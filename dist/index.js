@@ -50,10 +50,14 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const topLevelDir = `${process.env.GITHUB_WORKSPACE}${path.sep}`;
         const files = core.getInput('files', { required: false });
-        const filesSeparator = core.getInput('files-separator', { required: false, trimWhitespace: false });
+        const filesSeparator = core.getInput('files-separator', {
+            required: false,
+            trimWhitespace: false
+        });
         const excludedFiles = core.getInput('excluded-files', { required: false });
         const excludedFilesSeparator = core.getInput('excluded-files-separator', {
-            required: false, trimWhitespace: false
+            required: false,
+            trimWhitespace: false
         });
         const filesFromSourceFile = core.getInput('files-from-source-file', {
             required: false
@@ -64,7 +68,10 @@ function run() {
         const followSymbolicLinks = core.getBooleanInput('follow-symbolic-links', {
             required: false
         });
-        const separator = core.getInput('separator', { required: true, trimWhitespace: false });
+        const separator = core.getInput('separator', {
+            required: true,
+            trimWhitespace: false
+        });
         const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
             required: true
         });
