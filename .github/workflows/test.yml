@@ -1,0 +1,168 @@
+name: 'build-test'
+on: # rebuild any PRs and main branch changes
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build: # make sure build/ci work properly
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          cache: 'yarn'
+          node-version: '16.x'
+
+      - name: Install dependencies
+        run: |
+          yarn install
+
+      - name: Run eslint on changed files
+        uses: tj-actions/eslint-changed-files@v9
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          config_path: ".eslintrc.json"
+          ignore_path: ".eslintignore"
+          extensions: "ts,tsx"
+
+      - name: Run build
+        run: |
+          yarn all
+
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v8
+        id: changed_files
+        with:
+          files: |
+            src
+            dist
+
+      - name: Commit files
+        if: steps.changed_files.outputs.files_changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src dist
+          git commit -m "Added missing changes and modified dist assets."
+
+      - name: Push changes
+        if: steps.changed_files.outputs.files_changed == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          branch: ${{ github.head_ref }}
+
+      - name: Upload build assets
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-assets
+          path: dist
+
+  test: # make sure the action works on a clean machine without building
+    needs: build
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ ubuntu-latest, windows-latest, macos-latest, macos-11, ubuntu-18.04, windows-2022, windows-2016 ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Download build assets
+        uses: actions/download-artifact@v2
+        with:
+          name: build-assets
+
+      - name: Run glob for all files
+        id: glob-all-files
+        uses: ./
+        with:
+          files: "**"
+          include-deleted-files: "true"
+          base-sha: "ff61b233"
+
+      - name: Show output
+        run: |
+          echo "${{ steps.glob-all-files.outputs.paths }}"
+
+      - name: Run glob for all yml files
+        id: glob-all-yml-files
+        uses: ./
+        with:
+          files: |
+            **/*.yml
+            !.github/**/rebase.yml
+
+      - name: Show and output
+        run: |
+          echo "${{ steps.glob-all-yml-files.outputs.paths }}"
+
+      - name: Run glob for test.yml and md files
+        uses: ./
+        id: glob-test-yml-md
+        with:
+          files: |
+            .github/workflows/test.yml
+            *.md
+
+      - name: Show output
+        run: |
+          echo "${{ steps.glob-test-yml-md.outputs.paths }}"
+
+      - name: Run glob for source-files.txt
+        uses: ./
+        id: glob-source-files
+        with:
+          files-from-source-file: |
+            __test__/source-files.txt
+            __test__/source-files.txt
+
+      - name: Show output
+        run: |
+          echo "${{ steps.glob-source-files.outputs.paths }}"
+
+      - name: Run glob excluding files in source-files.txt
+        uses: ./
+        id: glob-excluded-source-files
+        with:
+          excluded-files-from-source-file: |
+            __test__/source-files.txt
+            __test__/source-files.txt
+
+      - name: Show output
+        run: |
+          echo "${{ steps.glob-excluded-source-files.outputs.paths }}"
+
+      - name: Run glob for test.yml and md files and custom separator
+        uses: ./
+        id: glob-test-yml-md-separator
+        with:
+          files: ".github/workflows/test.yml *.md"
+          files-separator: " "
+
+      - name: Show output
+        run: |
+          echo "${{ steps.glob-test-yml-md-separator.outputs.paths }}"
+
+      - name: Run glob for all .yml files and excluding test.yml and custom separator
+        uses: ./
+        id: glob-excluded-test-yml-separator
+        with:
+          files: "**.yml **/*.yml"
+          files-separator: " "
+          excluded-files: ".github/workflows/test.yml"
+
+      - name: Show output
+        run: |
+          echo "${{ steps.glob-excluded-test-yml-separator.outputs.paths }}"

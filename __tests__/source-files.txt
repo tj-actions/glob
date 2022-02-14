@@ -1,0 +1,4 @@
+*.md
+**.yaml
+**/rebase.yml
+!**.yml

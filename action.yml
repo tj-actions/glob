@@ -1,0 +1,119 @@
+name: Glob match
+description: Search for files matching glob patterns.
+author: tj-actions
+inputs:
+  files:
+    description: 'File patterns'
+    required: true
+  files-separator:
+    description: 'Separator used to split the `files` input'
+    default: "\n"
+    required: false
+  excluded-files:
+    description: 'Excluded file patterns (optionally include `!` before the file pattern or it would be prepended)'
+    required: false
+    default: ""
+  excluded-files-separator:
+    description: 'Separator used to split the `excluded-files` input'
+    default: "\n"
+    required: false
+  files-from-source-file:
+    description: 'Source file to populate the `files` input'
+    required: false
+    default: ""
+  files-from-source-file-separator:
+    description: 'Separator used to split the `files-from-source-file` input'
+    default: "\n"
+    required: false
+  excluded-files-from-source-file:
+    description: 'Source file to populate the `excluded-files` input'
+    required: false
+    default: ""
+  excluded-files-from-source-file-separator:
+    description: 'Separator used to split the `excluded-files-from-source-file` input'
+    default: "\n"
+    required: false
+  follow-symbolic-links:
+    description: 'Indicates whether to follow symbolic links'
+    default: "true"
+    required: true
+  separator:
+    description: 'Separator used for the paths output.'
+    required: true
+    default: " "
+  strip-top-level-dir:
+    description: 'Strip the `$GITHUB_WORKSPACE` from the `paths` output'
+    required: false
+    default: "true"
+  include-deleted-files:
+    description: 'Include all matching deleted files'
+    required: false
+    default: "false"
+  sha:
+    description: 'Specify a current commit SHA used for comparing changes, when include-deleted-files is set to `true`'
+    required: true
+    default: ${{ github.sha }}
+  base-sha:
+    description: 'Specify a base commit SHA on used for comparing changes, when include-deleted-files is set to `true`'
+    required: false
+  working-directory:
+    description: 'Specify a relative path under $GITHUB_WORKSPACE to locate the repository'
+    required: false
+    default: ${{ github.workspace }}
+
+outputs:
+  paths:
+    description: "List of filtered paths using the specified patterns and separator"
+
+
+#runs:
+#  using: 'composite'
+#  steps:
+#    - run: npm install -g "@actions/glob@0.2.0"
+#      shell: bash
+#    - name: Get matching files
+#      uses: actions/github-script@v6
+#      id: glob
+#      with:
+#        github-token: ${{ inputs.token }}
+#        script: |
+#          const path = require("path");
+#
+#          const { GITHUB_ACTION_PATH } = process.env;
+#          const ACTION_PATH = path.join(GITHUB_ACTION_PATH, "src", "main.js")
+#          const GET_FILES_FROM_SOURCE_FILE_PATH = path.join(GITHUB_ACTION_PATH, "src", "getFilesFromSourceFile.js");
+#          const GET_DELETED_FILES_PATH = path.join(GITHUB_ACTION_PATH, "src", "getDeletedFiles.js");
+#          const UTILS_PATH = path.join(GITHUB_ACTION_PATH, "src", "util.js");
+#
+#          const { getFilesFromSourceFile } = require(GET_FILES_FROM_SOURCE_FILE_PATH);
+#          const { getDeletedFiles } = require(GET_DELETED_FILES_PATH);
+#          const { normalizeSeparators } = require(UTILS_PATH);
+#          const main = require(ACTION_PATH);
+#
+#          await main({ core, glob, exec, getFilesFromSourceFile, getDeletedFiles, normalizeSeparators })
+#      env:
+#        GITHUB_ACTION_PATH: ${{ github.action_path }}
+#        GITHUB_WORKSPACE: ${{ github.workspace }}
+#        INPUT_FILES: ${{ inputs.files }}
+#        INPUT_FILES_SEPARATOR: ${{ inputs.files-separator }}
+#        INPUT_EXCLUDED_FILES: ${{ inputs.excluded-files }}
+#        INPUT_EXCLUDED_FILES_SEPARATOR: ${{ inputs.excluded-files-separator }}
+#        INPUT_FILES_FROM_SOURCE_FILE: ${{ inputs.files-from-source-file }}
+#        INPUT_FILES_FROM_SOURCE_FILE_SEPARATOR: ${{ inputs.files-from-source-file-separator }}
+#        INPUT_EXCLUDED_FILES_FROM_SOURCE_FILE: ${{ inputs.excluded-files-from-source-file }}
+#        INPUT_EXCLUDED_FILES_FROM_SOURCE_FILE_SEPARATOR: ${{ inputs.excluded-files-from-source-file-separator }}
+#        INPUT_FOLLOW_SYMBOLIC_LINKS: ${{ inputs.follow-symbolic-links }}
+#        INPUT_SEPARATOR: ${{ inputs.separator }}
+#        INPUT_STRIP_TOP_LEVEL_DIR: ${{ inputs.strip-top-level-dir }}
+#        INPUT_INCLUDE_DELETED_FILES: ${{ inputs.include-deleted-files }}
+#        INPUT_BASE_SHA: ${{ inputs.base-sha }}
+#        INPUT_SHA: ${{ inputs.sha }}
+#        INPUT_PATH: ${{ inputs.path }}
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
+branding:
+  icon: filter
+  color: white
