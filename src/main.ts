@@ -62,7 +62,7 @@ export async function run(): Promise<void> {
   const baseSha = core.getInput('base-sha', {required: includeDeletedFiles})
 
   const workingDirectory = core.getInput('working-directory', {
-    required: true
+    required: false
   })
 
   let filePatterns = files.split(filesSeparator).join('\n')
