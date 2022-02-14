@@ -1,6 +1,5 @@
 import * as core from '@actions/core'
 import * as path from 'path'
-import mockedEnv, {RestoreFn} from 'mocked-env'
 import {normalizeSeparators} from '../src/utils'
 import {run} from '../src/main'
 
@@ -16,16 +15,14 @@ const defaultEnv = {
 
 const {GITHUB_WORKSPACE} = process.env
 
-let restore: RestoreFn
-
-afterEach(() => {
-  if (restore) {
-    restore()
+function mockedEnv(testEnvVars: {[key: string]: string}) {
+  for (const key in testEnvVars) {
+    process.env[key] = testEnvVars[key as keyof typeof testEnvVars]
   }
-})
+}
 
 test('returns the paths of the filtered files (input files, input source files)', async () => {
-  restore = mockedEnv({
+  mockedEnv({
     ...defaultEnv,
     'INPUT_FILES': '__test__/**/*.test.js\n*.sh',
     'INPUT_FILES-FROM-SOURCE-FILE':
@@ -54,7 +51,7 @@ test('returns the paths of the filtered files (input files, input source files)'
 })
 
 test('returns the paths of the filtered files (input files)', async () => {
-  restore = mockedEnv({
+  mockedEnv({
     ...defaultEnv,
     'INPUT_INCLUDE-DELETED-FILES': 'true',
     'INPUT_FILES': '__test__/**/*.test.js\n__test__/**.txt\n*.sh',
@@ -82,7 +79,7 @@ test('returns the paths of the filtered files (input files)', async () => {
 })
 
 test('returns the paths of the filtered files (input source files)', async () => {
-  restore = mockedEnv({
+  mockedEnv({
     ...defaultEnv,
     'INPUT_FILES-FROM-SOURCE-FILE':
       '__test__/source-files.txt\n__test__/source-files.txt\n__test__/source-files.txt'
