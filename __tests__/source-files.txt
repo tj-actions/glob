@@ -1,4 +1,4 @@
 *.md
 **.yaml
-**/rebase.yml
+**/greetings.yml
 !**.yml
