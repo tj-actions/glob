@@ -6,8 +6,8 @@ import path from 'path'
 import {createInterface} from 'readline'
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
+import * as patternHelper from '@actions/glob/lib/internal-pattern-helper'
 import {Pattern} from '@actions/glob/lib/internal-pattern'
-import patternHelper from '@actions/glob/lib/internal-pattern-helper'
 
 export const IS_WINDOWS: boolean = process.platform === 'win32'
 
