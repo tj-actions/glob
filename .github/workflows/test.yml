@@ -126,8 +126,8 @@ jobs:
         id: glob-source-files
         with:
           files-from-source-file: |
-            __test__/source-files.txt
-            __test__/source-files.txt
+            __tests__/source-files.txt
+            __tests__/source-files.txt
 
       - name: Show output
         run: |
@@ -138,8 +138,8 @@ jobs:
         id: glob-excluded-source-files
         with:
           excluded-files-from-source-file: |
-            __test__/source-files.txt
-            __test__/source-files.txt
+            __tests__/source-files.txt
+            __tests__/source-files.txt
 
       - name: Show output
         run: |
