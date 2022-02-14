@@ -95,7 +95,7 @@ test('returns the paths of the filtered files (input source files)', async () =>
     'CODE_OF_CONDUCT.md',
     'CONTRIBUTING.md',
     'HISTORY.md',
-    'README.md',
+    'README.md'
   ]
     .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
     .join(process.env.INPUT_SEPARATOR)

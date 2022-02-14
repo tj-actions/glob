@@ -37,7 +37,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.run = void 0;
 /* eslint-disable sort-imports */
-const path = __importStar(__nccwpck_require__(17));
+const path = __importStar(__nccwpck_require__(622));
 const core = __importStar(__nccwpck_require__(186));
 const glob = __importStar(__nccwpck_require__(90));
 const utils_1 = __nccwpck_require__(918);
@@ -81,7 +81,7 @@ function run() {
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = core.getInput('working-directory', {
-            required: true
+            required: false
         });
         let filePatterns = files.split(filesSeparator).join('\n');
         core.debug(`file patterns: ${filePatterns}`);
@@ -209,9 +209,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.deletedGitFiles = exports.normalizeSeparators = exports.IS_WINDOWS = void 0;
 /*global AsyncIterableIterator*/
-const fs_1 = __nccwpck_require__(147);
-const path_1 = __importDefault(__nccwpck_require__(17));
-const readline_1 = __nccwpck_require__(521);
+const fs_1 = __nccwpck_require__(747);
+const path_1 = __importDefault(__nccwpck_require__(622));
+const readline_1 = __nccwpck_require__(58);
 const core = __importStar(__nccwpck_require__(186));
 const exec = __importStar(__nccwpck_require__(514));
 const patternHelper = __importStar(__nccwpck_require__(5));
@@ -377,7 +377,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
-const os = __importStar(__nccwpck_require__(37));
+const os = __importStar(__nccwpck_require__(87));
 const utils_1 = __nccwpck_require__(278);
 /**
  * Commands
@@ -488,8 +488,8 @@ exports.getIDToken = exports.getState = exports.saveState = exports.group = expo
 const command_1 = __nccwpck_require__(351);
 const file_command_1 = __nccwpck_require__(717);
 const utils_1 = __nccwpck_require__(278);
-const os = __importStar(__nccwpck_require__(37));
-const path = __importStar(__nccwpck_require__(17));
+const os = __importStar(__nccwpck_require__(87));
+const path = __importStar(__nccwpck_require__(622));
 const oidc_utils_1 = __nccwpck_require__(41);
 /**
  * The code to exit an action
@@ -798,8 +798,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issueCommand = void 0;
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const fs = __importStar(__nccwpck_require__(147));
-const os = __importStar(__nccwpck_require__(37));
+const fs = __importStar(__nccwpck_require__(747));
+const os = __importStar(__nccwpck_require__(87));
 const utils_1 = __nccwpck_require__(278);
 function issueCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
@@ -984,7 +984,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getExecOutput = exports.exec = void 0;
-const string_decoder_1 = __nccwpck_require__(576);
+const string_decoder_1 = __nccwpck_require__(304);
 const tr = __importStar(__nccwpck_require__(159));
 /**
  * Exec a command.
@@ -1094,13 +1094,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.argStringToArray = exports.ToolRunner = void 0;
-const os = __importStar(__nccwpck_require__(37));
-const events = __importStar(__nccwpck_require__(361));
-const child = __importStar(__nccwpck_require__(81));
-const path = __importStar(__nccwpck_require__(17));
+const os = __importStar(__nccwpck_require__(87));
+const events = __importStar(__nccwpck_require__(614));
+const child = __importStar(__nccwpck_require__(129));
+const path = __importStar(__nccwpck_require__(622));
 const io = __importStar(__nccwpck_require__(436));
 const ioUtil = __importStar(__nccwpck_require__(962));
-const timers_1 = __nccwpck_require__(512);
+const timers_1 = __nccwpck_require__(213);
 /* eslint-disable @typescript-eslint/unbound-method */
 const IS_WINDOWS = process.platform === 'win32';
 /*
@@ -1852,9 +1852,9 @@ var __asyncGenerator = (this && this.__asyncGenerator) || function (thisArg, _ar
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DefaultGlobber = void 0;
 const core = __importStar(__nccwpck_require__(186));
-const fs = __importStar(__nccwpck_require__(147));
+const fs = __importStar(__nccwpck_require__(747));
 const globOptionsHelper = __importStar(__nccwpck_require__(26));
-const path = __importStar(__nccwpck_require__(17));
+const path = __importStar(__nccwpck_require__(622));
 const patternHelper = __importStar(__nccwpck_require__(5));
 const internal_match_kind_1 = __nccwpck_require__(63);
 const internal_pattern_1 = __nccwpck_require__(536);
@@ -2081,12 +2081,12 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.hashFiles = void 0;
-const crypto = __importStar(__nccwpck_require__(113));
+const crypto = __importStar(__nccwpck_require__(373));
 const core = __importStar(__nccwpck_require__(186));
-const fs = __importStar(__nccwpck_require__(147));
-const stream = __importStar(__nccwpck_require__(781));
-const util = __importStar(__nccwpck_require__(837));
-const path = __importStar(__nccwpck_require__(17));
+const fs = __importStar(__nccwpck_require__(747));
+const stream = __importStar(__nccwpck_require__(413));
+const util = __importStar(__nccwpck_require__(669));
+const path = __importStar(__nccwpck_require__(622));
 function hashFiles(globber) {
     var e_1, _a;
     var _b;
@@ -2194,8 +2194,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.safeTrimTrailingSeparator = exports.normalizeSeparators = exports.hasRoot = exports.hasAbsoluteRoot = exports.ensureAbsoluteRoot = exports.dirname = void 0;
-const path = __importStar(__nccwpck_require__(17));
-const assert_1 = __importDefault(__nccwpck_require__(491));
+const path = __importStar(__nccwpck_require__(622));
+const assert_1 = __importDefault(__nccwpck_require__(357));
 const IS_WINDOWS = process.platform === 'win32';
 /**
  * Similar to path.dirname except normalizes the path separators and slightly better handling for Windows UNC paths.
@@ -2399,9 +2399,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Path = void 0;
-const path = __importStar(__nccwpck_require__(17));
+const path = __importStar(__nccwpck_require__(622));
 const pathHelper = __importStar(__nccwpck_require__(849));
-const assert_1 = __importDefault(__nccwpck_require__(491));
+const assert_1 = __importDefault(__nccwpck_require__(357));
 const IS_WINDOWS = process.platform === 'win32';
 /**
  * Helper class for parsing paths into segments
@@ -2620,10 +2620,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Pattern = void 0;
-const os = __importStar(__nccwpck_require__(37));
-const path = __importStar(__nccwpck_require__(17));
+const os = __importStar(__nccwpck_require__(87));
+const path = __importStar(__nccwpck_require__(622));
 const pathHelper = __importStar(__nccwpck_require__(849));
-const assert_1 = __importDefault(__nccwpck_require__(491));
+const assert_1 = __importDefault(__nccwpck_require__(357));
 const minimatch_1 = __nccwpck_require__(973);
 const internal_match_kind_1 = __nccwpck_require__(63);
 const internal_path_1 = __nccwpck_require__(836);
@@ -2943,8 +2943,8 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const http = __nccwpck_require__(685);
-const https = __nccwpck_require__(687);
+const http = __nccwpck_require__(605);
+const https = __nccwpck_require__(211);
 const pm = __nccwpck_require__(443);
 let tunnel;
 var HttpCodes;
@@ -3583,8 +3583,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 var _a;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getCmdPath = exports.tryGetExecutablePath = exports.isRooted = exports.isDirectory = exports.exists = exports.IS_WINDOWS = exports.unlink = exports.symlink = exports.stat = exports.rmdir = exports.rename = exports.readlink = exports.readdir = exports.mkdir = exports.lstat = exports.copyFile = exports.chmod = void 0;
-const fs = __importStar(__nccwpck_require__(147));
-const path = __importStar(__nccwpck_require__(17));
+const fs = __importStar(__nccwpck_require__(747));
+const path = __importStar(__nccwpck_require__(622));
 _a = fs.promises, exports.chmod = _a.chmod, exports.copyFile = _a.copyFile, exports.lstat = _a.lstat, exports.mkdir = _a.mkdir, exports.readdir = _a.readdir, exports.readlink = _a.readlink, exports.rename = _a.rename, exports.rmdir = _a.rmdir, exports.stat = _a.stat, exports.symlink = _a.symlink, exports.unlink = _a.unlink;
 exports.IS_WINDOWS = process.platform === 'win32';
 function exists(fsPath) {
@@ -3766,10 +3766,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.findInPath = exports.which = exports.mkdirP = exports.rmRF = exports.mv = exports.cp = void 0;
-const assert_1 = __nccwpck_require__(491);
-const childProcess = __importStar(__nccwpck_require__(81));
-const path = __importStar(__nccwpck_require__(17));
-const util_1 = __nccwpck_require__(837);
+const assert_1 = __nccwpck_require__(357);
+const childProcess = __importStar(__nccwpck_require__(129));
+const path = __importStar(__nccwpck_require__(622));
+const util_1 = __nccwpck_require__(669);
 const ioUtil = __importStar(__nccwpck_require__(962));
 const exec = util_1.promisify(childProcess.exec);
 const execFile = util_1.promisify(childProcess.execFile);
@@ -4383,7 +4383,7 @@ var isArray = Array.isArray || function (xs) {
 module.exports = minimatch
 minimatch.Minimatch = Minimatch
 
-var path = (function () { try { return __nccwpck_require__(17) } catch (e) {}}()) || {
+var path = (function () { try { return __nccwpck_require__(622) } catch (e) {}}()) || {
   sep: '/'
 }
 minimatch.sep = path.sep
@@ -5343,13 +5343,13 @@ module.exports = __nccwpck_require__(219);
 "use strict";
 
 
-var net = __nccwpck_require__(808);
-var tls = __nccwpck_require__(404);
-var http = __nccwpck_require__(685);
-var https = __nccwpck_require__(687);
-var events = __nccwpck_require__(361);
-var assert = __nccwpck_require__(491);
-var util = __nccwpck_require__(837);
+var net = __nccwpck_require__(631);
+var tls = __nccwpck_require__(16);
+var http = __nccwpck_require__(605);
+var https = __nccwpck_require__(211);
+var events = __nccwpck_require__(614);
+var assert = __nccwpck_require__(357);
+var util = __nccwpck_require__(669);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -5609,7 +5609,7 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 491:
+/***/ 357:
 /***/ ((module) => {
 
 "use strict";
@@ -5617,7 +5617,7 @@ module.exports = require("assert");
 
 /***/ }),
 
-/***/ 81:
+/***/ 129:
 /***/ ((module) => {
 
 "use strict";
@@ -5625,7 +5625,7 @@ module.exports = require("child_process");
 
 /***/ }),
 
-/***/ 113:
+/***/ 373:
 /***/ ((module) => {
 
 "use strict";
@@ -5633,7 +5633,7 @@ module.exports = require("crypto");
 
 /***/ }),
 
-/***/ 361:
+/***/ 614:
 /***/ ((module) => {
 
 "use strict";
@@ -5641,7 +5641,7 @@ module.exports = require("events");
 
 /***/ }),
 
-/***/ 147:
+/***/ 747:
 /***/ ((module) => {
 
 "use strict";
@@ -5649,7 +5649,7 @@ module.exports = require("fs");
 
 /***/ }),
 
-/***/ 685:
+/***/ 605:
 /***/ ((module) => {
 
 "use strict";
@@ -5657,7 +5657,7 @@ module.exports = require("http");
 
 /***/ }),
 
-/***/ 687:
+/***/ 211:
 /***/ ((module) => {
 
 "use strict";
@@ -5665,7 +5665,7 @@ module.exports = require("https");
 
 /***/ }),
 
-/***/ 808:
+/***/ 631:
 /***/ ((module) => {
 
 "use strict";
@@ -5673,7 +5673,7 @@ module.exports = require("net");
 
 /***/ }),
 
-/***/ 37:
+/***/ 87:
 /***/ ((module) => {
 
 "use strict";
@@ -5681,7 +5681,7 @@ module.exports = require("os");
 
 /***/ }),
 
-/***/ 17:
+/***/ 622:
 /***/ ((module) => {
 
 "use strict";
@@ -5689,7 +5689,7 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ 521:
+/***/ 58:
 /***/ ((module) => {
 
 "use strict";
@@ -5697,7 +5697,7 @@ module.exports = require("readline");
 
 /***/ }),
 
-/***/ 781:
+/***/ 413:
 /***/ ((module) => {
 
 "use strict";
@@ -5705,7 +5705,7 @@ module.exports = require("stream");
 
 /***/ }),
 
-/***/ 576:
+/***/ 304:
 /***/ ((module) => {
 
 "use strict";
@@ -5713,7 +5713,7 @@ module.exports = require("string_decoder");
 
 /***/ }),
 
-/***/ 512:
+/***/ 213:
 /***/ ((module) => {
 
 "use strict";
@@ -5721,7 +5721,7 @@ module.exports = require("timers");
 
 /***/ }),
 
-/***/ 404:
+/***/ 16:
 /***/ ((module) => {
 
 "use strict";
@@ -5729,7 +5729,7 @@ module.exports = require("tls");
 
 /***/ }),
 
-/***/ 837:
+/***/ 669:
 /***/ ((module) => {
 
 "use strict";
