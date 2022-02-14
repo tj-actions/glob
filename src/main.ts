@@ -9,19 +9,23 @@ import {
 } from './utils'
 
 const DEFAULT_EXCLUDED_FILES = [
-    '!node_modules/**',
-    '!**/node_modules/**',
-    '!.git/**'
+  '!node_modules/**',
+  '!**/node_modules/**',
+  '!.git/**'
 ]
 
 export async function run(): Promise<void> {
   const topLevelDir = `${process.env.GITHUB_WORKSPACE}${path.sep}`
 
   const files = core.getInput('files', {required: false})
-  const filesSeparator = core.getInput('files-separator', {required: false, trimWhitespace: false})
+  const filesSeparator = core.getInput('files-separator', {
+    required: false,
+    trimWhitespace: false
+  })
   const excludedFiles = core.getInput('excluded-files', {required: false})
   const excludedFilesSeparator = core.getInput('excluded-files-separator', {
-    required: false, trimWhitespace: false
+    required: false,
+    trimWhitespace: false
   })
 
   const filesFromSourceFile = core.getInput('files-from-source-file', {
@@ -43,7 +47,10 @@ export async function run(): Promise<void> {
   const followSymbolicLinks = core.getBooleanInput('follow-symbolic-links', {
     required: false
   })
-  const separator = core.getInput('separator', {required: true, trimWhitespace: false})
+  const separator = core.getInput('separator', {
+    required: true,
+    trimWhitespace: false
+  })
   const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
     required: true
   })
@@ -139,9 +146,8 @@ export async function run(): Promise<void> {
   core.setOutput('paths', paths.join(separator))
 }
 
-
 if (!process.env.TESTING) {
-// eslint-disable-next-line github/no-then
+  // eslint-disable-next-line github/no-then
   run().catch(e => {
     core.setFailed(e.message || e)
   })
