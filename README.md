@@ -48,13 +48,12 @@ matching [glob patterns](https://docs.github.com/en/actions/learn-github-actions
 | files-from-source-file                    | string | false    |                             | Source file to populate the<br>`files` input                                                                   |
 | files-from-source-file-separator          | string | false    | `"\n"`                      | Separator used to split the<br>`files-from-source-file` input                                                  |
 | files-separator                           | string | false    | `"\n"`                      | Separator used to split the<br>`files` input                                                                   |
-| follow-symbolic-links                     | string | false    | `"true"`                    | Indicates whether to follow symbolic<br>links                                                                  |
+| follow-symbolic-links                     | string | true     | `"true"`                    | Indicates whether to follow symbolic<br>links                                                                  |
 | include-deleted-files                     | string | false    | `"false"`                   | Include all matching deleted files<br>                                                                         |
-| path                                      | string | false    | `"${{ github.workspace }}"` | Specify a relative path under<br>$GITHUB\_WORKSPACE to locate the repository<br>                                |
-| separator                                 | string | false    | `" "`                       | Separator used for the paths<br>output.                                                                        |
+| separator                                 | string | true     | `" "`                       | Separator used for the paths<br>output.                                                                        |
 | sha                                       | string | true     | `"${{ github.sha }}"`       | Specify a current commit SHA<br>used for comparing changes, when<br>include-deleted-files is set to `true`<br> |
 | strip-top-level-dir                       | string | false    | `"true"`                    | Strip the `$GITHUB_WORKSPACE` from the<br>`paths` output                                                       |
-| token                                     | string | false    | `"${{ github.token }}"`     | The GitHub token used to<br>create an authenticated client                                                     |
+| working-directory                         | string | false    | `"${{ github.workspace }}"` | Specify a relative path under<br>$GITHUB\_WORKSPACE to locate the repository<br>                                |
 
 <!-- AUTO-DOC-INPUT:END -->
 
