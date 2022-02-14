@@ -10,7 +10,9 @@ const defaultEnv = {
   'INPUT_EXCLUDED-FILES-FROM-SOURCE-FILE-SEPARATOR': '\n',
   'INPUT_FOLLOW-SYMBOLIC-LINKS': 'true',
   'INPUT_SEPARATOR': ' ',
-  'INPUT_STRIP-TOP-LEVEL-DIR': 'true'
+  'INPUT_STRIP-TOP-LEVEL-DIR': 'true',
+  'INPUT_WORKING-DIRECTORY': process.cwd(),
+  'INPUT_INCLUDE-DELETED-FILES': 'false',
 }
 
 const {GITHUB_WORKSPACE} = process.env
@@ -24,7 +26,7 @@ function mockedEnv(testEnvVars: {[key: string]: string}) {
 test('returns the paths of the filtered files (input files, input source files)', async () => {
   mockedEnv({
     ...defaultEnv,
-    'INPUT_FILES': '__test__/**/*.test.js\n*.sh',
+    INPUT_FILES: '__test__/**/*.test.js\n*.sh',
     'INPUT_FILES-FROM-SOURCE-FILE':
       '__test__/source-files.txt\n__test__/source-files.txt'
   })
@@ -54,9 +56,9 @@ test('returns the paths of the filtered files (input files)', async () => {
   mockedEnv({
     ...defaultEnv,
     'INPUT_INCLUDE-DELETED-FILES': 'true',
-    'INPUT_FILES': '__test__/**/*.test.js\n__test__/**.txt\n*.sh',
+    INPUT_FILES: '__test__/**/*.test.js\n__test__/**.txt\n*.sh',
     'INPUT_BASE-SHA': '99561ef',
-    'INPUT_SHA': '2eb2427'
+    INPUT_SHA: '2eb2427'
   })
 
   const EXPECTED_FILENAMES = [
