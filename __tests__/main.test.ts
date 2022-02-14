@@ -5,13 +5,13 @@ import {normalizeSeparators} from '../src/utils'
 import {run} from '../src/main'
 
 const defaultEnv = {
-  INPUT_FILES_SEPARATOR: '\n',
-  INPUT_FILES_FROM_SOURCE_FILE_SEPARATOR: '\n',
-  INPUT_EXCLUDED_FILES_SEPARATOR: '\n',
-  INPUT_EXCLUDED_FILES_FROM_SOURCE_FILE_SEPARATOR: '\n',
-  INPUT_FOLLOW_SYMBOLIC_LINKS: 'true',
-  INPUT_SEPARATOR: ' ',
-  INPUT_STRIP_TOP_LEVEL_DIR: 'true'
+  'INPUT_FILES-SEPARATOR': '\n',
+  'INPUT_FILES-FROM-SOURCE-FILE-SEPARATOR': '\n',
+  'INPUT_EXCLUDED-FILES-SEPARATOR': '\n',
+  'INPUT_EXCLUDED-FILES-FROM-SOURCE-FILE-SEPARATOR': '\n',
+  'INPUT_FOLLOW-SYMBOLIC-LINKS': 'true',
+  'INPUT_SEPARATOR': ' ',
+  'INPUT_STRIP-TOP-LEVEL-DIR': 'true'
 }
 
 const {GITHUB_WORKSPACE} = process.env
@@ -27,8 +27,8 @@ afterEach(() => {
 test('returns the paths of the filtered files (input files, input source files)', async () => {
   restore = mockedEnv({
     ...defaultEnv,
-    INPUT_FILES: '__test__/**/*.test.js\n*.sh',
-    INPUT_FILES_FROM_SOURCE_FILE:
+    'INPUT_FILES': '__test__/**/*.test.js\n*.sh',
+    'INPUT_FILES-FROM-SOURCE-FILE':
       '__test__/source-files.txt\n__test__/source-files.txt'
   })
 
@@ -56,10 +56,10 @@ test('returns the paths of the filtered files (input files, input source files)'
 test('returns the paths of the filtered files (input files)', async () => {
   restore = mockedEnv({
     ...defaultEnv,
-    INPUT_INCLUDE_DELETED_FILES: 'true',
-    INPUT_FILES: '__test__/**/*.test.js\n__test__/**.txt\n*.sh',
-    INPUT_BASE_SHA: '99561ef',
-    INPUT_SHA: '2eb2427'
+    'INPUT_INCLUDE-DELETED-FILES': 'true',
+    'INPUT_FILES': '__test__/**/*.test.js\n__test__/**.txt\n*.sh',
+    'INPUT_BASE-SHA': '99561ef',
+    'INPUT_SHA': '2eb2427'
   })
 
   const EXPECTED_FILENAMES = [
@@ -84,7 +84,7 @@ test('returns the paths of the filtered files (input files)', async () => {
 test('returns the paths of the filtered files (input source files)', async () => {
   restore = mockedEnv({
     ...defaultEnv,
-    INPUT_FILES_FROM_SOURCE_FILE:
+    'INPUT_FILES-FROM-SOURCE-FILE':
       '__test__/source-files.txt\n__test__/source-files.txt\n__test__/source-files.txt'
   })
 
