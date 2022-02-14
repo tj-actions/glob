@@ -65,51 +65,6 @@ outputs:
   paths:
     description: "List of filtered paths using the specified patterns and separator"
 
-
-#runs:
-#  using: 'composite'
-#  steps:
-#    - run: npm install -g "@actions/glob@0.2.0"
-#      shell: bash
-#    - name: Get matching files
-#      uses: actions/github-script@v6
-#      id: glob
-#      with:
-#        github-token: ${{ inputs.token }}
-#        script: |
-#          const path = require("path");
-#
-#          const { GITHUB_ACTION_PATH } = process.env;
-#          const ACTION_PATH = path.join(GITHUB_ACTION_PATH, "src", "main.js")
-#          const GET_FILES_FROM_SOURCE_FILE_PATH = path.join(GITHUB_ACTION_PATH, "src", "getFilesFromSourceFile.js");
-#          const GET_DELETED_FILES_PATH = path.join(GITHUB_ACTION_PATH, "src", "getDeletedFiles.js");
-#          const UTILS_PATH = path.join(GITHUB_ACTION_PATH, "src", "util.js");
-#
-#          const { getFilesFromSourceFile } = require(GET_FILES_FROM_SOURCE_FILE_PATH);
-#          const { getDeletedFiles } = require(GET_DELETED_FILES_PATH);
-#          const { normalizeSeparators } = require(UTILS_PATH);
-#          const main = require(ACTION_PATH);
-#
-#          await main({ core, glob, exec, getFilesFromSourceFile, getDeletedFiles, normalizeSeparators })
-#      env:
-#        GITHUB_ACTION_PATH: ${{ github.action_path }}
-#        GITHUB_WORKSPACE: ${{ github.workspace }}
-#        INPUT_FILES: ${{ inputs.files }}
-#        INPUT_FILES_SEPARATOR: ${{ inputs.files-separator }}
-#        INPUT_EXCLUDED_FILES: ${{ inputs.excluded-files }}
-#        INPUT_EXCLUDED_FILES_SEPARATOR: ${{ inputs.excluded-files-separator }}
-#        INPUT_FILES_FROM_SOURCE_FILE: ${{ inputs.files-from-source-file }}
-#        INPUT_FILES_FROM_SOURCE_FILE_SEPARATOR: ${{ inputs.files-from-source-file-separator }}
-#        INPUT_EXCLUDED_FILES_FROM_SOURCE_FILE: ${{ inputs.excluded-files-from-source-file }}
-#        INPUT_EXCLUDED_FILES_FROM_SOURCE_FILE_SEPARATOR: ${{ inputs.excluded-files-from-source-file-separator }}
-#        INPUT_FOLLOW_SYMBOLIC_LINKS: ${{ inputs.follow-symbolic-links }}
-#        INPUT_SEPARATOR: ${{ inputs.separator }}
-#        INPUT_STRIP_TOP_LEVEL_DIR: ${{ inputs.strip-top-level-dir }}
-#        INPUT_INCLUDE_DELETED_FILES: ${{ inputs.include-deleted-files }}
-#        INPUT_BASE_SHA: ${{ inputs.base-sha }}
-#        INPUT_SHA: ${{ inputs.sha }}
-#        INPUT_PATH: ${{ inputs.path }}
-
 runs:
   using: 'node12'
   main: 'dist/index.js'

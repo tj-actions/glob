@@ -16,8 +16,8 @@ describe('getDeletedFiles test', () => {
   it('returns all deleted fileNames', async () => {
     const deletedFiles = await getDeletedFiles({
       filePatterns,
-      baseSha: 'ff61b233',
-      sha: '9fde8568',
+      baseSha: '99561ef',
+      sha: '2eb2427',
       cwd: GITHUB_WORKSPACE!
     })
 

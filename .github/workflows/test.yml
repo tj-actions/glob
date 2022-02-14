@@ -90,7 +90,8 @@ jobs:
         with:
           files: "**"
           include-deleted-files: "true"
-          base-sha: "ff61b233"
+          base-sha: "99561ef"
+          sha: "2eb2427"
 
       - name: Show output
         run: |

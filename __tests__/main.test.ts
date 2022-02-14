@@ -58,8 +58,8 @@ test('returns the paths of the filtered files (input files)', async () => {
     ...defaultEnv,
     INPUT_INCLUDE_DELETED_FILES: 'true',
     INPUT_FILES: '__test__/**/*.test.js\n__test__/**.txt\n*.sh',
-    INPUT_BASE_SHA: 'ff61b233',
-    INPUT_SHA: '9fde8568'
+    INPUT_BASE_SHA: '99561ef',
+    INPUT_SHA: '2eb2427'
   })
 
   const EXPECTED_FILENAMES = [
