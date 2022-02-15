@@ -82,9 +82,9 @@ This package was created
 with [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
 using [cookiecutter-action](https://github.com/tj-actions/cookiecutter-action)
 
-*   [github-script](https://github.com/actions/github-script)
 *   [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob)
 *   [@actions/core](https://github.com/actions/toolkit/tree/main/packages/core)
+*   [@actions/exec](https://github.com/actions/toolkit/tree/main/packages/exec)
 
 ## Report Bugs
 
