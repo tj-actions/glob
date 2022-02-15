@@ -50,11 +50,11 @@ inputs:
     required: false
     default: "false"
   sha:
-    description: 'Specify a current commit SHA used for comparing changes, when include-deleted-files is set to `true`'
+    description: 'Specify a current commit SHA used for comparing changes, when `include-deleted-files` is set to `true`'
     required: true
     default: ${{ github.sha }}
   base-sha:
-    description: 'Specify a base commit SHA on used for comparing changes, when include-deleted-files is set to `true`'
+    description: 'Specify a base commit SHA used for comparing changes, when `include-deleted-files` is set to `true`'
     required: false
   working-directory:
     description: 'Specify a relative path under $GITHUB_WORKSPACE to locate the repository'
