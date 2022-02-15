@@ -85,6 +85,8 @@ using [cookiecutter-action](https://github.com/tj-actions/cookiecutter-action)
 *   [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob)
 *   [@actions/core](https://github.com/actions/toolkit/tree/main/packages/core)
 *   [@actions/exec](https://github.com/actions/toolkit/tree/main/packages/exec)
+*   [@actions/github](https://github.com/actions/toolkit/tree/main/packages/github)
+*   [@actions/io](https://github.com/actions/toolkit/tree/main/packages/io)
 
 ## Report Bugs
 
