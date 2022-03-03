@@ -61,7 +61,7 @@ jobs:
           branch: ${{ github.head_ref }}
 
       - name: Upload build assets
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-assets
           path: dist
