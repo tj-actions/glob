@@ -64,10 +64,13 @@ inputs:
 outputs:
   paths:
     description: "List of filtered paths using the specified patterns and separator"
+  paths-output-file:
+    description: "List of filtered paths using the specified patterns and separator stored in a tempfile"
 
 runs:
   using: 'node12'
   main: 'dist/index.js'
+  post: 'dist/cleanup/index.js'
 
 branding:
   icon: filter
