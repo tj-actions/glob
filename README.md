@@ -60,9 +60,10 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 <!-- AUTO-DOC-OUTPUT:START - Do not remove or modify this section -->
 
-| OUTPUT |  TYPE  |                               DESCRIPTION                                |
-|--------|--------|--------------------------------------------------------------------------|
-| paths  | string | List of filtered paths using<br>the specified patterns and separator<br> |
+|      OUTPUT       |  TYPE  |                                         DESCRIPTION                                          |
+|-------------------|--------|----------------------------------------------------------------------------------------------|
+| paths             | string | List of filtered paths using<br>the specified patterns and separator<br>                     |
+| paths-output-file | string | List of filtered paths using<br>the specified patterns and separator<br>stored in a tempfile |
 
 <!-- AUTO-DOC-OUTPUT:END -->
 
