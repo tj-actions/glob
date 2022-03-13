@@ -147,7 +147,7 @@ jobs:
       - name: Show output
         run: |
           echo "${{ steps.glob-excluded-source-files.outputs.paths }}"
-          cat "${{ steps.glob-excluded-source-files.paths-output-file }}"
+          cat "${{ steps.glob-excluded-source-files.outputs.paths-output-file }}"
 
       - name: Run glob for test.yml and md files and custom separator
         uses: ./
@@ -159,7 +159,7 @@ jobs:
       - name: Show output
         run: |
           echo "${{ steps.glob-test-yml-md-separator.outputs.paths }}"
-          cat "${{ steps.glob-test-yml-md-separator.paths-output-file }}"
+          cat "${{ steps.glob-test-yml-md-separator.outputs.paths-output-file }}"
 
       - name: Run glob for all .yml files and excluding test.yml and custom separator
         uses: ./
@@ -172,4 +172,4 @@ jobs:
       - name: Show output
         run: |
           echo "${{ steps.glob-excluded-test-yml-separator.outputs.paths }}"
-          cat "${{ steps.glob-excluded-test-yml-separator.paths-output-file }}"
+          cat "${{ steps.glob-excluded-test-yml-separator.outputs.paths-output-file }}"
