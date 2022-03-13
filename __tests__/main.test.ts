@@ -39,6 +39,7 @@ test('returns the paths of the filtered files (input files, input source files)'
     'CONTRIBUTING.md',
     'HISTORY.md',
     'README.md',
+    '__tests__/cleanup.test.ts',
     '__tests__/getDeletedFiles.test.ts',
     '__tests__/getFilesFromSourceFile.test.ts',
     '__tests__/main.test.ts',
@@ -52,7 +53,7 @@ test('returns the paths of the filtered files (input files, input source files)'
 
   await run()
 
-  expect(core.setOutput).toHaveBeenCalledWith('paths', EXPECTED_FILENAMES)
+  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
 })
 
 test('returns the paths of the filtered files (input files)', async () => {
@@ -65,6 +66,7 @@ test('returns the paths of the filtered files (input files)', async () => {
   })
 
   const EXPECTED_FILENAMES = [
+    '__tests__/cleanup.test.ts',
     '__tests__/getDeletedFiles.test.ts',
     '__tests__/getFilesFromSourceFile.test.ts',
     '__tests__/main.test.ts',
@@ -80,7 +82,7 @@ test('returns the paths of the filtered files (input files)', async () => {
 
   await run()
 
-  expect(core.setOutput).toHaveBeenCalledWith('paths', EXPECTED_FILENAMES)
+  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
 })
 
 test('returns the paths of the filtered files (input source files)', async () => {
@@ -105,5 +107,5 @@ test('returns the paths of the filtered files (input source files)', async () =>
 
   await run()
 
-  expect(core.setOutput).toHaveBeenCalledWith('paths', EXPECTED_FILENAMES)
+  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
 })
