@@ -2,10 +2,13 @@
 import * as path from 'path'
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
+import {promises as fs} from 'fs'
+
 import {
   getDeletedFiles,
   getFilesFromSourceFile,
-  normalizeSeparators
+  normalizeSeparators,
+  tempfile
 } from './utils'
 
 const DEFAULT_EXCLUDED_FILES = [
@@ -143,7 +146,20 @@ export async function run(): Promise<void> {
       .filter((p: string) => p !== '')
   }
 
-  core.setOutput('paths', paths.join(separator))
+  const pathsOutput = paths.join(separator)
+  core.setOutput('paths', pathsOutput)
+
+  const pathsOutputFile = tempfile('.txt')
+
+  try {
+    await fs.writeFile(pathsOutputFile, pathsOutput)
+    core.info(`created paths-output-file: ${pathsOutputFile}`)
+  } catch (err) {
+    core.setFailed(err as Error)
+  }
+
+  core.setOutput('paths-output-file', pathsOutputFile)
+  core.saveState('paths-output-file', pathsOutputFile)
 }
 
 if (!process.env.TESTING) {

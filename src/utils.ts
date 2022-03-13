@@ -8,6 +8,8 @@ import * as core from '@actions/core'
 import * as exec from '@actions/exec'
 import * as patternHelper from '@actions/glob/lib/internal-pattern-helper'
 import {Pattern} from '@actions/glob/lib/internal-pattern'
+import {v4 as uuidv4} from 'uuid'
+import tempDirectory from 'temp-dir'
 
 export const IS_WINDOWS: boolean = process.platform === 'win32'
 
@@ -166,4 +168,8 @@ export async function getFilesFromSourceFile({
     }
   }
   return lines
+}
+
+export function tempfile(extension = ''): string {
+  return path.join(tempDirectory, `${uuidv4()}${extension}`)
 }
