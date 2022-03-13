@@ -11,13 +11,13 @@ jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false
           fetch-depth: 0
 
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3.0.0
         with:
           cache: 'yarn'
           node-version: '16.x'
@@ -38,7 +38,7 @@ jobs:
           yarn all
 
       - name: Verify Changed files
-        uses: tj-actions/verify-changed-files@v8
+        uses: tj-actions/verify-changed-files@v9
         id: changed_files
         with:
           files: |
@@ -61,7 +61,7 @@ jobs:
           branch: ${{ github.head_ref }}
 
       - name: Upload build assets
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-assets
           path: dist
@@ -74,12 +74,12 @@ jobs:
       matrix:
         platform: [ ubuntu-latest, windows-latest, macos-latest, macos-11, ubuntu-18.04, windows-2022, windows-2016 ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Download build assets
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build-assets
 
