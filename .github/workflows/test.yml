@@ -145,12 +145,9 @@ jobs:
             __tests__/source-files.txt
 
       - name: Show output
-        if: steps.glob-excluded-source-files.outputs.paths || steps.glob-excluded-source-files.outputs.paths-output-file
         run: |
-          echo "Unexpected outputs set"
-          echo "${{ steps.glob-excluded-source-files.outputs.paths-output-file }}"
           echo "${{ steps.glob-excluded-source-files.outputs.paths }}"
-          exit 1
+          cat "${{ steps.glob-excluded-source-files.outputs.paths-output-file }}"
 
       - name: Run glob for test.yml and md files and custom separator
         uses: ./

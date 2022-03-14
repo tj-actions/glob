@@ -101,7 +101,12 @@ function run() {
             })
                 .join('\n');
             core.debug(`excluded file patterns: ${excludedFilePatterns}`);
-            filePatterns += `\n${excludedFilePatterns}`;
+            if (!files) {
+                filePatterns += `\n**\n${excludedFilePatterns}`;
+            }
+            else {
+                filePatterns += `\n${excludedFilePatterns}`;
+            }
         }
         if (filesFromSourceFile !== '') {
             const inputFilesFromSourceFile = filesFromSourceFile
@@ -122,7 +127,12 @@ function run() {
                 excludedFiles: true
             })).join('\n');
             core.debug(`excluded files from source files patterns: ${excludedFilesFromSourceFiles}`);
-            filePatterns += `\n${excludedFilesFromSourceFiles}`;
+            if (!files && !filesFromSourceFile) {
+                filePatterns += `\n**\n${excludedFilesFromSourceFiles}`;
+            }
+            else {
+                filePatterns += `\n${excludedFilesFromSourceFiles}`;
+            }
         }
         filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`;
         const globOptions = { followSymbolicLinks };
