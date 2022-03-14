@@ -11,7 +11,6 @@
 
 Search for files matching [glob patterns](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet).
 
-
 ```yaml
 ...
     steps:
