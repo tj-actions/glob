@@ -4,14 +4,15 @@ import {promises as fs} from 'fs'
 export async function run(): Promise<void> {
   const pathsOutputFile = core.getState('paths-output-file')
 
-  try {
-    await fs.unlink(pathsOutputFile)
-    //file removed
-  } catch (err) {
-    core.setFailed(err as Error)
-  }
+  if (pathsOutputFile) {
+    try {
+      await fs.unlink(pathsOutputFile)
+    } catch (err) {
+      core.setFailed(err as Error)
+    }
 
-  core.info(`deleted paths-output-file: ${pathsOutputFile}`)
+    core.info(`deleted paths-output-file: ${pathsOutputFile}`)
+  }
 }
 
 if (!process.env.TESTING) {
