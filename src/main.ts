@@ -82,7 +82,6 @@ export async function run(): Promise<void> {
         return p
       })
       .join('\n')
-    
     core.debug(`excluded file patterns: ${excludedFilePatterns}`)
     
     if (!files) {
