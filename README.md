@@ -16,6 +16,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 ...
     steps:
       - uses: actions/checkout@v2
+
       - name: Glob match
         uses: tj-actions/glob@v7.5
         id: glob
@@ -26,6 +27,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
             **.yml
             !action.yml
             **/rebase.yml
+
       - name: Show all matching files
         run: |
           echo "${{ steps.glob.outputs.paths }}"
