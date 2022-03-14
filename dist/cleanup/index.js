@@ -46,12 +46,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const pathsOutputFile = core.getState('paths-output-file');
         if (pathsOutputFile) {
-            try {
-                yield fs_1.promises.unlink(pathsOutputFile);
-            }
-            catch (err) {
-                core.setFailed(err);
-            }
+            yield fs_1.promises.unlink(pathsOutputFile);
             core.info(`deleted paths-output-file: ${pathsOutputFile}`);
         }
     });
