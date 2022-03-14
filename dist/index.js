@@ -155,6 +155,9 @@ function run() {
             core.setOutput('paths-output-file', pathsOutputFile);
             core.saveState('paths-output-file', pathsOutputFile);
         }
+        else if (filePatterns && !pathsOutput) {
+            core.warning('No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet');
+        }
     });
 }
 exports.run = run;
