@@ -145,7 +145,7 @@ jobs:
             __tests__/source-files.txt
 
       - name: Show output
-        if: steps.glob-excluded-source-files.outputs.paths != "" || steps.glob-excluded-source-files.outputs.paths-output-file != ""
+        if: steps.glob-excluded-source-files.outputs.paths || steps.glob-excluded-source-files.outputs.paths-output-file
         run: |
           echo "Unexpected outputs set"
           echo "${{ steps.glob-excluded-source-files.outputs.paths-output-file }}"
