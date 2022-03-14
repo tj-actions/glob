@@ -5,12 +5,7 @@ export async function run(): Promise<void> {
   const pathsOutputFile = core.getState('paths-output-file')
 
   if (pathsOutputFile) {
-    try {
-      await fs.unlink(pathsOutputFile)
-    } catch (err) {
-      core.setFailed(err as Error)
-    }
-
+    await fs.unlink(pathsOutputFile)
     core.info(`deleted paths-output-file: ${pathsOutputFile}`)
   }
 }
