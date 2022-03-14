@@ -82,8 +82,9 @@ export async function run(): Promise<void> {
         return p
       })
       .join('\n')
+
     core.debug(`excluded file patterns: ${excludedFilePatterns}`)
-    
+
     if (!files) {
       filePatterns += `\n**\n${excludedFilePatterns}`
     } else {
@@ -122,6 +123,7 @@ export async function run(): Promise<void> {
     core.debug(
       `excluded files from source files patterns: ${excludedFilesFromSourceFiles}`
     )
+
     if (!files && !filesFromSourceFile) {
       filePatterns += `\n**\n${excludedFilesFromSourceFiles}`
     } else {
