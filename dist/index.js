@@ -143,16 +143,18 @@ function run() {
         }
         const pathsOutput = paths.join(separator);
         core.setOutput('paths', pathsOutput);
-        const pathsOutputFile = (0, utils_1.tempfile)('.txt');
-        try {
-            yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput);
-            core.info(`created paths-output-file: ${pathsOutputFile}`);
+        if (pathsOutput) {
+            const pathsOutputFile = (0, utils_1.tempfile)('.txt');
+            try {
+                yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput);
+                core.info(`created paths-output-file: ${pathsOutputFile}`);
+            }
+            catch (err) {
+                core.setFailed(err);
+            }
+            core.setOutput('paths-output-file', pathsOutputFile);
+            core.saveState('paths-output-file', pathsOutputFile);
         }
-        catch (err) {
-            core.setFailed(err);
-        }
-        core.setOutput('paths-output-file', pathsOutputFile);
-        core.saveState('paths-output-file', pathsOutputFile);
     });
 }
 exports.run = run;
