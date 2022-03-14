@@ -45,14 +45,15 @@ const fs_1 = __nccwpck_require__(147);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const pathsOutputFile = core.getState('paths-output-file');
-        try {
-            yield fs_1.promises.unlink(pathsOutputFile);
-            //file removed
+        if (pathsOutputFile) {
+            try {
+                yield fs_1.promises.unlink(pathsOutputFile);
+            }
+            catch (err) {
+                core.setFailed(err);
+            }
+            core.info(`deleted paths-output-file: ${pathsOutputFile}`);
         }
-        catch (err) {
-            core.setFailed(err);
-        }
-        core.info(`deleted paths-output-file: ${pathsOutputFile}`);
     });
 }
 exports.run = run;
