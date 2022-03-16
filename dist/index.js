@@ -155,15 +155,10 @@ function run() {
         core.setOutput('paths', pathsOutput);
         if (pathsOutput) {
             const pathsOutputFile = (0, utils_1.tempfile)('.txt');
-            try {
-                yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput);
-                core.info(`created paths-output-file: ${pathsOutputFile}`);
-            }
-            catch (err) {
-                core.setFailed(err);
-            }
+            yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput);
             core.setOutput('paths-output-file', pathsOutputFile);
             core.saveState('paths-output-file', pathsOutputFile);
+            core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
         }
         else if (!pathsOutput &&
             filePatterns.split('\n').filter(p => !DEFAULT_EXCLUDED_FILES.includes(p))
