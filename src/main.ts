@@ -160,15 +160,11 @@ export async function run(): Promise<void> {
   if (pathsOutput) {
     const pathsOutputFile = tempfile('.txt')
 
-    try {
-      await fs.writeFile(pathsOutputFile, pathsOutput)
-      core.info(`created paths-output-file: ${pathsOutputFile}`)
-    } catch (err) {
-      core.setFailed(err as Error)
-    }
-
+    await fs.writeFile(pathsOutputFile, pathsOutput)
+    
     core.setOutput('paths-output-file', pathsOutputFile)
     core.saveState('paths-output-file', pathsOutputFile)
+    core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
   } else if (
     !pathsOutput &&
     filePatterns.split('\n').filter(p => !DEFAULT_EXCLUDED_FILES.includes(p))
