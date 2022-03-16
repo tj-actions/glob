@@ -161,7 +161,6 @@ export async function run(): Promise<void> {
     const pathsOutputFile = tempfile('.txt')
 
     await fs.writeFile(pathsOutputFile, pathsOutput)
-    
     core.setOutput('paths-output-file', pathsOutputFile)
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
