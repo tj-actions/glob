@@ -182,6 +182,6 @@ jobs:
             - *.md
 
       - name: Show output
+        if: steps.glob-invalid.outputs.paths != "" || steps.glob-invalid.outputs.paths-output-file != ""
         run: |
-          echo "${{ steps.glob-invalid.outputs.paths }}"
-          cat "${{ steps.glob-invalid.outputs.paths-output-file }}"
+          echo "Unexpected output returned:\n${{ steps.glob-invalid.outputs.paths }}\n${{ steps.glob-invalid.outputs.paths-output-file }}"
