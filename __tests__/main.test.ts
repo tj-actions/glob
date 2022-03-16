@@ -1,6 +1,8 @@
 import * as core from '@actions/core'
 import * as path from 'path'
-import {normalizeSeparators} from '../src/utils'
+import {promises as fs} from "fs";
+
+import {normalizeSeparators, tempfile} from '../src/utils'
 import {run} from '../src/main'
 
 const defaultEnv = {
@@ -108,4 +110,48 @@ test('returns the paths of the filtered files (input source files)', async () =>
   await run()
 
   expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
+})
+
+test('returns the paths of the filtered files in the paths-output-file', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    'INPUT_FILES-FROM-SOURCE-FILE':
+      '__tests__/source-files.txt\n__tests__/source-files.txt\n__tests__/source-files.txt'
+  })
+
+  const EXPECTED_FILENAMES = [
+    '.github/workflows/greetings.yml',
+    'CODE_OF_CONDUCT.md',
+    'CONTRIBUTING.md',
+    'HISTORY.md',
+    'README.md'
+  ]
+    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  const pathsOutputFile = tempfile('.txt')
+  
+  // @ts-ignore
+  tempfile = jest.fn().mockReturnValue(pathsOutputFile)
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths-output-file', pathsOutputFile)
+})
+
+test('returns warning for no match found', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: '-**.yml',
+  })
+
+  // @ts-ignore
+  core.warning = jest.fn()
+
+  await run()
+
+  expect(core.warning).toBeCalledWith('No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet')
 })

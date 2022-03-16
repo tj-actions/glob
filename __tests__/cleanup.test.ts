@@ -1,7 +1,7 @@
-import {tempfile} from '../src/utils'
 import * as core from "@actions/core";
 import {promises as fs} from "fs";
 
+import {tempfile} from '../src/utils'
 import {run} from '../src/cleanup'
 
 describe('cleanup test', () => {
