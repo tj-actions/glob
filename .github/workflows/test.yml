@@ -173,3 +173,15 @@ jobs:
         run: |
           echo "${{ steps.glob-excluded-test-yml-separator.outputs.paths }}"
           cat "${{ steps.glob-excluded-test-yml-separator.outputs.paths-output-file }}"
+      
+      - name: Run glob with invalid patterns
+        uses: ./
+        id: glob-invalid
+        with:
+          files: |
+            - *.md
+
+      - name: Show output
+        run: |
+          echo "${{ steps.glob-invalid.outputs.paths }}"
+          cat "${{ steps.glob-invalid.outputs.paths-output-file }}"
