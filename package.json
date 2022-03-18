@@ -33,7 +33,7 @@
     "@actions/exec": "1.1.1",
     "@actions/github": "5.0.0",
     "@actions/glob": "0.2.0",
-    "@actions/io": "1.1.1",
+    "@actions/io": "1.1.2",
     "temp-dir": "2.0.0",
     "uuid": "8.3.2"
   },
