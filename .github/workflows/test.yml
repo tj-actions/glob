@@ -183,6 +183,9 @@ jobs:
       - name: Run glob with invalid patterns
         uses: ./
         id: glob-invalid
+        with:
+          files: |
+            - *.md
 
       - name: Show output
         if: steps.glob-invalid.outputs.paths != '' || steps.glob-invalid.outputs.paths-output-file != ''
