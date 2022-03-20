@@ -165,7 +165,9 @@ export async function run(): Promise<void> {
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
   } else {
-    const allPatterns = filePatterns.split('\n').filter(p => !DEFAULT_EXCLUDED_FILES.includes(p))
+    const allPatterns = filePatterns
+      .split('\n')
+      .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p))
     
     if (allPatterns.length > 0) {
       core.info(allPatterns)
