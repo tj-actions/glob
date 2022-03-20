@@ -45,7 +45,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 | excluded-files-from-source-file           | string | false    |                             | Source file to populate the<br>`excluded-files` input                                                            |
 | excluded-files-from-source-file-separator | string | false    | `"\n"`                      | Separator used to split the<br>`excluded-files-from-source-file` input                                           |
 | excluded-files-separator                  | string | false    | `"\n"`                      | Separator used to split the<br>`excluded-files` input                                                            |
-| files                                     | string | true     |                             | File patterns                                                                                                    |
+| files                                     | string | false    |                             | File patterns                                                                                                    |
 | files-from-source-file                    | string | false    |                             | Source file to populate the<br>`files` input                                                                     |
 | files-from-source-file-separator          | string | false    | `"\n"`                      | Separator used to split the<br>`files-from-source-file` input                                                    |
 | files-separator                           | string | false    | `"\n"`                      | Separator used to split the<br>`files` input                                                                     |
