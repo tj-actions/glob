@@ -4,7 +4,7 @@ author: tj-actions
 inputs:
   files:
     description: 'File patterns'
-    required: true
+    required: false
   files-separator:
     description: 'Separator used to split the `files` input'
     default: "\n"
