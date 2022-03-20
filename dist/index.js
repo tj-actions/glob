@@ -165,7 +165,6 @@ function run() {
                 .split('\n')
                 .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p) && p !== '');
             if (allPatterns.length > 0) {
-                core.info(allPatterns.join(' '));
                 core.warning('No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet');
             }
         }
