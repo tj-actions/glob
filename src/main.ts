@@ -168,7 +168,6 @@ export async function run(): Promise<void> {
     const allPatterns = filePatterns
       .split('\n')
       .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p))
-    
     if (allPatterns.length > 0) {
       core.info(allPatterns)
       core.warning(
