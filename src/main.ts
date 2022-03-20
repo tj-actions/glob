@@ -167,7 +167,8 @@ export async function run(): Promise<void> {
   } else {
     const allPatterns = filePatterns
       .split('\n')
-      .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p))
+      .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p) && p != '')
+
     if (allPatterns.length > 0) {
       core.info(allPatterns.join(' '))
       core.warning(
