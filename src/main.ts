@@ -164,14 +164,17 @@ export async function run(): Promise<void> {
     core.setOutput('paths-output-file', pathsOutputFile)
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
-  } else if (
-    !pathsOutput &&
-    filePatterns.split('\n').filter(p => !DEFAULT_EXCLUDED_FILES.includes(p))
-      .length > 0
-  ) {
-    core.warning(
-      'No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
-    )
+  } else {
+    const allPatterns = filePatterns
+      .split('\n')
+      .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p) && p !== '')
+
+    if (allPatterns.length > 0) {
+      core.info(allPatterns.join(' '))
+      core.warning(
+        'No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
+      )
+    }
   }
 }
 
