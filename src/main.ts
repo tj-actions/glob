@@ -169,7 +169,7 @@ export async function run(): Promise<void> {
       .split('\n')
       .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p))
     if (allPatterns.length > 0) {
-      core.info(allPatterns)
+      core.info(allPatterns.join(' '))
       core.warning(
         'No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
       )
