@@ -1,5 +1,3 @@
-/* eslint-disable sort-imports */
-
 /*global AsyncIterableIterator*/
 import {createReadStream} from 'fs'
 import path from 'path'
