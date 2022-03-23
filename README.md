@@ -31,7 +31,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
       - name: Show all matching files
         run: |
           echo "${{ steps.glob.outputs.paths }}"
-        ## Returns: .github/workflows/rebase.yml .github/workflows/sync-release-version.yml .github/workflows/test.yml...
+        ## Outputs: .github/workflows/rebase.yml .github/workflows/sync-release-version.yml .github/workflows/test.yml...
 ```
 
 ## Inputs
