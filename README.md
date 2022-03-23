@@ -31,7 +31,34 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
       - name: Show all matching files
         run: |
           echo "${{ steps.glob.outputs.paths }}"
-        ## Outputs
+        ## Outputs: .github/workflows/rebase.yml .github/workflows/sync-release-version.yml .github/workflows/test.yml...
+```
+
+## Inputs
+
+<!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
+
+|                   INPUT                   |  TYPE  | REQUIRED |           DEFAULT           |                                                   DESCRIPTION                                                    |
+|-------------------------------------------|--------|----------|-----------------------------|------------------------------------------------------------------------------------------------------------------|
+| base-sha                                  | string | false    |                             | Specify a base commit SHA<br>used for comparing changes, when<br>`include-deleted-files` is set to `true`<br>    |
+| excluded-files                            | string | false    |                             | Excluded file patterns (optionally include<br>`!` before the file pattern<br>or it would be prepended)<br>       |
+| excluded-files-from-source-file           | string | false    |                             | Source file to populate the<br>`excluded-files` input                                                            |
+| excluded-files-from-source-file-separator | string | false    | `"\n"`                      | Separator used to split the<br>`excluded-files-from-source-file` input                                           |
+| excluded-files-separator                  | string | false    | `"\n"`                      | Separator used to split the<br>`excluded-files` input                                                            |
+| files                                     | string | false    |                             | File patterns                                                                                                    |
+| files-from-source-file                    | string | false    |                             | Source file to populate the<br>`files` input                                                                     |
+| files-from-source-file-separator          | string | false    | `"\n"`                      | Separator used to split the<br>`files-from-source-file` input                                                    |
+| files-separator                           | string | false    | `"\n"`                      | Separator used to split the<br>`files` input                                                                     |
+| follow-symbolic-links                     | string | true     | `"true"`                    | Indicates whether to follow symbolic<br>links                                                                    |
+| include-deleted-files                     | string | false    | `"false"`                   | Include all matching deleted files<br>                                                                           |
+| separator                                 | string | true     | `" "`                       | Separator used for the paths<br>output.                                                                          |
+| sha                                       | string | true     | `"${{ github.sha }}"`       | Specify a current commit SHA<br>used for comparing changes, when<br>`include-deleted-files` is set to `true`<br> |
+| strip-top-level-dir                       | string | false    | `"true"`                    | Strip the `$GITHUB_WORKSPACE` from the<br>`paths` output                                                         |
+| working-directory                         | string | false    | `"${{ github.workspace }}"` | Specify a relative path under<br>$GITHUB\_WORKSPACE to locate the repository<br>                                  |
+
+<!-- AUTO-DOC-INPUT:END -->
+
+## Outputs
 
 <!-- AUTO-DOC-OUTPUT:START - Do not remove or modify this section -->
 
@@ -73,4 +100,3 @@ If you are reporting a bug, please include:
 *   Your operating system name and version.
 *   Any details about your workflow that might be helpful in troubleshooting.
 *   Detailed steps to reproduce the bug.
-```
