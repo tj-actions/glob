@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
 import * as path from 'path'
-import {promises as fs} from "fs";
+import {promises as fs} from 'fs'
 
 import {normalizeSeparators, tempfile} from '../src/utils'
 import {run} from '../src/main'
@@ -133,19 +133,23 @@ test('returns the paths of the filtered files in the paths-output-file', async (
   core.setOutput = jest.fn()
 
   const pathsOutputFile = tempfile('.txt')
-  
+
   // @ts-ignore
   tempfile = jest.fn().mockReturnValue(pathsOutputFile)
 
   await run()
 
-  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths-output-file', pathsOutputFile)
+  expect(core.setOutput).toHaveBeenNthCalledWith(
+    2,
+    'paths-output-file',
+    pathsOutputFile
+  )
 })
 
 test('returns warning for no match found', async () => {
   mockedEnv({
     ...defaultEnv,
-    INPUT_FILES: '-**.yml',
+    INPUT_FILES: '-**.yml'
   })
 
   // @ts-ignore
@@ -153,5 +157,7 @@ test('returns warning for no match found', async () => {
 
   await run()
 
-  expect(core.warning).toBeCalledWith('No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet')
+  expect(core.warning).toBeCalledWith(
+    'No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
+  )
 })

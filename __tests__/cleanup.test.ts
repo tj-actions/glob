@@ -1,5 +1,5 @@
-import * as core from "@actions/core";
-import {promises as fs} from "fs";
+import * as core from '@actions/core'
+import {promises as fs} from 'fs'
 
 import {tempfile} from '../src/utils'
 import {run} from '../src/cleanup'
@@ -8,9 +8,10 @@ describe('cleanup test', () => {
   const pathsOutputFile = tempfile('.txt')
 
   it('deletes the paths-output-file', async () => {
-    await fs.writeFile(pathsOutputFile, "12345")
+    await fs.writeFile(pathsOutputFile, '12345')
 
-    const fileExists = async (path: string) => !!(await fs.stat(path).catch(() => false));
+    const fileExists = async (path: string) =>
+      !!(await fs.stat(path).catch(() => false))
 
     // @ts-ignore
     core.getState = jest.fn().mockReturnValue(pathsOutputFile)
@@ -20,6 +21,5 @@ describe('cleanup test', () => {
     await run()
 
     expect(await fileExists(pathsOutputFile)).toBeFalsy()
-
   })
 })
