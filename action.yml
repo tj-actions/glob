@@ -42,7 +42,7 @@ inputs:
     required: true
     default: " "
   escape-paths:
-    description: 'Escape regex special characters used in the `paths` output'
+    description: 'Escape special characters used in the `paths` output'
     required: true
     default: false
   strip-top-level-dir:
