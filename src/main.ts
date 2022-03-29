@@ -2,7 +2,6 @@ import * as path from 'path'
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
 import {promises as fs} from 'fs'
-import { escapeStringRegexp } from 'escape-string-regexp'
 
 import {
   getDeletedFiles,
