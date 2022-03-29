@@ -1,5 +1,15 @@
 # Changelog
 
+## [v7.14](https://github.com/tj-actions/glob/tree/v7.14) (2022-03-29)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.13...v7.14)
+
+**Merged pull requests:**
+
+- Updated README.md [\#111](https://github.com/tj-actions/glob/pull/111) ([jackton1](https://github.com/jackton1))
+- Update action.yml [\#110](https://github.com/tj-actions/glob/pull/110) ([jackton1](https://github.com/jackton1))
+- Upgraded to v7.13 [\#109](https://github.com/tj-actions/glob/pull/109) ([jackton1](https://github.com/jackton1))
+
 ## [v7.13](https://github.com/tj-actions/glob/tree/v7.13) (2022-03-29)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v7.12...v7.13)
@@ -152,19 +162,15 @@
 
 ## [v6.1](https://github.com/tj-actions/glob/tree/v6.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v5...v6.1)
-
-## [v5](https://github.com/tj-actions/glob/tree/v5) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6...v5)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6...v6.1)
 
 ## [v6](https://github.com/tj-actions/glob/tree/v6) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v4...v6)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v5...v6)
 
-## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
+## [v5](https://github.com/tj-actions/glob/tree/v5) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6.2...v4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6.2...v5)
 
 ## [v6.2](https://github.com/tj-actions/glob/tree/v6.2) (2022-02-14)
 
@@ -172,15 +178,19 @@
 
 ## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v7)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v4...v7)
 
-## [v3.3](https://github.com/tj-actions/glob/tree/v3.3) (2022-02-14)
+## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v3.3)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v4)
 
 ## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v3.2...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v7.4)
+
+## [v3.3](https://github.com/tj-actions/glob/tree/v3.3) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v3.2...v3.3)
 
 ## [v3.2](https://github.com/tj-actions/glob/tree/v3.2) (2022-02-14)
 
