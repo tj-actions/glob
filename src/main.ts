@@ -7,6 +7,7 @@ import {
   getDeletedFiles,
   getFilesFromSourceFile,
   normalizeSeparators,
+  escapeStringRegexp,
   tempfile
 } from './utils'
 
@@ -53,6 +54,7 @@ export async function run(): Promise<void> {
     required: true,
     trimWhitespace: false
   })
+  const escapePaths = core.getBooleanInput('escape-paths', {required: false})
   const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
     required: true
   })
@@ -153,7 +155,11 @@ export async function run(): Promise<void> {
       .filter((p: string) => p !== '')
   }
 
-  const pathsOutput = paths.join(separator)
+  let pathsOutput = paths.join(separator)
+
+  if (escapePaths) {
+    pathsOutput = escapeStringRegexp(pathsOutput)
+  }
   core.setOutput('paths', pathsOutput)
 
   if (pathsOutput) {

@@ -76,6 +76,7 @@ function run() {
             required: true,
             trimWhitespace: false
         });
+        const escapePaths = core.getBooleanInput('escape-paths', { required: false });
         const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
             required: true
         });
@@ -150,7 +151,10 @@ function run() {
                 .map((p) => (0, utils_1.normalizeSeparators)(p.replace(topLevelDir, '')))
                 .filter((p) => p !== '');
         }
-        const pathsOutput = paths.join(separator);
+        let pathsOutput = paths.join(separator);
+        if (escapePaths) {
+            pathsOutput = (0, utils_1.escapeStringRegexp)(pathsOutput);
+        }
         core.setOutput('paths', pathsOutput);
         if (pathsOutput) {
             const pathsOutputFile = (0, utils_1.tempfile)('.txt');
@@ -240,7 +244,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.deletedGitFiles = exports.normalizeSeparators = exports.IS_WINDOWS = void 0;
+exports.escapeStringRegexp = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.deletedGitFiles = exports.normalizeSeparators = exports.IS_WINDOWS = void 0;
 /*global AsyncIterableIterator*/
 const fs_1 = __nccwpck_require__(7147);
 const path_1 = __importDefault(__nccwpck_require__(1017));
@@ -386,6 +390,15 @@ function tempfile(extension = '') {
     return path_1.default.join(temp_dir_1.default, `${(0, uuid_1.v4)()}${extension}`);
 }
 exports.tempfile = tempfile;
+function escapeStringRegexp(value) {
+    if (typeof value !== 'string') {
+        throw new TypeError(`Expected a string instead got: ${typeof value}`);
+    }
+    // Escape characters with special meaning either inside or outside character sets.
+    // Use a simple backslash escape when it’s always valid, and a `\xnn` escape when the simpler form would be disallowed by Unicode patterns’ stricter grammar.
+    return value.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&').replace(/-/g, '\\x2d');
+}
+exports.escapeStringRegexp = escapeStringRegexp;
 
 
 /***/ }),
