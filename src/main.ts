@@ -54,7 +54,7 @@ export async function run(): Promise<void> {
     required: true,
     trimWhitespace: false
   })
-  const escapePaths = core.getBooleanInput('escape-paths', {required: true})
+  const escapePaths = core.getBooleanInput('escape-paths', {required: false})
   const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
     required: true
   })
