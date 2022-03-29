@@ -171,3 +171,13 @@ export async function getFilesFromSourceFile({
 export function tempfile(extension = ''): string {
   return path.join(tempDirectory, `${uuidv4()}${extension}`)
 }
+
+export function escapeStringRegexp(value: string): string {
+  if (typeof value !== 'string') {
+    throw new TypeError(`Expected a string instead got: ${typeof value}`)
+  }
+
+  // Escape characters with special meaning either inside or outside character sets.
+  // Use a simple backslash escape when it’s always valid, and a `\xnn` escape when the simpler form would be disallowed by Unicode patterns’ stricter grammar.
+  return value.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&').replace(/-/g, '\\x2d')
+}
