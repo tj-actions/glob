@@ -128,6 +128,20 @@ jobs:
         run: |
           echo "${{ steps.glob-test-yml-md.outputs.paths }}"
           cat "${{ steps.glob-test-yml-md.outputs.paths-output-file }}"
+          
+      - name: Run glob for source-files.txt escape paths
+        uses: ./
+        id: glob-source-files-escape-paths
+        with:
+          files-from-source-file: |
+            __tests__/source-files.txt
+            __tests__/source-files.txt
+          escape-paths: true
+
+      - name: Show output
+        run: |
+          echo "${{ steps.glob-source-files-escape-paths.outputs.paths }}"
+          cat "${{ steps.glob-source-files-escape-paths.outputs.paths-output-file }}"
 
       - name: Run glob for source-files.txt
         uses: ./
