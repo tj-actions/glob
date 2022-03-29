@@ -41,6 +41,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 |                   INPUT                   |  TYPE  | REQUIRED |           DEFAULT           |                                                   DESCRIPTION                                                    |
 |-------------------------------------------|--------|----------|-----------------------------|------------------------------------------------------------------------------------------------------------------|
 | base-sha                                  | string | false    |                             | Specify a base commit SHA<br>used for comparing changes, when<br>`include-deleted-files` is set to `true`<br>    |
+| escape-paths                              | string | false    | `"false"`                   | Escape special characters used in<br>the `paths` output                                                          |
 | excluded-files                            | string | false    |                             | Excluded file patterns (optionally include<br>`!` before the file pattern<br>or it would be prepended)<br>       |
 | excluded-files-from-source-file           | string | false    |                             | Source file to populate the<br>`excluded-files` input                                                            |
 | excluded-files-from-source-file-separator | string | false    | `"\n"`                      | Separator used to split the<br>`excluded-files-from-source-file` input                                           |
