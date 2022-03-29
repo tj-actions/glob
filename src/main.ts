@@ -154,9 +154,9 @@ export async function run(): Promise<void> {
       .map((p: string) => normalizeSeparators(p.replace(topLevelDir, '')))
       .filter((p: string) => p !== '')
   }
-  
+
   if (escapePaths) {
-    paths = paths.map((p: string) => escapeStringRegexp(pathsOutput))
+    paths = paths.map((p: string) => escapeStringRegexp(p))
   }
 
   const pathsOutput = paths.join(separator)

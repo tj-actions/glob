@@ -151,10 +151,10 @@ function run() {
                 .map((p) => (0, utils_1.normalizeSeparators)(p.replace(topLevelDir, '')))
                 .filter((p) => p !== '');
         }
-        let pathsOutput = paths.join(separator);
         if (escapePaths) {
-            pathsOutput = (0, utils_1.escapeStringRegexp)(pathsOutput);
+            paths = paths.map((p) => (0, utils_1.escapeStringRegexp)(p));
         }
+        const pathsOutput = paths.join(separator);
         core.setOutput('paths', pathsOutput);
         if (pathsOutput) {
             const pathsOutputFile = (0, utils_1.tempfile)('.txt');
