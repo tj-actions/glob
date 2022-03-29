@@ -156,7 +156,7 @@ export async function run(): Promise<void> {
   }
   
   if (escapePaths) {
-    paths = paths.map((p: string) => escapeStringRegexp(pathsOutput))
+    paths = paths.map((p: string) => escapeStringRegexp(p))
   }
 
   const pathsOutput = paths.join(separator)
