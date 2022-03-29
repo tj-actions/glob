@@ -41,6 +41,10 @@ inputs:
     description: 'Separator used for the paths output.'
     required: true
     default: " "
+  escape-paths:
+    description: 'Escape regex special characters used in the `paths` output'
+    required: true
+    default: false
   strip-top-level-dir:
     description: 'Strip the `$GITHUB_WORKSPACE` from the `paths` output'
     required: false

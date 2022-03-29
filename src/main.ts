@@ -2,6 +2,7 @@ import * as path from 'path'
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
 import {promises as fs} from 'fs'
+import escapeStringRegexp from 'escape-string-regexp'
 
 import {
   getDeletedFiles,
@@ -53,6 +54,7 @@ export async function run(): Promise<void> {
     required: true,
     trimWhitespace: false
   })
+  const escapePaths = core.getBooleanInput('escape-paths', { required: true })
   const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
     required: true
   })
@@ -153,7 +155,11 @@ export async function run(): Promise<void> {
       .filter((p: string) => p !== '')
   }
 
-  const pathsOutput = paths.join(separator)
+  let pathsOutput = paths.join(separator)
+
+  if (escapePaths) {
+    pathsOutput = escapeStringRegexp(pathsOutput)
+  }
   core.setOutput('paths', pathsOutput)
 
   if (pathsOutput) {
