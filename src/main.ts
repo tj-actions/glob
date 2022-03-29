@@ -8,6 +8,7 @@ import {
   getDeletedFiles,
   getFilesFromSourceFile,
   normalizeSeparators,
+  escapeStringRegexp,
   tempfile
 } from './utils'
 
