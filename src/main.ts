@@ -154,12 +154,12 @@ export async function run(): Promise<void> {
       .map((p: string) => normalizeSeparators(p.replace(topLevelDir, '')))
       .filter((p: string) => p !== '')
   }
-
-  let pathsOutput = paths.join(separator)
-
+  
   if (escapePaths) {
-    pathsOutput = escapeStringRegexp(pathsOutput)
+    paths = paths.map((p: string) => escapeStringRegexp(pathsOutput))
   }
+
+  const pathsOutput = paths.join(separator)
   core.setOutput('paths', pathsOutput)
 
   if (pathsOutput) {
