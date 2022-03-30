@@ -7,7 +7,7 @@ import {
   getDeletedFiles,
   getFilesFromSourceFile,
   normalizeSeparators,
-  escapeStringRegexp,
+  escapeString,
   tempfile
 } from './utils'
 
@@ -156,7 +156,7 @@ export async function run(): Promise<void> {
   }
 
   if (escapePaths) {
-    paths = paths.map((p: string) => escapeStringRegexp(p))
+    paths = paths.map((p: string) => escapeString(p))
   }
 
   const pathsOutput = paths.join(separator)
