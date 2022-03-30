@@ -1,5 +1,15 @@
 # Changelog
 
+## [v7.15](https://github.com/tj-actions/glob/tree/v7.15) (2022-03-30)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.14...v7.15)
+
+**Merged pull requests:**
+
+- fix: bug with escaped strings [\#114](https://github.com/tj-actions/glob/pull/114) ([jackton1](https://github.com/jackton1))
+- Lock file maintenance [\#113](https://github.com/tj-actions/glob/pull/113) ([renovate[bot]](https://github.com/apps/renovate))
+- Upgraded to v7.14 [\#112](https://github.com/tj-actions/glob/pull/112) ([jackton1](https://github.com/jackton1))
+
 ## [v7.14](https://github.com/tj-actions/glob/tree/v7.14) (2022-03-29)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v7.13...v7.14)
@@ -158,7 +168,11 @@
 
 ## [v7.1](https://github.com/tj-actions/glob/tree/v7.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6.1...v7.1)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6.2...v7.1)
+
+## [v6.2](https://github.com/tj-actions/glob/tree/v6.2) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6.1...v6.2)
 
 ## [v6.1](https://github.com/tj-actions/glob/tree/v6.1) (2022-02-14)
 
@@ -166,27 +180,23 @@
 
 ## [v6](https://github.com/tj-actions/glob/tree/v6) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v5...v6)
-
-## [v5](https://github.com/tj-actions/glob/tree/v5) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6.2...v5)
-
-## [v6.2](https://github.com/tj-actions/glob/tree/v6.2) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v6.2)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v6)
 
 ## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v4...v7)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v5...v7)
 
-## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
+## [v5](https://github.com/tj-actions/glob/tree/v5) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v5)
 
 ## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v4...v7.4)
+
+## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v4)
 
 ## [v3.3](https://github.com/tj-actions/glob/tree/v3.3) (2022-02-14)
 
