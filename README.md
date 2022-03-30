@@ -18,7 +18,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
       - uses: actions/checkout@v2
 
       - name: Glob match
-        uses: tj-actions/glob@v7.14
+        uses: tj-actions/glob@v17.5
         id: glob
         with:
           files: |
