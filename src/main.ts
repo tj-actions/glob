@@ -176,7 +176,7 @@ export async function run(): Promise<void> {
 
     if (allPatterns.length > 0) {
       core.warning(
-        'No match found for specified patterns. Ensure that subdirectory patterns are prefixed with "**/" and all patterns are specified without single quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
+        'No match found for specified patterns. Ensure that subdirectory patterns are prefixed with "**/" and all multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
       )
     }
   }
