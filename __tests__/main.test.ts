@@ -159,6 +159,6 @@ test('returns warning for no match found', async () => {
   await run()
 
   expect(core.warning).toBeCalledWith(
-    'No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
+    'No match found for specified patterns. Ensure that subdirectory patterns are prefixed with "**/" and all patterns are specified without single quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
   )
 })
