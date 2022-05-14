@@ -1,5 +1,14 @@
 # Changelog
 
+## [v7.20](https://github.com/tj-actions/glob/tree/v7.20) (2022-05-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.19...v7.20)
+
+**Merged pull requests:**
+
+- chore: Update warning message [\#186](https://github.com/tj-actions/glob/pull/186) ([jackton1](https://github.com/jackton1))
+- Upgraded to v7.19 [\#185](https://github.com/tj-actions/glob/pull/185) ([jackton1](https://github.com/jackton1))
+
 ## [v7.19](https://github.com/tj-actions/glob/tree/v7.19) (2022-05-14)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v7.18...v7.19)
@@ -253,15 +262,15 @@
 
 ## [v7.1](https://github.com/tj-actions/glob/tree/v7.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v7.1)
-
-## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v7)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v7.1)
 
 ## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6.2...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v7.4)
+
+## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6.2...v7)
 
 ## [v6.2](https://github.com/tj-actions/glob/tree/v6.2) (2022-02-14)
 
