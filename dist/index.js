@@ -168,7 +168,7 @@ function run() {
                 .split('\n')
                 .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p) && p !== '');
             if (allPatterns.length > 0) {
-                core.warning('No match found for specified patterns. Ensure that subdirectory patterns a prefixed with "**/". See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet');
+                core.warning('No match found for specified patterns. Ensure that subdirectory patterns are prefixed with "**/" and all patterns are specified without single quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet');
             }
         }
     });
