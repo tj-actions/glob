@@ -1,5 +1,32 @@
 # Changelog
 
+## [v7.18](https://github.com/tj-actions/glob/tree/v7.18) (2022-05-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.17...v7.18)
+
+**Merged pull requests:**
+
+- Update dependency eslint-plugin-jest to v26.2.0 [\#182](https://github.com/tj-actions/glob/pull/182) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @actions/github to v5.0.3 [\#180](https://github.com/tj-actions/glob/pull/180) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 17.0.31 to 17.0.33 [\#178](https://github.com/tj-actions/glob/pull/178) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update dependency @actions/github to v5.0.2 [\#177](https://github.com/tj-actions/glob/pull/177) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @actions/core to v1.8.2 [\#176](https://github.com/tj-actions/glob/pull/176) ([renovate[bot]](https://github.com/apps/renovate))
+- Update pascalgn/automerge-action action to v0.15.3 [\#175](https://github.com/tj-actions/glob/pull/175) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @types/jest to v27.5.1 [\#174](https://github.com/tj-actions/glob/pull/174) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @typescript-eslint/parser to v5.23.0 [\#172](https://github.com/tj-actions/glob/pull/172) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#171](https://github.com/tj-actions/glob/pull/171) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.0.3 [\#170](https://github.com/tj-actions/glob/pull/170) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency ts-jest to v28.0.2 [\#169](https://github.com/tj-actions/glob/pull/169) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint to v8.15.0 [\#168](https://github.com/tj-actions/glob/pull/168) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency jest to v28.1.0 [\#167](https://github.com/tj-actions/glob/pull/167) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @actions/core to v1.8.0 [\#166](https://github.com/tj-actions/glob/pull/166) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency ts-jest to v28.0.1 [\#165](https://github.com/tj-actions/glob/pull/165) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#164](https://github.com/tj-actions/glob/pull/164) ([renovate[bot]](https://github.com/apps/renovate))
+- Update jest monorepo \(major\) [\#163](https://github.com/tj-actions/glob/pull/163) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @typescript-eslint/parser to v5.22.0 [\#162](https://github.com/tj-actions/glob/pull/162) ([renovate[bot]](https://github.com/apps/renovate))
+- Upgraded to v7.17 [\#161](https://github.com/tj-actions/glob/pull/161) ([jackton1](https://github.com/jackton1))
+- Update dependency @types/jest to v27.5.0 [\#150](https://github.com/tj-actions/glob/pull/150) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [v7.17](https://github.com/tj-actions/glob/tree/v7.17) (2022-05-02)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v7.16...v7.17)
@@ -225,15 +252,15 @@
 
 ## [v6.2](https://github.com/tj-actions/glob/tree/v6.2) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6.1...v6.2)
-
-## [v6.1](https://github.com/tj-actions/glob/tree/v6.1) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v6.1)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v6.2)
 
 ## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6.1...v7.4)
+
+## [v6.1](https://github.com/tj-actions/glob/tree/v6.1) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6...v6.1)
 
 ## [v6](https://github.com/tj-actions/glob/tree/v6) (2022-02-14)
 
