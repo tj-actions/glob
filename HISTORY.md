@@ -1,5 +1,36 @@
 # Changelog
 
+## [v8](https://github.com/tj-actions/glob/tree/v8) (2022-05-30)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.20...v8)
+
+**Merged pull requests:**
+
+- feat: add support for using the current path as the directory for all path inputs [\#211](https://github.com/tj-actions/glob/pull/211) ([jackton1](https://github.com/jackton1))
+- Lock file maintenance [\#210](https://github.com/tj-actions/glob/pull/210) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v26.4.5 [\#209](https://github.com/tj-actions/glob/pull/209) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v26.4.3 [\#208](https://github.com/tj-actions/glob/pull/208) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v26.4.2 [\#207](https://github.com/tj-actions/glob/pull/207) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v26.3.0 [\#206](https://github.com/tj-actions/glob/pull/206) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @vercel/ncc to v0.34.0 [\#205](https://github.com/tj-actions/glob/pull/205) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency typescript to v4.7.2 [\#204](https://github.com/tj-actions/glob/pull/204) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency ts-jest to v28.0.3 [\#203](https://github.com/tj-actions/glob/pull/203) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @typescript-eslint/parser to v5.26.0 [\#202](https://github.com/tj-actions/glob/pull/202) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/auto-doc action to v1.2.15 [\#201](https://github.com/tj-actions/glob/pull/201) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#200](https://github.com/tj-actions/glob/pull/200) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint to v8.16.0 [\#199](https://github.com/tj-actions/glob/pull/199) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#198](https://github.com/tj-actions/glob/pull/198) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 17.0.33 to 17.0.35 [\#197](https://github.com/tj-actions/glob/pull/197) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Lock file maintenance [\#196](https://github.com/tj-actions/glob/pull/196) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @typescript-eslint/parser to v5.25.0 [\#195](https://github.com/tj-actions/glob/pull/195) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#193](https://github.com/tj-actions/glob/pull/193) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @typescript-eslint/parser to v5.24.0 [\#192](https://github.com/tj-actions/glob/pull/192) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/setup-node action to v3.2.0 [\#191](https://github.com/tj-actions/glob/pull/191) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v26.2.2 [\#190](https://github.com/tj-actions/glob/pull/190) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v26.2.1 [\#189](https://github.com/tj-actions/glob/pull/189) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#188](https://github.com/tj-actions/glob/pull/188) ([renovate[bot]](https://github.com/apps/renovate))
+- Upgraded to v7.20 [\#187](https://github.com/tj-actions/glob/pull/187) ([jackton1](https://github.com/jackton1))
+
 ## [v7.20](https://github.com/tj-actions/glob/tree/v7.20) (2022-05-14)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v7.19...v7.20)
