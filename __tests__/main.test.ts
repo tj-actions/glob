@@ -5,6 +5,8 @@ import {promises as fs} from 'fs'
 import {normalizeSeparators, tempfile} from '../src/utils'
 import {run} from '../src/main'
 
+const {GITHUB_WORKSPACE} = process.env
+
 const defaultEnv = {
   'INPUT_FILES-SEPARATOR': '\n',
   'INPUT_FILES-FROM-SOURCE-FILE-SEPARATOR': '\n',
@@ -14,7 +16,7 @@ const defaultEnv = {
   'INPUT_ESCAPE-PATHS': 'false',
   INPUT_SEPARATOR: ' ',
   'INPUT_STRIP-TOP-LEVEL-DIR': 'true',
-  'INPUT_WORKING-DIRECTORY': process.env.GITHUB_WORKSPACE,
+  'INPUT_WORKING-DIRECTORY': GITHUB_WORKSPACE,
   'INPUT_INCLUDE-DELETED-FILES': 'false',
   INPUT_FILES: '',
   'INPUT_FILES-FROM-SOURCE-FILE': ''
