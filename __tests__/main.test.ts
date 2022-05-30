@@ -14,13 +14,11 @@ const defaultEnv = {
   'INPUT_ESCAPE-PATHS': 'false',
   INPUT_SEPARATOR: ' ',
   'INPUT_STRIP-TOP-LEVEL-DIR': 'true',
-  'INPUT_WORKING-DIRECTORY': process.cwd(),
+  'INPUT_WORKING-DIRECTORY': process.env.GITHUB_WORKSPACE,
   'INPUT_INCLUDE-DELETED-FILES': 'false',
   INPUT_FILES: '',
   'INPUT_FILES-FROM-SOURCE-FILE': ''
 }
-
-const {GITHUB_WORKSPACE} = process.env
 
 function mockedEnv(testEnvVars: {[key: string]: string}) {
   for (const key in testEnvVars) {
