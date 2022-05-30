@@ -149,6 +149,7 @@ export async function run(): Promise<void> {
 
   if (stripTopLevelDir) {
     paths = paths
+      .map((p: string) => normalizeSeparators(p.replace(workingDirectory + path.sep, '')))
       .map((p: string) => normalizeSeparators(p.replace(workingDirectory, '')))
       .filter((p: string) => p !== '')
   }
