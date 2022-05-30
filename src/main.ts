@@ -18,8 +18,6 @@ const DEFAULT_EXCLUDED_FILES = [
 ]
 
 export async function run(): Promise<void> {
-  const topLevelDir = `${process.env.GITHUB_WORKSPACE}${path.sep}`
-
   const files = core.getInput('files', {required: false})
   const filesSeparator = core.getInput('files-separator', {
     required: false,
@@ -66,7 +64,7 @@ export async function run(): Promise<void> {
   const baseSha = core.getInput('base-sha', {required: includeDeletedFiles})
 
   const workingDirectory = core.getInput('working-directory', {
-    required: false
+    required: true
   })
 
   let filePatterns = files.split(filesSeparator).join('\n')
@@ -97,7 +95,7 @@ export async function run(): Promise<void> {
     const inputFilesFromSourceFile = filesFromSourceFile
       .split(filesFromSourceFileSeparator)
       .filter(p => p !== '')
-      .map(p => path.join(topLevelDir, p))
+      .map(p => path.join(workingDirectory, p))
 
     const filesFromSourceFiles = (
       await getFilesFromSourceFile({filePaths: inputFilesFromSourceFile})
@@ -112,7 +110,7 @@ export async function run(): Promise<void> {
     const inputExcludedFilesFromSourceFile = excludedFilesFromSourceFile
       .split(excludedFilesFromSourceFileSeparator)
       .filter(p => p !== '')
-      .map(p => path.join(topLevelDir, p))
+      .map(p => path.join(workingDirectory, p))
 
     const excludedFilesFromSourceFiles = (
       await getFilesFromSourceFile({
@@ -151,7 +149,7 @@ export async function run(): Promise<void> {
 
   if (stripTopLevelDir) {
     paths = paths
-      .map((p: string) => normalizeSeparators(p.replace(topLevelDir, '')))
+      .map((p: string) => normalizeSeparators(p.replace(workingDirectory, '')))
       .filter((p: string) => p !== '')
   }
 
