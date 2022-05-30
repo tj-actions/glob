@@ -5,6 +5,8 @@ import {promises as fs} from 'fs'
 import {normalizeSeparators, tempfile} from '../src/utils'
 import {run} from '../src/main'
 
+const {GITHUB_WORKSPACE} = process.env
+
 const defaultEnv = {
   'INPUT_FILES-SEPARATOR': '\n',
   'INPUT_FILES-FROM-SOURCE-FILE-SEPARATOR': '\n',
@@ -14,13 +16,11 @@ const defaultEnv = {
   'INPUT_ESCAPE-PATHS': 'false',
   INPUT_SEPARATOR: ' ',
   'INPUT_STRIP-TOP-LEVEL-DIR': 'true',
-  'INPUT_WORKING-DIRECTORY': process.cwd(),
+  'INPUT_WORKING-DIRECTORY': GITHUB_WORKSPACE!,
   'INPUT_INCLUDE-DELETED-FILES': 'false',
   INPUT_FILES: '',
   'INPUT_FILES-FROM-SOURCE-FILE': ''
 }
-
-const {GITHUB_WORKSPACE} = process.env
 
 function mockedEnv(testEnvVars: {[key: string]: string}) {
   for (const key in testEnvVars) {
@@ -48,7 +48,7 @@ test('returns the paths of the filtered files (input files, input source files)'
     '__tests__/main.test.ts',
     '__tests__/util.test.ts'
   ]
-    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
 
   // @ts-ignore
@@ -77,7 +77,7 @@ test('returns the paths of the filtered files (input files)', async () => {
     '__tests__/util.test.ts',
     'entrypoint.sh'
   ]
-    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
 
   // @ts-ignore
@@ -102,7 +102,7 @@ test('returns the paths of the filtered files (input source files)', async () =>
     'HISTORY.md',
     'README.md'
   ]
-    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
 
   // @ts-ignore
@@ -127,7 +127,7 @@ test('returns the paths of the filtered files in the paths-output-file', async (
     'HISTORY.md',
     'README.md'
   ]
-    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
 
   // @ts-ignore

@@ -52,7 +52,6 @@ const DEFAULT_EXCLUDED_FILES = [
 ];
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        const topLevelDir = `${process.env.GITHUB_WORKSPACE}${path.sep}`;
         const files = core.getInput('files', { required: false });
         const filesSeparator = core.getInput('files-separator', {
             required: false,
@@ -86,7 +85,7 @@ function run() {
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = core.getInput('working-directory', {
-            required: false
+            required: true
         });
         let filePatterns = files.split(filesSeparator).join('\n');
         core.debug(`file patterns: ${filePatterns}`);
@@ -112,7 +111,7 @@ function run() {
             const inputFilesFromSourceFile = filesFromSourceFile
                 .split(filesFromSourceFileSeparator)
                 .filter(p => p !== '')
-                .map(p => path.join(topLevelDir, p));
+                .map(p => path.join(workingDirectory, p));
             const filesFromSourceFiles = (yield (0, utils_1.getFilesFromSourceFile)({ filePaths: inputFilesFromSourceFile })).join('\n');
             core.debug(`files from source files patterns: ${filesFromSourceFiles}`);
             filePatterns += `\n${filesFromSourceFiles}`;
@@ -121,7 +120,7 @@ function run() {
             const inputExcludedFilesFromSourceFile = excludedFilesFromSourceFile
                 .split(excludedFilesFromSourceFileSeparator)
                 .filter(p => p !== '')
-                .map(p => path.join(topLevelDir, p));
+                .map(p => path.join(workingDirectory, p));
             const excludedFilesFromSourceFiles = (yield (0, utils_1.getFilesFromSourceFile)({
                 filePaths: inputExcludedFilesFromSourceFile,
                 excludedFiles: true
@@ -148,7 +147,8 @@ function run() {
         }
         if (stripTopLevelDir) {
             paths = paths
-                .map((p) => (0, utils_1.normalizeSeparators)(p.replace(topLevelDir, '')))
+                .map((p) => (0, utils_1.normalizeSeparators)(p.replace(workingDirectory + path.sep, '')))
+                .map((p) => (0, utils_1.normalizeSeparators)(p.replace(workingDirectory, '')))
                 .filter((p) => p !== '');
         }
         if (escapePaths) {
