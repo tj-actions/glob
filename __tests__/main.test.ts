@@ -48,7 +48,7 @@ test('returns the paths of the filtered files (input files, input source files)'
     '__tests__/main.test.ts',
     '__tests__/util.test.ts'
   ]
-    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
 
   // @ts-ignore
@@ -77,7 +77,7 @@ test('returns the paths of the filtered files (input files)', async () => {
     '__tests__/util.test.ts',
     'entrypoint.sh'
   ]
-    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
 
   // @ts-ignore
@@ -102,7 +102,7 @@ test('returns the paths of the filtered files (input source files)', async () =>
     'HISTORY.md',
     'README.md'
   ]
-    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
 
   // @ts-ignore
@@ -127,7 +127,7 @@ test('returns the paths of the filtered files in the paths-output-file', async (
     'HISTORY.md',
     'README.md'
   ]
-    .map(fName => normalizeSeparators(path.join(GITHUB_WORKSPACE!, fName)))
+    .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
 
   // @ts-ignore
