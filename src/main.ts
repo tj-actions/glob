@@ -68,7 +68,11 @@ export async function run(): Promise<void> {
     core.getInput('working-directory', {required: true})
   )
 
-  let filePatterns = files.split(filesSeparator).filter(p => p !== '').map(p => path.join(workingDirectory, p)).join('\n')
+  let filePatterns = files
+    .split(filesSeparator)
+    .filter(p => p !== '')
+    .map(p => path.join(workingDirectory, p))
+    .join('\n')
 
   core.debug(`file patterns: ${filePatterns}`)
 
