@@ -170,7 +170,7 @@ function run() {
         else {
             const allPatterns = filePatterns
                 .split('\n')
-                .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p) && p !== '');
+                .filter(p => !DEFAULT_EXCLUDED_FILES.map(ep => `!${path.join(workingDirectory, ep.replace(/^!/, ''))}`).includes(p) && p !== '');
             if (allPatterns.length > 0) {
                 core.warning('No match found for specified patterns. Ensure that subdirectory patterns are prefixed with "**/" and all multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet');
             }
