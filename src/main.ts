@@ -64,8 +64,8 @@ export async function run(): Promise<void> {
   const baseSha = core.getInput('base-sha', {required: includeDeletedFiles})
 
   const workingDirectory = path.resolve(
-    process.env.GITHUB_WORKSPACE!, 
-    core.getInput('working-directory', { required: true }),
+    process.env.GITHUB_WORKSPACE!,
+    core.getInput('working-directory', {required: true})
   )
 
   let filePatterns = files.split(filesSeparator).join('\n')
