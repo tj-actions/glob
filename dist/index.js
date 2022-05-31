@@ -137,7 +137,7 @@ function run() {
                 filePatterns += `\n${excludedFilesFromSourceFiles}`;
             }
         }
-        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`;
+        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.map(p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`).join('\n')}`;
         const globOptions = { followSymbolicLinks };
         const globber = yield glob.create(filePatterns, globOptions);
         let paths = yield globber.glob();
