@@ -184,7 +184,12 @@ export async function run(): Promise<void> {
   } else {
     const allPatterns = filePatterns
       .split('\n')
-      .filter(p => !DEFAULT_EXCLUDED_FILES.map(p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`).includes(p) && p !== '')
+      .filter(
+        p =>
+          !DEFAULT_EXCLUDED_FILES.map(
+            p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`
+          ).includes(p) && p !== ''
+      )
 
     if (allPatterns.length > 0) {
       core.warning(
