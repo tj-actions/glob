@@ -137,9 +137,9 @@ export async function run(): Promise<void> {
     }
   }
 
-  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.map(
+  filePatterns += '\n' + DEFAULT_EXCLUDED_FILES.map(
     p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`
-  ).join('\n')}`
+  ).join('\n')
 
   const globOptions = {followSymbolicLinks}
   const globber = await glob.create(filePatterns, globOptions)
@@ -182,7 +182,7 @@ export async function run(): Promise<void> {
   } else {
     const allPatterns = filePatterns
       .split('\n')
-      .filter(p => !DEFAULT_EXCLUDED_FILES.includes(p) && p !== '')
+      .filter(p => !DEFAULT_EXCLUDED_FILES.map(p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`).includes(p) && p !== '')
 
     if (allPatterns.length > 0) {
       core.warning(
