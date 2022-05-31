@@ -137,7 +137,7 @@ export async function run(): Promise<void> {
     }
   }
 
-  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`
+  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.map(p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`).join('\n')}`
 
   const globOptions = {followSymbolicLinks}
   const globber = await glob.create(filePatterns, globOptions)
