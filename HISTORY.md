@@ -1,5 +1,14 @@
 # Changelog
 
+## [v9.1](https://github.com/tj-actions/glob/tree/v9.1) (2022-05-31)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v9...v9.1)
+
+**Merged pull requests:**
+
+- fix: using nested paths with file patterns [\#219](https://github.com/tj-actions/glob/pull/219) ([jackton1](https://github.com/jackton1))
+- Upgraded to v9 [\#218](https://github.com/tj-actions/glob/pull/218) ([jackton1](https://github.com/jackton1))
+
 ## [v9](https://github.com/tj-actions/glob/tree/v9) (2022-05-31)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v8...v9)
@@ -306,11 +315,11 @@
 
 ## [v7.1](https://github.com/tj-actions/glob/tree/v7.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v7.1)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v7.1)
 
-## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
+## [v3.3](https://github.com/tj-actions/glob/tree/v3.3) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v3.3)
 
 ## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
 
@@ -334,11 +343,11 @@
 
 ## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v4)
 
-## [v3.3](https://github.com/tj-actions/glob/tree/v3.3) (2022-02-14)
+## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v3.2...v3.3)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v3.2...v7.4)
 
 ## [v3.2](https://github.com/tj-actions/glob/tree/v3.2) (2022-02-14)
 
