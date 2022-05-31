@@ -1,5 +1,14 @@
 # Changelog
 
+## [v9.2](https://github.com/tj-actions/glob/tree/v9.2) (2022-05-31)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v9.1...v9.2)
+
+**Merged pull requests:**
+
+- fix: invalid error message [\#221](https://github.com/tj-actions/glob/pull/221) ([jackton1](https://github.com/jackton1))
+- Upgraded to v9.1 [\#220](https://github.com/tj-actions/glob/pull/220) ([jackton1](https://github.com/jackton1))
+
 ## [v9.1](https://github.com/tj-actions/glob/tree/v9.1) (2022-05-31)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v9...v9.1)
