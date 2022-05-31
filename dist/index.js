@@ -84,7 +84,7 @@ function run() {
         });
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
-        const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE, core.getInput('working-directory', { required: true }));
+        const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
         let filePatterns = files.split(filesSeparator).join('\n');
         core.debug(`file patterns: ${filePatterns}`);
         if (excludedFiles !== '') {
