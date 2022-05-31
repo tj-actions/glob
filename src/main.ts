@@ -68,7 +68,7 @@ export async function run(): Promise<void> {
     core.getInput('working-directory', {required: true})
   )
 
-  let filePatterns = files.split(filesSeparator).join('\n')
+  let filePatterns = files.split(filesSeparator).map(p => path.join(workingDirectory, p)).join('\n')
 
   core.debug(`file patterns: ${filePatterns}`)
 
@@ -81,6 +81,7 @@ export async function run(): Promise<void> {
         }
         return p
       })
+      .map(p => path.join(workingDirectory, p.replace(/^!/, '')))
       .join('\n')
 
     core.debug(`excluded file patterns: ${excludedFilePatterns}`)
@@ -96,7 +97,7 @@ export async function run(): Promise<void> {
     const inputFilesFromSourceFile = filesFromSourceFile
       .split(filesFromSourceFileSeparator)
       .filter(p => p !== '')
-      .map(p => path.join(workingDirectory, p))
+      .map(p => `${path.join(workingDirectory, p)}`)
 
     const filesFromSourceFiles = (
       await getFilesFromSourceFile({filePaths: inputFilesFromSourceFile})
@@ -111,7 +112,7 @@ export async function run(): Promise<void> {
     const inputExcludedFilesFromSourceFile = excludedFilesFromSourceFile
       .split(excludedFilesFromSourceFileSeparator)
       .filter(p => p !== '')
-      .map(p => path.join(workingDirectory, p))
+      .map(p => path.join(workingDirectory, p)
 
     const excludedFilesFromSourceFiles = (
       await getFilesFromSourceFile({
