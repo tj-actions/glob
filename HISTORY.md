@@ -1,5 +1,18 @@
 # Changelog
 
+## [v9](https://github.com/tj-actions/glob/tree/v9) (2022-05-31)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v8...v9)
+
+**Merged pull requests:**
+
+- Updated README.md [\#217](https://github.com/tj-actions/glob/pull/217) ([jackton1](https://github.com/jackton1))
+- Update dependency eslint-plugin-jest to v26.4.6 [\#216](https://github.com/tj-actions/glob/pull/216) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @typescript-eslint/parser to v5.27.0 [\#215](https://github.com/tj-actions/glob/pull/215) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#214](https://github.com/tj-actions/glob/pull/214) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 17.0.35 to 17.0.36 [\#213](https://github.com/tj-actions/glob/pull/213) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Upgraded to v8 [\#212](https://github.com/tj-actions/glob/pull/212) ([jackton1](https://github.com/jackton1))
+
 ## [v8](https://github.com/tj-actions/glob/tree/v8) (2022-05-30)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v7.20...v8)
