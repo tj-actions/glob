@@ -187,7 +187,7 @@ export async function run(): Promise<void> {
       .filter(
         p =>
           !DEFAULT_EXCLUDED_FILES.map(
-            p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`
+            ep => `!${path.join(workingDirectory, ep.replace(/^!/, ''))}`
           ).includes(p) && p !== ''
       )
 
