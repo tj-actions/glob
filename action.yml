@@ -62,8 +62,8 @@ inputs:
     required: false
   working-directory:
     description: 'Specify a relative path under $GITHUB_WORKSPACE to locate the repository'
-    required: false
-    default: ${{ github.workspace }}
+    required: true
+    default: '.'
 
 outputs:
   paths:
