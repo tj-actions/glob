@@ -113,7 +113,7 @@ export async function run(): Promise<void> {
     const inputExcludedFilesFromSourceFile = excludedFilesFromSourceFile
       .split(excludedFilesFromSourceFileSeparator)
       .filter(p => p !== '')
-      .map(p => path.join(workingDirectory, p)
+      .map(p => path.join(workingDirectory, p))
 
     const excludedFilesFromSourceFiles = (
       await getFilesFromSourceFile({
