@@ -85,17 +85,23 @@ function run() {
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
-        let filePatterns = files.split(filesSeparator).join('\n');
+        let filePatterns = files
+            .split(filesSeparator)
+            .filter(p => p !== '')
+            .map(p => path.join(workingDirectory, p))
+            .join('\n');
         core.debug(`file patterns: ${filePatterns}`);
         if (excludedFiles !== '') {
             const excludedFilePatterns = excludedFiles
                 .split(excludedFilesSeparator)
+                .filter(p => p !== '')
                 .map(p => {
                 if (!p.startsWith('!')) {
                     p = `!${p}`;
                 }
                 return p;
             })
+                .map(p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`)
                 .join('\n');
             core.debug(`excluded file patterns: ${excludedFilePatterns}`);
             if (!files) {
