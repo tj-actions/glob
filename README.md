@@ -14,11 +14,10 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 ## Usage
 
-
 > NOTE: :warning:
 >
-> * Ensure that subdirectory patterns are prefixed with `**/`
-> * All multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+> *   Ensure that subdirectory patterns are prefixed with `**/`
+> *   All multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
 
 ```yaml
 ...
