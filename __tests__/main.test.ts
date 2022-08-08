@@ -161,6 +161,6 @@ test('returns warning for no match found', async () => {
   await run()
 
   expect(core.warning).toBeCalledWith(
-    'Invalid pattern detected: "**.yml". Ensure that subdirectory patterns are prefixed with "**/" and all multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
+    'Invalid pattern detected: "-**.yml". Ensure that subdirectory patterns are prefixed with "**/" and all multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
   )
 })
