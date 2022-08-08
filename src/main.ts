@@ -193,6 +193,7 @@ export async function run(): Promise<void> {
           isGlob(p, {strict: false}) &&
           !defaultExcludedPatterns.includes(p)
       )
+      .map(p => `${p.replace(`${workingDirectory}${path.sep}`, '')}`)
 
     if (invalidPatterns.length > 0) {
       core.warning(
