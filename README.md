@@ -12,6 +12,14 @@
 
 Search for files matching [glob patterns](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet) with support for returning matching deleted git tracked files
 
+## Usage
+
+
+> NOTE: :warning:
+>
+> * Ensure that subdirectory patterns are prefixed with `**/`
+> * All multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+
 ```yaml
 ...
     steps:
