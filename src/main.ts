@@ -197,8 +197,9 @@ export async function run(): Promise<void> {
 
     if (invalidPatterns.length > 0) {
       core.warning(
-        `Invalid pattern detected: "${invalidPatterns.join(', ')}". 
-        Ensure that subdirectory patterns are prefixed with "**/" and all multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet`
+        `Invalid pattern detected: "${invalidPatterns.join(
+          ', '
+        )}". Ensure that subdirectory patterns are prefixed with "**/" and all multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet`
       )
     }
   }
