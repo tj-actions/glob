@@ -148,19 +148,3 @@ test('returns the paths of the filtered files in the paths-output-file', async (
     pathsOutputFile
   )
 })
-
-test('returns warning for no match found', async () => {
-  mockedEnv({
-    ...defaultEnv,
-    INPUT_FILES: '-**.yml'
-  })
-
-  // @ts-ignore
-  core.warning = jest.fn()
-
-  await run()
-
-  expect(core.warning).toBeCalledWith(
-    'Invalid pattern detected: "-**.yml". Ensure that subdirectory patterns are prefixed with "**/" and all multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet'
-  )
-})

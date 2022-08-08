@@ -2,7 +2,6 @@ import * as path from 'path'
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
 import {promises as fs} from 'fs'
-import isGlob from 'is-glob'
 
 import {
   getDeletedFiles,
@@ -180,28 +179,6 @@ export async function run(): Promise<void> {
     core.setOutput('paths-output-file', pathsOutputFile)
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
-  } else {
-    const defaultExcludedPatterns = DEFAULT_EXCLUDED_FILES.map(
-      ep => `!${path.join(workingDirectory, ep.replace(/^!/, ''))}`
-    )
-    const invalidPatterns = filePatterns
-      .split('\n')
-      .filter(
-        p =>
-          p !== '' &&
-          !p.startsWith('!') &&
-          isGlob(p, {strict: false}) &&
-          !defaultExcludedPatterns.includes(p)
-      )
-      .map(p => `${p.replace(`${workingDirectory}${path.sep}`, '')}`)
-
-    if (invalidPatterns.length > 0) {
-      core.warning(
-        `Invalid pattern detected: "${invalidPatterns.join(
-          ', '
-        )}". Ensure that subdirectory patterns are prefixed with "**/" and all multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet`
-      )
-    }
   }
 }
 
