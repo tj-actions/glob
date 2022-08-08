@@ -33,7 +33,7 @@ jobs:
           config_path: ".eslintrc.json"
           ignore_path: ".eslintignore"
 
-      - name: Run build
+      - name: Run build and test
         run: |
           yarn all
 
