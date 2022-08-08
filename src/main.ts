@@ -2,6 +2,7 @@ import * as path from 'path'
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
 import {promises as fs} from 'fs'
+import isGlob from 'is-glob';
 
 import {
   getDeletedFiles,
@@ -186,7 +187,9 @@ export async function run(): Promise<void> {
         p =>
           !DEFAULT_EXCLUDED_FILES.map(
             ep => `!${path.join(workingDirectory, ep.replace(/^!/, ''))}`
-          ).includes(p) && p !== ''
+          ).includes(p) &&
+          p !== '' &&
+          !isGlob(p, {strict: false})
       )
 
     if (allPatterns.length > 0) {
