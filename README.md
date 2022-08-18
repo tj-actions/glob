@@ -51,12 +51,12 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 | escape-paths                              | string | false    | `"false"`             | Escape special characters of filenames<br>used in the `paths` output<br>                                         |
 | excluded-files                            | string | false    |                       | Excluded file patterns (optionally include<br>`!` before the file pattern<br>or it would be prepended)<br>       |
 | excluded-files-from-source-file           | string | false    |                       | Source file to populate the<br>`excluded-files` input                                                            |
-| excluded-files-from-source-file-separator | string | false    |                       | Separator used to split the<br>`excluded-files-from-source-file` input                                           |
-| excluded-files-separator                  | string | false    |                       | Separator used to split the<br>`excluded-files` input                                                            |
+| excluded-files-from-source-file-separator | string | false    | `"\n"`                | Separator used to split the<br>`excluded-files-from-source-file` input                                           |
+| excluded-files-separator                  | string | false    | `"\n"`                | Separator used to split the<br>`excluded-files` input                                                            |
 | files                                     | string | false    |                       | File patterns                                                                                                    |
 | files-from-source-file                    | string | false    |                       | Source file to populate the<br>`files` input                                                                     |
-| files-from-source-file-separator          | string | false    |                       | Separator used to split the<br>`files-from-source-file` input                                                    |
-| files-separator                           | string | false    |                       | Separator used to split the<br>`files` input                                                                     |
+| files-from-source-file-separator          | string | false    | `"\n"`                | Separator used to split the<br>`files-from-source-file` input                                                    |
+| files-separator                           | string | false    | `"\n"`                | Separator used to split the<br>`files` input                                                                     |
 | follow-symbolic-links                     | string | true     | `"true"`              | Indicates whether to follow symbolic<br>links                                                                    |
 | include-deleted-files                     | string | false    | `"false"`             | Include all matching deleted files<br>                                                                           |
 | separator                                 | string | true     | `" "`                 | Separator used for the paths<br>output.                                                                          |
