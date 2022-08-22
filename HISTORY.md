@@ -1,5 +1,14 @@
 # Changelog
 
+## [v11.1](https://github.com/tj-actions/glob/tree/v11.1) (2022-08-22)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v11...v11.1)
+
+**Merged pull requests:**
+
+- Upgraded to v11 [\#344](https://github.com/tj-actions/glob/pull/344) ([jackton1](https://github.com/jackton1))
+- Update typescript-eslint monorepo to v5.34.0 [\#343](https://github.com/tj-actions/glob/pull/343) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [v11](https://github.com/tj-actions/glob/tree/v11) (2022-08-22)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v10...v11)
@@ -459,11 +468,11 @@
 
 ## [v7.1](https://github.com/tj-actions/glob/tree/v7.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v7.1)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v4...v7.1)
 
-## [v3.3](https://github.com/tj-actions/glob/tree/v3.3) (2022-02-14)
+## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v3.3)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v4)
 
 ## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
 
@@ -483,15 +492,15 @@
 
 ## [v5](https://github.com/tj-actions/glob/tree/v5) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v4...v5)
-
-## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v5)
 
 ## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v3.2...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v7.4)
+
+## [v3.3](https://github.com/tj-actions/glob/tree/v3.3) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v3.2...v3.3)
 
 ## [v3.2](https://github.com/tj-actions/glob/tree/v3.2) (2022-02-14)
 
