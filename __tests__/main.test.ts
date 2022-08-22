@@ -1,11 +1,7 @@
-import * as core from '@actions/core'
-import * as path from 'path'
-import {promises as fs} from 'fs'
+import * as core from "@actions/core";
+import { run } from "../src/main";
 
-import {normalizeSeparators, tempfile} from '../src/utils'
-import {run} from '../src/main'
-
-const {GITHUB_WORKSPACE} = process.env
+import { normalizeSeparators, tempfile } from "../src/utils";
 
 const defaultEnv = {
   'INPUT_FILES-SEPARATOR': '\n',
@@ -47,6 +43,32 @@ test('returns the paths of the filtered files (input files, input source files)'
     '__tests__/getFilesFromSourceFile.test.ts',
     '__tests__/main.test.ts',
     '__tests__/util.test.ts'
+  ]
+    .map(fName => normalizeSeparators(fName))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
+})
+
+test('returns the paths of the all other files (input files)', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: '!__tests__\n!*.md\n!dist\n!jest\n!.*\n!src',
+  })
+
+  const EXPECTED_FILENAMES = [
+    'LICENSE',
+    'action.yml',
+    'jest.config.js',
+    'package.json',
+    'renovate.json',
+    'tsconfig.json',
+    'yarn.lock'
   ]
     .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
