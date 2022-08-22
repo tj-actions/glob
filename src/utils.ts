@@ -173,9 +173,5 @@ export function tempfile(extension = ''): string {
 }
 
 export function escapeString(value: string): string {
-  if (typeof value !== 'string') {
-    throw new TypeError(`Expected a string instead got: ${typeof value}`)
-  }
-
   return value.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
 }
