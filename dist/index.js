@@ -88,7 +88,6 @@ function run() {
         let filePatterns = files
             .split(filesSeparator)
             .filter(p => p !== '')
-            .map(p => path.join(workingDirectory, p))
             .join('\n');
         core.debug(`file patterns: ${filePatterns}`);
         if (excludedFiles !== '') {
@@ -101,7 +100,6 @@ function run() {
                 }
                 return p;
             })
-                .map(p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`)
                 .join('\n');
             core.debug(`excluded file patterns: ${excludedFilePatterns}`);
             if (!files) {
@@ -137,7 +135,18 @@ function run() {
                 filePatterns += `\n${excludedFilesFromSourceFiles}`;
             }
         }
-        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.map(p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`).join('\n')}`;
+        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`;
+        filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
+            .map(p => {
+            if (p.startsWith('!')) {
+                return `!${workingDirectory}${path.sep}${p.substring(1)}`;
+            }
+            return path.join(workingDirectory, p);
+        })
+            .join('\n');
+        if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {
+            filePatterns = `**\n${filePatterns}`;
+        }
         const globOptions = { followSymbolicLinks };
         const globber = yield glob.create(filePatterns, globOptions);
         let paths = yield globber.glob();
@@ -387,9 +396,6 @@ function tempfile(extension = '') {
 }
 exports.tempfile = tempfile;
 function escapeString(value) {
-    if (typeof value !== 'string') {
-        throw new TypeError(`Expected a string instead got: ${typeof value}`);
-    }
     return value.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
 }
 exports.escapeString = escapeString;

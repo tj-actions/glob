@@ -71,7 +71,6 @@ export async function run(): Promise<void> {
   let filePatterns = files
     .split(filesSeparator)
     .filter(p => p !== '')
-    .map(p => path.join(workingDirectory, p))
     .join('\n')
 
   core.debug(`file patterns: ${filePatterns}`)
@@ -86,7 +85,6 @@ export async function run(): Promise<void> {
         }
         return p
       })
-      .map(p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`)
       .join('\n')
 
     core.debug(`excluded file patterns: ${excludedFilePatterns}`)
@@ -137,9 +135,20 @@ export async function run(): Promise<void> {
     }
   }
 
-  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.map(
-    p => `!${path.join(workingDirectory, p.replace(/^!/, ''))}`
-  ).join('\n')}`
+  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`
+
+  filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
+    .map(p => {
+      if (p.startsWith('!')) {
+        return `!${workingDirectory}${path.sep}${p.substring(1)}`
+      }
+      return path.join(workingDirectory, p)
+    })
+    .join('\n')
+
+  if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {
+    filePatterns = `**\n${filePatterns}`
+  }
 
   const globOptions = {followSymbolicLinks}
   const globber = await glob.create(filePatterns, globOptions)
