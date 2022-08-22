@@ -137,8 +137,7 @@ export async function run(): Promise<void> {
 
   filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`
 
-  filePatterns = [...new Set(filePatterns.split('\n'))]
-    .filter(p => p !== '')
+  filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
     .map(p => {
       if (p.startsWith('!')) {
         return `!${workingDirectory}${path.sep}${p.substring(1)}`
