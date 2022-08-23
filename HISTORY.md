@@ -1,5 +1,14 @@
 # Changelog
 
+## [v12](https://github.com/tj-actions/glob/tree/v12) (2022-08-23)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v11.1...v12)
+
+**Merged pull requests:**
+
+- feat: exclude match directory with sub-directory glob patterns [\#346](https://github.com/tj-actions/glob/pull/346) ([jackton1](https://github.com/jackton1))
+- Upgraded to v11.1 [\#345](https://github.com/tj-actions/glob/pull/345) ([jackton1](https://github.com/jackton1))
+
 ## [v11.1](https://github.com/tj-actions/glob/tree/v11.1) (2022-08-22)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v11...v11.1)
