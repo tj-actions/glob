@@ -58,7 +58,7 @@ test('returns the paths of the filtered files (input files, input source files)'
 test('returns the paths of the all other files (input files)', async () => {
   mockedEnv({
     ...defaultEnv,
-    INPUT_FILES: '!__tests__\n!*.md\n!dist\n!jest\n!.*\n!src\n!lib',
+    INPUT_FILES: '!__tests__\n!*.md\n!dist\n!jest\n!.*\n!src/main.ts\n!lib',
   })
 
   const EXPECTED_FILENAMES = [
@@ -67,6 +67,8 @@ test('returns the paths of the all other files (input files)', async () => {
     'jest.config.js',
     'package.json',
     'renovate.json',
+    'src/cleanup.ts',
+    'src/utils.ts',
     'tsconfig.json',
     'yarn.lock'
   ]
