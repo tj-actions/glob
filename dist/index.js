@@ -147,7 +147,10 @@ function run() {
         if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {
             filePatterns = `**\n${filePatterns}`;
         }
-        const globOptions = { followSymbolicLinks };
+        const globOptions = {
+            followSymbolicLinks,
+            matchDirectories: false
+        };
         const globber = yield glob.create(filePatterns, globOptions);
         let paths = yield globber.glob();
         if (includeDeletedFiles) {
