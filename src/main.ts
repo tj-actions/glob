@@ -1,3 +1,4 @@
+import {GlobOptions} from '@actions/glob'
 import * as path from 'path'
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
@@ -150,7 +151,10 @@ export async function run(): Promise<void> {
     filePatterns = `**\n${filePatterns}`
   }
 
-  const globOptions = {followSymbolicLinks}
+  const globOptions: GlobOptions = {
+    followSymbolicLinks,
+    matchDirectories: false
+  }
   const globber = await glob.create(filePatterns, globOptions)
   let paths = await globber.glob()
 
