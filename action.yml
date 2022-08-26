@@ -37,6 +37,10 @@ inputs:
     description: 'Indicates whether to follow symbolic links'
     default: "true"
     required: true
+  match-directories:
+    description: 'Indicates whether to include match directories'
+    default: "true"
+    required: true
   separator:
     description: 'Separator used for the paths output.'
     required: true
