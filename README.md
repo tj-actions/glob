@@ -59,6 +59,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 | files-separator                           | string | false    | `"\n"`                | Separator used to split the<br>`files` input                                                                     |
 | follow-symbolic-links                     | string | true     | `"true"`              | Indicates whether to follow symbolic<br>links                                                                    |
 | include-deleted-files                     | string | false    | `"false"`             | Include all matching deleted files<br>                                                                           |
+| match-directories                         | string | true     | `"true"`              | Indicates whether to include match<br>directories                                                                |
 | separator                                 | string | true     | `" "`                 | Separator used for the paths<br>output.                                                                          |
 | sha                                       | string | true     | `"${{ github.sha }}"` | Specify a current commit SHA<br>used for comparing changes, when<br>`include-deleted-files` is set to `true`<br> |
 | strip-top-level-dir                       | string | false    | `"true"`              | Strip the `$GITHUB_WORKSPACE` from the<br>`paths` output                                                         |
