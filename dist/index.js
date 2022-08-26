@@ -71,6 +71,9 @@ function run() {
         const followSymbolicLinks = core.getBooleanInput('follow-symbolic-links', {
             required: false
         });
+        const matchDirectories = core.getBooleanInput('match-directories', {
+            required: false
+        });
         const separator = core.getInput('separator', {
             required: true,
             trimWhitespace: false
@@ -149,7 +152,7 @@ function run() {
         }
         const globOptions = {
             followSymbolicLinks,
-            matchDirectories: false
+            matchDirectories
         };
         const globber = yield glob.create(filePatterns, globOptions);
         let paths = yield globber.glob();
