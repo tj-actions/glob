@@ -1,12 +1,31 @@
 # Changelog
 
+## [v13](https://github.com/tj-actions/glob/tree/v13) (2022-08-26)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v12...v13)
+
+**Merged pull requests:**
+
+- Updated README.md [\#358](https://github.com/tj-actions/glob/pull/358) ([jackton1](https://github.com/jackton1))
+- feat: add support for configuring match directories [\#357](https://github.com/tj-actions/glob/pull/357) ([jackton1](https://github.com/jackton1))
+- Update dependency typescript to v4.8.2 [\#356](https://github.com/tj-actions/glob/pull/356) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency jest to v29 [\#355](https://github.com/tj-actions/glob/pull/355) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.7.12 to 18.7.13 [\#354](https://github.com/tj-actions/glob/pull/354) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update typescript-eslint monorepo to v5.35.1 [\#353](https://github.com/tj-actions/glob/pull/353) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @types/jest to v28.1.8 [\#352](https://github.com/tj-actions/glob/pull/352) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.7.11 to 18.7.12 [\#351](https://github.com/tj-actions/glob/pull/351) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Lock file maintenance [\#350](https://github.com/tj-actions/glob/pull/350) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.7.9 to 18.7.11 [\#349](https://github.com/tj-actions/glob/pull/349) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump tj-actions/verify-changed-files from 10 to 11 [\#348](https://github.com/tj-actions/glob/pull/348) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Upgraded to v12 [\#347](https://github.com/tj-actions/glob/pull/347) ([jackton1](https://github.com/jackton1))
+
 ## [v12](https://github.com/tj-actions/glob/tree/v12) (2022-08-23)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v11.1...v12)
 
 **Merged pull requests:**
 
-- feat: exclude match directory with sub-directory glob patterns [\#346](https://github.com/tj-actions/glob/pull/346) ([jackton1](https://github.com/jackton1))
+- feat: exclude match directory [\#346](https://github.com/tj-actions/glob/pull/346) ([jackton1](https://github.com/jackton1))
 - Upgraded to v11.1 [\#345](https://github.com/tj-actions/glob/pull/345) ([jackton1](https://github.com/jackton1))
 
 ## [v11.1](https://github.com/tj-actions/glob/tree/v11.1) (2022-08-22)
@@ -477,11 +496,11 @@
 
 ## [v7.1](https://github.com/tj-actions/glob/tree/v7.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v4...v7.1)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v5...v7.1)
 
-## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
+## [v5](https://github.com/tj-actions/glob/tree/v5) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v5)
 
 ## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
 
@@ -497,15 +516,15 @@
 
 ## [v6](https://github.com/tj-actions/glob/tree/v6) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v5...v6)
-
-## [v5](https://github.com/tj-actions/glob/tree/v5) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v5)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v6)
 
 ## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v4...v7.4)
+
+## [v4](https://github.com/tj-actions/glob/tree/v4) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v3.3...v4)
 
 ## [v3.3](https://github.com/tj-actions/glob/tree/v3.3) (2022-02-14)
 
