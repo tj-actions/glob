@@ -33,7 +33,7 @@
     "@actions/exec": "1.1.1",
     "@actions/glob": "0.3.0",
     "temp-dir": "2.0.0",
-    "uuid": "8.3.2"
+    "uuid": "9.0.0"
   },
   "devDependencies": {
     "@types/jest": "29.0.0",
