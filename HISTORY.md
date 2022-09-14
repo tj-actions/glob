@@ -1,5 +1,45 @@
 # Changelog
 
+## [v13.1](https://github.com/tj-actions/glob/tree/v13.1) (2022-09-13)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v13...v13.1)
+
+**Merged pull requests:**
+
+- Update dependency ts-jest to v29.0.1 [\#391](https://github.com/tj-actions/glob/pull/391) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @types/jest to v29.0.2 [\#390](https://github.com/tj-actions/glob/pull/390) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.7.16 to 18.7.17 [\#389](https://github.com/tj-actions/glob/pull/389) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update typescript-eslint monorepo to v5.37.0 [\#388](https://github.com/tj-actions/glob/pull/388) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint to v8.23.1 [\#387](https://github.com/tj-actions/glob/pull/387) ([renovate[bot]](https://github.com/apps/renovate))
+- Roll back dependency eslint to 8.23.0 [\#386](https://github.com/tj-actions/glob/pull/386) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump eslint from 8.23.0 to 8.23.1 [\#385](https://github.com/tj-actions/glob/pull/385) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Lock file maintenance [\#384](https://github.com/tj-actions/glob/pull/384) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @types/jest to v29.0.1 [\#383](https://github.com/tj-actions/glob/pull/383) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency jest to v29.0.3 [\#382](https://github.com/tj-actions/glob/pull/382) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v27.0.4 [\#381](https://github.com/tj-actions/glob/pull/381) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/github-changelog-generator action to v1.15 [\#380](https://github.com/tj-actions/glob/pull/380) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v27.0.3 [\#379](https://github.com/tj-actions/glob/pull/379) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency ts-jest to v29 [\#378](https://github.com/tj-actions/glob/pull/378) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency typescript to v4.8.3 [\#377](https://github.com/tj-actions/glob/pull/377) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v27.0.2 [\#376](https://github.com/tj-actions/glob/pull/376) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.7.15 to 18.7.16 [\#375](https://github.com/tj-actions/glob/pull/375) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update dependency uuid to v9 [\#374](https://github.com/tj-actions/glob/pull/374) ([renovate[bot]](https://github.com/apps/renovate))
+- Update typescript-eslint monorepo to v5.36.2 [\#373](https://github.com/tj-actions/glob/pull/373) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.7.14 to 18.7.15 [\#372](https://github.com/tj-actions/glob/pull/372) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Lock file maintenance [\#371](https://github.com/tj-actions/glob/pull/371) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency jest to v29.0.2 [\#370](https://github.com/tj-actions/glob/pull/370) ([renovate[bot]](https://github.com/apps/renovate))
+- Update typescript-eslint monorepo to v5.36.1 [\#369](https://github.com/tj-actions/glob/pull/369) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.7.13 to 18.7.14 [\#368](https://github.com/tj-actions/glob/pull/368) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update typescript-eslint monorepo to v5.36.0 [\#367](https://github.com/tj-actions/glob/pull/367) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @types/jest to v29 [\#366](https://github.com/tj-actions/glob/pull/366) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#365](https://github.com/tj-actions/glob/pull/365) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v27.0.1 [\#364](https://github.com/tj-actions/glob/pull/364) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v27 [\#363](https://github.com/tj-actions/glob/pull/363) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v26.9.0 [\#362](https://github.com/tj-actions/glob/pull/362) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint to v8.23.0 [\#361](https://github.com/tj-actions/glob/pull/361) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency jest to v29.0.1 [\#360](https://github.com/tj-actions/glob/pull/360) ([renovate[bot]](https://github.com/apps/renovate))
+- Upgraded to v13 [\#359](https://github.com/tj-actions/glob/pull/359) ([jackton1](https://github.com/jackton1))
+
 ## [v13](https://github.com/tj-actions/glob/tree/v13) (2022-08-26)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v12...v13)
