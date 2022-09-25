@@ -139,6 +139,17 @@ test('returns the paths of the filtered files (input source files)', async () =>
   expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
 })
 
+test('returns true when no custom patterns are used', async () => {
+  mockedEnv(defaultEnv)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(3, 'has-custom-patterns', false)
+})
+
 test('returns the paths of the filtered files in the paths-output-file', async () => {
   mockedEnv({
     ...defaultEnv,
@@ -173,4 +184,5 @@ test('returns the paths of the filtered files in the paths-output-file', async (
     'paths-output-file',
     pathsOutputFile
   )
+  expect(core.setOutput).toHaveBeenNthCalledWith(3, 'has-custom-patterns', true)
 })
