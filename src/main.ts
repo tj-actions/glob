@@ -196,6 +196,14 @@ export async function run(): Promise<void> {
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
   }
+
+  core.setOutput(
+    'has-custom-patterns',
+    files !== '' ||
+      filesFromSourceFile !== '' ||
+      excludedFiles !== '' ||
+      excludedFilesFromSourceFile !== ''
+  )
 }
 
 if (!process.env.TESTING) {
