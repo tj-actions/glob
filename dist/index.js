@@ -182,6 +182,10 @@ function run() {
             core.saveState('paths-output-file', pathsOutputFile);
             core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
         }
+        core.setOutput('has-custom-patterns', files !== '' ||
+            filesFromSourceFile !== '' ||
+            excludedFiles !== '' ||
+            excludedFilesFromSourceFile !== '');
     });
 }
 exports.run = run;

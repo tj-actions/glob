@@ -73,7 +73,9 @@ outputs:
   paths:
     description: "List of filtered paths using the specified patterns and separator"
   paths-output-file:
-    description: "List of filtered paths using the specified patterns and separator stored in a tempfile"
+    description: "List of filtered paths using the specified patterns and separator stored in a temporary file"
+  has-custom-patterns:
+    description: "Indicates whether custom patterns were used"
 
 runs:
   using: 'node12'
