@@ -186,10 +186,9 @@ export async function run(): Promise<void> {
   }
 
   const pathsOutput = paths.join(separator)
-  core.setOutput('paths', pathsOutput)
 
   if (pathsOutput) {
-    const pathsOutputFile = tempfile('.txt')
+    const pathsOutputFile = await tempfile('.txt')
 
     await fs.writeFile(pathsOutputFile, pathsOutput)
     core.setOutput('paths-output-file', pathsOutputFile)
@@ -197,6 +196,7 @@ export async function run(): Promise<void> {
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
   }
 
+  core.setOutput('paths', pathsOutput)
   core.setOutput(
     'has-custom-patterns',
     files !== '' ||
