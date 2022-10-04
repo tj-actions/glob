@@ -53,7 +53,7 @@ test('returns the paths of the filtered files (input files, input source files)'
 
   await run()
 
-  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
 
 test('returns the paths of the all other files (input files)', async () => {
@@ -82,7 +82,7 @@ test('returns the paths of the all other files (input files)', async () => {
 
   await run()
 
-  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
 
 test('returns the paths of the filtered files (input files)', async () => {
@@ -111,7 +111,7 @@ test('returns the paths of the filtered files (input files)', async () => {
 
   await run()
 
-  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
 
 test('returns the paths of the filtered files (input source files)', async () => {
@@ -136,7 +136,7 @@ test('returns the paths of the filtered files (input source files)', async () =>
 
   await run()
 
-  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
 
 test('returns true when no custom patterns are used', async () => {
@@ -170,19 +170,18 @@ test('returns the paths of the filtered files in the paths-output-file', async (
   // @ts-ignore
   core.setOutput = jest.fn()
 
-  const pathsOutputFile = tempfile('.txt')
+  const pathsOutputFile = await tempfile('.txt')
 
   // @ts-ignore
-  tempfile = jest.fn().mockReturnValue(pathsOutputFile)
+  tempfile = jest.fn().mockResolvedValue(pathsOutputFile)
 
   await run()
 
-  expect(core.setOutput).toHaveBeenNthCalledWith(1, 'paths', EXPECTED_FILENAMES)
-
   expect(core.setOutput).toHaveBeenNthCalledWith(
-    2,
+    1,
     'paths-output-file',
     pathsOutputFile
   )
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
   expect(core.setOutput).toHaveBeenNthCalledWith(3, 'has-custom-patterns', true)
 })
