@@ -45,11 +45,7 @@ const core = __importStar(__nccwpck_require__(2186));
 const glob = __importStar(__nccwpck_require__(8090));
 const fs_1 = __nccwpck_require__(7147);
 const utils_1 = __nccwpck_require__(918);
-const DEFAULT_EXCLUDED_FILES = [
-    '!node_modules/**',
-    '!**/node_modules/**',
-    '!.git/**'
-];
+const DEFAULT_EXCLUDED_FILES = ['!.git/**'];
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const files = core.getInput('files', { required: false });
@@ -88,6 +84,12 @@ function run() {
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
+        const gitignorePath = path.join(workingDirectory, '.gitignore');
+        const gitignoreExcludedFiles = yield (0, utils_1.getFilesFromSourceFile)({
+            filePaths: [gitignorePath],
+            excludedFiles: true
+        });
+        core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`);
         let filePatterns = files
             .split(filesSeparator)
             .filter(p => p !== '')
@@ -138,7 +140,9 @@ function run() {
                 filePatterns += `\n${excludedFilesFromSourceFiles}`;
             }
         }
-        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`;
+        filePatterns += `\n${[...DEFAULT_EXCLUDED_FILES, ...gitignoreExcludedFiles]
+            .filter(p => !!p)
+            .join('\n')}`;
         filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
             .map(p => {
             if (p.startsWith('!')) {
@@ -150,6 +154,7 @@ function run() {
         if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {
             filePatterns = `**\n${filePatterns}`;
         }
+        core.debug(`file patterns: ${filePatterns}`);
         const globOptions = {
             followSymbolicLinks,
             matchDirectories
@@ -356,16 +361,18 @@ function lineOfFileGenerator({ filePath, excludedFiles }) {
         try {
             for (var rl_1 = __asyncValues(rl), rl_1_1; rl_1_1 = yield __await(rl_1.next()), !rl_1_1.done;) {
                 const line = rl_1_1.value;
-                if (excludedFiles) {
-                    if (line.startsWith('!')) {
-                        yield yield __await(`!**/${line.replace(/^!/, '')}`);
+                if (!line.startsWith('#') && line !== '') {
+                    if (excludedFiles) {
+                        if (line.startsWith('!')) {
+                            yield yield __await(`!**/${line.replace(/^!/, '')}`);
+                        }
+                        else {
+                            yield yield __await(`!**/${line}`);
+                        }
                     }
                     else {
-                        yield yield __await(`!**/${line}`);
+                        yield yield __await(line);
                     }
-                }
-                else {
-                    yield yield __await(line);
                 }
             }
         }
