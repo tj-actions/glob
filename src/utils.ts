@@ -1,6 +1,5 @@
 /*global AsyncIterableIterator*/
-import {createReadStream} from 'fs'
-import {realpath} from 'fs/promises'
+import {createReadStream, promises as fs} from 'fs'
 import {tmpdir} from 'os'
 import path from 'path'
 import {createInterface} from 'readline'
@@ -170,7 +169,7 @@ export async function getFilesFromSourceFile({
 }
 
 export async function tempfile(extension = ''): Promise<string> {
-  const tempDirectory = await realpath(tmpdir())
+  const tempDirectory = await fs.realpath(tmpdir())
   return path.join(tempDirectory, `${uuidv4()}${extension}`)
 }
 
