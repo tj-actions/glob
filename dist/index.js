@@ -174,14 +174,14 @@ function run() {
             paths = paths.map((p) => (0, utils_1.escapeString)(p));
         }
         const pathsOutput = paths.join(separator);
-        core.setOutput('paths', pathsOutput);
         if (pathsOutput) {
-            const pathsOutputFile = (0, utils_1.tempfile)('.txt');
+            const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
             yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput);
             core.setOutput('paths-output-file', pathsOutputFile);
             core.saveState('paths-output-file', pathsOutputFile);
             core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
         }
+        core.setOutput('paths', pathsOutput);
         core.setOutput('has-custom-patterns', files !== '' ||
             filesFromSourceFile !== '' ||
             excludedFiles !== '' ||
@@ -262,6 +262,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.deletedGitFiles = exports.normalizeSeparators = exports.IS_WINDOWS = void 0;
 /*global AsyncIterableIterator*/
 const fs_1 = __nccwpck_require__(7147);
+const os_1 = __nccwpck_require__(2037);
 const path_1 = __importDefault(__nccwpck_require__(1017));
 const readline_1 = __nccwpck_require__(4521);
 const core = __importStar(__nccwpck_require__(2186));
@@ -269,7 +270,6 @@ const exec = __importStar(__nccwpck_require__(1514));
 const patternHelper = __importStar(__nccwpck_require__(9005));
 const internal_pattern_1 = __nccwpck_require__(4536);
 const uuid_1 = __nccwpck_require__(5840);
-const temp_dir_1 = __importDefault(__nccwpck_require__(8770));
 exports.IS_WINDOWS = process.platform === 'win32';
 /**
  * Converts windows path `\` to `/`
@@ -402,7 +402,10 @@ function getFilesFromSourceFile({ filePaths, excludedFiles = false }) {
 }
 exports.getFilesFromSourceFile = getFilesFromSourceFile;
 function tempfile(extension = '') {
-    return path_1.default.join(temp_dir_1.default, `${(0, uuid_1.v4)()}${extension}`);
+    return __awaiter(this, void 0, void 0, function* () {
+        const tempDirectory = yield fs_1.promises.realpath((0, os_1.tmpdir)());
+        return path_1.default.join(tempDirectory, `${(0, uuid_1.v4)()}${extension}`);
+    });
 }
 exports.tempfile = tempfile;
 function escapeString(value) {
@@ -6523,27 +6526,6 @@ function globUnescape (s) {
 function regExpEscape (s) {
   return s.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
 }
-
-
-/***/ }),
-
-/***/ 8770:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
-
-"use strict";
-
-const fs = __nccwpck_require__(7147);
-const os = __nccwpck_require__(2037);
-
-const tempDirectorySymbol = Symbol.for('__RESOLVED_TEMP_DIRECTORY__');
-
-if (!global[tempDirectorySymbol]) {
-	Object.defineProperty(global, tempDirectorySymbol, {
-		value: fs.realpathSync(os.tmpdir())
-	});
-}
-
-module.exports = global[tempDirectorySymbol];
 
 
 /***/ }),
