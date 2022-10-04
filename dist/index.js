@@ -85,19 +85,11 @@ function run() {
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
         const gitignorePath = path.join(workingDirectory, '.gitignore');
-        let gitignoreExcludedFiles = [];
-        try {
-            const gitignore = yield fs_1.promises.readFile(gitignorePath, 'utf8');
-            gitignoreExcludedFiles = gitignore
-                .split('\n')
-                .filter(p => p !== '')
-                .filter(line => line && !line.startsWith('#'))
-                .map(line => `!${line}`);
-            core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`);
-        }
-        catch (error) {
-            core.debug(`.gitignore file not found: ${error}`);
-        }
+        const gitignoreExcludedFiles = yield (0, utils_1.getFilesFromSourceFile)({
+            filePaths: [gitignorePath],
+            excludedFiles: true
+        });
+        core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`);
         let filePatterns = files
             .split(filesSeparator)
             .filter(p => p !== '')
@@ -369,16 +361,18 @@ function lineOfFileGenerator({ filePath, excludedFiles }) {
         try {
             for (var rl_1 = __asyncValues(rl), rl_1_1; rl_1_1 = yield __await(rl_1.next()), !rl_1_1.done;) {
                 const line = rl_1_1.value;
-                if (excludedFiles) {
-                    if (line.startsWith('!')) {
-                        yield yield __await(`!**/${line.replace(/^!/, '')}`);
+                if (!line.startsWith('#') && line !== '') {
+                    if (excludedFiles) {
+                        if (line.startsWith('!')) {
+                            yield yield __await(`!**/${line.replace(/^!/, '')}`);
+                        }
+                        else {
+                            yield yield __await(`!**/${line}`);
+                        }
                     }
                     else {
-                        yield yield __await(`!**/${line}`);
+                        yield yield __await(line);
                     }
-                }
-                else {
-                    yield yield __await(line);
                 }
             }
         }
