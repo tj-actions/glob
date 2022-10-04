@@ -262,7 +262,6 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.deletedGitFiles = exports.normalizeSeparators = exports.IS_WINDOWS = void 0;
 /*global AsyncIterableIterator*/
 const fs_1 = __nccwpck_require__(7147);
-const promises_1 = __nccwpck_require__(3292);
 const os_1 = __nccwpck_require__(2037);
 const path_1 = __importDefault(__nccwpck_require__(1017));
 const readline_1 = __nccwpck_require__(4521);
@@ -404,7 +403,7 @@ function getFilesFromSourceFile({ filePaths, excludedFiles = false }) {
 exports.getFilesFromSourceFile = getFilesFromSourceFile;
 function tempfile(extension = '') {
     return __awaiter(this, void 0, void 0, function* () {
-        const tempDirectory = yield (0, promises_1.realpath)((0, os_1.tmpdir)());
+        const tempDirectory = yield fs_1.promises.realpath((0, os_1.tmpdir)());
         return path_1.default.join(tempDirectory, `${(0, uuid_1.v4)()}${extension}`);
     });
 }
@@ -7529,14 +7528,6 @@ module.exports = require("events");
 
 "use strict";
 module.exports = require("fs");
-
-/***/ }),
-
-/***/ 3292:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("fs/promises");
 
 /***/ }),
 
