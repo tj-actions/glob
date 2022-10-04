@@ -85,10 +85,13 @@ function run() {
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
         const gitignorePath = path.join(workingDirectory, '.gitignore');
-        const gitignoreExcludedFiles = yield (0, utils_1.getFilesFromSourceFile)({
-            filePaths: [gitignorePath],
-            excludedFiles: true
-        });
+        let gitignoreExcludedFiles = [];
+        if ((0, fs_1.existsSync)(gitignorePath)) {
+            gitignoreExcludedFiles = yield (0, utils_1.getFilesFromSourceFile)({
+                filePaths: [gitignorePath],
+                excludedFiles: true
+            });
+        }
         core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`);
         let filePatterns = files
             .split(filesSeparator)
