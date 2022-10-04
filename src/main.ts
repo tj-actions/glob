@@ -70,20 +70,12 @@ export async function run(): Promise<void> {
 
   const gitignorePath = path.join(workingDirectory, '.gitignore')
 
-  let gitignoreExcludedFiles: string[] = []
+  const gitignoreExcludedFiles = await getFilesFromSourceFile({
+    filePaths: [gitignorePath],
+    excludedFiles: true
+  })
 
-  try {
-    gitignoreExcludedFiles = await getFilesFromSourceFile({
-      filePaths: [gitignorePath],
-      excludedFiles: true
-    })
-
-    core.debug(
-      `.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`
-    )
-  } catch (error) {
-    core.debug(`.gitignore file not found: ${error}`)
-  }
+  core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`)
 
   let filePatterns = files
     .split(filesSeparator)
