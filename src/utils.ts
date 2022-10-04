@@ -1,6 +1,6 @@
 /*global AsyncIterableIterator*/
 import {createReadStream} from 'fs'
-import { realpath } from "fs/promises";
+import {realpath} from 'fs/promises'
 import {tmpdir} from 'os'
 import path from 'path'
 import {createInterface} from 'readline'
