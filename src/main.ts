@@ -2,7 +2,7 @@ import {GlobOptions} from '@actions/glob'
 import * as path from 'path'
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
-import {promises as fs} from 'fs'
+import {existsSync, promises as fs} from 'fs'
 
 import {
   getDeletedFiles,
@@ -70,10 +70,14 @@ export async function run(): Promise<void> {
 
   const gitignorePath = path.join(workingDirectory, '.gitignore')
 
-  const gitignoreExcludedFiles = await getFilesFromSourceFile({
-    filePaths: [gitignorePath],
-    excludedFiles: true
-  })
+  let gitignoreExcludedFiles: string[] = []
+
+  if (existsSync(gitignorePath)) {
+    gitignoreExcludedFiles = await getFilesFromSourceFile({
+      filePaths: [gitignorePath],
+      excludedFiles: true
+    })
+  }
 
   core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`)
 
