@@ -73,12 +73,10 @@ export async function run(): Promise<void> {
   let gitignoreExcludedFiles: string[] = []
 
   try {
-    const gitignore = await fs.readFile(gitignorePath, 'utf8')
-    gitignoreExcludedFiles = gitignore
-      .split('\n')
-      .filter(p => p !== '')
-      .filter(line => line && !line.startsWith('#'))
-      .map(line => `!${line}`)
+    gitignoreExcludedFiles = await getFilesFromSourceFile({
+      filePaths: [gitignorePath],
+      excludedFiles: true
+    })
 
     core.debug(
       `.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`

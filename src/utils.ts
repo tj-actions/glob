@@ -140,14 +140,16 @@ async function* lineOfFileGenerator({
     crlfDelay: Infinity
   })
   for await (const line of rl) {
-    if (excludedFiles) {
-      if (line.startsWith('!')) {
-        yield `!**/${line.replace(/^!/, '')}`
+    if (!line.startsWith('#') && line !== '') {
+      if (excludedFiles) {
+        if (line.startsWith('!')) {
+          yield `!**/${line.replace(/^!/, '')}`
+        } else {
+          yield `!**/${line}`
+        }
       } else {
-        yield `!**/${line}`
+        yield line
       }
-    } else {
-      yield line
     }
   }
 }
