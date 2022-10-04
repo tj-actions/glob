@@ -45,11 +45,7 @@ const core = __importStar(__nccwpck_require__(2186));
 const glob = __importStar(__nccwpck_require__(8090));
 const fs_1 = __nccwpck_require__(7147);
 const utils_1 = __nccwpck_require__(918);
-const DEFAULT_EXCLUDED_FILES = [
-    '!node_modules/**',
-    '!**/node_modules/**',
-    '!.git/**'
-];
+const DEFAULT_EXCLUDED_FILES = ['!.git/**'];
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const files = core.getInput('files', { required: false });
@@ -88,6 +84,20 @@ function run() {
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
+        const gitignorePath = path.join(workingDirectory, '.gitignore');
+        let gitignoreExcludedFiles = [];
+        try {
+            const gitignore = yield fs_1.promises.readFile(gitignorePath, 'utf8');
+            gitignoreExcludedFiles = gitignore
+                .split('\n')
+                .filter(p => p !== '')
+                .filter(line => line && !line.startsWith('#'))
+                .map(line => `!${line}`);
+            core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`);
+        }
+        catch (error) {
+            core.debug(`.gitignore file not found: ${error}`);
+        }
         let filePatterns = files
             .split(filesSeparator)
             .filter(p => p !== '')
@@ -138,7 +148,9 @@ function run() {
                 filePatterns += `\n${excludedFilesFromSourceFiles}`;
             }
         }
-        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`;
+        filePatterns += `\n${[...DEFAULT_EXCLUDED_FILES, ...gitignoreExcludedFiles]
+            .filter(p => !!p)
+            .join('\n')}`;
         filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
             .map(p => {
             if (p.startsWith('!')) {
@@ -150,6 +162,7 @@ function run() {
         if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {
             filePatterns = `**\n${filePatterns}`;
         }
+        core.debug(`file patterns: ${filePatterns}`);
         const globOptions = {
             followSymbolicLinks,
             matchDirectories

@@ -12,11 +12,7 @@ import {
   tempfile
 } from './utils'
 
-const DEFAULT_EXCLUDED_FILES = [
-  '!node_modules/**',
-  '!**/node_modules/**',
-  '!.git/**'
-]
+const DEFAULT_EXCLUDED_FILES = ['!.git/**']
 
 export async function run(): Promise<void> {
   const files = core.getInput('files', {required: false})
@@ -71,6 +67,15 @@ export async function run(): Promise<void> {
     process.env.GITHUB_WORKSPACE || process.cwd(),
     core.getInput('working-directory', {required: true})
   )
+
+  const gitignorePath = path.join(workingDirectory, '.gitignore')
+
+  const gitignoreExcludedFiles = await getFilesFromSourceFile({
+    filePaths: [gitignorePath],
+    excludedFiles: true
+  })
+
+  core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`)
 
   let filePatterns = files
     .split(filesSeparator)
@@ -139,7 +144,9 @@ export async function run(): Promise<void> {
     }
   }
 
-  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`
+  filePatterns += `\n${[...DEFAULT_EXCLUDED_FILES, ...gitignoreExcludedFiles]
+    .filter(p => !!p)
+    .join('\n')}`
 
   filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
     .map(p => {
@@ -153,6 +160,8 @@ export async function run(): Promise<void> {
   if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {
     filePatterns = `**\n${filePatterns}`
   }
+
+  core.debug(`file patterns: ${filePatterns}`)
 
   const globOptions: GlobOptions = {
     followSymbolicLinks,
