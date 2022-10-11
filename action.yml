@@ -78,7 +78,7 @@ outputs:
     description: "Indicates whether custom patterns were used"
 
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
   post: 'dist/cleanup/index.js'
 
