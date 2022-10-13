@@ -10,7 +10,7 @@
 
 ## glob
 
-Search for files matching [glob patterns](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet) with support for returning matching deleted git tracked files and also excludes all files and folders specified in `.gitignore` and the `.git` directory. 
+Search for files matching [glob patterns](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet) with support for returning matching deleted git tracked files and also excludes all files and folders specified in `.gitignore` and the `.git` directory.
 
 ## Usage
 
