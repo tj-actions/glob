@@ -153,7 +153,8 @@ export async function run(): Promise<void> {
     .join('\n')}`
 
   filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
-    .map(p => {
+    .map(pt => {
+      const p = pt.replace(/^.\//, '')
       if (p.startsWith('!')) {
         return `!${workingDirectory}${path.sep}${p.substring(1)}`
       }
