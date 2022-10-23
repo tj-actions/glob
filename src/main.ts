@@ -159,10 +159,12 @@ export async function run(): Promise<void> {
       let isExcluded = false
 
       if (parts[0].startsWith('!')) {
-        absolutePath = path.resolve(parts[0].slice(1))
+        absolutePath = path.resolve(
+          path.join(workingDirectory, parts[0].slice(1))
+        )
         isExcluded = true
       } else {
-        absolutePath = path.resolve(parts[0])
+        absolutePath = path.resolve(path.join(workingDirectory, parts[0]))
       }
 
       const p = path.join(absolutePath, ...parts.slice(1))
