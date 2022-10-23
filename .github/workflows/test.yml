@@ -41,6 +41,7 @@ jobs:
       - name: Verify Changed files
         uses: tj-actions/verify-changed-files@v12
         id: changed_files
+        continue-on-error: true
         with:
           files: |
             src
