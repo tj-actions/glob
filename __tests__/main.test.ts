@@ -1,7 +1,7 @@
-import * as core from "@actions/core";
-import { run } from "../src/main";
+import * as core from '@actions/core'
+import {run} from '../src/main'
 
-import { normalizeSeparators, tempfile } from "../src/utils";
+import {normalizeSeparators, tempfile} from '../src/utils'
 
 const defaultEnv = {
   'INPUT_FILES-SEPARATOR': '\n',
@@ -59,7 +59,7 @@ test('returns the paths of the filtered files (input files, input source files)'
 test('returns the paths of the all other files (input files)', async () => {
   mockedEnv({
     ...defaultEnv,
-    INPUT_FILES: '!__tests__\n!*.md\n!dist\n!jest\n!.*\n!src/main.ts\n!lib',
+    INPUT_FILES: '!__tests__\n!*.md\n!dist\n!jest\n!.*\n!src/main.ts\n!lib'
   })
 
   const EXPECTED_FILENAMES = [
@@ -147,7 +147,11 @@ test('returns true when no custom patterns are used', async () => {
 
   await run()
 
-  expect(core.setOutput).toHaveBeenNthCalledWith(3, 'has-custom-patterns', false)
+  expect(core.setOutput).toHaveBeenNthCalledWith(
+    3,
+    'has-custom-patterns',
+    false
+  )
 })
 
 test('returns the paths of the filtered files in the paths-output-file', async () => {

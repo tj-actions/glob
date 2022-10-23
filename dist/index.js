@@ -147,11 +147,19 @@ function run() {
             .filter(p => !!p)
             .join('\n')}`;
         filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
-            .map(p => {
-            if (p.startsWith('!')) {
-                return `!${workingDirectory}${path.sep}${p.substring(1)}`;
+            .map(pt => {
+            const parts = pt.split(path.sep);
+            let absolutePath;
+            let isExcluded = false;
+            if (parts[0].startsWith('!')) {
+                absolutePath = path.resolve(path.join(workingDirectory, parts[0].slice(1)));
+                isExcluded = true;
             }
-            return path.join(workingDirectory, p);
+            else {
+                absolutePath = path.resolve(path.join(workingDirectory, parts[0]));
+            }
+            const p = path.join(absolutePath, ...parts.slice(1));
+            return isExcluded ? `!${p}` : p;
         })
             .join('\n');
         if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {

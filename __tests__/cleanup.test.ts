@@ -5,7 +5,6 @@ import {tempfile} from '../src/utils'
 import {run} from '../src/cleanup'
 
 describe('cleanup test', () => {
-
   it('deletes the paths-output-file', async () => {
     const pathsOutputFile = await tempfile('.txt')
     await fs.writeFile(pathsOutputFile, '12345')
