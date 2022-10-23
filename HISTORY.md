@@ -2,19 +2,52 @@
 
 ## [Unreleased](https://github.com/tj-actions/glob/tree/HEAD)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v15.0...HEAD)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v15.1...HEAD)
+
+**Fixed bugs:**
+
+- \[BUG\] Invalid pattern with relative path in .gitignore [\#445](https://github.com/tj-actions/glob/issues/445)
+
+## [v15.1](https://github.com/tj-actions/glob/tree/v15.1) (2022-10-23)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v15...v15.1)
+
+## [v15](https://github.com/tj-actions/glob/tree/v15) (2022-10-23)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v15.0...v15)
 
 **Implemented enhancements:**
 
 - \[Feature\] node12 deprecation [\#448](https://github.com/tj-actions/glob/issues/448)
 
+**Merged pull requests:**
+
+- Update dependency eslint to v8.26.0 [\#471](https://github.com/tj-actions/glob/pull/471) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.11.2 to 18.11.3 [\#470](https://github.com/tj-actions/glob/pull/470) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump @types/node from 18.11.0 to 18.11.2 [\#469](https://github.com/tj-actions/glob/pull/469) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update dependency eslint-plugin-jest to v27.1.3 [\#468](https://github.com/tj-actions/glob/pull/468) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency jest to v29.2.1 [\#467](https://github.com/tj-actions/glob/pull/467) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @types/jest to v29.2.0 [\#466](https://github.com/tj-actions/glob/pull/466) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.2.0 [\#465](https://github.com/tj-actions/glob/pull/465) ([renovate[bot]](https://github.com/apps/renovate))
+- Update typescript-eslint monorepo to v5.40.1 [\#464](https://github.com/tj-actions/glob/pull/464) ([renovate[bot]](https://github.com/apps/renovate))
+- Update pascalgn/automerge-action action to v0.15.5 [\#463](https://github.com/tj-actions/glob/pull/463) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.1.4 [\#462](https://github.com/tj-actions/glob/pull/462) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.8.5 to 18.11.0 [\#461](https://github.com/tj-actions/glob/pull/461) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Lock file maintenance [\#460](https://github.com/tj-actions/glob/pull/460) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/verify-changed-files action to v12 [\#459](https://github.com/tj-actions/glob/pull/459) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint-plugin-jest to v27.1.2 [\#458](https://github.com/tj-actions/glob/pull/458) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency jest to v29.2.0 [\#457](https://github.com/tj-actions/glob/pull/457) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/eslint-changed-files action to v17 [\#456](https://github.com/tj-actions/glob/pull/456) ([renovate[bot]](https://github.com/apps/renovate))
+- Updated README.md [\#455](https://github.com/tj-actions/glob/pull/455) ([jackton1](https://github.com/jackton1))
+- Update actions/setup-node action to v3.5.1 [\#454](https://github.com/tj-actions/glob/pull/454) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.8.4 to 18.8.5 [\#453](https://github.com/tj-actions/glob/pull/453) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update dependency eslint-plugin-github to v4.4.0 [\#452](https://github.com/tj-actions/glob/pull/452) ([renovate[bot]](https://github.com/apps/renovate))
+- fix: bug using relative paths in .gitignore [\#451](https://github.com/tj-actions/glob/pull/451) ([jackton1](https://github.com/jackton1))
+- Upgraded to v15.0 [\#450](https://github.com/tj-actions/glob/pull/450) ([jackton1](https://github.com/jackton1))
+
 ## [v15.0](https://github.com/tj-actions/glob/tree/v15.0) (2022-10-11)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v15...v15.0)
-
-## [v15](https://github.com/tj-actions/glob/tree/v15) (2022-10-11)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v14.0...v15)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v14.0...v15.0)
 
 **Merged pull requests:**
 
