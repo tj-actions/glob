@@ -154,11 +154,20 @@ export async function run(): Promise<void> {
 
   filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
     .map(pt => {
-      const p = pt.replace(/^.\//, '')
-      if (p.startsWith('!')) {
-        return `!${workingDirectory}${path.sep}${p.substring(1)}`
+      const parts = pt.split(path.sep)
+      let absolutePath: string
+      let isExcluded = false
+
+      if (parts[0].startsWith('!')) {
+        absolutePath = path.resolve(parts[0].slice(1))
+        isExcluded = true
+      } else {
+        absolutePath = path.resolve(parts[0])
       }
-      return path.join(workingDirectory, p)
+
+      const p = path.join(absolutePath, ...parts.slice(1))
+
+      return isExcluded ? `!${p}` : p
     })
     .join('\n')
 
