@@ -73,7 +73,7 @@ body:
       placeholder: |
         This can be achieved by:
         1. Re-running the workflow with debug logging enabled.
-        2. Optionally copy or download the log archive
+        2. Copy or download the log archive.
         3. Paste the contents here or upload the file in a subsequent comment.
       render: shell
   - type: textarea
