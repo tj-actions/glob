@@ -79,6 +79,42 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 <!-- AUTO-DOC-OUTPUT:END -->
 
+## Patterns
+
+### Glob behavior
+
+Patterns `*`, `?`, `[...]`, `**` (globstar) are supported.
+
+With the following behaviors:
+- File names that begin with `.` may be included in the results
+- Case insensitive on Windows
+- Directory separator `/` and `\` both supported on Windows
+
+### Tilde expansion
+
+Supports basic tilde expansion, for current user HOME replacement only.
+
+Example:
+- `~` may expand to /Users/johndoe
+- `~/foo` may expand to /Users/johndoe/foo
+
+### Comments
+
+Patterns that begin with `#` are treated as comments.
+
+### Exclude patterns
+
+Leading `!` changes the meaning of an include pattern to exclude.
+
+Multiple leading `!` flips the meaning.
+
+### Escaping
+
+Wrapping special characters in `[]` can be used to escape literal glob characters
+in a file name. For example the literal file name `hello[a-z]` can be escaped as `hello[[]a-z]`.
+
+On Linux/macOS `\` is also treated as an escape character.
+
 *   Free software: [MIT license](LICENSE)
 
 If you feel generous and want to show some extra appreciation:
