@@ -86,17 +86,19 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 Patterns `*`, `?`, `[...]`, `**` (globstar) are supported.
 
 With the following behaviors:
-- File names that begin with `.` may be included in the results
-- Case insensitive on Windows
-- Directory separator `/` and `\` both supported on Windows
+
+*   File names that begin with `.` may be included in the results
+*   Case insensitive on Windows
+*   Directory separator `/` and `\` both supported on Windows
 
 ### Tilde expansion
 
 Supports basic tilde expansion, for current user HOME replacement only.
 
 Example:
-- `~` may expand to /Users/johndoe
-- `~/foo` may expand to /Users/johndoe/foo
+
+*   `~` may expand to /Users/johndoe
+*   `~/foo` may expand to /Users/johndoe/foo
 
 ### Comments
 
