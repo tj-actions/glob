@@ -12,7 +12,7 @@ import {
   tempfile
 } from './utils'
 
-const DEFAULT_EXCLUDED_FILES = ['!.git/**']
+const DEFAULT_EXCLUDED_FILES = ['!.git/**', '!**/node_modules/**']
 
 export async function run(): Promise<void> {
   const files = core.getInput('files', {required: false})
