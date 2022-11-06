@@ -90,6 +90,7 @@ test('returns the paths of the filtered files (input files)', async () => {
     ...defaultEnv,
     'INPUT_INCLUDE-DELETED-FILES': 'true',
     INPUT_FILES: '__tests__/*.test.ts\n__tests__/**.txt\n*.sh',
+    'INPUT_BASE-REF': 'main',
     'INPUT_BASE-SHA': '99561ef',
     INPUT_SHA: '2eb2427'
   })
