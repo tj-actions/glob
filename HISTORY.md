@@ -1,12 +1,25 @@
 # Changelog
 
+## [v15.3](https://github.com/tj-actions/glob/tree/v15.3) (2022-11-06)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v15...v15.3)
+
+## [v15](https://github.com/tj-actions/glob/tree/v15) (2022-11-06)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v15.2...v15)
+
+**Merged pull requests:**
+
+- Lock file maintenance [\#502](https://github.com/tj-actions/glob/pull/502) ([renovate[bot]](https://github.com/apps/renovate))
+- Updated README.md [\#501](https://github.com/tj-actions/glob/pull/501) ([jackton1](https://github.com/jackton1))
+- feat: update to include two and three dot diff [\#500](https://github.com/tj-actions/glob/pull/500) ([jackton1](https://github.com/jackton1))
+- Update dependency eslint to v8.27.0 [\#499](https://github.com/tj-actions/glob/pull/499) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#498](https://github.com/tj-actions/glob/pull/498) ([renovate[bot]](https://github.com/apps/renovate))
+- Upgraded to v15.2 [\#497](https://github.com/tj-actions/glob/pull/497) ([jackton1](https://github.com/jackton1))
+
 ## [v15.2](https://github.com/tj-actions/glob/tree/v15.2) (2022-11-05)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v15...v15.2)
-
-## [v15](https://github.com/tj-actions/glob/tree/v15) (2022-11-05)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v15.1...v15)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v15.1...v15.2)
 
 **Fixed bugs:**
 
@@ -74,7 +87,7 @@
 
 ## [v15.0](https://github.com/tj-actions/glob/tree/v15.0) (2022-10-11)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v14...v15.0)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v14.0...v15.0)
 
 **Merged pull requests:**
 
@@ -91,13 +104,13 @@
 - Bump @types/node from 18.8.1 to 18.8.2 [\#437](https://github.com/tj-actions/glob/pull/437) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Upgraded to v14.0 [\#436](https://github.com/tj-actions/glob/pull/436) ([jackton1](https://github.com/jackton1))
 
-## [v14](https://github.com/tj-actions/glob/tree/v14) (2022-10-04)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v14.0...v14)
-
 ## [v14.0](https://github.com/tj-actions/glob/tree/v14.0) (2022-10-04)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v13.3...v14.0)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v14...v14.0)
+
+## [v14](https://github.com/tj-actions/glob/tree/v14) (2022-10-04)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v13.3...v14)
 
 **Merged pull requests:**
 
@@ -692,11 +705,11 @@
 
 ## [v7.1](https://github.com/tj-actions/glob/tree/v7.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6...v7.1)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6.1...v7.1)
 
-## [v6](https://github.com/tj-actions/glob/tree/v6) (2022-02-14)
+## [v6.1](https://github.com/tj-actions/glob/tree/v6.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v6)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v6.1)
 
 ## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
 
@@ -704,15 +717,15 @@
 
 ## [v6.2](https://github.com/tj-actions/glob/tree/v6.2) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6.1...v6.2)
-
-## [v6.1](https://github.com/tj-actions/glob/tree/v6.1) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v6.1)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7.4...v6.2)
 
 ## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v5...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6...v7.4)
+
+## [v6](https://github.com/tj-actions/glob/tree/v6) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v5...v6)
 
 ## [v5](https://github.com/tj-actions/glob/tree/v5) (2022-02-14)
 
