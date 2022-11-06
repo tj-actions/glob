@@ -81,6 +81,7 @@ function run() {
         const includeDeletedFiles = core.getBooleanInput('include-deleted-files', {
             required: true
         });
+        const baseRef = core.getInput('base-ref', { required: includeDeletedFiles });
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
@@ -177,7 +178,8 @@ function run() {
                 filePatterns,
                 baseSha,
                 sha,
-                cwd: workingDirectory
+                cwd: workingDirectory,
+                diff: !baseRef ? '..' : '...'
             }));
         }
         if (stripTopLevelDir) {
@@ -303,7 +305,7 @@ exports.normalizeSeparators = normalizeSeparators;
 /**
  * Retrieve all deleted files
  */
-function deletedGitFiles({ baseSha, sha, cwd }) {
+function deletedGitFiles({ baseSha, sha, cwd, diff }) {
     return __awaiter(this, void 0, void 0, function* () {
         const { exitCode: topDirExitCode, stdout: topDirStdout, stderr: topDirStderr } = yield exec.getExecOutput('git', ['rev-parse', '--show-toplevel'], {
             cwd
@@ -313,7 +315,7 @@ function deletedGitFiles({ baseSha, sha, cwd }) {
         }
         const topLevelDir = topDirStdout.trim();
         core.debug(`top level directory: ${topLevelDir}`);
-        const { exitCode, stdout, stderr } = yield exec.getExecOutput('git', ['diff', '--diff-filter=D', '--name-only', baseSha, sha], { cwd });
+        const { exitCode, stdout, stderr } = yield exec.getExecOutput('git', ['diff', '--diff-filter=D', '--name-only', `${baseSha}${diff}${sha}`], { cwd });
         if (stderr || exitCode !== 0) {
             core.setFailed(stderr || 'An unexpected error occurred');
         }
@@ -327,7 +329,7 @@ function deletedGitFiles({ baseSha, sha, cwd }) {
     });
 }
 exports.deletedGitFiles = deletedGitFiles;
-function getDeletedFiles({ filePatterns, baseSha, sha, cwd }) {
+function getDeletedFiles({ filePatterns, baseSha, sha, cwd, diff }) {
     return __awaiter(this, void 0, void 0, function* () {
         const patterns = [];
         const deletedFiles = [];
@@ -347,7 +349,7 @@ function getDeletedFiles({ filePatterns, baseSha, sha, cwd }) {
                 }
             }
         }
-        for (const filePath of yield deletedGitFiles({ baseSha, sha, cwd })) {
+        for (const filePath of yield deletedGitFiles({ baseSha, sha, cwd, diff })) {
             const match = patternHelper.match(patterns, filePath);
             if (match) {
                 deletedFiles.push(filePath);
