@@ -81,7 +81,7 @@ function run() {
         const includeDeletedFiles = core.getBooleanInput('include-deleted-files', {
             required: true
         });
-        const baseRef = core.getInput('base-ref', { required: includeDeletedFiles });
+        const baseRef = core.getInput('base-ref', { required: false });
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
