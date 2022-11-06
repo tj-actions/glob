@@ -193,7 +193,7 @@ export async function run(): Promise<void> {
         baseSha,
         sha,
         cwd: workingDirectory,
-        diff: !baseRef ? ".." : "..."
+        diff: !baseRef ? '..' : '...'
       })
     )
   }
