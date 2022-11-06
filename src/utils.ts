@@ -32,11 +32,13 @@ export function normalizeSeparators(filePath: string): string {
 export async function deletedGitFiles({
   baseSha,
   sha,
-  cwd
+  cwd,
+  diff
 }: {
   baseSha: string
   sha: string
   cwd: string
+  diff: string
 }): Promise<string[]> {
   const {
     exitCode: topDirExitCode,
@@ -56,7 +58,7 @@ export async function deletedGitFiles({
 
   const {exitCode, stdout, stderr} = await exec.getExecOutput(
     'git',
-    ['diff', '--diff-filter=D', '--name-only', baseSha, sha],
+    ['diff', '--diff-filter=D', '--name-only', `${baseSha}${diff}${sha}`],
     {cwd}
   )
 
@@ -79,12 +81,14 @@ export async function getDeletedFiles({
   filePatterns,
   baseSha,
   sha,
-  cwd
+  cwd,
+  diff
 }: {
   filePatterns: string
   baseSha: string
   sha: string
   cwd: string
+  diff: string
 }): Promise<string[]> {
   const patterns = []
   const deletedFiles = []
@@ -112,7 +116,7 @@ export async function getDeletedFiles({
     }
   }
 
-  for (const filePath of await deletedGitFiles({baseSha, sha, cwd})) {
+  for (const filePath of await deletedGitFiles({baseSha, sha, cwd, diff})) {
     const match = patternHelper.match(patterns, filePath)
 
     if (match) {
