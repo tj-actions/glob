@@ -57,6 +57,10 @@ inputs:
     description: 'Include all matching deleted files'
     required: false
     default: "false"
+  base-ref:
+    description: 'Specify a base ref used for comparing changes, when `include-deleted-files` is set to `true`'
+    required: false
+    default: ${{ github.base_ref }}
   sha:
     description: 'Specify a current commit SHA used for comparing changes, when `include-deleted-files` is set to `true`'
     required: true
