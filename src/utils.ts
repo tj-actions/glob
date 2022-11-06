@@ -81,7 +81,8 @@ export async function getDeletedFiles({
   filePatterns,
   baseSha,
   sha,
-  cwd
+  cwd,
+  diff
 }: {
   filePatterns: string
   baseSha: string
