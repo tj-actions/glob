@@ -192,7 +192,7 @@ export async function run(): Promise<void> {
         filePatterns,
         baseSha,
         sha,
-        cwd: workingDirectory
+        cwd: workingDirectory,
         diff: !baseRef ? ".." : "..."
       })
     )
