@@ -147,9 +147,9 @@ async function* lineOfFileGenerator({
     if (!line.startsWith('#') && line !== '') {
       if (excludedFiles) {
         if (line.startsWith('!')) {
-          yield `!**/${line.replace(/^!/, '')}`
+          yield line
         } else {
-          yield `!**/${line}`
+          yield `!${line}`
         }
       } else {
         yield line
