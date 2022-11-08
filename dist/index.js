@@ -377,10 +377,10 @@ function lineOfFileGenerator({ filePath, excludedFiles }) {
                 if (!line.startsWith('#') && line !== '') {
                     if (excludedFiles) {
                         if (line.startsWith('!')) {
-                            yield yield __await(`!**/${line.replace(/^!/, '')}`);
+                            yield yield __await(line);
                         }
                         else {
-                            yield yield __await(`!**/${line}`);
+                            yield yield __await(`!${line}`);
                         }
                     }
                     else {
