@@ -1,5 +1,24 @@
 # Changelog
 
+## [Unreleased](https://github.com/tj-actions/glob/tree/HEAD)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16...HEAD)
+
+**Fixed bugs:**
+
+- \[BUG\] wrong file patterns created from .gitignore entries [\#504](https://github.com/tj-actions/glob/issues/504)
+
+## [v16](https://github.com/tj-actions/glob/tree/v16) (2022-11-08)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v15.3...v16)
+
+**Merged pull requests:**
+
+- fix: matching non top-level paths [\#507](https://github.com/tj-actions/glob/pull/507) ([jackton1](https://github.com/jackton1))
+- Update dependency jest to v29.3.0 [\#506](https://github.com/tj-actions/glob/pull/506) ([renovate[bot]](https://github.com/apps/renovate))
+- Update typescript-eslint monorepo to v5.42.1 [\#505](https://github.com/tj-actions/glob/pull/505) ([renovate[bot]](https://github.com/apps/renovate))
+- Upgraded to v15.3 [\#503](https://github.com/tj-actions/glob/pull/503) ([jackton1](https://github.com/jackton1))
+
 ## [v15.3](https://github.com/tj-actions/glob/tree/v15.3) (2022-11-06)
 
 [Full Changelog](https://github.com/tj-actions/glob/compare/v15...v15.3)
