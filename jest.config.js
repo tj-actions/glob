@@ -8,6 +8,6 @@ module.exports = {
   verbose: true,
   testTimeout: 10000,
   setupFiles: [
-    "<rootDir>/jest/setEnvVars.cjs"
+    "<rootDir>/jest/setupEnv.cjs"
   ]
 }
