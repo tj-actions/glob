@@ -364,7 +364,7 @@ exports.getDeletedFiles = getDeletedFiles;
  */
 function lineOfFileGenerator({ filePath, excludedFiles }) {
     return __asyncGenerator(this, arguments, function* lineOfFileGenerator_1() {
-        var e_1, _a;
+        var _a, e_1, _b, _c;
         const fileStream = (0, fs_1.createReadStream)(filePath);
         fileStream.on('error', (error) => core.setFailed(error));
         const rl = (0, readline_1.createInterface)({
@@ -372,47 +372,61 @@ function lineOfFileGenerator({ filePath, excludedFiles }) {
             crlfDelay: Infinity
         });
         try {
-            for (var rl_1 = __asyncValues(rl), rl_1_1; rl_1_1 = yield __await(rl_1.next()), !rl_1_1.done;) {
-                const line = rl_1_1.value;
-                if (!line.startsWith('#') && line !== '') {
-                    if (excludedFiles) {
-                        if (line.startsWith('!')) {
-                            yield yield __await(line);
+            for (var _d = true, rl_1 = __asyncValues(rl), rl_1_1; rl_1_1 = yield __await(rl_1.next()), _a = rl_1_1.done, !_a;) {
+                _c = rl_1_1.value;
+                _d = false;
+                try {
+                    const line = _c;
+                    if (!line.startsWith('#') && line !== '') {
+                        if (excludedFiles) {
+                            if (line.startsWith('!')) {
+                                yield yield __await(line);
+                            }
+                            else {
+                                yield yield __await(`!${line}`);
+                            }
                         }
                         else {
-                            yield yield __await(`!${line}`);
+                            yield yield __await(line);
                         }
                     }
-                    else {
-                        yield yield __await(line);
-                    }
+                }
+                finally {
+                    _d = true;
                 }
             }
         }
         catch (e_1_1) { e_1 = { error: e_1_1 }; }
         finally {
             try {
-                if (rl_1_1 && !rl_1_1.done && (_a = rl_1.return)) yield __await(_a.call(rl_1));
+                if (!_d && !_a && (_b = rl_1.return)) yield __await(_b.call(rl_1));
             }
             finally { if (e_1) throw e_1.error; }
         }
     });
 }
 function getFilesFromSourceFile({ filePaths, excludedFiles = false }) {
-    var e_2, _a;
+    var _a, e_2, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
         const lines = [];
         for (const filePath of filePaths) {
             try {
-                for (var _b = (e_2 = void 0, __asyncValues(lineOfFileGenerator({ filePath, excludedFiles }))), _c; _c = yield _b.next(), !_c.done;) {
-                    const line = _c.value;
-                    lines.push(line);
+                for (var _d = true, _e = (e_2 = void 0, __asyncValues(lineOfFileGenerator({ filePath, excludedFiles }))), _f; _f = yield _e.next(), _a = _f.done, !_a;) {
+                    _c = _f.value;
+                    _d = false;
+                    try {
+                        const line = _c;
+                        lines.push(line);
+                    }
+                    finally {
+                        _d = true;
+                    }
                 }
             }
             catch (e_2_1) { e_2 = { error: e_2_1 }; }
             finally {
                 try {
-                    if (_c && !_c.done && (_a = _b.return)) yield _a.call(_b);
+                    if (!_d && !_a && (_b = _e.return)) yield _b.call(_e);
                 }
                 finally { if (e_2) throw e_2.error; }
             }
