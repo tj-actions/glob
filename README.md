@@ -130,8 +130,7 @@ If you feel generous and want to show some extra appreciation:
 
 ## Credits
 
-This package was created
-with [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
+This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
 using [cookiecutter-action](https://github.com/tj-actions/cookiecutter-action)
 
 *   [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob)
