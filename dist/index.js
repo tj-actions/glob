@@ -45,7 +45,11 @@ const core = __importStar(__nccwpck_require__(2186));
 const glob = __importStar(__nccwpck_require__(8090));
 const fs_1 = __nccwpck_require__(7147);
 const utils_1 = __nccwpck_require__(918);
-const DEFAULT_EXCLUDED_FILES = ['!.git/**', '!**/node_modules/**'];
+const DEFAULT_EXCLUDED_FILES = [
+    '!.git/**',
+    '!**/node_modules/**',
+    '!node_modules/**'
+];
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         const files = core.getInput('files', { required: false });
