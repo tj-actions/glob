@@ -104,6 +104,19 @@ jobs:
           echo "${{ steps.glob-all-files.outputs.paths }}"
           cat "${{ steps.glob-all-files.outputs.paths-output-file }}"
 
+      - name: Run glob for yml files
+        id: glob-yml-files
+        uses: ./
+        with:
+          files: |
+            **.yml
+            !.github/**/rebase.yml
+
+      - name: Show and output
+        run: |
+          echo "${{ steps.glob-yml-files.outputs.paths }}"
+          cat "${{ steps.glob-yml-files.outputs.paths-output-file }}"
+
       - name: Run glob for all yml files
         id: glob-all-yml-files
         uses: ./

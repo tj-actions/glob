@@ -28,7 +28,7 @@ function mockedEnv(testEnvVars: {[key: string]: string}) {
 test('returns the paths of the filtered files (input files, input source files)', async () => {
   mockedEnv({
     ...defaultEnv,
-    INPUT_FILES: '__tests__/**/*.test.ts\n*.sh',
+    INPUT_FILES: '__tests__/**.test.ts\n*.sh',
     'INPUT_FILES-FROM-SOURCE-FILE':
       '__tests__/source-files.txt\n__tests__/source-files.txt'
   })
