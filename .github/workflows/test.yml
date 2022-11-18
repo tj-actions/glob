@@ -116,7 +116,6 @@ jobs:
         run: |
           echo "${{ steps.glob-yml-files.outputs.paths }}"
           cat "${{ steps.glob-yml-files.outputs.paths-output-file }}"
-file }}"
 
       - name: Run glob for all yml files
         id: glob-all-yml-files
