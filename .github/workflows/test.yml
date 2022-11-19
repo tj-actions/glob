@@ -112,7 +112,7 @@ jobs:
             **.yml
             !.github/**/rebase.yml
 
-      - name: Show and output
+      - name: Show output
         run: |
           echo "${{ steps.glob-yml-files.outputs.paths }}"
           cat "${{ steps.glob-yml-files.outputs.paths-output-file }}"
@@ -125,7 +125,7 @@ jobs:
             **/*.yml
             !.github/**/rebase.yml
 
-      - name: Show and output
+      - name: Show output
         run: |
           echo "${{ steps.glob-all-yml-files.outputs.paths }}"
           cat "${{ steps.glob-all-yml-files.outputs.paths-output-file }}"
