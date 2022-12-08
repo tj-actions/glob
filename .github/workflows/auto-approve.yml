@@ -29,4 +29,4 @@ jobs:
             github.actor == 'github-actions[bot]'
           )
         with:
-          github-token: ${{ secrets.PAT_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
