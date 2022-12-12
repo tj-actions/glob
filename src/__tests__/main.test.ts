@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
-import {run} from '../src/main'
+import {run} from '../main'
 
-import {normalizeSeparators, tempfile} from '../src/utils'
+import {normalizeSeparators, tempfile} from '../utils'
 
 const defaultEnv = {
   'INPUT_FILES-SEPARATOR': '\n',
@@ -11,6 +11,7 @@ const defaultEnv = {
   'INPUT_FOLLOW-SYMBOLIC-LINKS': 'true',
   'INPUT_MATCH-DIRECTORIES': 'true',
   'INPUT_ESCAPE-PATHS': 'false',
+  'INPUT_HEAD-REPO-FORK': 'false',
   INPUT_SEPARATOR: ' ',
   'INPUT_STRIP-TOP-LEVEL-DIR': 'true',
   'INPUT_WORKING-DIRECTORY': '.',
@@ -19,7 +20,7 @@ const defaultEnv = {
   'INPUT_FILES-FROM-SOURCE-FILE': ''
 }
 
-function mockedEnv(testEnvVars: {[key: string]: string}) {
+function mockedEnv(testEnvVars: {[key: string]: string}): void {
   for (const key in testEnvVars) {
     process.env[key] = testEnvVars[key as keyof typeof testEnvVars]
   }
@@ -28,9 +29,9 @@ function mockedEnv(testEnvVars: {[key: string]: string}) {
 test('returns the paths of the filtered files (input files, input source files)', async () => {
   mockedEnv({
     ...defaultEnv,
-    INPUT_FILES: '__tests__/**.test.ts\n*.sh',
+    INPUT_FILES: 'src/__tests__/**.test.ts\n*.sh',
     'INPUT_FILES-FROM-SOURCE-FILE':
-      '__tests__/source-files.txt\n__tests__/source-files.txt'
+      'src/__tests__/source-files.txt\nsrc/__tests__/source-files.txt'
   })
 
   const EXPECTED_FILENAMES = [
@@ -39,11 +40,11 @@ test('returns the paths of the filtered files (input files, input source files)'
     'CONTRIBUTING.md',
     'HISTORY.md',
     'README.md',
-    '__tests__/cleanup.test.ts',
-    '__tests__/getDeletedFiles.test.ts',
-    '__tests__/getFilesFromSourceFile.test.ts',
-    '__tests__/main.test.ts',
-    '__tests__/util.test.ts'
+    'src/__tests__/cleanup.test.ts',
+    'src/__tests__/getDeletedFiles.test.ts',
+    'src/__tests__/getFilesFromSourceFile.test.ts',
+    'src/__tests__/main.test.ts',
+    'src/__tests__/util.test.ts'
   ]
     .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
@@ -59,7 +60,7 @@ test('returns the paths of the filtered files (input files, input source files)'
 test('returns the paths of the all other files (input files)', async () => {
   mockedEnv({
     ...defaultEnv,
-    INPUT_FILES: '!__tests__\n!*.md\n!dist\n!jest\n!.*\n!src/main.ts\n!lib'
+    INPUT_FILES: '!src/__tests__\n!*.md\n!dist\n!jest\n!.*\n!src/main.ts\n!lib'
   })
 
   const EXPECTED_FILENAMES = [
@@ -89,19 +90,19 @@ test('returns the paths of the filtered files (input files)', async () => {
   mockedEnv({
     ...defaultEnv,
     'INPUT_INCLUDE-DELETED-FILES': 'true',
-    INPUT_FILES: '__tests__/*.test.ts\n__tests__/**.txt\n*.sh',
+    INPUT_FILES: 'src/__tests__/*.test.ts\nsrc/__tests__/**.txt\n*.sh',
     'INPUT_BASE-REF': 'main',
     'INPUT_BASE-SHA': '99561ef',
     INPUT_SHA: '2eb2427'
   })
 
   const EXPECTED_FILENAMES = [
-    '__tests__/cleanup.test.ts',
-    '__tests__/getDeletedFiles.test.ts',
-    '__tests__/getFilesFromSourceFile.test.ts',
-    '__tests__/main.test.ts',
-    '__tests__/source-files.txt',
-    '__tests__/util.test.ts',
+    'src/__tests__/cleanup.test.ts',
+    'src/__tests__/getDeletedFiles.test.ts',
+    'src/__tests__/getFilesFromSourceFile.test.ts',
+    'src/__tests__/main.test.ts',
+    'src/__tests__/source-files.txt',
+    'src/__tests__/util.test.ts',
     'entrypoint.sh'
   ]
     .map(fName => normalizeSeparators(fName))
@@ -119,7 +120,7 @@ test('returns the paths of the filtered files (input source files)', async () =>
   mockedEnv({
     ...defaultEnv,
     'INPUT_FILES-FROM-SOURCE-FILE':
-      '__tests__/source-files.txt\n__tests__/source-files.txt\n__tests__/source-files.txt'
+      'src/__tests__/source-files.txt\nsrc/__tests__/source-files.txt\nsrc/__tests__/source-files.txt'
   })
 
   const EXPECTED_FILENAMES = [
@@ -159,7 +160,7 @@ test('returns the paths of the filtered files in the paths-output-file', async (
   mockedEnv({
     ...defaultEnv,
     'INPUT_FILES-FROM-SOURCE-FILE':
-      '__tests__/source-files.txt\n__tests__/source-files.txt\n__tests__/source-files.txt'
+      'src/__tests__/source-files.txt\nsrc/__tests__/source-files.txt\nsrc/__tests__/source-files.txt'
   })
 
   const EXPECTED_FILENAMES = [

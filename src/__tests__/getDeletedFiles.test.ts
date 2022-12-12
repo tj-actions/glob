@@ -1,5 +1,5 @@
 import * as path from 'path'
-import {getDeletedFiles} from '../src/utils'
+import {getDeletedFiles} from '../utils'
 
 const {GITHUB_WORKSPACE} = process.env
 const topLevelDir = `${GITHUB_WORKSPACE}${path.sep}`
@@ -18,7 +18,7 @@ describe('getDeletedFiles test', () => {
       filePatterns,
       baseSha: '99561ef',
       sha: '2eb2427',
-      cwd: GITHUB_WORKSPACE!,
+      cwd: GITHUB_WORKSPACE ? GITHUB_WORKSPACE : process.cwd(),
       diff: '...'
     })
 

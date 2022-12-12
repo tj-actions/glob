@@ -86,6 +86,7 @@ function run() {
             required: true
         });
         const baseRef = core.getInput('base-ref', { required: false });
+        const headRepoFork = core.getBooleanInput('head-repo-fork', { required: false });
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
@@ -183,7 +184,7 @@ function run() {
                 baseSha,
                 sha,
                 cwd: workingDirectory,
-                diff: !baseRef ? '..' : '...'
+                diff: !baseRef || headRepoFork ? '..' : '...'
             }));
         }
         if (stripTopLevelDir) {

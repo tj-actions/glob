@@ -1,5 +1,5 @@
 import * as path from 'path'
-import {getFilesFromSourceFile} from '../src/utils'
+import {getFilesFromSourceFile} from '../utils'
 
 describe('getFilesFromSourceFile test', () => {
   const filePaths = new Array(2)
