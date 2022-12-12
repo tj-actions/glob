@@ -10,6 +10,9 @@
 
 **Merged pull requests:**
 
+- fix: invalid input [\#560](https://github.com/tj-actions/glob/pull/560) ([jackton1](https://github.com/jackton1))
+- Upgraded to v16.4 [\#559](https://github.com/tj-actions/glob/pull/559) ([jackton1](https://github.com/jackton1))
+- Updated README.md [\#558](https://github.com/tj-actions/glob/pull/558) ([jackton1](https://github.com/jackton1))
 - fix: error comparing changes from fork PR's [\#557](https://github.com/tj-actions/glob/pull/557) ([jackton1](https://github.com/jackton1))
 - Update actions/checkout action to v3.2.0 [\#556](https://github.com/tj-actions/glob/pull/556) ([renovate[bot]](https://github.com/apps/renovate))
 - Update typescript-eslint monorepo to v5.46.1 [\#555](https://github.com/tj-actions/glob/pull/555) ([renovate[bot]](https://github.com/apps/renovate))
