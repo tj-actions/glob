@@ -11,6 +11,7 @@ const defaultEnv = {
   'INPUT_FOLLOW-SYMBOLIC-LINKS': 'true',
   'INPUT_MATCH-DIRECTORIES': 'true',
   'INPUT_ESCAPE-PATHS': 'false',
+  'INPUT_HEAD_REPO_FORK': 'false',
   INPUT_SEPARATOR: ' ',
   'INPUT_STRIP-TOP-LEVEL-DIR': 'true',
   'INPUT_WORKING-DIRECTORY': '.',
