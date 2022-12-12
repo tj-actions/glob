@@ -148,8 +148,8 @@ jobs:
         id: glob-source-files-escape-paths
         with:
           files-from-source-file: |
-            __tests__/source-files.txt
-            __tests__/source-files.txt
+            src/__tests__/source-files.txt
+            src/__tests__/source-files.txt
           escape-paths: true
 
       - name: Show output
@@ -162,8 +162,8 @@ jobs:
         id: glob-source-files
         with:
           files-from-source-file: |
-            __tests__/source-files.txt
-            __tests__/source-files.txt
+            src/__tests__/source-files.txt
+            src/__tests__/source-files.txt
 
       - name: Show output
         run: |
@@ -175,8 +175,8 @@ jobs:
         id: glob-excluded-source-files
         with:
           excluded-files-from-source-file: |
-            __tests__/source-files.txt
-            __tests__/source-files.txt
+            src/__tests__/source-files.txt
+            src/__tests__/source-files.txt
 
       - name: Show output
         run: |
