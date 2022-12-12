@@ -1,5 +1,5 @@
 import * as path from 'path'
-import {getDeletedFiles} from '../src/utils'
+import {getDeletedFiles} from '../utils'
 
 const {GITHUB_WORKSPACE} = process.env
 const topLevelDir = `${GITHUB_WORKSPACE}${path.sep}`

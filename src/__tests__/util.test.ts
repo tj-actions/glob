@@ -1,5 +1,5 @@
 import * as path from 'path'
-import {normalizeSeparators} from '../src/utils'
+import {normalizeSeparators} from '../utils'
 
 describe('utils test', () => {
   const FILENAMES = path.resolve(__dirname, 'source-files.txt')
