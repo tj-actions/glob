@@ -18,7 +18,7 @@ describe('getDeletedFiles test', () => {
       filePatterns,
       baseSha: '99561ef',
       sha: '2eb2427',
-      cwd: GITHUB_WORKSPACE!,
+      cwd: GITHUB_WORKSPACE ? GITHUB_WORKSPACE : process.cwd(),
       diff: '...'
     })
 

@@ -11,7 +11,7 @@ const defaultEnv = {
   'INPUT_FOLLOW-SYMBOLIC-LINKS': 'true',
   'INPUT_MATCH-DIRECTORIES': 'true',
   'INPUT_ESCAPE-PATHS': 'false',
-  'INPUT_HEAD_REPO_FORK': 'false',
+  INPUT_HEAD_REPO_FORK: 'false',
   INPUT_SEPARATOR: ' ',
   'INPUT_STRIP-TOP-LEVEL-DIR': 'true',
   'INPUT_WORKING-DIRECTORY': '.',
@@ -20,7 +20,7 @@ const defaultEnv = {
   'INPUT_FILES-FROM-SOURCE-FILE': ''
 }
 
-function mockedEnv(testEnvVars: {[key: string]: string}) {
+function mockedEnv(testEnvVars: {[key: string]: string}): void {
   for (const key in testEnvVars) {
     process.env[key] = testEnvVars[key as keyof typeof testEnvVars]
   }

@@ -9,8 +9,8 @@ describe('cleanup test', () => {
     const pathsOutputFile = await tempfile('.txt')
     await fs.writeFile(pathsOutputFile, '12345')
 
-    const fileExists = async (path: string) =>
-      !!(await fs.stat(path).catch(() => false))
+    const fileExists = async (path: string): Promise<boolean> =>
+      !!(await fs.stat(path))
 
     // @ts-ignore
     core.getState = jest.fn().mockReturnValue(pathsOutputFile)
