@@ -222,7 +222,13 @@ export async function run(): Promise<void> {
   if (pathsOutput) {
     const pathsOutputFile = await tempfile('.txt')
 
-    await fs.writeFile(pathsOutputFile, pathsOutput)
+    try {
+      await fs.writeFile(pathsOutputFile, pathsOutput)
+    } catch (error) {
+      core.error(`Failed to create paths-output-file: ${error}`)
+      process.exit(1)
+    }
+
     core.setOutput('paths-output-file', pathsOutputFile)
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
