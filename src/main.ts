@@ -220,17 +220,12 @@ export async function run(): Promise<void> {
   const pathsOutput = paths.join(separator)
 
   if (pathsOutput) {
-    try {
-      const pathsOutputFile = await tempfile('.txt')
-      await fs.writeFile(pathsOutputFile, pathsOutput, {flag: 'w'})
+    const pathsOutputFile = await tempfile('.txt')
+    await fs.writeFile(pathsOutputFile, pathsOutput, {flag: 'w'})
 
-      core.setOutput('paths-output-file', pathsOutputFile)
-      core.saveState('paths-output-file', pathsOutputFile)
-      core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
-    } catch (error) {
-      core.setFailed(`Failed to create paths-output-file: ${error}`)
-      throw error
-    }
+    core.setOutput('paths-output-file', pathsOutputFile)
+    core.saveState('paths-output-file', pathsOutputFile)
+    core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
   }
 
   core.setOutput('paths', pathsOutput)
