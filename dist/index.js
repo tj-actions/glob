@@ -198,17 +198,11 @@ function run() {
         }
         const pathsOutput = paths.join(separator);
         if (pathsOutput) {
-            try {
-                const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
-                yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput, { flag: 'w' });
-                core.setOutput('paths-output-file', pathsOutputFile);
-                core.saveState('paths-output-file', pathsOutputFile);
-                core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
-            }
-            catch (error) {
-                core.setFailed(`Failed to create paths-output-file: ${error}`);
-                throw error;
-            }
+            const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
+            yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput, { flag: 'w' });
+            core.setOutput('paths-output-file', pathsOutputFile);
+            core.saveState('paths-output-file', pathsOutputFile);
+            core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
         }
         core.setOutput('paths', pathsOutput);
         core.setOutput('has-custom-patterns', files !== '' ||
