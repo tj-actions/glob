@@ -198,17 +198,17 @@ function run() {
         }
         const pathsOutput = paths.join(separator);
         if (pathsOutput) {
-            const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
             try {
-                yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput);
+                const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
+                yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput, { flag: 'w' });
+                core.setOutput('paths-output-file', pathsOutputFile);
+                core.saveState('paths-output-file', pathsOutputFile);
+                core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
             }
             catch (error) {
-                core.error(`Failed to create paths-output-file: ${error}`);
-                process.exit(1);
+                core.setFailed(`Failed to create paths-output-file: ${error}`);
+                throw error;
             }
-            core.setOutput('paths-output-file', pathsOutputFile);
-            core.saveState('paths-output-file', pathsOutputFile);
-            core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
         }
         core.setOutput('paths', pathsOutput);
         core.setOutput('has-custom-patterns', files !== '' ||
@@ -222,6 +222,7 @@ if (!process.env.TESTING) {
     // eslint-disable-next-line github/no-then
     run().catch(e => {
         core.setFailed(e.message || e);
+        throw e;
     });
 }
 
