@@ -199,7 +199,13 @@ function run() {
         const pathsOutput = paths.join(separator);
         if (pathsOutput) {
             const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
-            yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput);
+            try {
+                yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput);
+            }
+            catch (error) {
+                core.error(`Failed to create paths-output-file: ${error}`);
+                process.exit(1);
+            }
             core.setOutput('paths-output-file', pathsOutputFile);
             core.saveState('paths-output-file', pathsOutputFile);
             core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
