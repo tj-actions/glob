@@ -220,18 +220,17 @@ export async function run(): Promise<void> {
   const pathsOutput = paths.join(separator)
 
   if (pathsOutput) {
-    const pathsOutputFile = await tempfile('.txt')
-
     try {
-      await fs.writeFile(pathsOutputFile, pathsOutput)
-    } catch (error) {
-      core.error(`Failed to create paths-output-file: ${error}`)
-      process.exit(1)
-    }
+      const pathsOutputFile = await tempfile('.txt')
+      await fs.writeFile(pathsOutputFile, pathsOutput, {flag: 'w'})
 
-    core.setOutput('paths-output-file', pathsOutputFile)
-    core.saveState('paths-output-file', pathsOutputFile)
-    core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
+      core.setOutput('paths-output-file', pathsOutputFile)
+      core.saveState('paths-output-file', pathsOutputFile)
+      core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
+    } catch (error) {
+      core.setFailed(`Failed to create paths-output-file: ${error}`)
+      throw error
+    }
   }
 
   core.setOutput('paths', pathsOutput)
@@ -248,5 +247,6 @@ if (!process.env.TESTING) {
   // eslint-disable-next-line github/no-then
   run().catch(e => {
     core.setFailed(e.message || e)
+    throw e
   })
 }

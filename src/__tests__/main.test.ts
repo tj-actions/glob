@@ -191,3 +191,28 @@ test('returns the paths of the filtered files in the paths-output-file', async (
   expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
   expect(core.setOutput).toHaveBeenNthCalledWith(3, 'has-custom-patterns', true)
 })
+
+test('exits when the paths-output-file cannot be created', async () => {
+  mockedEnv(defaultEnv)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  const expectedError = new Error('Cannot create file')
+
+  // @ts-ignore
+  tempfile = jest.fn().mockRejectedValue(expectedError)
+
+  // @ts-ignore
+  core.setFailed = jest.fn()
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await expect(run()).rejects.toThrow(expectedError)
+
+  expect(core.setOutput).not.toHaveBeenCalled()
+  expect(core.setFailed).toHaveBeenCalledWith(
+    `Failed to create paths-output-file: ${expectedError}`
+  )
+})
