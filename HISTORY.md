@@ -1,12 +1,25 @@
 # Changelog
 
+## [v16.5](https://github.com/tj-actions/glob/tree/v16.5) (2022-12-13)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16...v16.5)
+
+## [v16](https://github.com/tj-actions/glob/tree/v16) (2022-12-13)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16.4...v16)
+
+**Merged pull requests:**
+
+- chore: remove unused code [\#566](https://github.com/tj-actions/glob/pull/566) ([jackton1](https://github.com/jackton1))
+- feat: exit on failure to create tempfile [\#565](https://github.com/tj-actions/glob/pull/565) ([jackton1](https://github.com/jackton1))
+- Update dependency @types/node to v18.11.14 [\#564](https://github.com/tj-actions/glob/pull/564) ([renovate[bot]](https://github.com/apps/renovate))
+- Roll back dependency @types/node to 18.11.13 [\#563](https://github.com/tj-actions/glob/pull/563) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump @types/node from 18.11.13 to 18.11.14 [\#562](https://github.com/tj-actions/glob/pull/562) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Upgraded to v16.4 [\#561](https://github.com/tj-actions/glob/pull/561) ([jackton1](https://github.com/jackton1))
+
 ## [v16.4](https://github.com/tj-actions/glob/tree/v16.4) (2022-12-12)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v16...v16.4)
-
-## [v16](https://github.com/tj-actions/glob/tree/v16) (2022-12-12)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v16.3...v16)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16.3...v16.4)
 
 **Merged pull requests:**
 
@@ -173,7 +186,7 @@
 
 ## [v15.0](https://github.com/tj-actions/glob/tree/v15.0) (2022-10-11)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v14...v15.0)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v14.0...v15.0)
 
 **Merged pull requests:**
 
@@ -190,13 +203,13 @@
 - Bump @types/node from 18.8.1 to 18.8.2 [\#437](https://github.com/tj-actions/glob/pull/437) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Upgraded to v14.0 [\#436](https://github.com/tj-actions/glob/pull/436) ([jackton1](https://github.com/jackton1))
 
-## [v14](https://github.com/tj-actions/glob/tree/v14) (2022-10-04)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v14.0...v14)
-
 ## [v14.0](https://github.com/tj-actions/glob/tree/v14.0) (2022-10-04)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v13.3...v14.0)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v14...v14.0)
+
+## [v14](https://github.com/tj-actions/glob/tree/v14) (2022-10-04)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v13.3...v14)
 
 **Merged pull requests:**
 
