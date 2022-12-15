@@ -1,12 +1,27 @@
 # Changelog
 
+## [v16.6](https://github.com/tj-actions/glob/tree/v16.6) (2022-12-15)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16...v16.6)
+
+## [v16](https://github.com/tj-actions/glob/tree/v16) (2022-12-15)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16.5...v16)
+
+**Implemented enhancements:**
+
+- \[gitignore\] optionally include directories that are a part of gitignore in the glob [\#554](https://github.com/tj-actions/glob/issues/554)
+
+**Merged pull requests:**
+
+- Updated README.md [\#570](https://github.com/tj-actions/glob/pull/570) ([jackton1](https://github.com/jackton1))
+- feat: add support for matching files in .gitignore [\#569](https://github.com/tj-actions/glob/pull/569) ([jackton1](https://github.com/jackton1))
+- Update dependency @types/node to v18.11.15 [\#568](https://github.com/tj-actions/glob/pull/568) ([renovate[bot]](https://github.com/apps/renovate))
+- Upgraded to v16.5 [\#567](https://github.com/tj-actions/glob/pull/567) ([jackton1](https://github.com/jackton1))
+
 ## [v16.5](https://github.com/tj-actions/glob/tree/v16.5) (2022-12-13)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v16...v16.5)
-
-## [v16](https://github.com/tj-actions/glob/tree/v16) (2022-12-13)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v16.4...v16)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16.4...v16.5)
 
 **Merged pull requests:**
 
