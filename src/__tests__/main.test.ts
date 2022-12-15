@@ -1,6 +1,7 @@
 import * as core from '@actions/core'
 import {run} from '../main'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {normalizeSeparators, tempfile} from '../utils'
 
 const defaultEnv = {
@@ -10,6 +11,7 @@ const defaultEnv = {
   'INPUT_EXCLUDED-FILES-FROM-SOURCE-FILE-SEPARATOR': '\n',
   'INPUT_FOLLOW-SYMBOLIC-LINKS': 'true',
   'INPUT_MATCH-DIRECTORIES': 'true',
+  'INPUT_MATCH-GITIGNORE-FILES': 'true',
   'INPUT_ESCAPE-PATHS': 'false',
   'INPUT_HEAD-REPO-FORK': 'false',
   INPUT_SEPARATOR: ' ',
@@ -176,12 +178,17 @@ test('returns the paths of the filtered files in the paths-output-file', async (
   // @ts-ignore
   core.setOutput = jest.fn()
 
-  const pathsOutputFile = await tempfile('.txt')
+  const {tempfile: defaultTempfile} = await import('../utils')
+
+  const pathsOutputFile = await defaultTempfile('.txt')
 
   // @ts-ignore
   tempfile = jest.fn().mockResolvedValue(pathsOutputFile)
 
   await run()
+
+  // @ts-ignore
+  tempfile = defaultTempfile
 
   expect(core.setOutput).toHaveBeenNthCalledWith(
     1,
@@ -200,8 +207,90 @@ test('exits when the paths-output-file cannot be created', async () => {
 
   const expectedError = new Error('Cannot create file')
 
+  const {tempfile: defaultTempfile} = await import('../utils')
+
   // @ts-ignore
   tempfile = jest.fn().mockRejectedValue(expectedError)
 
   await expect(run()).rejects.toThrow(expectedError)
+
+  // @ts-ignore
+  tempfile = defaultTempfile
+})
+
+test('excludes default excluded files', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: '**/node_modules/**\n.git/**',
+    'INPUT_FILES-FROM-SOURCE-FILE': 'src/__tests__/source-files.txt'
+  })
+
+  const EXPECTED_FILENAMES = [
+    '.github/workflows/greetings.yml',
+    'CODE_OF_CONDUCT.md',
+    'CONTRIBUTING.md',
+    'HISTORY.md',
+    'README.md'
+  ]
+    .map(fName => normalizeSeparators(fName))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
+})
+
+test('includes patterns provided in the files input that are excluded in the .gitignore file', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: 'coverage/clover.xml',
+    'INPUT_FILES-FROM-SOURCE-FILE': 'src/__tests__/source-files.txt'
+  })
+
+  const EXPECTED_FILENAMES = [
+    '.github/workflows/greetings.yml',
+    'CODE_OF_CONDUCT.md',
+    'CONTRIBUTING.md',
+    'HISTORY.md',
+    'README.md',
+    'coverage/clover.xml'
+  ]
+    .map(fName => normalizeSeparators(fName))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
+})
+
+test('excludes patterns provided in the files input that are excluded in the .gitignore file when match-gitignore-files is false', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: 'coverage/clover.xml',
+    'INPUT_FILES-FROM-SOURCE-FILE': 'src/__tests__/source-files.txt',
+    'INPUT_MATCH-GITIGNORE-FILES': 'false'
+  })
+
+  const EXPECTED_FILENAMES = [
+    '.github/workflows/greetings.yml',
+    'CODE_OF_CONDUCT.md',
+    'CONTRIBUTING.md',
+    'HISTORY.md',
+    'README.md'
+  ]
+    .map(fName => normalizeSeparators(fName))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
