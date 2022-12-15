@@ -40,10 +40,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.run = void 0;
-const path = __importStar(__nccwpck_require__(1017));
 const core = __importStar(__nccwpck_require__(2186));
 const glob = __importStar(__nccwpck_require__(8090));
 const fs_1 = __nccwpck_require__(7147);
+const path = __importStar(__nccwpck_require__(1017));
 const utils_1 = __nccwpck_require__(918);
 const DEFAULT_EXCLUDED_FILES = [
     '!.git/**',
@@ -74,6 +74,9 @@ function run() {
         const matchDirectories = core.getBooleanInput('match-directories', {
             required: false
         });
+        const matchGitignoreFiles = core.getBooleanInput('match-gitignore-files', {
+            required: true
+        });
         const separator = core.getInput('separator', {
             required: true,
             trimWhitespace: false
@@ -90,15 +93,11 @@ function run() {
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
+        const globOptions = {
+            followSymbolicLinks,
+            matchDirectories
+        };
         const gitignorePath = path.join(workingDirectory, '.gitignore');
-        let gitignoreExcludedFiles = [];
-        if ((0, fs_1.existsSync)(gitignorePath)) {
-            gitignoreExcludedFiles = yield (0, utils_1.getFilesFromSourceFile)({
-                filePaths: [gitignorePath],
-                excludedFiles: true
-            });
-        }
-        core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`);
         let filePatterns = files
             .split(filesSeparator)
             .filter(p => p !== '')
@@ -149,9 +148,7 @@ function run() {
                 filePatterns += `\n${excludedFilesFromSourceFiles}`;
             }
         }
-        filePatterns += `\n${[...DEFAULT_EXCLUDED_FILES, ...gitignoreExcludedFiles]
-            .filter(p => !!p)
-            .join('\n')}`;
+        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.filter(p => !!p).join('\n')}`;
         filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
             .map(pt => {
             const parts = pt.split(path.sep);
@@ -168,16 +165,36 @@ function run() {
             return isExcluded ? `!${p}` : p;
         })
             .join('\n');
+        let allInclusive = false;
         if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {
+            allInclusive = true;
             filePatterns = `**\n${filePatterns}`;
         }
         core.debug(`file patterns: ${filePatterns}`);
-        const globOptions = {
-            followSymbolicLinks,
-            matchDirectories
-        };
         const globber = yield glob.create(filePatterns, globOptions);
         let paths = yield globber.glob();
+        if ((0, fs_1.existsSync)(gitignorePath)) {
+            const gitignoreFilePatterns = (yield (0, utils_1.getFilesFromSourceFile)({
+                filePaths: [gitignorePath]
+            }))
+                .filter(p => !!p)
+                .map(pt => {
+                const parts = pt.split(path.sep);
+                const absolutePath = path.resolve(path.join(workingDirectory, parts[0]));
+                return path.join(absolutePath, ...parts.slice(1));
+            })
+                .join('\n');
+            const gitIgnoreGlobber = yield glob.create(gitignoreFilePatterns, globOptions);
+            const gitignoreMatchingFiles = yield gitIgnoreGlobber.glob();
+            if (allInclusive || !matchGitignoreFiles) {
+                paths = paths.filter(p => !gitignoreMatchingFiles.includes(p));
+            }
+            else if (matchGitignoreFiles) {
+                paths = paths.filter(p => ![
+                    ...gitignoreMatchingFiles.filter(pt => !paths.filter(pf => !pf.startsWith('!')).includes(pt))
+                ].includes(p));
+            }
+        }
         if (includeDeletedFiles) {
             paths = paths.concat(yield (0, utils_1.getDeletedFiles)({
                 filePatterns,

@@ -22,6 +22,11 @@ jobs:
           cache: 'yarn'
           node-version: '16.x'
 
+      - name: Create coverage directory and clover.xml
+        run: |
+          mkdir -p coverage
+          touch coverage/clover.xml
+
       - name: Install dependencies
         run: |
           yarn install
