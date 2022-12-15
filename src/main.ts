@@ -1,14 +1,14 @@
-import {GlobOptions} from '@actions/glob'
-import * as path from 'path'
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
+import {GlobOptions} from '@actions/glob'
 import {existsSync, promises as fs} from 'fs'
+import * as path from 'path'
 
 import {
+  escapeString,
   getDeletedFiles,
   getFilesFromSourceFile,
   normalizeSeparators,
-  escapeString,
   tempfile
 } from './utils'
 
@@ -74,18 +74,12 @@ export async function run(): Promise<void> {
     core.getInput('working-directory', {required: true})
   )
 
-  const gitignorePath = path.join(workingDirectory, '.gitignore')
-
-  let gitignoreExcludedFiles: string[] = []
-
-  if (existsSync(gitignorePath)) {
-    gitignoreExcludedFiles = await getFilesFromSourceFile({
-      filePaths: [gitignorePath],
-      excludedFiles: true
-    })
+  const globOptions: GlobOptions = {
+    followSymbolicLinks,
+    matchDirectories
   }
 
-  core.debug(`.gitignore excluded files: ${gitignoreExcludedFiles.join(', ')}`)
+  const gitignorePath = path.join(workingDirectory, '.gitignore')
 
   let filePatterns = files
     .split(filesSeparator)
@@ -154,9 +148,7 @@ export async function run(): Promise<void> {
     }
   }
 
-  filePatterns += `\n${[...DEFAULT_EXCLUDED_FILES, ...gitignoreExcludedFiles]
-    .filter(p => !!p)
-    .join('\n')}`
+  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.filter(p => !!p).join('\n')}`
 
   filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
     .map(pt => {
@@ -179,18 +171,54 @@ export async function run(): Promise<void> {
     })
     .join('\n')
 
+  let allInclusive = false
+
   if (filePatterns.split('\n').filter(p => !p.startsWith('!')).length === 0) {
+    allInclusive = true
     filePatterns = `**\n${filePatterns}`
   }
 
   core.debug(`file patterns: ${filePatterns}`)
 
-  const globOptions: GlobOptions = {
-    followSymbolicLinks,
-    matchDirectories
-  }
   const globber = await glob.create(filePatterns, globOptions)
   let paths = await globber.glob()
+
+  if (existsSync(gitignorePath)) {
+    const gitignoreFilePatterns = (
+      await getFilesFromSourceFile({
+        filePaths: [gitignorePath]
+      })
+    )
+      .filter(p => !!p)
+      .map(pt => {
+        const parts = pt.split(path.sep)
+
+        const absolutePath = path.resolve(path.join(workingDirectory, parts[0]))
+
+        return path.join(absolutePath, ...parts.slice(1))
+      })
+      .join('\n')
+
+    const gitIgnoreGlobber = await glob.create(
+      gitignoreFilePatterns,
+      globOptions
+    )
+
+    const gitignoreMatchingFiles = await gitIgnoreGlobber.glob()
+
+    if (allInclusive) {
+      paths = paths.filter(p => !gitignoreMatchingFiles.includes(p))
+    } else {
+      paths = paths.filter(
+        p =>
+          ![
+            ...gitignoreMatchingFiles.filter(
+              pt => !paths.filter(pf => !pf.startsWith('!')).includes(pt)
+            )
+          ].includes(p)
+      )
+    }
+  }
 
   if (includeDeletedFiles) {
     paths = paths.concat(
