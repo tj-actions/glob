@@ -41,6 +41,10 @@ inputs:
     description: 'Indicates whether to include match directories'
     default: "true"
     required: true
+  match-gitignore-files:
+    description: 'Indicates whether to match files in `.gitignore`'
+    default: "true"
+    required: true
   separator:
     description: 'Separator used for the paths output.'
     required: true

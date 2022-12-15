@@ -52,6 +52,9 @@ export async function run(): Promise<void> {
   const matchDirectories = core.getBooleanInput('match-directories', {
     required: false
   })
+  const matchGitignoreFiles = core.getBooleanInput('match-gitignore-files', {
+    required: true
+  })
   const separator = core.getInput('separator', {
     required: true,
     trimWhitespace: false
@@ -206,9 +209,9 @@ export async function run(): Promise<void> {
 
     const gitignoreMatchingFiles = await gitIgnoreGlobber.glob()
 
-    if (allInclusive) {
+    if (allInclusive || !matchGitignoreFiles) {
       paths = paths.filter(p => !gitignoreMatchingFiles.includes(p))
-    } else {
+    } else if (matchGitignoreFiles) {
       paths = paths.filter(
         p =>
           ![
