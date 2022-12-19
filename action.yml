@@ -80,6 +80,9 @@ inputs:
     description: 'Specify a relative path under $GITHUB_WORKSPACE to locate the repository'
     required: true
     default: '.'
+  diff:
+    description: 'Specify a diff string .. or ... used for comparing changes, when `include-deleted-files` is set to `true`'
+    required: false
 
 outputs:
   paths:
