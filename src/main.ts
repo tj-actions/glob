@@ -91,9 +91,9 @@ export async function run(): Promise<void> {
     .join('\n')
 
   core.debug(`file patterns: ${filePatterns}`)
-  
+
   let diffType = diff
-  
+
   if (!diffType) {
     diffType = !baseRef || headRepoFork ? '..' : '...'
   }
@@ -237,7 +237,7 @@ export async function run(): Promise<void> {
         baseSha,
         sha,
         cwd: workingDirectory,
-        diff: diffType,
+        diff: diffType
       })
     )
   }
