@@ -1,12 +1,35 @@
 # Changelog
 
+## [v16.7](https://github.com/tj-actions/glob/tree/v16.7) (2022-12-19)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16...v16.7)
+
+## [v16](https://github.com/tj-actions/glob/tree/v16) (2022-12-19)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16.6...v16)
+
+**Fixed bugs:**
+
+- \[BUG\] Looking for \_\_init\_\_.py is failing [\#582](https://github.com/tj-actions/glob/issues/582)
+
+**Merged pull requests:**
+
+- Updated README.md [\#585](https://github.com/tj-actions/glob/pull/585) ([jackton1](https://github.com/jackton1))
+- feat: add new diff input [\#584](https://github.com/tj-actions/glob/pull/584) ([jackton1](https://github.com/jackton1))
+- chore\(deps\): lock file maintenance [\#583](https://github.com/tj-actions/glob/pull/583) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @types/node to v18.11.17 [\#581](https://github.com/tj-actions/glob/pull/581) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency eslint to v8.30.0 [\#580](https://github.com/tj-actions/glob/pull/580) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency @types/node to v18.11.16 [\#579](https://github.com/tj-actions/glob/pull/579) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#578](https://github.com/tj-actions/glob/pull/578) ([renovate[bot]](https://github.com/apps/renovate))
+- Updated README.md [\#577](https://github.com/tj-actions/glob/pull/577) ([jackton1](https://github.com/jackton1))
+- Update dependency eslint-plugin-jest to v27.1.7 [\#576](https://github.com/tj-actions/glob/pull/576) ([renovate[bot]](https://github.com/apps/renovate))
+- chore: remove ubuntu 18.04 from test [\#575](https://github.com/tj-actions/glob/pull/575) ([jackton1](https://github.com/jackton1))
+- Update tj-actions/verify-changed-files action to v13 [\#574](https://github.com/tj-actions/glob/pull/574) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/auto-doc action to v1.6.0 [\#573](https://github.com/tj-actions/glob/pull/573) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [v16.6](https://github.com/tj-actions/glob/tree/v16.6) (2022-12-15)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v16...v16.6)
-
-## [v16](https://github.com/tj-actions/glob/tree/v16) (2022-12-15)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v16.5...v16)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v16.5...v16.6)
 
 **Implemented enhancements:**
 
@@ -14,6 +37,8 @@
 
 **Merged pull requests:**
 
+- Updated README.md [\#572](https://github.com/tj-actions/glob/pull/572) ([jackton1](https://github.com/jackton1))
+- Upgraded to v16.6 [\#571](https://github.com/tj-actions/glob/pull/571) ([jackton1](https://github.com/jackton1))
 - Updated README.md [\#570](https://github.com/tj-actions/glob/pull/570) ([jackton1](https://github.com/jackton1))
 - feat: add support for matching files in .gitignore [\#569](https://github.com/tj-actions/glob/pull/569) ([jackton1](https://github.com/jackton1))
 - Update dependency @types/node to v18.11.15 [\#568](https://github.com/tj-actions/glob/pull/568) ([renovate[bot]](https://github.com/apps/renovate))
@@ -201,7 +226,7 @@
 
 ## [v15.0](https://github.com/tj-actions/glob/tree/v15.0) (2022-10-11)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v14.0...v15.0)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v14...v15.0)
 
 **Merged pull requests:**
 
@@ -218,13 +243,13 @@
 - Bump @types/node from 18.8.1 to 18.8.2 [\#437](https://github.com/tj-actions/glob/pull/437) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Upgraded to v14.0 [\#436](https://github.com/tj-actions/glob/pull/436) ([jackton1](https://github.com/jackton1))
 
-## [v14.0](https://github.com/tj-actions/glob/tree/v14.0) (2022-10-04)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v14...v14.0)
-
 ## [v14](https://github.com/tj-actions/glob/tree/v14) (2022-10-04)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v13.3...v14)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v14.0...v14)
+
+## [v14.0](https://github.com/tj-actions/glob/tree/v14.0) (2022-10-04)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v13.3...v14.0)
 
 **Merged pull requests:**
 
@@ -819,11 +844,7 @@
 
 ## [v7.1](https://github.com/tj-actions/glob/tree/v7.1) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6.2...v7.1)
-
-## [v6.2](https://github.com/tj-actions/glob/tree/v6.2) (2022-02-14)
-
-[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v6.2)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v7...v7.1)
 
 ## [v7](https://github.com/tj-actions/glob/tree/v7) (2022-02-14)
 
@@ -831,7 +852,11 @@
 
 ## [v7.4](https://github.com/tj-actions/glob/tree/v7.4) (2022-02-14)
 
-[Full Changelog](https://github.com/tj-actions/glob/compare/v6.1...v7.4)
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6.2...v7.4)
+
+## [v6.2](https://github.com/tj-actions/glob/tree/v6.2) (2022-02-14)
+
+[Full Changelog](https://github.com/tj-actions/glob/compare/v6.1...v6.2)
 
 ## [v6.1](https://github.com/tj-actions/glob/tree/v6.1) (2022-02-14)
 
