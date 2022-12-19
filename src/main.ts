@@ -59,6 +59,7 @@ export async function run(): Promise<void> {
     required: true,
     trimWhitespace: false
   })
+  const diff = core.getInput('diff', {required: false})
   const escapePaths = core.getBooleanInput('escape-paths', {required: false})
   const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
     required: true
@@ -90,6 +91,12 @@ export async function run(): Promise<void> {
     .join('\n')
 
   core.debug(`file patterns: ${filePatterns}`)
+  
+  let diffType = diff
+  
+  if (!diffType) {
+    diffType = !baseRef || headRepoFork ? '..' : '...'
+  }
 
   if (excludedFiles !== '') {
     const excludedFilePatterns = excludedFiles
@@ -230,7 +237,7 @@ export async function run(): Promise<void> {
         baseSha,
         sha,
         cwd: workingDirectory,
-        diff: !baseRef || headRepoFork ? '..' : '...'
+        diff: diffType,
       })
     )
   }
