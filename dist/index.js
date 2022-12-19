@@ -81,6 +81,7 @@ function run() {
             required: true,
             trimWhitespace: false
         });
+        const diff = core.getInput('diff', { required: false });
         const escapePaths = core.getBooleanInput('escape-paths', { required: false });
         const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
             required: true
@@ -103,6 +104,10 @@ function run() {
             .filter(p => p !== '')
             .join('\n');
         core.debug(`file patterns: ${filePatterns}`);
+        let diffType = diff;
+        if (!diffType) {
+            diffType = !baseRef || headRepoFork ? '..' : '...';
+        }
         if (excludedFiles !== '') {
             const excludedFilePatterns = excludedFiles
                 .split(excludedFilesSeparator)
@@ -201,7 +206,7 @@ function run() {
                 baseSha,
                 sha,
                 cwd: workingDirectory,
-                diff: !baseRef || headRepoFork ? '..' : '...'
+                diff: diffType
             }));
         }
         if (stripTopLevelDir) {
