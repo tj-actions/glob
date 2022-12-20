@@ -32,7 +32,7 @@ jobs:
           yarn install
 
       - name: Run eslint on changed files
-        uses: tj-actions/eslint-changed-files@v17
+        uses: tj-actions/eslint-changed-files@v18
         with:
           token: ${{ secrets.PAT_TOKEN }}
           config_path: ".eslintrc.json"
