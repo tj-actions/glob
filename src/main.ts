@@ -78,11 +78,6 @@ export async function run(): Promise<void> {
     core.getInput('working-directory', {required: true})
   )
 
-  const globOptions: GlobOptions = {
-    followSymbolicLinks,
-    matchDirectories
-  }
-
   const gitignorePath = path.join(workingDirectory, '.gitignore')
 
   let filePatterns = files
@@ -189,6 +184,11 @@ export async function run(): Promise<void> {
   }
 
   core.debug(`file patterns: ${filePatterns}`)
+
+  const globOptions: GlobOptions = {
+    followSymbolicLinks,
+    matchDirectories
+  }
 
   const globber = await glob.create(filePatterns, globOptions)
   let paths = await globber.glob()
