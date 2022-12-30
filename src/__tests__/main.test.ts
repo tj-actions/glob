@@ -59,6 +59,65 @@ test('returns the paths of the filtered files (input files, input source files)'
   expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
 
+test('returns the paths of the filtered files (input files, input source files) with match-directories enabled', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: 'src'
+  })
+
+  const EXPECTED_FILENAMES = [
+    'src',
+    'src/__tests__',
+    'src/__tests__/cleanup.test.ts',
+    'src/__tests__/getDeletedFiles.test.ts',
+    'src/__tests__/getFilesFromSourceFile.test.ts',
+    'src/__tests__/main.test.ts',
+    'src/__tests__/source-files.txt',
+    'src/__tests__/util.test.ts',
+    'src/cleanup.ts',
+    'src/main.ts',
+    'src/utils.ts'
+  ]
+    .map(fName => normalizeSeparators(fName))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
+})
+
+test('returns the paths of the filtered files (input files, input source files) with match-directories disabled', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: 'src',
+    'INPUT_MATCH-DIRECTORIES': 'false'
+  })
+
+  const EXPECTED_FILENAMES = [
+    'src/__tests__/cleanup.test.ts',
+    'src/__tests__/getDeletedFiles.test.ts',
+    'src/__tests__/getFilesFromSourceFile.test.ts',
+    'src/__tests__/main.test.ts',
+    'src/__tests__/source-files.txt',
+    'src/__tests__/util.test.ts',
+    'src/cleanup.ts',
+    'src/main.ts',
+    'src/utils.ts'
+  ]
+    .map(fName => normalizeSeparators(fName))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
+})
+
 test('returns the paths of the all other files (input files)', async () => {
   mockedEnv({
     ...defaultEnv,
