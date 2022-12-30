@@ -94,10 +94,6 @@ function run() {
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
-        const globOptions = {
-            followSymbolicLinks,
-            matchDirectories
-        };
         const gitignorePath = path.join(workingDirectory, '.gitignore');
         let filePatterns = files
             .split(filesSeparator)
@@ -176,6 +172,10 @@ function run() {
             filePatterns = `**\n${filePatterns}`;
         }
         core.debug(`file patterns: ${filePatterns}`);
+        const globOptions = {
+            followSymbolicLinks,
+            matchDirectories
+        };
         const globber = yield glob.create(filePatterns, globOptions);
         let paths = yield globber.glob();
         if ((0, fs_1.existsSync)(gitignorePath)) {
