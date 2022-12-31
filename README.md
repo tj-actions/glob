@@ -59,12 +59,12 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 |          files-from-source-file           | string |  false   |                                                     |                                             Source file to populate the `files`<br>input                                              |
 |     files-from-source-file-separator      | string |  false   |                       `"\n"`                        |                                     Separator used to split the `files-from-source-file`<br>input                                     |
 |              files-separator              | string |  false   |                       `"\n"`                        |                                             Separator used to split the `files`<br>input                                              |
-|           follow-symbolic-links           | string |   true   |                      `"true"`                       |                                            Indicates whether to follow symbolic links<br>                                             |
+|           follow-symbolic-links           | string |   true   |                      `"true"`                       |                                              Indicates whether to follow symbolic links                                               |
 |              head-repo-fork               | string |  false   | `"${{ github.event.pull_request.head.repo.fork }}"` | Specify a boolean indicating a PR<br> from a fork is used for<br> comparing changes, when `include-deleted-files` is set<br>to `true` |
 |           include-deleted-files           | string |  false   |                      `"false"`                      |                                                  Include all matching deleted files                                                   |
-|             match-directories             | string |   true   |                      `"true"`                       |                                          Indicates whether to include match directories<br>                                           |
+|             match-directories             | string |   true   |                      `"true"`                       |                                            Indicates whether to include match directories                                             |
 |           match-gitignore-files           | string |   true   |                      `"false"`                      |                                          Indicates whether to match files in<br>`.gitignore`                                          |
-|                 separator                 | string |   true   |                        `" "`                        |                                               Separator used for the paths output.<br>                                                |
+|                 separator                 | string |   true   |                        `" "`                        |                                                 Separator used for the paths output.                                                  |
 |                    sha                    | string |   true   |                `"${{ github.sha }}"`                |             Specify a current commit SHA used<br> for comparing changes, when `include-deleted-files` is<br>set to `true`             |
 |            strip-top-level-dir            | string |  false   |                      `"true"`                       |                                       Strip the `$GITHUB_WORKSPACE` from the `paths`<br>output                                        |
 |             working-directory             | string |   true   |                        `"."`                        |                              Specify a relative path under $GITHUB\_WORKSPACE<br>to locate the repository                              |
@@ -77,7 +77,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 |       OUTPUT        |  TYPE  |                                             DESCRIPTION                                             |
 |---------------------|--------|-----------------------------------------------------------------------------------------------------|
-| has-custom-patterns | string |                           Indicates whether custom patterns were used<br>                           |
+| has-custom-patterns | string |                             Indicates whether custom patterns were used                             |
 |        paths        | string |                List of filtered paths using the<br>specified patterns and separator                 |
 |  paths-output-file  | string | List of filtered paths using the<br> specified patterns and separator stored in<br>a temporary file |
 
