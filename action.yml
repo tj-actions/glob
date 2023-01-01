@@ -64,7 +64,7 @@ inputs:
   base-ref:
     description: 'Specify a base ref used for comparing changes, when `include-deleted-files` is set to `true`'
     required: false
-    default: ${{ github.event.base.ref }}
+    default: ${{ github.event.pull_request.base.ref }}
   head-repo-fork:
     description: 'Specify a boolean indicating a PR from a fork is used for comparing changes, when `include-deleted-files` is set to `true`'
     required: false
