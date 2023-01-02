@@ -1,5 +1,8 @@
 name: build
-on: # rebuild any PRs and main branch changes
+on:
+  pull_request_review:
+    branches:
+      - main
   pull_request:
     branches:
       - main
