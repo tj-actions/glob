@@ -131,7 +131,7 @@ jobs:
         with:
           files: |
             **/*.yml
-          excluded-files:
+          excluded-files: |
             .github/workflow/rebase.yml
 
       - name: Show output
