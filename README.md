@@ -16,7 +16,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 > NOTE: :warning:
 >
-> *   Ensure that subdirectory patterns are prefixed with `**/`
+> *   Ensure that subdirectory patterns are prefixed with `**/` as `**.yml` only matches yml files in the top level directory and should be replaced with `**/*.yml`.
 > *   All multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
 
 ```yaml
