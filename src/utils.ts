@@ -87,7 +87,7 @@ async function getPatterns(filePatterns: string): Promise<Pattern[]> {
 
   const lines = filePatterns.split('\n').map(filePattern => filePattern.trim())
 
-  for (let line of lines) {
+  for (const line of lines) {
     // Empty or comment
     if (!(!line || line.startsWith('#'))) {
       line = IS_WINDOWS ? line.replace(/\\/g, '/') : line
