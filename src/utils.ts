@@ -77,6 +77,41 @@ export async function deletedGitFiles({
   return deletedFiles
 }
 
+async function getPatterns(filePatterns: string): Promise<Pattern[]> {
+  const patterns = []
+
+  if (IS_WINDOWS) {
+    filePatterns = filePatterns.replace(/\r\n/g, '\n')
+    filePatterns = filePatterns.replace(/\r/g, '\n')
+  }
+
+  const lines = filePatterns.split('\n').map(filePattern => filePattern.trim())
+
+  for (let line of lines) {
+    // Empty or comment
+    if (!(!line || line.startsWith('#'))) {
+      line = IS_WINDOWS ? line.replace(/\\/g, '/') : line
+      const pattern = new Pattern(line)
+      // @ts-ignore
+      pattern.minimatch.options.nobrace = false
+      // @ts-ignore
+      pattern.minimatch.make()
+      patterns.push(pattern)
+
+      if (
+        pattern.trailingSeparator ||
+        pattern.segments[pattern.segments.length - 1] !== '**'
+      ) {
+        patterns.push(
+          new Pattern(pattern.negate, true, pattern.segments.concat('**'))
+        )
+      }
+    }
+  }
+
+  return patterns
+}
+
 export async function getDeletedFiles({
   filePatterns,
   baseSha,
@@ -90,31 +125,8 @@ export async function getDeletedFiles({
   cwd: string
   diff: string
 }): Promise<string[]> {
-  const patterns = []
+  const patterns = await getPatterns(filePatterns)
   const deletedFiles = []
-
-  if (IS_WINDOWS) {
-    filePatterns = filePatterns.replace(/\r\n/g, '\n')
-    filePatterns = filePatterns.replace(/\r/g, '\n')
-  }
-
-  const lines = filePatterns.split('\n').map(filePattern => filePattern.trim())
-
-  for (const line of lines) {
-    // Empty or comment
-    if (!(!line || line.startsWith('#'))) {
-      const pattern = new Pattern(line)
-      patterns.push(pattern)
-      if (
-        pattern.trailingSeparator ||
-        pattern.segments[pattern.segments.length - 1] !== '**'
-      ) {
-        patterns.push(
-          new Pattern(pattern.negate, true, pattern.segments.concat('**'))
-        )
-      }
-    }
-  }
 
   for (const filePath of await deletedGitFiles({baseSha, sha, cwd, diff})) {
     const match = patternHelper.match(patterns, filePath)
