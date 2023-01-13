@@ -177,6 +177,12 @@ function run() {
             matchDirectories
         };
         const globber = yield glob.create(filePatterns, globOptions);
+        // @ts-ignore
+        globber.patterns.map(pattern => {
+            pattern.minimatch.options.nobrace = false;
+            pattern.minimatch.make();
+            return pattern;
+        });
         let paths = yield globber.glob();
         if ((0, fs_1.existsSync)(gitignorePath)) {
             const gitignoreFilePatterns = (yield (0, utils_1.getFilesFromSourceFile)({
@@ -357,19 +363,23 @@ function deletedGitFiles({ baseSha, sha, cwd, diff }) {
     });
 }
 exports.deletedGitFiles = deletedGitFiles;
-function getDeletedFiles({ filePatterns, baseSha, sha, cwd, diff }) {
+function getPatterns(filePatterns) {
     return __awaiter(this, void 0, void 0, function* () {
         const patterns = [];
-        const deletedFiles = [];
         if (exports.IS_WINDOWS) {
             filePatterns = filePatterns.replace(/\r\n/g, '\n');
             filePatterns = filePatterns.replace(/\r/g, '\n');
         }
         const lines = filePatterns.split('\n').map(filePattern => filePattern.trim());
-        for (const line of lines) {
+        for (let line of lines) {
             // Empty or comment
             if (!(!line || line.startsWith('#'))) {
+                line = exports.IS_WINDOWS ? line.replace(/\\/g, '/') : line;
                 const pattern = new internal_pattern_1.Pattern(line);
+                // @ts-ignore
+                pattern.minimatch.options.nobrace = false;
+                // @ts-ignore
+                pattern.minimatch.make();
                 patterns.push(pattern);
                 if (pattern.trailingSeparator ||
                     pattern.segments[pattern.segments.length - 1] !== '**') {
@@ -377,6 +387,13 @@ function getDeletedFiles({ filePatterns, baseSha, sha, cwd, diff }) {
                 }
             }
         }
+        return patterns;
+    });
+}
+function getDeletedFiles({ filePatterns, baseSha, sha, cwd, diff }) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const patterns = yield getPatterns(filePatterns);
+        const deletedFiles = [];
         for (const filePath of yield deletedGitFiles({ baseSha, sha, cwd, diff })) {
             const match = patternHelper.match(patterns, filePath);
             if (match) {
