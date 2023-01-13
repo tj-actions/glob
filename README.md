@@ -30,8 +30,8 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
         with:
           files: |
             *.md
-            **.yaml
-            **.yml
+            *.yaml
+            **/*.yaml
             !action.yml
             **/rebase.yml
 
