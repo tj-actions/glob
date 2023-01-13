@@ -353,3 +353,28 @@ test('excludes patterns provided in the files input that are excluded in the .gi
 
   expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
+
+test('matched file patterns with braces are expanded', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: 'src/__tests__/*.{txt,ts}'
+  })
+
+  const EXPECTED_FILENAMES = [
+    'src/__tests__/cleanup.test.ts',
+    'src/__tests__/getDeletedFiles.test.ts',
+    'src/__tests__/getFilesFromSourceFile.test.ts',
+    'src/__tests__/main.test.ts',
+    'src/__tests__/source-files.txt',
+    'src/__tests__/util.test.ts'
+  ]
+    .map(fName => normalizeSeparators(fName))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
+})

@@ -191,6 +191,12 @@ export async function run(): Promise<void> {
   }
 
   const globber = await glob.create(filePatterns, globOptions)
+  // @ts-ignore
+  globber.patterns.map(pattern => {
+    pattern.minimatch.options.nobrace = false
+    pattern.minimatch.make()
+    return pattern
+  })
   let paths = await globber.glob()
 
   if (existsSync(gitignorePath)) {
