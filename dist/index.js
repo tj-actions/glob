@@ -225,6 +225,10 @@ function run() {
             paths = paths.map((p) => (0, utils_1.escapeString)(p));
         }
         const pathsOutput = paths.join(separator);
+        const hasCustomPatterns = files !== '' ||
+            filesFromSourceFile !== '' ||
+            excludedFiles !== '' ||
+            excludedFilesFromSourceFile !== '';
         if (pathsOutput) {
             const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
             yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput, { flag: 'w' });
@@ -232,11 +236,11 @@ function run() {
             core.saveState('paths-output-file', pathsOutputFile);
             core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
         }
+        else if (hasCustomPatterns) {
+            core.warning('No paths found using the specified patterns');
+        }
         core.setOutput('paths', pathsOutput);
-        core.setOutput('has-custom-patterns', files !== '' ||
-            filesFromSourceFile !== '' ||
-            excludedFiles !== '' ||
-            excludedFilesFromSourceFile !== '');
+        core.setOutput('has-custom-patterns', hasCustomPatterns);
     });
 }
 exports.run = run;
