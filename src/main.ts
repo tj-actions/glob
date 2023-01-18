@@ -277,7 +277,7 @@ export async function run(): Promise<void> {
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
   } else if (hasCustomPatterns) {
-    core.warning('No paths found using the specified patterns')
+    core.setFailed('No paths found using the specified patterns')
   }
 
   core.setOutput('paths', pathsOutput)
