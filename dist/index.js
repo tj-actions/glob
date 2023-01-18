@@ -237,7 +237,7 @@ function run() {
             core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
         }
         else if (hasCustomPatterns) {
-            core.warning('No paths found using the specified patterns');
+            throw new Error('No paths found using the specified patterns');
         }
         core.setOutput('paths', pathsOutput);
         core.setOutput('has-custom-patterns', hasCustomPatterns);
@@ -349,13 +349,13 @@ function deletedGitFiles({ baseSha, sha, cwd, diff }) {
             cwd
         });
         if (topDirStderr || topDirExitCode !== 0) {
-            core.setFailed(topDirStderr || 'An unexpected error occurred');
+            throw new Error(topDirStderr || 'An unexpected error occurred');
         }
         const topLevelDir = topDirStdout.trim();
         core.debug(`top level directory: ${topLevelDir}`);
         const { exitCode, stdout, stderr } = yield exec.getExecOutput('git', ['diff', '--diff-filter=D', '--name-only', `${baseSha}${diff}${sha}`], { cwd });
         if (stderr || exitCode !== 0) {
-            core.setFailed(stderr || 'An unexpected error occurred');
+            throw new Error(stderr || 'An unexpected error occurred');
         }
         const deletedFiles = stdout
             .split('\n')
@@ -415,7 +415,9 @@ function lineOfFileGenerator({ filePath, excludedFiles }) {
     return __asyncGenerator(this, arguments, function* lineOfFileGenerator_1() {
         var _a, e_1, _b, _c;
         const fileStream = (0, fs_1.createReadStream)(filePath);
-        fileStream.on('error', (error) => core.setFailed(error));
+        fileStream.on('error', error => {
+            throw error;
+        });
         const rl = (0, readline_1.createInterface)({
             input: fileStream,
             crlfDelay: Infinity
