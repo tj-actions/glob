@@ -220,9 +220,16 @@ jobs:
       - name: Run glob with invalid patterns
         uses: ./
         id: glob-invalid
+        continue-on-error: true
         with:
           files: |
             - *.md
+
+      - name: Exit with 1 if no error is raised
+        if: steps.glob-invalid.outcome != 'failure'
+        run: |
+          echo "Expected: (failure) got ${{ steps.changed-files.outcome }}"
+          exit 1
 
       - name: Show output
         if: steps.glob-invalid.outputs.paths != '' || steps.glob-invalid.outputs.paths-output-file != ''
