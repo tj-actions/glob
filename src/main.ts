@@ -288,6 +288,5 @@ if (!process.env.TESTING) {
   // eslint-disable-next-line github/no-then
   run().catch(e => {
     core.setFailed(e.message || e)
-    throw e
   })
 }
