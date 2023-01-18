@@ -1,3 +1,4 @@
+import {ExitCode} from '@actions/core'
 import * as core from '@actions/core'
 import {run} from '../main'
 
@@ -379,7 +380,7 @@ test('matched file patterns with braces are expanded', async () => {
   expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
 
-test('warnings are logged when files are not found', async () => {
+test('error raised when files are not found', async () => {
   mockedEnv({
     ...defaultEnv,
     INPUT_FILES: 'src/__tests__/not-found.txt'
