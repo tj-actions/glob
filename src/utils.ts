@@ -49,7 +49,7 @@ export async function deletedGitFiles({
   })
 
   if (topDirStderr || topDirExitCode !== 0) {
-    core.setFailed(topDirStderr || 'An unexpected error occurred')
+    throw new Error(topDirStderr || 'An unexpected error occurred')
   }
 
   const topLevelDir = topDirStdout.trim()
@@ -63,7 +63,7 @@ export async function deletedGitFiles({
   )
 
   if (stderr || exitCode !== 0) {
-    core.setFailed(stderr || 'An unexpected error occurred')
+    throw new Error(stderr || 'An unexpected error occurred')
   }
 
   const deletedFiles = stdout
@@ -150,7 +150,9 @@ async function* lineOfFileGenerator({
   excludedFiles: boolean
 }): AsyncIterableIterator<string> {
   const fileStream = createReadStream(filePath)
-  fileStream.on('error', (error: string | Error) => core.setFailed(error))
+  fileStream.on('error', error => {
+    throw error
+  })
   const rl = createInterface({
     input: fileStream,
     crlfDelay: Infinity
