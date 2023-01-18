@@ -277,7 +277,7 @@ export async function run(): Promise<void> {
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
   } else if (hasCustomPatterns) {
-    core.warning('No paths found using the specified patterns')
+    throw new Error('No paths found using the specified patterns')
   }
 
   core.setOutput('paths', pathsOutput)
@@ -288,6 +288,5 @@ if (!process.env.TESTING) {
   // eslint-disable-next-line github/no-then
   run().catch(e => {
     core.setFailed(e.message || e)
-    throw e
   })
 }
