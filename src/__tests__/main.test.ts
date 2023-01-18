@@ -386,6 +386,5 @@ test('warnings are logged when files are not found', async () => {
   })
 
   const expectedError = new Error('No paths found using the specified patterns')
-  
   await expect(run()).rejects.toThrow(expectedError)
 })
