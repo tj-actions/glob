@@ -263,6 +263,12 @@ export async function run(): Promise<void> {
 
   const pathsOutput = paths.join(separator)
 
+  const hasCustomPatterns =
+    files !== '' ||
+    filesFromSourceFile !== '' ||
+    excludedFiles !== '' ||
+    excludedFilesFromSourceFile !== ''
+
   if (pathsOutput) {
     const pathsOutputFile = await tempfile('.txt')
     await fs.writeFile(pathsOutputFile, pathsOutput, {flag: 'w'})
@@ -270,16 +276,12 @@ export async function run(): Promise<void> {
     core.setOutput('paths-output-file', pathsOutputFile)
     core.saveState('paths-output-file', pathsOutputFile)
     core.info(`Successfully created paths-output-file: ${pathsOutputFile}`)
+  } else if (hasCustomPatterns) {
+    core.warning('No paths found using the specified patterns')
   }
 
   core.setOutput('paths', pathsOutput)
-  core.setOutput(
-    'has-custom-patterns',
-    files !== '' ||
-      filesFromSourceFile !== '' ||
-      excludedFiles !== '' ||
-      excludedFilesFromSourceFile !== ''
-  )
+  core.setOutput('has-custom-patterns', hasCustomPatterns)
 }
 
 if (!process.env.TESTING) {
