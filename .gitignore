@@ -104,3 +104,5 @@ lib/**/*
 
 # Pycharm
 .idea/
+
+!test.txt

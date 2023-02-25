@@ -189,6 +189,7 @@ function run() {
                 filePaths: [gitignorePath]
             }))
                 .filter(p => !!p)
+                .filter(p => !p.startsWith('!'))
                 .map(pt => {
                 const parts = pt.split(path.sep);
                 const absolutePath = path.resolve(path.join(workingDirectory, parts[0]));
