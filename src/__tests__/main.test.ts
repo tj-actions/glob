@@ -73,6 +73,7 @@ test('returns the paths of the filtered files (input files, input source files) 
     'src/__tests__/getFilesFromSourceFile.test.ts',
     'src/__tests__/main.test.ts',
     'src/__tests__/source-files.txt',
+    'src/__tests__/test.txt',
     'src/__tests__/util.test.ts',
     'src/cleanup.ts',
     'src/main.ts',
@@ -102,6 +103,7 @@ test('returns the paths of the filtered files (input files, input source files) 
     'src/__tests__/getFilesFromSourceFile.test.ts',
     'src/__tests__/main.test.ts',
     'src/__tests__/source-files.txt',
+    'src/__tests__/test.txt',
     'src/__tests__/util.test.ts',
     'src/cleanup.ts',
     'src/main.ts',
@@ -163,6 +165,7 @@ test('returns the paths of the filtered files (input files)', async () => {
     'src/__tests__/getFilesFromSourceFile.test.ts',
     'src/__tests__/main.test.ts',
     'src/__tests__/source-files.txt',
+    'src/__tests__/test.txt',
     'src/__tests__/util.test.ts',
     'entrypoint.sh'
   ]
@@ -384,6 +387,7 @@ test('matched file patterns with braces are expanded', async () => {
     'src/__tests__/getFilesFromSourceFile.test.ts',
     'src/__tests__/main.test.ts',
     'src/__tests__/source-files.txt',
+    'src/__tests__/test.txt',
     'src/__tests__/util.test.ts'
   ]
     .map(fName => normalizeSeparators(fName))
