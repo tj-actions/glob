@@ -206,6 +206,7 @@ export async function run(): Promise<void> {
       })
     )
       .filter(p => !!p)
+      .filter(p => !p.startsWith('!'))
       .map(pt => {
         const parts = pt.split(path.sep)
 
