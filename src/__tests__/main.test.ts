@@ -328,6 +328,24 @@ test('includes patterns provided in the files input that are excluded in the .gi
   expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
 
+test('includes patterns provided in the files input that are included in the .gitignore file', async () => {
+  mockedEnv({
+    ...defaultEnv,
+    INPUT_FILES: 'src/__tests__/test.txt'
+  })
+
+  const EXPECTED_FILENAMES = ['src/__tests__/test.txt']
+    .map(fName => normalizeSeparators(fName))
+    .join(process.env.INPUT_SEPARATOR)
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
+})
+
 test('excludes patterns provided in the files input that are excluded in the .gitignore file when match-gitignore-files is false', async () => {
   mockedEnv({
     ...defaultEnv,
