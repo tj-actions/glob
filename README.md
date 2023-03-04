@@ -76,7 +76,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 |       OUTPUT        |  TYPE  |                                             DESCRIPTION                                             |
 |---------------------|--------|-----------------------------------------------------------------------------------------------------|
-| has-custom-patterns | string |                             Indicates whether custom patterns were used                             |
+| has-custom-patterns | string |                       Indicates whether at least one pattern<br>was provided                        |
 |        paths        | string |                List of filtered paths using the<br>specified patterns and separator                 |
 |  paths-output-file  | string | List of filtered paths using the<br> specified patterns and separator stored in<br>a temporary file |
 
