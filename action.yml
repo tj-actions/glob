@@ -90,7 +90,7 @@ outputs:
   paths-output-file:
     description: "List of filtered paths using the specified patterns and separator stored in a temporary file"
   has-custom-patterns:
-    description: "Indicates whether custom patterns were used"
+    description: "Indicates whether at least one pattern was provided"
 
 runs:
   using: 'node16'
