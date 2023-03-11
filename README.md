@@ -96,10 +96,10 @@ File and Directory patterns are evaluted using [minimatch](https://github.com/is
 *   [noext](https://github.com/isaacs/minimatch#noext)
 *   [nonegate](https://github.com/isaacs/minimatch#nonegate): This is handled by the [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob) package.
 
-#### Optionally enabled options
+#### Optionally enabled
 *   [nocase](https://github.com/isaacs/minimatch#nobrace): Enabled for windows
 
-#### Disabled options
+#### Disabled
 *   [nobrace](https://github.com/isaacs/minimatch#nobrace): Ensures that brace or brace sets can be used.
 
 ### Pattern Gotcha
