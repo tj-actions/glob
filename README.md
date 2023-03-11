@@ -12,6 +12,8 @@
 
 Search for files matching [glob patterns](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet) with support for returning matching deleted git tracked files and also excludes all files and folders specified in `.gitignore` and the `.git` directory.
 
+## Table of Contents
+
 ## Usage
 
 > NOTE: :warning:
@@ -84,17 +86,21 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 ## Path filtering
 
-*   file and directory patterns are evaluted using [minimatch](https://github.com/isaacs/minimatch) with the help of the [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob) package.
+File and Directory patterns are evaluted using [minimatch](https://github.com/isaacs/minimatch) with the help of the [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob) package.
 
-    *   Enabled [minimatch options](https://github.com/isaacs/minimatch#options)
-        *   [dot](https://github.com/isaacs/minimatch#dot)
-        *   [nocomment](https://github.com/isaacs/minimatch#nocomment)
-        *   [noext](https://github.com/isaacs/minimatch#noext)
-        *   [nonegate](https://github.com/isaacs/minimatch#nonegate): This is handled by the [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob) package.
-    *   Optionally enabled options
-        *   [nocase](https://github.com/isaacs/minimatch#nobrace): Enabled for windows
-    *   Disabled options
-        *   [nobrace](https://github.com/isaacs/minimatch#nobrace): Ensures that brace or brace sets can be used.
+### [minimatch options](https://github.com/isaacs/minimatch#options)
+
+#### Enabled
+*   [dot](https://github.com/isaacs/minimatch#dot)
+*   [nocomment](https://github.com/isaacs/minimatch#nocomment)
+*   [noext](https://github.com/isaacs/minimatch#noext)
+*   [nonegate](https://github.com/isaacs/minimatch#nonegate): This is handled by the [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob) package.
+
+#### Optionally enabled options
+*   [nocase](https://github.com/isaacs/minimatch#nobrace): Enabled for windows
+
+#### Disabled options
+*   [nobrace](https://github.com/isaacs/minimatch#nobrace): Ensures that brace or brace sets can be used.
 
 ### Pattern Gotcha
 
