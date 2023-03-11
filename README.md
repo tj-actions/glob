@@ -14,6 +14,24 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 ## Table of Contents
 
+*   [Usage](#usage)
+*   [Inputs](#inputs)
+*   [Outputs](#outputs)
+*   [Path filtering](#path-filtering)
+    *   [minimatch options](#minimatch-options)
+        *   [Enabled](#enabled)
+        *   [Optionally enabled](#optionally-enabled)
+        *   [Disabled](#disabled)
+    *   [Pattern Gotcha](#pattern-gotcha)
+*   [Patterns](#patterns)
+    *   [Glob behavior](#glob-behavior)
+    *   [Tilde expansion](#tilde-expansion)
+    *   [Comments](#comments)
+    *   [Exclude patterns](#exclude-patterns)
+    *   [Escaping](#escaping)
+*   [Credits](#credits)
+*   [Report Bugs](#report-bugs)
+
 ## Usage
 
 > NOTE: :warning:
@@ -91,15 +109,18 @@ File and Directory patterns are evaluted using [minimatch](https://github.com/is
 ### [minimatch options](https://github.com/isaacs/minimatch#options)
 
 #### Enabled
+
 *   [dot](https://github.com/isaacs/minimatch#dot)
 *   [nocomment](https://github.com/isaacs/minimatch#nocomment)
 *   [noext](https://github.com/isaacs/minimatch#noext)
 *   [nonegate](https://github.com/isaacs/minimatch#nonegate): This is handled by the [@actions/glob](https://github.com/actions/toolkit/tree/main/packages/glob) package.
 
 #### Optionally enabled
+
 *   [nocase](https://github.com/isaacs/minimatch#nobrace): Enabled for windows
 
 #### Disabled
+
 *   [nobrace](https://github.com/isaacs/minimatch#nobrace): Ensures that brace or brace sets can be used.
 
 ### Pattern Gotcha
