@@ -189,7 +189,6 @@ function run() {
                 filePaths: [gitignorePath]
             }))
                 .filter(p => !!p)
-                .filter(p => !p.startsWith('!'))
                 .map(pt => {
                 const parts = pt.split(path.sep);
                 const absolutePath = path.resolve(path.join(workingDirectory, parts[0]));
@@ -202,9 +201,7 @@ function run() {
                 paths = paths.filter(p => !gitignoreMatchingFiles.includes(p));
             }
             else if (matchGitignoreFiles) {
-                paths = paths.filter(p => ![
-                    ...gitignoreMatchingFiles.filter(pt => !paths.filter(pf => !pf.startsWith('!')).includes(pt))
-                ].includes(p));
+                paths = paths.filter(p => !gitignoreMatchingFiles.filter(gp => !paths.includes(gp)).includes(p));
             }
         }
         if (includeDeletedFiles) {
