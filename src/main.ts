@@ -225,8 +225,9 @@ export async function run(): Promise<void> {
     if (allInclusive || !matchGitignoreFiles) {
       paths = paths.filter(p => !gitignoreMatchingFiles.includes(p))
     } else if (matchGitignoreFiles) {
-      paths = paths.filter(p =>
-        !gitignoreMatchingFiles.filter(gp => !paths.includes(gp)).includes(p)
+      paths = paths.filter(
+        p =>
+          !gitignoreMatchingFiles.filter(gp => !paths.includes(gp)).includes(p)
       )
     }
   }
