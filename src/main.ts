@@ -206,7 +206,6 @@ export async function run(): Promise<void> {
       })
     )
       .filter(p => !!p)
-      .filter(p => !p.startsWith('!'))
       .map(pt => {
         const parts = pt.split(path.sep)
 
@@ -228,11 +227,7 @@ export async function run(): Promise<void> {
     } else if (matchGitignoreFiles) {
       paths = paths.filter(
         p =>
-          ![
-            ...gitignoreMatchingFiles.filter(
-              pt => !paths.filter(pf => !pf.startsWith('!')).includes(pt)
-            )
-          ].includes(p)
+          !gitignoreMatchingFiles.filter(gp => !paths.includes(gp)).includes(p)
       )
     }
   }
