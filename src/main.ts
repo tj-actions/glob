@@ -153,7 +153,7 @@ export async function run(): Promise<void> {
     }
   }
 
-  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.filter(p => !!p).join('\n')}`
+  filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`
 
   filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
     .map(pt => {
@@ -205,15 +205,22 @@ export async function run(): Promise<void> {
         filePaths: [gitignorePath]
       })
     )
+      .concat(DEFAULT_EXCLUDED_FILES)
       .filter(p => !!p)
       .map(pt => {
-        const parts = pt.split(path.sep)
+        const negated = pt.startsWith('!')
+        const parts = pt.replace(/^!/, '').split(path.sep)
 
         const absolutePath = path.resolve(path.join(workingDirectory, parts[0]))
 
-        return path.join(absolutePath, ...parts.slice(1))
+        return `${negated ? '!' : ''}${path.join(
+          absolutePath,
+          ...parts.slice(1)
+        )}`
       })
       .join('\n')
+
+    core.debug(`gitignore file patterns: ${gitignoreFilePatterns}`)
 
     const gitIgnoreGlobber = await glob.create(
       gitignoreFilePatterns,
