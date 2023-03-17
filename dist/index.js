@@ -149,7 +149,7 @@ function run() {
                 filePatterns += `\n${excludedFilesFromSourceFiles}`;
             }
         }
-        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.filter(p => !!p).join('\n')}`;
+        filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`;
         filePatterns = [...new Set(filePatterns.split('\n').filter(p => p !== ''))]
             .map(pt => {
             const parts = pt.split(path.sep);
@@ -188,13 +188,16 @@ function run() {
             const gitignoreFilePatterns = (yield (0, utils_1.getFilesFromSourceFile)({
                 filePaths: [gitignorePath]
             }))
+                .concat(DEFAULT_EXCLUDED_FILES)
                 .filter(p => !!p)
                 .map(pt => {
-                const parts = pt.split(path.sep);
+                const negated = pt.startsWith('!');
+                const parts = pt.replace(/^!/, '').split(path.sep);
                 const absolutePath = path.resolve(path.join(workingDirectory, parts[0]));
-                return path.join(absolutePath, ...parts.slice(1));
+                return `${negated ? '!' : ''}${path.join(absolutePath, ...parts.slice(1))}`;
             })
                 .join('\n');
+            core.debug(`gitignore file patterns: ${gitignoreFilePatterns}`);
             const gitIgnoreGlobber = yield glob.create(gitignoreFilePatterns, globOptions);
             const gitignoreMatchingFiles = yield gitIgnoreGlobber.glob();
             if (allInclusive || !matchGitignoreFiles) {
