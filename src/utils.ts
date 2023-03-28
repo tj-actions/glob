@@ -62,6 +62,8 @@ export async function deletedGitFiles({
     {cwd}
   )
 
+  core.debug(`git diff exited with: ${exitCode}`)
+
   if (stderr || exitCode !== 0) {
     throw new Error(stderr || 'An unexpected error occurred')
   }
