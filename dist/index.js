@@ -355,8 +355,11 @@ function deletedGitFiles({ baseSha, sha, cwd, diff }) {
         core.debug(`top level directory: ${topLevelDir}`);
         const { exitCode, stdout, stderr } = yield exec.getExecOutput('git', ['diff', '--diff-filter=D', '--name-only', `${baseSha}${diff}${sha}`], { cwd });
         core.debug(`git diff exited with: ${exitCode}`);
-        if (stderr || exitCode !== 0) {
+        if (exitCode !== 0) {
             throw new Error(stderr || 'An unexpected error occurred');
+        }
+        else if (stderr) {
+            core.warning(stderr);
         }
         const deletedFiles = stdout
             .split('\n')
