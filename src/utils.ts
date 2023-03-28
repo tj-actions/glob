@@ -64,8 +64,10 @@ export async function deletedGitFiles({
 
   core.debug(`git diff exited with: ${exitCode}`)
 
-  if (stderr || exitCode !== 0) {
+  if (exitCode !== 0) {
     throw new Error(stderr || 'An unexpected error occurred')
+  } else if (stderr) {
+    core.warning(stderr)
   }
 
   const deletedFiles = stdout
