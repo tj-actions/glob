@@ -108,3 +108,4 @@ lib/**/*
 **/*.txt
 !src/__tests__/test.txt
 !src/__tests__/source-files.txt
+!src/__tests__/excluded-files.txt
