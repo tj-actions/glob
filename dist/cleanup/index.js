@@ -52,6 +52,7 @@ function run() {
     });
 }
 exports.run = run;
+/* istanbul ignore if */
 if (!process.env.TESTING) {
     // eslint-disable-next-line github/no-then
     run().catch(e => {
