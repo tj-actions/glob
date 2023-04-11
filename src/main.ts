@@ -1,11 +1,12 @@
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
 import {GlobOptions} from '@actions/glob'
-import {existsSync, promises as fs} from 'fs'
+import {promises as fs} from 'fs'
 import * as path from 'path'
 
 import {
   escapeString,
+  exists,
   getDeletedFiles,
   getFilesFromSourceFile,
   normalizeSeparators,
@@ -197,9 +198,9 @@ export async function run(): Promise<void> {
     pattern.minimatch.make()
     return pattern
   })
-  let paths = await globber.glob()
+  let paths = new Set(await globber.glob())
 
-  if (existsSync(gitignorePath)) {
+  if (await exists(gitignorePath)) {
     const gitignoreFilePatterns = (
       await getFilesFromSourceFile({
         filePaths: [gitignorePath]
@@ -227,44 +228,50 @@ export async function run(): Promise<void> {
       globOptions
     )
 
-    const gitignoreMatchingFiles = await gitIgnoreGlobber.glob()
+    const gitignoreMatchingFiles = new Set(await gitIgnoreGlobber.glob())
 
     if (allInclusive || !matchGitignoreFiles) {
-      paths = paths.filter(p => !gitignoreMatchingFiles.includes(p))
+      paths = new Set([...paths].filter(p => !gitignoreMatchingFiles.has(p)))
     } else if (matchGitignoreFiles) {
-      paths = paths.filter(
-        p =>
-          !gitignoreMatchingFiles.filter(gp => !paths.includes(gp)).includes(p)
+      const excludedPaths = new Set(
+        [...gitignoreMatchingFiles].filter(gp => !paths.has(gp))
       )
+      paths = new Set([...paths].filter(p => !excludedPaths.has(p)))
     }
   }
 
   if (includeDeletedFiles) {
-    paths = paths.concat(
-      await getDeletedFiles({
+    paths = new Set<string>([
+      ...paths,
+      ...(await getDeletedFiles({
         filePatterns,
         baseSha,
         sha,
         cwd: workingDirectory,
         diff: diffType
-      })
-    )
+      }))
+    ])
   }
 
   if (stripTopLevelDir) {
-    paths = paths
-      .map((p: string) =>
-        normalizeSeparators(p.replace(workingDirectory + path.sep, ''))
-      )
-      .map((p: string) => normalizeSeparators(p.replace(workingDirectory, '')))
-      .filter((p: string) => p !== '')
+    paths = new Set(
+      [...paths]
+        .map((p: string) =>
+          normalizeSeparators(
+            p
+              .replace(workingDirectory + path.sep, '')
+              .replace(workingDirectory, '')
+          )
+        )
+        .filter((p: string) => !!p)
+    )
   }
 
   if (escapePaths) {
-    paths = paths.map((p: string) => escapeString(p))
+    paths = new Set([...paths].map(p => escapeString(p)))
   }
 
-  const pathsOutput = paths.join(separator)
+  const pathsOutput = [...paths].join(separator)
 
   const hasCustomPatterns =
     files !== '' ||
@@ -287,6 +294,7 @@ export async function run(): Promise<void> {
   core.setOutput('has-custom-patterns', hasCustomPatterns)
 }
 
+/* istanbul ignore if */
 if (!process.env.TESTING) {
   // eslint-disable-next-line github/no-then
   run().catch(e => {
