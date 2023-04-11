@@ -3,8 +3,14 @@ name: Renovate config validation
 on:
   push:
     branches: [main]
+    paths:
+      - renovate.json
+      - .github/workflows/renovate.yml
   pull_request:
     branches: [main]
+    paths:
+      - renovate.json
+      - .github/workflows/renovate.yml
 
 jobs:
   renovate-config-validation:
