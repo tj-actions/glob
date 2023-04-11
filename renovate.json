@@ -19,6 +19,9 @@
     "enabled": true,
     "automerge": true
   },
+  "nvm": {
+    "enabled": false
+  },
   "packageRules": [
     {
       "matchUpdateTypes": [
