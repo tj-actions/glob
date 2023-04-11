@@ -259,8 +259,8 @@ export async function run(): Promise<void> {
         .map((p: string) =>
           normalizeSeparators(
             p
-              .replace(new RegExp(`^${workingDirectory}${path.sep}`), '')
-              .replace(new RegExp(`^${workingDirectory}`), '')
+              .replace(workingDirectory + path.sep, '')
+              .replace(workingDirectory, '')
           )
         )
         .filter((p: string) => !!p)
