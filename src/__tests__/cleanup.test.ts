@@ -1,17 +1,8 @@
 import * as core from '@actions/core'
 import {promises as fs} from 'fs'
 
-import {tempfile} from '../utils'
+import {exists, tempfile} from '../utils'
 import {run} from '../cleanup'
-
-async function exists(path: string): Promise<boolean> {
-  try {
-    await fs.access(path)
-    return true
-  } catch {
-    return false
-  }
-}
 
 describe('cleanup test', () => {
   it('deletes the paths-output-file', async () => {

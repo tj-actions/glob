@@ -9,12 +9,11 @@ import * as patternHelper from '@actions/glob/lib/internal-pattern-helper'
 import {Pattern} from '@actions/glob/lib/internal-pattern'
 import {v4 as uuidv4} from 'uuid'
 
-export const IS_WINDOWS: boolean = process.platform === 'win32'
-
 /**
  * Converts windows path `\` to `/`
  */
 export function normalizeSeparators(filePath: string): string {
+  const IS_WINDOWS: boolean = process.platform === 'win32'
   filePath = filePath || ''
 
   // Windows
@@ -48,6 +47,7 @@ export async function deletedGitFiles({
     cwd
   })
 
+  /* istanbul ignore if */
   if (topDirStderr || topDirExitCode !== 0) {
     throw new Error(topDirStderr || 'An unexpected error occurred')
   }
@@ -64,9 +64,11 @@ export async function deletedGitFiles({
 
   core.debug(`git diff exited with: ${exitCode}`)
 
+  /* istanbul ignore if */
   if (exitCode !== 0) {
     throw new Error(stderr || 'An unexpected error occurred')
   } else if (stderr) {
+    /* istanbul ignore next */
     core.warning(stderr)
   }
 
@@ -82,6 +84,7 @@ export async function deletedGitFiles({
 }
 
 async function getPatterns(filePatterns: string): Promise<Pattern[]> {
+  const IS_WINDOWS: boolean = process.platform === 'win32'
   const patterns = []
 
   if (IS_WINDOWS) {
@@ -154,6 +157,7 @@ async function* lineOfFileGenerator({
   excludedFiles: boolean
 }): AsyncIterableIterator<string> {
   const fileStream = createReadStream(filePath)
+  /* istanbul ignore next */
   fileStream.on('error', error => {
     throw error
   })
@@ -199,4 +203,13 @@ export async function tempfile(extension = ''): Promise<string> {
 
 export function escapeString(value: string): string {
   return value.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
+}
+
+export async function exists(filePath: string): Promise<boolean> {
+  try {
+    await fs.access(filePath)
+    return true
+  } catch {
+    return false
+  }
 }

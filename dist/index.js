@@ -183,8 +183,8 @@ function run() {
             pattern.minimatch.make();
             return pattern;
         });
-        let paths = yield globber.glob();
-        if ((0, fs_1.existsSync)(gitignorePath)) {
+        let paths = new Set(yield globber.glob());
+        if (yield (0, utils_1.exists)(gitignorePath)) {
             const gitignoreFilePatterns = (yield (0, utils_1.getFilesFromSourceFile)({
                 filePaths: [gitignorePath]
             }))
@@ -199,33 +199,38 @@ function run() {
                 .join('\n');
             core.debug(`gitignore file patterns: ${gitignoreFilePatterns}`);
             const gitIgnoreGlobber = yield glob.create(gitignoreFilePatterns, globOptions);
-            const gitignoreMatchingFiles = yield gitIgnoreGlobber.glob();
+            const gitignoreMatchingFiles = new Set(yield gitIgnoreGlobber.glob());
             if (allInclusive || !matchGitignoreFiles) {
-                paths = paths.filter(p => !gitignoreMatchingFiles.includes(p));
+                paths = new Set([...paths].filter(p => !gitignoreMatchingFiles.has(p)));
             }
             else if (matchGitignoreFiles) {
-                paths = paths.filter(p => !gitignoreMatchingFiles.filter(gp => !paths.includes(gp)).includes(p));
+                const excludedPaths = new Set([...gitignoreMatchingFiles].filter(gp => !paths.has(gp)));
+                paths = new Set([...paths].filter(p => !excludedPaths.has(p)));
             }
         }
         if (includeDeletedFiles) {
-            paths = paths.concat(yield (0, utils_1.getDeletedFiles)({
-                filePatterns,
-                baseSha,
-                sha,
-                cwd: workingDirectory,
-                diff: diffType
-            }));
+            paths = new Set([
+                ...paths,
+                ...(yield (0, utils_1.getDeletedFiles)({
+                    filePatterns,
+                    baseSha,
+                    sha,
+                    cwd: workingDirectory,
+                    diff: diffType
+                }))
+            ]);
         }
         if (stripTopLevelDir) {
-            paths = paths
-                .map((p) => (0, utils_1.normalizeSeparators)(p.replace(workingDirectory + path.sep, '')))
-                .map((p) => (0, utils_1.normalizeSeparators)(p.replace(workingDirectory, '')))
-                .filter((p) => p !== '');
+            paths = new Set([...paths]
+                .map((p) => (0, utils_1.normalizeSeparators)(p
+                .replace(workingDirectory + path.sep, '')
+                .replace(workingDirectory, '')))
+                .filter((p) => !!p));
         }
         if (escapePaths) {
-            paths = paths.map((p) => (0, utils_1.escapeString)(p));
+            paths = new Set([...paths].map(p => (0, utils_1.escapeString)(p)));
         }
-        const pathsOutput = paths.join(separator);
+        const pathsOutput = [...paths].join(separator);
         const hasCustomPatterns = files !== '' ||
             filesFromSourceFile !== '' ||
             excludedFiles !== '' ||
@@ -245,6 +250,7 @@ function run() {
     });
 }
 exports.run = run;
+/* istanbul ignore if */
 if (!process.env.TESTING) {
     // eslint-disable-next-line github/no-then
     run().catch(e => {
@@ -315,7 +321,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.deletedGitFiles = exports.normalizeSeparators = exports.IS_WINDOWS = void 0;
+exports.exists = exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.deletedGitFiles = exports.normalizeSeparators = void 0;
 /*global AsyncIterableIterator*/
 const fs_1 = __nccwpck_require__(7147);
 const os_1 = __nccwpck_require__(2037);
@@ -326,14 +332,14 @@ const exec = __importStar(__nccwpck_require__(1514));
 const patternHelper = __importStar(__nccwpck_require__(9005));
 const internal_pattern_1 = __nccwpck_require__(4536);
 const uuid_1 = __nccwpck_require__(5840);
-exports.IS_WINDOWS = process.platform === 'win32';
 /**
  * Converts windows path `\` to `/`
  */
 function normalizeSeparators(filePath) {
+    const IS_WINDOWS = process.platform === 'win32';
     filePath = filePath || '';
     // Windows
-    if (exports.IS_WINDOWS) {
+    if (IS_WINDOWS) {
         // Convert slashes on Windows
         filePath = filePath.replace(/\\/g, '/');
     }
@@ -348,6 +354,7 @@ function deletedGitFiles({ baseSha, sha, cwd, diff }) {
         const { exitCode: topDirExitCode, stdout: topDirStdout, stderr: topDirStderr } = yield exec.getExecOutput('git', ['rev-parse', '--show-toplevel'], {
             cwd
         });
+        /* istanbul ignore if */
         if (topDirStderr || topDirExitCode !== 0) {
             throw new Error(topDirStderr || 'An unexpected error occurred');
         }
@@ -355,10 +362,12 @@ function deletedGitFiles({ baseSha, sha, cwd, diff }) {
         core.debug(`top level directory: ${topLevelDir}`);
         const { exitCode, stdout, stderr } = yield exec.getExecOutput('git', ['diff', '--diff-filter=D', '--name-only', `${baseSha}${diff}${sha}`], { cwd });
         core.debug(`git diff exited with: ${exitCode}`);
+        /* istanbul ignore if */
         if (exitCode !== 0) {
             throw new Error(stderr || 'An unexpected error occurred');
         }
         else if (stderr) {
+            /* istanbul ignore next */
             core.warning(stderr);
         }
         const deletedFiles = stdout
@@ -373,8 +382,9 @@ function deletedGitFiles({ baseSha, sha, cwd, diff }) {
 exports.deletedGitFiles = deletedGitFiles;
 function getPatterns(filePatterns) {
     return __awaiter(this, void 0, void 0, function* () {
+        const IS_WINDOWS = process.platform === 'win32';
         const patterns = [];
-        if (exports.IS_WINDOWS) {
+        if (IS_WINDOWS) {
             filePatterns = filePatterns.replace(/\r\n/g, '\n');
             filePatterns = filePatterns.replace(/\r/g, '\n');
         }
@@ -382,7 +392,7 @@ function getPatterns(filePatterns) {
         for (let line of lines) {
             // Empty or comment
             if (!(!line || line.startsWith('#'))) {
-                line = exports.IS_WINDOWS ? line.replace(/\\/g, '/') : line;
+                line = IS_WINDOWS ? line.replace(/\\/g, '/') : line;
                 const pattern = new internal_pattern_1.Pattern(line);
                 // @ts-ignore
                 pattern.minimatch.options.nobrace = false;
@@ -419,6 +429,7 @@ function lineOfFileGenerator({ filePath, excludedFiles }) {
     return __asyncGenerator(this, arguments, function* lineOfFileGenerator_1() {
         var _a, e_1, _b, _c;
         const fileStream = (0, fs_1.createReadStream)(filePath);
+        /* istanbul ignore next */
         fileStream.on('error', error => {
             throw error;
         });
@@ -501,6 +512,18 @@ function escapeString(value) {
     return value.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
 }
 exports.escapeString = escapeString;
+function exists(filePath) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            yield fs_1.promises.access(filePath);
+            return true;
+        }
+        catch (_a) {
+            return false;
+        }
+    });
+}
+exports.exists = exists;
 
 
 /***/ }),
