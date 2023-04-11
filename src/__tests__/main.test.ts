@@ -27,7 +27,6 @@ function mockedEnv(testEnvVars: {[key: string]: string}): void {
 }
 
 afterEach(() => {
-  // restore replaced property
   jest.restoreAllMocks()
 })
 
