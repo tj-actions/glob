@@ -86,7 +86,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 |                 separator                 | string |   true   |                        `" "`                        |                                                 Separator used for the paths output.                                                  |
 |                    sha                    | string |   true   |                `"${{ github.sha }}"`                |             Specify a current commit SHA used<br> for comparing changes, when `include-deleted-files` is<br>set to `true`             |
 |            strip-top-level-dir            | string |  false   |                      `"true"`                       |                                       Strip the `$GITHUB_WORKSPACE` from the `paths`<br>output                                        |
-|             working-directory             | string |   true   |                        `"."`                        |                              Specify a relative path under $GITHUB\_WORKSPACE<br>to locate the repository                              |
+|             working-directory             | string |   true   |                        `"."`                        |                       Provide a path that is relative<br>to `$GITHUB_WORKSPACE` for identifying the repository.                       |
 
 <!-- AUTO-DOC-INPUT:END -->
 
