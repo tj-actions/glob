@@ -77,7 +77,7 @@ inputs:
     description: 'Specify a base commit SHA used for comparing changes, when `include-deleted-files` is set to `true`'
     required: false
   working-directory:
-    description: 'Specify a relative path under $GITHUB_WORKSPACE to locate the repository'
+    description: 'Provide a path that is relative to `$GITHUB_WORKSPACE` for identifying the repository.'
     required: true
     default: '.'
   diff:
