@@ -487,12 +487,25 @@ test('matched file patterns with braces are expanded', async () => {
   expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', EXPECTED_FILENAMES)
 })
 
-test('error raised when files are not found', async () => {
+test('Warning is reported when files are not found', async () => {
   mockedEnv({
     ...defaultEnv,
     INPUT_FILES: 'src/__tests__/not-found.txt'
   })
 
-  const expectedError = new Error('No paths found using the specified patterns')
-  await expect(run()).rejects.toThrow(expectedError)
+  // @ts-ignore
+  core.warning = jest.fn()
+
+  // @ts-ignore
+  core.setOutput = jest.fn()
+
+  await run()
+
+  expect(core.warning).toHaveBeenCalledWith(
+    'No paths found using the specified patterns'
+  )
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(2, 'paths', '')
+
+  expect(core.setOutput).toHaveBeenNthCalledWith(3, 'has-custom-patterns', true)
 })
