@@ -1,5 +1,55 @@
 # Changelog
 
+# [17.1.0](https://github.com/tj-actions/glob/compare/v17.0.1...v17.1.0) - (2023-04-21)
+
+## <!-- 16 -->➕ Add
+
+- Added missing changes and modified dist assets.
+ ([edb2bde](https://github.com/tj-actions/glob/commit/edb2bdeed76f56c674d8d72a9bd579759a54fd85))  - (GitHub Action)
+
+## <!-- 2 -->🚜 Refactor
+
+- No matching files with the specified pattern to raised a warning instead ([08c32ab](https://github.com/tj-actions/glob/commit/08c32abcc7f8fb1d7a7c9c19aae48e9bf4a47750))  - (Tonye Jack)
+
+## <!-- 26 -->🔄 Update
+
+- Update README.md ([eb13804](https://github.com/tj-actions/glob/commit/eb138047b8b00dafdd53554152f8885f68a891f6))  - (Tonye Jack)
+- Update test.yml ([d763c16](https://github.com/tj-actions/glob/commit/d763c16dc99d62a65dc2b230e6a10348fc57fd74))  - (Tonye Jack)
+- Update test.yml ([e1310bb](https://github.com/tj-actions/glob/commit/e1310bb840c7cbad78dc963425e526d1af3b1582))  - (Tonye Jack)
+- Update test
+ ([dbc63da](https://github.com/tj-actions/glob/commit/dbc63da33948a07c58ea78bd24dddf4b4edd9456))  - (Tonye Jack)
+- Update main.ts ([12c8309](https://github.com/tj-actions/glob/commit/12c830985722b2e228ea353decc58620824a5f88))  - (Tonye Jack)
+- Updated README.md
+ ([b14f8f6](https://github.com/tj-actions/glob/commit/b14f8f6eeae0959b989e25288053e78c12e541ac))  - (repo-ranger[bot])
+
+## <!-- 30 -->📝 Other
+
+- PR [#746](https://github.com/tj-actions/glob/pull/746): no matching files with the specified pattern to raised a wa rning instead ([9423dbf](https://github.com/tj-actions/glob/commit/9423dbf649c8d78b1322a2ac11b5a4dcb9e39163))  - (repo-ranger[bot])
+- Merge dbc63da33948a07c58ea78bd24dddf4b4edd9456 into 21d0114fc2490512ccf0215cbc24e7eb852d5600
+ ([457cf57](https://github.com/tj-actions/glob/commit/457cf575d64ffd82c457bc51374e93b208790fc7))  - (Tonye Jack)
+- Apply suggestions from code review ([beb63cb](https://github.com/tj-actions/glob/commit/beb63cb5be833a19d9f9d8beb2ba965f4b69f052))  - (Tonye Jack)
+- PR [#739](https://github.com/tj-actions/glob/pull/739): README.md ([e1fc14b](https://github.com/tj-actions/glob/commit/e1fc14b8e154f8111c25fa17cb192a95558fa06c))  - (repo-ranger[bot])
+- PR [#738](https://github.com/tj-actions/glob/pull/738): update working-directory input description ([cbb711e](https://github.com/tj-actions/glob/commit/cbb711ed7a18785d7064ceeaf562ff671e9f9210))  - (repo-ranger[bot])
+- PR [#735](https://github.com/tj-actions/glob/pull/735): to v17.0.1 ([4691c4e](https://github.com/tj-actions/glob/commit/4691c4e7a9ddac0baea59cb819518e7b5c9218a8))  - (repo-ranger[bot])
+- PR [#736](https://github.com/tj-actions/glob/pull/736): to v17 ([1bf1bea](https://github.com/tj-actions/glob/commit/1bf1beaaa97b8ba926798ff00e39a2727546a73d))  - (repo-ranger[bot])
+
+## <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- **deps:** Update dependency @types/node to v18.15.13 ([21d0114](https://github.com/tj-actions/glob/commit/21d0114fc2490512ccf0215cbc24e7eb852d5600))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v18.15.12 ([7869204](https://github.com/tj-actions/glob/commit/7869204c1463cffc03529bb0a5dfa24c7d80577f))  - (renovate[bot])
+- **deps:** Update dependency @types/jest to v29.5.1 ([c5096d9](https://github.com/tj-actions/glob/commit/c5096d99579ff05f828ba6975d6a5b1345a3a413))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v5.59.0 ([58d6b67](https://github.com/tj-actions/glob/commit/58d6b679f89a494b64fc89a723b271ac9cea3f66))  - (renovate[bot])
+- **deps:** Lock file maintenance ([b115434](https://github.com/tj-actions/glob/commit/b115434a409ccc0d05074b98de8f8892e4c4a38f))  - (renovate[bot])
+- Update working-directory input description ([0dd3326](https://github.com/tj-actions/glob/commit/0dd3326fa6ac8f5f0f0d2d6b17973cb146cc9bed))  - (Tonye Jack)
+- **deps:** Lock file maintenance ([3d26a5d](https://github.com/tj-actions/glob/commit/3d26a5da3113e4ec6c52e73414ea446a3cbe9e8a))  - (renovate[bot])
+
+## <!-- 9 -->⬆️ Upgrades
+
+- Upgraded from v17.0.0 -> v17.0.1
+ ([e6667b5](https://github.com/tj-actions/glob/commit/e6667b58df1c5a035e6d0123e35331f9e2d6c3c0))  - (jackton1)
+- Upgraded from v16.14 -> v17
+ ([ac24605](https://github.com/tj-actions/glob/commit/ac246057348c7a1959f5bd4a380b9212489ec2a0))  - (jackton1)
+
 # [17.0.1](https://github.com/tj-actions/glob/compare/v17.0.0...v17.0.1) - (2023-04-11)
 
 ## <!-- 26 -->🔄 Update
