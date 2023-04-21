@@ -279,7 +279,7 @@ export async function run(): Promise<void> {
     excludedFiles !== '' ||
     excludedFilesFromSourceFile !== ''
 
-  if (!pathOutput && hasCustomPatterns) {
+  if (!pathsOutput && hasCustomPatterns) {
     core.warning('No paths found using the specified patterns')
   }
   
