@@ -282,7 +282,6 @@ export async function run(): Promise<void> {
   if (!pathsOutput && hasCustomPatterns) {
     core.warning('No paths found using the specified patterns')
   }
-  
   const pathsOutputFile = await tempfile('.txt')
   await fs.writeFile(pathsOutputFile, pathsOutput, {flag: 'w'})
   core.setOutput('paths-output-file', pathsOutputFile)
