@@ -235,16 +235,14 @@ function run() {
             filesFromSourceFile !== '' ||
             excludedFiles !== '' ||
             excludedFilesFromSourceFile !== '';
-        if (pathsOutput) {
-            const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
-            yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput, { flag: 'w' });
-            core.setOutput('paths-output-file', pathsOutputFile);
-            core.saveState('paths-output-file', pathsOutputFile);
-            core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
+        if (!pathsOutput && hasCustomPatterns) {
+            core.warning('No paths found using the specified patterns');
         }
-        else if (hasCustomPatterns) {
-            throw new Error('No paths found using the specified patterns');
-        }
+        const pathsOutputFile = yield (0, utils_1.tempfile)('.txt');
+        yield fs_1.promises.writeFile(pathsOutputFile, pathsOutput, { flag: 'w' });
+        core.setOutput('paths-output-file', pathsOutputFile);
+        core.saveState('paths-output-file', pathsOutputFile);
+        core.info(`Successfully created paths-output-file: ${pathsOutputFile}`);
         core.setOutput('paths', pathsOutput);
         core.setOutput('has-custom-patterns', hasCustomPatterns);
     });

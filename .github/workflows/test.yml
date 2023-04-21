@@ -225,13 +225,13 @@ jobs:
           files: |
             - *.md
 
-      - name: Exit with 1 if no error is raised
-        if: steps.glob-invalid.outcome != 'failure'
-        run: |
-          echo "Expected: (failure) got ${{ steps.changed-files.outcome }}"
-          exit 1
-
       - name: Show output
-        if: steps.glob-invalid.outputs.paths != '' || steps.glob-invalid.outputs.paths-output-file != ''
         run: |
-          echo "Unexpected output returned:\n${{ steps.glob-invalid.outputs.paths }}\n${{ steps.glob-invalid.outputs.paths-output-file }}"
+          echo "${{ steps.glob-invalid.outputs.paths }}"
+          echo "${{ steps.glob-invalid.outputs.paths-output-file }}"
+
+      - name: Verify that the paths-output-file is created
+        if: steps.glob-invalid.outputs.paths-output-file == ''
+        run: |
+          echo "Expected: paths-output-file to not be empty got ${{ steps.glob-invalid.outputs.paths-output-file }}"
+          exit 1
