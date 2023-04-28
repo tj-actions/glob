@@ -31,6 +31,10 @@ jobs:
           node-version: '16.x'
           registry-url: https://npm.pkg.github.com/
       - run: yarn install
+      - name: Setup committer
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
       - run: yarn publish --${{ steps.semver-diff.outputs.release_type }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
