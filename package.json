@@ -1,9 +1,11 @@
 {
-  "name": "glob",
+  "name": "@tj-actions/glob",
   "version": "1.0.0",
-  "private": true,
   "description": "Glob pattern matching github action",
   "main": "lib/main.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.ts",

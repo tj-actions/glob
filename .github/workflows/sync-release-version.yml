@@ -7,6 +7,10 @@ on:
 jobs:
   update-version:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v3
         with:
@@ -23,6 +27,17 @@ jobs:
             README.md
       - name: Run git-cliff
         uses: tj-actions/git-cliff@v1
+      - name: Run semver-diff
+        id: semver-diff
+        uses: tj-actions/semver-diff@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: https://npm.pkg.github.com/
+      - run: yarn install
+      - run: yarn publish -${{ steps.semver-diff.outputs.release_type }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5.0.0
         with:
