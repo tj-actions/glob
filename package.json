@@ -1,5 +1,5 @@
 {
-  "name": "glob",
+  "name": "@tj-actions/glob",
   "version": "1.0.0",
   "description": "Glob pattern matching github action",
   "main": "lib/main.js",
