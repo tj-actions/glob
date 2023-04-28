@@ -1,5 +1,79 @@
 # Changelog
 
+# [17.2.5](https://github.com/tj-actions/glob/compare/v17.2.4...v17.2.5) - (2023-04-28)
+
+## <!-- 26 -->🔄 Update
+
+- Update package.json ([0fe7f8d](https://github.com/tj-actions/glob/commit/0fe7f8d9e113caff328f057851c9be33b7a50fbf))  - (Tonye Jack)
+- Update sync-release-version.yml ([7ad5bb9](https://github.com/tj-actions/glob/commit/7ad5bb94fca3bd9fd8cb3ff1e68c25e8d37efcd4))  - (Tonye Jack)
+
+# [17.2.4](https://github.com/tj-actions/glob/compare/v17.2.3...v17.2.4) - (2023-04-28)
+
+## <!-- 26 -->🔄 Update
+
+- Update package.json ([d067720](https://github.com/tj-actions/glob/commit/d0677205cd298c225fe270700aedf06ba82dba7b))  - (Tonye Jack)
+
+# [17.2.3](https://github.com/tj-actions/glob/compare/v17.2.2...v17.2.3) - (2023-04-28)
+
+## <!-- 26 -->🔄 Update
+
+- Update sync-release-version.yml ([9684ede](https://github.com/tj-actions/glob/commit/9684ede69d354c9e5f7bfa88ec3133407534808b))  - (Tonye Jack)
+
+# [17.2.2](https://github.com/tj-actions/glob/compare/v17.2.1...v17.2.2) - (2023-04-28)
+
+## <!-- 26 -->🔄 Update
+
+- Update sync-release-version.yml ([de7875a](https://github.com/tj-actions/glob/commit/de7875aa9025a544747bd8771a043758b794c9bc))  - (Tonye Jack)
+
+# [17.2.1](https://github.com/tj-actions/glob/compare/v17.2.0...v17.2.1) - (2023-04-28)
+
+## <!-- 26 -->🔄 Update
+
+- Update sync-release-version.yml ([942049e](https://github.com/tj-actions/glob/commit/942049e2490290f3af90c8d0e12ce991ff988e69))  - (Tonye Jack)
+
+# [17.2.0](https://github.com/tj-actions/glob/compare/v17.1.0...v17.2.0) - (2023-04-28)
+
+## <!-- 0 -->🚀 Features
+
+- Publish package to github packages ([#757](https://github.com/tj-actions/glob/issues/757)) ([b9c1557](https://github.com/tj-actions/glob/commit/b9c1557c62802c5cb21eb0ae5773d54fdf7f68d0))  - (Tonye Jack)
+
+## <!-- 13 -->📦 Bumps
+
+- Bump @typescript-eslint/eslint-plugin from 5.59.0 to 5.59.1
+
+Bumps [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/HEAD/packages/eslint-plugin) from 5.59.0 to 5.59.1.
+- [Release notes](https://github.com/typescript-eslint/typescript-eslint/releases)
+- [Changelog](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/CHANGELOG.md)
+- [Commits](https://github.com/typescript-eslint/typescript-eslint/commits/v5.59.1/packages/eslint-plugin)
+
+---
+updated-dependencies:
+- dependency-name: "@typescript-eslint/eslint-plugin"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([1654334](https://github.com/tj-actions/glob/commit/16543347fef2d2ae4e8134f1d01f562516306445))  - (dependabot[bot])
+
+## <!-- 30 -->📝 Other
+
+- PR [#747](https://github.com/tj-actions/glob/pull/747): to v17.1.0 ([f4b753d](https://github.com/tj-actions/glob/commit/f4b753db2868ba11ce69849b8fdae41132efe416))  - (repo-ranger[bot])
+
+## <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- **deps:** Update dependency @types/node to v18.16.2 ([a7e17e1](https://github.com/tj-actions/glob/commit/a7e17e12a41e52fc321476a622580bda24042c0c))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v18.16.1 ([a310ce3](https://github.com/tj-actions/glob/commit/a310ce3acbfeab75eb17d66436b67525bf23f1b8))  - (renovate[bot])
+- **deps:** Update dependency @typescript-eslint/parser to v5.59.1 ([853e17e](https://github.com/tj-actions/glob/commit/853e17e8a1ae7e48bf164de64d3c8c2c3787dfac))  - (renovate[bot])
+- **deps:** Lock file maintenance ([60cb55f](https://github.com/tj-actions/glob/commit/60cb55f5bd0eb417822097b4c59ba97d508f2f97))  - (renovate[bot])
+- **deps:** Update dependency prettier to v2.8.8 ([146b010](https://github.com/tj-actions/glob/commit/146b01014916371541bf62f5429438d11578d39b))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v18.16.0 ([34f2b29](https://github.com/tj-actions/glob/commit/34f2b29e0208088a1f6a573748b39d97d6f04e6e))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.39.0 ([988e104](https://github.com/tj-actions/glob/commit/988e104d58f2cf24e11c2169f20351593c0b34f1))  - (renovate[bot])
+
+## <!-- 9 -->⬆️ Upgrades
+
+- Upgraded from v17.0.1 -> v17.1.0
+ ([868fcc2](https://github.com/tj-actions/glob/commit/868fcc2d49167e42c0047442f87391ac2714f5b1))  - (jackton1)
+
 # [17.1.0](https://github.com/tj-actions/glob/compare/v17.0.1...v17.1.0) - (2023-04-21)
 
 ## <!-- 16 -->➕ Add

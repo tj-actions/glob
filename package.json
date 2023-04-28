@@ -1,6 +1,6 @@
 {
   "name": "@tj-actions/glob",
-  "version": "17.2.4",
+  "version": "17.2.5",
   "description": "Glob pattern matching github action",
   "main": "lib/main.js",
   "publishConfig": {
