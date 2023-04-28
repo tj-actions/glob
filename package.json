@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Glob pattern matching github action",
   "main": "lib/main.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.ts",
