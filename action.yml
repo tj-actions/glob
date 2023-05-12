@@ -38,7 +38,7 @@ inputs:
     default: "true"
     required: true
   match-directories:
-    description: 'Indicates whether to include match directories'
+    description: 'Indicates whether to include matched directories'
     default: "true"
     required: true
   match-gitignore-files:
