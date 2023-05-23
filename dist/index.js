@@ -319,7 +319,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.exists = exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.deletedGitFiles = exports.normalizeSeparators = void 0;
+exports.exists = exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.getPatterns = exports.deletedGitFiles = exports.normalizeSeparators = void 0;
 /*global AsyncIterableIterator*/
 const fs_1 = __nccwpck_require__(7147);
 const os_1 = __nccwpck_require__(2037);
@@ -406,6 +406,7 @@ function getPatterns(filePatterns) {
         return patterns;
     });
 }
+exports.getPatterns = getPatterns;
 function getDeletedFiles({ filePatterns, baseSha, sha, cwd, diff }) {
     return __awaiter(this, void 0, void 0, function* () {
         const patterns = yield getPatterns(filePatterns);
