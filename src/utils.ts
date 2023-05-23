@@ -83,7 +83,7 @@ export async function deletedGitFiles({
   return deletedFiles
 }
 
-async function getPatterns(filePatterns: string): Promise<Pattern[]> {
+export async function getPatterns(filePatterns: string): Promise<Pattern[]> {
   const IS_WINDOWS: boolean = process.platform === 'win32'
   const patterns = []
 
