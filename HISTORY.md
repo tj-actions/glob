@@ -1,5 +1,200 @@
 # Changelog
 
+# [17.2.6](https://github.com/tj-actions/glob/compare/v17.2.5...v17.2.6) - (2023-05-23)
+
+## <!-- 1 -->🐛 Bug Fixes
+
+- **deps:** Update dependency minimatch to v9.0.1 ([69832a8](https://github.com/tj-actions/glob/commit/69832a846950d7175c6bcf10cb859ca8e363e2f9))  - (renovate[bot])
+
+## <!-- 13 -->📦 Bumps
+
+- Bump @types/node from 20.2.1 to 20.2.3
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.2.1 to 20.2.3.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([fcfb77e](https://github.com/tj-actions/glob/commit/fcfb77e86fc8ee71a97821b1fc2613c7918074e3))  - (dependabot[bot])
+- Bump @types/node from 20.2.0 to 20.2.1
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.2.0 to 20.2.1.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([c7a65c9](https://github.com/tj-actions/glob/commit/c7a65c91ba8452dad258aacd29be45d6947c7b4d))  - (dependabot[bot])
+- Bump @types/node from 20.1.7 to 20.2.0
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.1.7 to 20.2.0.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([1e25767](https://github.com/tj-actions/glob/commit/1e2576767175aba41da767e07092fe797075b660))  - (dependabot[bot])
+- Bump @types/node from 20.1.5 to 20.1.7
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.1.5 to 20.1.7.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([01032e9](https://github.com/tj-actions/glob/commit/01032e9830e3a30458981e1ebf39c170e020705d))  - (dependabot[bot])
+- Bump @types/node from 20.1.4 to 20.1.5
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.1.4 to 20.1.5.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([11ae524](https://github.com/tj-actions/glob/commit/11ae524c5e1feda2e7d8e0f9cc9f6e5cdbacea04))  - (dependabot[bot])
+- Bump @types/node from 20.1.3 to 20.1.4
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.1.3 to 20.1.4.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([e3c315f](https://github.com/tj-actions/glob/commit/e3c315fe1b9037b9836bdde71f7c20d48e0e16e4))  - (dependabot[bot])
+- Bump @types/node from 20.1.2 to 20.1.3
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.1.2 to 20.1.3.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([34d97ce](https://github.com/tj-actions/glob/commit/34d97ce6ffa1d8f5a64a7ec4203038fa919e0d94))  - (dependabot[bot])
+- Bump @types/node from 20.1.1 to 20.1.2
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.1.1 to 20.1.2.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([4a66c55](https://github.com/tj-actions/glob/commit/4a66c55502f282c67d094d6249473056bcaea986))  - (dependabot[bot])
+- Bump @types/node from 20.1.0 to 20.1.1
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 20.1.0 to 20.1.1.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([d7e63d7](https://github.com/tj-actions/glob/commit/d7e63d72dd98f81fedeb658865b5bb1cddac24f8))  - (dependabot[bot])
+- Bump @types/node from 18.16.5 to 20.1.0
+
+Bumps [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/node) from 18.16.5 to 20.1.0.
+- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)
+- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/node)
+
+---
+updated-dependencies:
+- dependency-name: "@types/node"
+  dependency-type: direct:development
+  update-type: version-update:semver-major
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([50f3f22](https://github.com/tj-actions/glob/commit/50f3f2265b9a3337e4812cee31efd6d2e0888ec3))  - (dependabot[bot])
+
+## <!-- 26 -->🔄 Update
+
+- Updated README.md
+ ([ab4b147](https://github.com/tj-actions/glob/commit/ab4b1478a7d27e7655488be16d3188fceda1e89d))  - (jackton1)
+- Updated README.md
+ ([6ec5994](https://github.com/tj-actions/glob/commit/6ec5994a67be1b6e8866b052275cda045f3f4171))  - (jackton1)
+- Update action.yml ([c051191](https://github.com/tj-actions/glob/commit/c0511914a728707764c837f3c30b0051117dccf7))  - (Tonye Jack)
+- Updated README.md
+ ([20a79d4](https://github.com/tj-actions/glob/commit/20a79d4aed1e5188b7a50aeac3a7c208ed054169))  - (jackton1)
+- Update README.md ([e0d75d6](https://github.com/tj-actions/glob/commit/e0d75d6d141d83b73e7b914432114751064e9eb9))  - (Tonye Jack)
+- Update README.md ([540300c](https://github.com/tj-actions/glob/commit/540300c07167e44e93240d6b181db7ea1e708fbf))  - (Tonye Jack)
+- Updated README.md
+ ([b5bc66a](https://github.com/tj-actions/glob/commit/b5bc66a2a30e0c0d45d9524f602d7cdedcc7a307))  - (jackton1)
+
+## <!-- 30 -->📝 Other
+
+- PR [#777](https://github.com/tj-actions/glob/pull/777): README.md ([5bc3109](https://github.com/tj-actions/glob/commit/5bc3109ffc3178bdf22f9bb97a8149231e0e380f))  - (repo-ranger[bot])
+- PR [#774](https://github.com/tj-actions/glob/pull/774): README.md ([961ce02](https://github.com/tj-actions/glob/commit/961ce02024f3539202610e338ba83b85f0dd3eae))  - (repo-ranger[bot])
+- PR [#763](https://github.com/tj-actions/glob/pull/763): README.md ([1addc15](https://github.com/tj-actions/glob/commit/1addc15a120c13b4d771c8126ce3198b0492bef7))  - (repo-ranger[bot])
+- PR [#761](https://github.com/tj-actions/glob/pull/761): README.md ([57c6e15](https://github.com/tj-actions/glob/commit/57c6e158ec2095c8d973fc8a5992bb1d61b4cb54))  - (repo-ranger[bot])
+- PR [#758](https://github.com/tj-actions/glob/pull/758): to v17.2.5 ([c351802](https://github.com/tj-actions/glob/commit/c351802c2b792fbdaf6a4088ca5d13d3cb743c27))  - (repo-ranger[bot])
+
+## <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- Export getPatterns function ([#789](https://github.com/tj-actions/glob/issues/789)) ([c439d09](https://github.com/tj-actions/glob/commit/c439d09de27426e33c579972414e981cde617595))  - (Tonye Jack)
+- **deps:** Update typescript-eslint monorepo to v5.59.7 ([4d15bff](https://github.com/tj-actions/glob/commit/4d15bff09a09728e57eb76e212e08bc33c74c3df))  - (renovate[bot])
+- **deps:** Lock file maintenance ([24afc7f](https://github.com/tj-actions/glob/commit/24afc7f4221c7b09610b55a9d4808496def3b636))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.41.0 ([fbe7ea3](https://github.com/tj-actions/glob/commit/fbe7ea3bba6bc864e457053a700ce4328a99b5ed))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v5.59.6 ([18fe70c](https://github.com/tj-actions/glob/commit/18fe70cccb16139ec86f8f2d5aa90393e5e95122))  - (renovate[bot])
+- **deps:** Lock file maintenance ([331ffbe](https://github.com/tj-actions/glob/commit/331ffbe54c7419618802e168dabcb35bcd185bd7))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v5.59.5 ([b08480a](https://github.com/tj-actions/glob/commit/b08480aeb9e5053b8452505e6b7860728cdbe66a))  - (renovate[bot])
+- **deps:** Lock file maintenance ([027fb17](https://github.com/tj-actions/glob/commit/027fb17ec3216eec90216d11eb665ef6b2d6bd99))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v18.16.5 ([590005c](https://github.com/tj-actions/glob/commit/590005c5b7951971950f310acc37f26fc7314210))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.40.0 ([c685ed9](https://github.com/tj-actions/glob/commit/c685ed90430e50afe067e2d585cd10d3f76ad8b1))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v18.16.4 ([b418904](https://github.com/tj-actions/glob/commit/b41890463b30379a6ee3b89bb70ff3fac2e8d38e))  - (renovate[bot])
+- **deps:** Update peter-evans/create-pull-request action to v5.0.1 ([6a00c4d](https://github.com/tj-actions/glob/commit/6a00c4dda2dfac2666ff4f7580e521504c6ef119))  - (renovate[bot])
+- **deps:** Update dependency @typescript-eslint/eslint-plugin to v5.59.2 ([b23117f](https://github.com/tj-actions/glob/commit/b23117f2fbf5d38e257992da19cbb052ec14057c))  - (renovate[bot])
+- **deps:** Update dependency @typescript-eslint/parser to v5.59.2 ([e2eae66](https://github.com/tj-actions/glob/commit/e2eae66dc9a5ced7abef5ea6d96b60d63960fe7d))  - (renovate[bot])
+- **deps:** Lock file maintenance ([c2d7ee8](https://github.com/tj-actions/glob/commit/c2d7ee8a63b6d428d5ffb2490b1df989dac16e6c))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v18.16.3 ([5df4aea](https://github.com/tj-actions/glob/commit/5df4aea0628127543bc7246ba57c648378066c5e))  - (renovate[bot])
+
+## <!-- 9 -->⬆️ Upgrades
+
+- Upgraded from v17.2.4 -> v17.2.5
+ ([5cdb0e6](https://github.com/tj-actions/glob/commit/5cdb0e649f0e22eb17f6333bf10c19d66839812a))  - (jackton1)
+
 # [17.2.5](https://github.com/tj-actions/glob/compare/v17.2.4...v17.2.5) - (2023-04-28)
 
 ## <!-- 26 -->🔄 Update
