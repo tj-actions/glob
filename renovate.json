@@ -33,7 +33,7 @@
       "automerge": true,
       "rebaseWhen": "behind-base-branch",
       "addLabels": [
-        "automerge"
+        "merge when passing"
       ]
     },
     {
