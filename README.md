@@ -24,7 +24,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
         *   [Disabled](#disabled)
     *   [Pattern Gotcha](#pattern-gotcha)
 *   [Patterns](#patterns)
-    *   [Glob behavior](#glob-behavior)
+    *   [Glob behaviour](#glob-behaviour)
     *   [Tilde expansion](#tilde-expansion)
     *   [Comments](#comments)
     *   [Exclude patterns](#exclude-patterns)
