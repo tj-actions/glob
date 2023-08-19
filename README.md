@@ -34,10 +34,10 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 
 ## Usage
 
-> **Warning**:
+> **Warning**
 >
 > *   Ensure that subdirectory patterns are prefixed with `**/` as `**.yml` only matches yml files in the top level directory and should be replaced with `**/*.yml`.
-> *   All multi line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet for more examples of filter patterns
+> *   All multi-line string patterns are specified without quotes. See: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet for more examples of filter patterns
 
 ```yaml
 ...
@@ -129,15 +129,15 @@ The `**` pattern in [minimatch](https://github.com/isaacs/minimatch) matches any
 
 ## Patterns
 
-### Glob behavior
+### Glob behaviour
 
-Patterns `*`, `?`, `[...]`, `**` (globstar) are supported.
+Patterns `*`, `?`, `[...]`, and `**` (globstar) are supported.
 
-With the following behaviors:
+With the following behaviours:
 
 *   File names that begin with `.` may be included in the results
 *   Case insensitive on Windows
-*   Directory separator `/` and `\` both supported on Windows
+*   Directory separators `/` and `\` are both supported on Windows
 
 ### Tilde expansion
 
@@ -190,7 +190,7 @@ using [cookiecutter-action](https://github.com/tj-actions/cookiecutter-action)
 
 Report bugs at https://github.com/tj-actions/glob/issues.
 
-If you are reporting a bug, please include:
+If you are reporting a bug, please include the following:
 
 *   Your operating system name and version.
 *   Any details about your workflow that might be helpful in troubleshooting.
