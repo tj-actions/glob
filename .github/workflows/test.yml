@@ -13,6 +13,9 @@ on:
 jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
+    outputs:
+      files_changed: ${{ steps.changed_files.outputs.files_changed }}
+
     steps:
       - uses: actions/checkout@v3
         with:
@@ -83,6 +86,7 @@ jobs:
 
   test: # make sure the action works on a clean machine without building
     needs: build
+    if: needs.build.outputs.files_changed != 'true'
     runs-on: ${{ matrix.platform }}
     strategy:
       fail-fast: false
