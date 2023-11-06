@@ -12777,23 +12777,7 @@ function _resume (client, sync) {
       return
     }
 
-    if (util.isStream(request.body) && util.bodyLength(request.body) === 0) {
-      request.body
-        .on('data', /* istanbul ignore next */ function () {
-          /* istanbul ignore next */
-          assert(false)
-        })
-        .on('error', function (err) {
-          errorRequest(client, request, err)
-        })
-        .on('end', function () {
-          util.destroy(this)
-        })
-
-      request.body = null
-    }
-
-    if (client[kRunning] > 0 &&
+    if (client[kRunning] > 0 && util.bodyLength(request.body) !== 0 &&
       (util.isStream(request.body) || util.isAsyncIterable(request.body))) {
       // Request with stream or iterator body can error while other requests
       // are inflight and indirectly error those as well.
@@ -12812,6 +12796,11 @@ function _resume (client, sync) {
       client[kQueue].splice(client[kPendingIdx], 1)
     }
   }
+}
+
+// https://www.rfc-editor.org/rfc/rfc7230#section-3.3.2
+function shouldSendContentLength (method) {
+  return method !== 'GET' && method !== 'HEAD' && method !== 'OPTIONS' && method !== 'TRACE' && method !== 'CONNECT'
 }
 
 function write (client, request) {
@@ -12842,7 +12831,9 @@ function write (client, request) {
     body.read(0)
   }
 
-  let contentLength = util.bodyLength(body)
+  const bodyLength = util.bodyLength(body)
+
+  let contentLength = bodyLength
 
   if (contentLength === null) {
     contentLength = request.contentLength
@@ -12857,7 +12848,9 @@ function write (client, request) {
     contentLength = null
   }
 
-  if (request.contentLength !== null && request.contentLength !== contentLength) {
+  // https://github.com/nodejs/undici/issues/2046
+  // A user agent may send a Content-Length header with 0 value, this should be allowed.
+  if (shouldSendContentLength(method) && contentLength > 0 && request.contentLength !== null && request.contentLength !== contentLength) {
     if (client[kStrictContentLength]) {
       errorRequest(client, request, new RequestContentLengthMismatchError())
       return false
@@ -12938,7 +12931,7 @@ function write (client, request) {
   }
 
   /* istanbul ignore else: assertion */
-  if (!body) {
+  if (!body || bodyLength === 0) {
     if (contentLength === 0) {
       socket.write(`${header}content-length: 0\r\n\r\n`, 'latin1')
     } else {
@@ -13078,7 +13071,9 @@ function writeH2 (client, session, request) {
     contentLength = null
   }
 
-  if (request.contentLength != null && request.contentLength !== contentLength) {
+  // https://github.com/nodejs/undici/issues/2046
+  // A user agent may send a Content-Length header with 0 value, this should be allowed.
+  if (shouldSendContentLength(method) && contentLength > 0 && request.contentLength != null && request.contentLength !== contentLength) {
     if (client[kStrictContentLength]) {
       errorRequest(client, request, new RequestContentLengthMismatchError())
       return false
@@ -15040,10 +15035,29 @@ class Request {
 
     this.method = method
 
+    this.abort = null
+
     if (body == null) {
       this.body = null
     } else if (util.isStream(body)) {
       this.body = body
+
+      const rState = this.body._readableState
+      if (!rState || !rState.autoDestroy) {
+        this.endHandler = function autoDestroy () {
+          util.destroy(this)
+        }
+        this.body.on('end', this.endHandler)
+      }
+
+      this.errorHandler = err => {
+        if (this.abort) {
+          this.abort(err)
+        } else {
+          this.error = err
+        }
+      }
+      this.body.on('error', this.errorHandler)
     } else if (util.isBuffer(body)) {
       this.body = body.byteLength ? body : null
     } else if (ArrayBuffer.isView(body)) {
@@ -15164,7 +15178,12 @@ class Request {
     assert(!this.aborted)
     assert(!this.completed)
 
-    return this[kHandler].onConnect(abort)
+    if (this.error) {
+      abort(this.error)
+    } else {
+      this.abort = abort
+      return this[kHandler].onConnect(abort)
+    }
   }
 
   onHeaders (statusCode, headers, resume, statusText) {
@@ -15193,6 +15212,8 @@ class Request {
   }
 
   onComplete (trailers) {
+    this.onFinally()
+
     assert(!this.aborted)
 
     this.completed = true
@@ -15203,6 +15224,8 @@ class Request {
   }
 
   onError (error) {
+    this.onFinally()
+
     if (channels.error.hasSubscribers) {
       channels.error.publish({ request: this, error })
     }
@@ -15212,6 +15235,18 @@ class Request {
     }
     this.aborted = true
     return this[kHandler].onError(error)
+  }
+
+  onFinally () {
+    if (this.errorHandler) {
+      this.body.off('error', this.errorHandler)
+      this.errorHandler = null
+    }
+
+    if (this.endHandler) {
+      this.body.off('end', this.endHandler)
+      this.endHandler = null
+    }
   }
 
   // TODO: adjust to support H2
@@ -15637,7 +15672,7 @@ function isReadableAborted (stream) {
 }
 
 function destroy (stream, err) {
-  if (!isStream(stream) || isDestroyed(stream)) {
+  if (stream == null || !isStream(stream) || isDestroyed(stream)) {
     return
   }
 
@@ -27508,7 +27543,7 @@ class Pool extends PoolBase {
         maxCachedSessions,
         allowH2,
         socketPath,
-        timeout: connectTimeout == null ? 10e3 : connectTimeout,
+        timeout: connectTimeout,
         ...(util.nodeHasAutoSelectFamily && autoSelectFamily ? { autoSelectFamily, autoSelectFamilyAttemptTimeout } : undefined),
         ...connect
       })
