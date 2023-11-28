@@ -11,7 +11,7 @@ on:
       - main
 
 jobs:
-  build: # make sure build/ci work properly
+  build:
     runs-on: ubuntu-latest
     outputs:
       files_changed: ${{ steps.changed_files.outputs.files_changed }}
@@ -84,14 +84,14 @@ jobs:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: coverage/lcov.info
 
-  test: # make sure the action works on a clean machine without building
+  test:
     needs: build
     if: needs.build.outputs.files_changed != 'true'
     runs-on: ${{ matrix.platform }}
     strategy:
       fail-fast: false
       matrix:
-        platform: [ ubuntu-latest, windows-latest, macos-latest, macos-11, windows-2022 ]
+        platform: [ ubuntu-latest, windows-latest, macos-latest ]
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
