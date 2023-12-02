@@ -1,2 +1,1 @@
-.github/workflows/greetings.yml
 HISTORY.md
