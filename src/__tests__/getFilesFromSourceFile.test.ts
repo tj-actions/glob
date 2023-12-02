@@ -16,11 +16,7 @@ describe('getFilesFromSourceFile test', () => {
   })
 
   it('generator returns all excluded fileNames', async () => {
-    const expectedFilePaths = [
-      '!*.md',
-      '!**.yaml',
-      '!**.yml'
-    ]
+    const expectedFilePaths = ['!*.md', '!**.yaml', '!**.yml']
 
     const fileNames = await getFilesFromSourceFile({
       filePaths,
