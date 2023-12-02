@@ -39,7 +39,6 @@ test('returns the paths of the filtered files (input files, input source files)'
   })
 
   const EXPECTED_FILENAMES = [
-    '.github/workflows/greetings.yml',
     'CODE_OF_CONDUCT.md',
     'CONTRIBUTING.md',
     'HISTORY.md',
@@ -70,7 +69,6 @@ test('returns the paths of the filtered files as escaped paths (input files, inp
   })
 
   const EXPECTED_FILENAMES = [
-    '\\.github/workflows/greetings\\.yml',
     'CODE_OF_CONDUCT\\.md',
     'CONTRIBUTING\\.md',
     'HISTORY\\.md',
@@ -274,7 +272,6 @@ test('returns the paths of the filtered files (input source files)', async () =>
   })
 
   const EXPECTED_FILENAMES = [
-    '.github/workflows/greetings.yml',
     'CODE_OF_CONDUCT.md',
     'CONTRIBUTING.md',
     'HISTORY.md',
@@ -314,7 +311,6 @@ test('returns the paths of the filtered files in the paths-output-file', async (
   })
 
   const EXPECTED_FILENAMES = [
-    '.github/workflows/greetings.yml',
     'CODE_OF_CONDUCT.md',
     'CONTRIBUTING.md',
     'HISTORY.md',
@@ -374,7 +370,6 @@ test('excludes default excluded files', async () => {
   })
 
   const EXPECTED_FILENAMES = [
-    '.github/workflows/greetings.yml',
     'CODE_OF_CONDUCT.md',
     'CONTRIBUTING.md',
     'HISTORY.md',
@@ -399,7 +394,6 @@ test('includes patterns provided in the files input that are excluded in the .gi
   })
 
   const EXPECTED_FILENAMES = [
-    '.github/workflows/greetings.yml',
     'CODE_OF_CONDUCT.md',
     'CONTRIBUTING.md',
     'HISTORY.md',
@@ -444,7 +438,6 @@ test('excludes patterns provided in the files input that are excluded in the .gi
   })
 
   const EXPECTED_FILENAMES = [
-    '.github/workflows/greetings.yml',
     'CODE_OF_CONDUCT.md',
     'CONTRIBUTING.md',
     'HISTORY.md',
