@@ -7,7 +7,7 @@ describe('getFilesFromSourceFile test', () => {
     .flat()
 
   it('generator returns all fileNames', async () => {
-    const expectedFilePaths = ['*.md', '**.yaml', '**/greetings.yml', '!**.yml']
+    const expectedFilePaths = ['*.md', '**.yaml', '!**.yml']
 
     const fileNames = await getFilesFromSourceFile({filePaths})
     const expectedFileNames = new Array(2).fill(expectedFilePaths).flat()
@@ -19,7 +19,6 @@ describe('getFilesFromSourceFile test', () => {
     const expectedFilePaths = [
       '!*.md',
       '!**.yaml',
-      '!**/greetings.yml',
       '!**.yml'
     ]
 
