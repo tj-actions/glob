@@ -98,7 +98,7 @@ jobs:
           fetch-depth: 0
 
       - name: Download build assets
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-assets
 
