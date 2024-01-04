@@ -52,7 +52,7 @@ inputs:
   escape-paths:
     description: 'Escape special characters of filenames used in the `paths` output'
     required: false
-    default: "false"
+    default: "true"
   strip-top-level-dir:
     description: 'Strip the `$GITHUB_WORKSPACE` from the `paths` output'
     required: false
