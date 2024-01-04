@@ -88,7 +88,7 @@ inputs:
     description: 'Specify a diff string `..` or `...` used for comparing changes, when `include-deleted-files` is set to `true`'
     required: false
   safe_output:
-    description: 'Escape filename returned in the output'
+    description: 'Escaped filename returned in the output'
     required: true
     default: "true"
 
