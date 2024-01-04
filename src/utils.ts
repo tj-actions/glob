@@ -202,7 +202,8 @@ export async function tempfile(extension = ''): Promise<string> {
 }
 
 export function escapeString(value: string): string {
-  return value.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
+  // escape special characters for bash shell
+  return value.replace(/[^\x20-\x7E]|[:*?<>|;`$()&!]/g, '\\$&')
 }
 
 export async function exists(filePath: string): Promise<boolean> {
