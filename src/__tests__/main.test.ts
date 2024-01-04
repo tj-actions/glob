@@ -69,14 +69,14 @@ test('returns the paths of the filtered files as escaped paths (input files, inp
   })
 
   const EXPECTED_FILENAMES = [
-    'CODE_OF_CONDUCT\\.md',
-    'CONTRIBUTING\\.md',
-    'HISTORY\\.md',
-    'README\\.md',
-    'src/__tests__/cleanup\\.test\\.ts',
-    'src/__tests__/getFilesFromSourceFile\\.test\\.ts',
-    'src/__tests__/main\\.test\\.ts',
-    'src/__tests__/util\\.test\\.ts'
+    'CODE_OF_CONDUCT.md',
+    'CONTRIBUTING.md',
+    'HISTORY.md',
+    'README.md',
+    'src/__tests__/cleanup.test.ts',
+    'src/__tests__/getFilesFromSourceFile.test.ts',
+    'src/__tests__/main.test.ts',
+    'src/__tests__/util.test.ts'
   ]
     .map(fName => normalizeSeparators(fName))
     .join(process.env.INPUT_SEPARATOR)
