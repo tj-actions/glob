@@ -87,7 +87,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
     # Escape special characters of filenames used in the `paths` 
     # output 
     # Type: boolean
-    # Default: "false"
+    # Default: "true"
     escape-paths: ''
 
     # Excluded file patterns (optionally include `!` before the file pattern or it would be prepended) 
