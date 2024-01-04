@@ -1,5 +1,393 @@
 # Changelog
 
+# [18.0.0](https://github.com/tj-actions/glob/compare/v17.3.0...v18.0.0) - (2024-01-04)
+
+## <!-- 0 -->🚀 Features
+
+- Enable escaping unsafe filename characters by default ([#1031](https://github.com/tj-actions/glob/issues/1031)) ([11737bf](https://github.com/tj-actions/glob/commit/11737bf97b0c443be5bf37be830976dcf76b2170))  - (Tonye Jack)
+
+## <!-- 1 -->🐛 Bug Fixes
+
+- Error with test ([#995](https://github.com/tj-actions/glob/issues/995)) ([02eacb0](https://github.com/tj-actions/glob/commit/02eacb0ed0f8ef37eb048449f540b7ae26c08a76))  - (Tonye Jack)
+- **deps:** Update dependency uuid to v9.0.1 ([df6e0fd](https://github.com/tj-actions/glob/commit/df6e0fd67a710a6add4219ed78fc082a8e87ef3a))  - (renovate[bot])
+- **deps:** Update dependency @actions/core to v1.10.1 ([2ad810e](https://github.com/tj-actions/glob/commit/2ad810ecdd9ac8851d4220b15a4653f8c004089a))  - (renovate[bot])
+
+## <!-- 13 -->📦 Bumps
+
+- Bump tj-actions/verify-changed-files from 16 to 17
+
+Bumps [tj-actions/verify-changed-files](https://github.com/tj-actions/verify-changed-files) from 16 to 17.
+- [Release notes](https://github.com/tj-actions/verify-changed-files/releases)
+- [Changelog](https://github.com/tj-actions/verify-changed-files/blob/main/HISTORY.md)
+- [Commits](https://github.com/tj-actions/verify-changed-files/compare/v16...v17)
+
+---
+updated-dependencies:
+- dependency-name: tj-actions/verify-changed-files
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([edfa3e1](https://github.com/tj-actions/glob/commit/edfa3e19198b640deabb720128b51ee9c93d08dd))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.0 to 4.1.1
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.0 to 4.1.1.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/8ade135a41bc03ea155e62e844d188df1ea18608...b4ffde65f46336ab88eb53be808477a3936bae11)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([74e531d](https://github.com/tj-actions/glob/commit/74e531dfade4f044683096fd90531b2c865291a8))  - (dependabot[bot])
+
+## <!-- 16 -->➕ Add
+
+- Added missing changes and modified dist assets.
+ ([63be496](https://github.com/tj-actions/glob/commit/63be49677323b90ef01c83d43ef785b1f1b1912e))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([98aebbe](https://github.com/tj-actions/glob/commit/98aebbecacda492396ce7d999f6474c167056dbe))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([e264f30](https://github.com/tj-actions/glob/commit/e264f30ab2ccdb21f051e71bd386fe91e1405e52))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([994ad38](https://github.com/tj-actions/glob/commit/994ad3868fa8bd96eb0c0ddefb3fa97d9bff2e61))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([1084655](https://github.com/tj-actions/glob/commit/10846551f1d6f6b06552e647aa98442a4d4f0101))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([c7e3a9b](https://github.com/tj-actions/glob/commit/c7e3a9b6feffe2bcf968f48cfef310986ceb2196))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([1b27801](https://github.com/tj-actions/glob/commit/1b27801e4222d6beea845c2d32ab41960878eb9a))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([5b5f030](https://github.com/tj-actions/glob/commit/5b5f030aa2af5830caad7ed320b49e3cb1416128))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([7b357fb](https://github.com/tj-actions/glob/commit/7b357fb7f29bebacfdc4c696b873759f1b13a8dd))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([1e37fd0](https://github.com/tj-actions/glob/commit/1e37fd02027c86248ed6194e193ceade4aced896))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([3705d38](https://github.com/tj-actions/glob/commit/3705d385f168c90707b6ce645337db75eeef194d))  - (GitHub Action)
+
+## <!-- 17 -->➖ Remove
+
+- Deleted .github/workflows/auto-approve.yml ([04b145f](https://github.com/tj-actions/glob/commit/04b145fa69e307105b83289354468da62bccd862))  - (Tonye Jack)
+- Deleted .github/workflows/greetings.yml ([04628d2](https://github.com/tj-actions/glob/commit/04628d2b70786627f7fab10be77623f2f6eea20f))  - (Tonye Jack)
+- Deleted .github/ISSUE_TEMPLATE/feature_request.yaml ([8c5da8a](https://github.com/tj-actions/glob/commit/8c5da8a3caa6e8dbec750725fef49e1dd3a9cd36))  - (Tonye Jack)
+- Deleted .github/ISSUE_TEMPLATE/bug_report.yaml ([75787c1](https://github.com/tj-actions/glob/commit/75787c19a507e40293c8f4dc115b1696ab6418b6))  - (Tonye Jack)
+- Deleted .github/FUNDING.yml ([99143e4](https://github.com/tj-actions/glob/commit/99143e4e6c6e952fcdf1cfb1d929669398499b8c))  - (Tonye Jack)
+
+## <!-- 26 -->🔄 Update
+
+- Updated README.md ([#1032](https://github.com/tj-actions/glob/issues/1032))
+
+Co-authored-by: jackton1 <jackton1@users.noreply.github.com> ([7364209](https://github.com/tj-actions/glob/commit/73642096e60e23558cd8dc5cb6bc83de88ac8290))  - (tj-actions[bot])
+- Updated README.md
+ ([bc00b7c](https://github.com/tj-actions/glob/commit/bc00b7c36da17ef675a5f32074613084cd7a3415))  - (jackton1)
+- Update README.md ([1a402ff](https://github.com/tj-actions/glob/commit/1a402ff201eba24e04b8840891d14ee748dacbf9))  - (Tonye Jack)
+- Updated README.md
+ ([811c474](https://github.com/tj-actions/glob/commit/811c4748db409e6d4b17be97853d4674b7769252))  - (repo-ranger[bot])
+- Update update-readme.yml ([6d3d633](https://github.com/tj-actions/glob/commit/6d3d633f12a30fcc6b242d76a487840819b18461))  - (Tonye Jack)
+- Updated .github/FUNDING.yml ([397e794](https://github.com/tj-actions/glob/commit/397e7948517f9ebb31b7e6dde98878793d7d3fbe))  - (Tonye Jack)
+- Updated .github/FUNDING.yml ([ecac9cc](https://github.com/tj-actions/glob/commit/ecac9cc37cff8a54660c6754b90b1a89304ada9a))  - (Tonye Jack)
+- Updated README.md
+ ([cf554ca](https://github.com/tj-actions/glob/commit/cf554caeab8b46bd6418f7140e6ff88a875cc5f5))  - (repo-ranger[bot])
+
+## <!-- 30 -->📝 Other
+
+- PR [#1028](https://github.com/tj-actions/glob/pull/1028): update dependency eslint-plugin-jest to v27.6.1 ([5022ea0](https://github.com/tj-actions/glob/commit/5022ea098dfe9a0a291878ca8af7a65cece6790f))  - (repo-ranger[bot])
+- PR [#1027](https://github.com/tj-actions/glob/pull/1027): update typescript-eslint monorepo to v6.17.0 ([3071c0c](https://github.com/tj-actions/glob/commit/3071c0c7d5d0d9f8ed9f64838bddb8316101ab6b))  - (repo-ranger[bot])
+- PR [#1026](https://github.com/tj-actions/glob/pull/1026): lock file maintenance ([630f6b6](https://github.com/tj-actions/glob/commit/630f6b6a975c5b9520b11104f7083100f3197d87))  - (repo-ranger[bot])
+- PR [#1025](https://github.com/tj-actions/glob/pull/1025): update dependency @types/node to v20.10.6 ([c37f3bc](https://github.com/tj-actions/glob/commit/c37f3bc6d9aa938b28d9176e93c755cfa9d348d5))  - (repo-ranger[bot])
+- PR [#1023](https://github.com/tj-actions/glob/pull/1023): tj-actions/verify-changed-files from 16 to 17 ([1fe16e1](https://github.com/tj-actions/glob/commit/1fe16e12c0d07c0aa0a120ff86b6950bd4a8736e))  - (repo-ranger[bot])
+- PR [#1024](https://github.com/tj-actions/glob/pull/1024): update tj-actions/verify-changed-files action to v17 ([9d96c31](https://github.com/tj-actions/glob/commit/9d96c31d0cd9bebecec39dfdc387ad8d2aaed6d7))  - (repo-ranger[bot])
+- PR [#1022](https://github.com/tj-actions/glob/pull/1022): update typescript-eslint monorepo to v6.16.0 ([0ba0602](https://github.com/tj-actions/glob/commit/0ba060256238767592685c17673f8caef7431882))  - (repo-ranger[bot])
+- PR [#1021](https://github.com/tj-actions/glob/pull/1021): lock file maintenance ([9c14630](https://github.com/tj-actions/glob/commit/9c1463029b2b81361ef747b3cb83a3a4f8b3dd16))  - (repo-ranger[bot])
+- PR [#1020](https://github.com/tj-actions/glob/pull/1020): update dependency eslint-plugin-prettier to v5.1.2 ([dff7478](https://github.com/tj-actions/glob/commit/dff7478d99dfa323d4b7be1c64ba3bdc30f475d9))  - (repo-ranger[bot])
+- PR [#1018](https://github.com/tj-actions/glob/pull/1018): update dependency eslint-plugin-prettier to v5.1.1 ([738eace](https://github.com/tj-actions/glob/commit/738eacede982d6a2e280f71255f4212aebbeec09))  - (repo-ranger[bot])
+- PR [#1017](https://github.com/tj-actions/glob/pull/1017): update typescript-eslint monorepo to v6.15.0 ([29910f5](https://github.com/tj-actions/glob/commit/29910f568ba32d297a1ecb13592789035aa36cfd))  - (repo-ranger[bot])
+- PR [#1016](https://github.com/tj-actions/glob/pull/1016): update actions/setup-node action to v4.0.1 ([0922c47](https://github.com/tj-actions/glob/commit/0922c47614b12f0c74daf5e84cd22b77efaac51e))  - (repo-ranger[bot])
+- PR [#1015](https://github.com/tj-actions/glob/pull/1015): lock file maintenance ([2a982ae](https://github.com/tj-actions/glob/commit/2a982ae189785ffc6336be21554ddab0eb63b0d7))  - (repo-ranger[bot])
+- PR [#1014](https://github.com/tj-actions/glob/pull/1014): update dependency @types/node to v20.10.5 ([5e92dee](https://github.com/tj-actions/glob/commit/5e92dee58515c33477989aec76eb864ccb4280a5))  - (repo-ranger[bot])
+- PR [#1013](https://github.com/tj-actions/glob/pull/1013): update dependency eslint to v8.56.0 ([08fae9e](https://github.com/tj-actions/glob/commit/08fae9e5695d08d1d78f49d01055e2bf1bcbbf47))  - (repo-ranger[bot])
+- PR [#1008](https://github.com/tj-actions/glob/pull/1008): update github/codeql-action action to v3 ([f0013f9](https://github.com/tj-actions/glob/commit/f0013f97ffad5825f1262247748af44d50573293))  - (repo-ranger[bot])
+- PR [#1007](https://github.com/tj-actions/glob/pull/1007): update typescript-eslint monorepo to v6.14.0 ([2562494](https://github.com/tj-actions/glob/commit/25624940f86dffb864a8522eba48e117aa7ab61b))  - (repo-ranger[bot])
+- PR [#1006](https://github.com/tj-actions/glob/pull/1006): lock file maintenance ([ebebee9](https://github.com/tj-actions/glob/commit/ebebee9cbe98fd565d998f06e1c769cbdf8d8d45))  - (repo-ranger[bot])
+- PR [#1005](https://github.com/tj-actions/glob/pull/1005): update dependency prettier to v3.1.1 ([29e4fb4](https://github.com/tj-actions/glob/commit/29e4fb467686dda55edf54dce98bbf1727007415))  - (repo-ranger[bot])
+- PR [#1004](https://github.com/tj-actions/glob/pull/1004): README.md ([cd776a0](https://github.com/tj-actions/glob/commit/cd776a0900525fe2e89c77ce4a65b341489b265a))  - (repo-ranger[bot])
+- PR [#1003](https://github.com/tj-actions/glob/pull/1003): update dependency @types/node to v20.10.4 ([887c8ca](https://github.com/tj-actions/glob/commit/887c8ca8bfa898a0166ec4f8070aef0793e8c888))  - (repo-ranger[bot])
+- PR [#1002](https://github.com/tj-actions/glob/pull/1002): update dependency typescript to v5.3.3 ([179c38c](https://github.com/tj-actions/glob/commit/179c38c4f5525d894b42034f3af48a8f43614ea9))  - (repo-ranger[bot])
+- PR [#1001](https://github.com/tj-actions/glob/pull/1001): update dependency @types/jest to v29.5.11 ([187fc5d](https://github.com/tj-actions/glob/commit/187fc5d2479dff39367119e5cbcb5d7a854e3032))  - (repo-ranger[bot])
+- PR [#1000](https://github.com/tj-actions/glob/pull/1000): update typescript-eslint monorepo to v6.13.2 ([cdaa5f4](https://github.com/tj-actions/glob/commit/cdaa5f43aed2973170ecec9c06a2e2069a7dc049))  - (repo-ranger[bot])
+- PR [#999](https://github.com/tj-actions/glob/pull/999): lock file maintenance ([45f5467](https://github.com/tj-actions/glob/commit/45f5467d3f66f0c6a96476ecc8ddac1e96575a49))  - (repo-ranger[bot])
+- PR [#985](https://github.com/tj-actions/glob/pull/985): lock file maintenance ([0a7c2f2](https://github.com/tj-actions/glob/commit/0a7c2f2b4845d3112fc946c3a8732d5bbb3d9482))  - (repo-ranger[bot])
+- Merge 184adf13b8ac384c635d97210cfd9a26a73c97d5 into 2183d57d4641aafb80f6e79e2fd026fc30102f6d
+ ([7368782](https://github.com/tj-actions/glob/commit/73687825d84671bc8959b98f60f3b52ee6599a7b))  - (renovate[bot])
+- PR [#998](https://github.com/tj-actions/glob/pull/998): update dependency @types/node to v20.10.3 ([2183d57](https://github.com/tj-actions/glob/commit/2183d57d4641aafb80f6e79e2fd026fc30102f6d))  - (repo-ranger[bot])
+- PR [#997](https://github.com/tj-actions/glob/pull/997): README.md ([a018eca](https://github.com/tj-actions/glob/commit/a018eca8252101409b1faf0c5f9b7b5258d8e20e))  - (repo-ranger[bot])
+- PR [#994](https://github.com/tj-actions/glob/pull/994): update dependency eslint-config-prettier to v9.1.0 ([84e66e2](https://github.com/tj-actions/glob/commit/84e66e239d195d72f711e709e8e3a484b9d618a4))  - (repo-ranger[bot])
+- PR [#993](https://github.com/tj-actions/glob/pull/993): update dependency eslint to v8.55.0 ([9f34424](https://github.com/tj-actions/glob/commit/9f34424d3e35e7b3c60411440099689231f3d84e))  - (repo-ranger[bot])
+- PR [#984](https://github.com/tj-actions/glob/pull/984): update dependency @types/node to v20.10.2 ([6f4e437](https://github.com/tj-actions/glob/commit/6f4e4378d18c230190f3cdfe69c5bd494af2d5e2))  - (repo-ranger[bot])
+- PR [#987](https://github.com/tj-actions/glob/pull/987): update typescript-eslint monorepo to v6.13.1 ([570cf22](https://github.com/tj-actions/glob/commit/570cf2202285fe0f6c50f3aea62279e0a91093a8))  - (repo-ranger[bot])
+- PR [#983](https://github.com/tj-actions/glob/pull/983): update dependency @types/node to v20.9.5 ([a1f54ac](https://github.com/tj-actions/glob/commit/a1f54ac6f895a335f8b6665bd4adfc4d61cb0447))  - (repo-ranger[bot])
+- PR [#982](https://github.com/tj-actions/glob/pull/982): update dependency @types/node to v20.9.4 ([c0e599c](https://github.com/tj-actions/glob/commit/c0e599c90dc4fe56be94d811d71106069d04f69f))  - (repo-ranger[bot])
+- PR [#981](https://github.com/tj-actions/glob/pull/981): update dependency @types/jest to v29.5.10 ([68badd6](https://github.com/tj-actions/glob/commit/68badd637fdbe8cf8d9b478909dff636aa646b59))  - (repo-ranger[bot])
+- PR [#980](https://github.com/tj-actions/glob/pull/980): update dependency @types/node to v20.9.3 ([9bda939](https://github.com/tj-actions/glob/commit/9bda939814a4483f7c43c68faa334cd5da4872f8))  - (repo-ranger[bot])
+- PR [#979](https://github.com/tj-actions/glob/pull/979): update dependency @types/jest to v29.5.9 ([891df4e](https://github.com/tj-actions/glob/commit/891df4e037a64861af775b672afeb26abb36f39b))  - (repo-ranger[bot])
+- PR [#978](https://github.com/tj-actions/glob/pull/978): update typescript-eslint monorepo to v6.12.0 ([b3363ad](https://github.com/tj-actions/glob/commit/b3363ada2725c0c743e157a1229316ae0a7d1c22))  - (repo-ranger[bot])
+- PR [#977](https://github.com/tj-actions/glob/pull/977): update dependency typescript to v5.3.2 ([9d44c1f](https://github.com/tj-actions/glob/commit/9d44c1f3666f4b93fd2c6325f34ba3e349730ab4))  - (repo-ranger[bot])
+- Merge f8d28560602ed9209723e54fa82294afc43251f7 into 98543395c942ac1506d1bc97d030f368b40ef32d
+ ([d9bc9cc](https://github.com/tj-actions/glob/commit/d9bc9cc13ece1ed77deb7b81be8426e9b81c8d66))  - (renovate[bot])
+- PR [#976](https://github.com/tj-actions/glob/pull/976): lock file maintenance ([9854339](https://github.com/tj-actions/glob/commit/98543395c942ac1506d1bc97d030f368b40ef32d))  - (repo-ranger[bot])
+- PR [#975](https://github.com/tj-actions/glob/pull/975): update dependency @types/node to v20.9.2 ([8503f23](https://github.com/tj-actions/glob/commit/8503f2320dfb3b7c23f136b2eb62e29edc3a0f62))  - (repo-ranger[bot])
+- PR [#974](https://github.com/tj-actions/glob/pull/974): update dependency eslint to v8.54.0 ([889cc3c](https://github.com/tj-actions/glob/commit/889cc3c8a6ebebe8aee4f0979bf2763571918ad1))  - (repo-ranger[bot])
+- PR [#973](https://github.com/tj-actions/glob/pull/973): update dependency @types/node to v20.9.1 ([f27c1a7](https://github.com/tj-actions/glob/commit/f27c1a7ace3f60bfa2686621d6f6130a8b45a7d6))  - (repo-ranger[bot])
+- PR [#972](https://github.com/tj-actions/glob/pull/972): update typescript-eslint monorepo to v6.11.0 ([435ec14](https://github.com/tj-actions/glob/commit/435ec1433d2a1a08130647a2529c6b7a26f083bd))  - (repo-ranger[bot])
+- PR [#970](https://github.com/tj-actions/glob/pull/970): update dependency prettier to v3.1.0 ([32b1a39](https://github.com/tj-actions/glob/commit/32b1a392013295c2a289f050f842a77e8268bf65))  - (repo-ranger[bot])
+- PR [#971](https://github.com/tj-actions/glob/pull/971): lock file maintenance ([83bfe63](https://github.com/tj-actions/glob/commit/83bfe63eeb15dc261bbabcefc283eae8e5c57722))  - (repo-ranger[bot])
+- PR [#969](https://github.com/tj-actions/glob/pull/969): lock file maintenance ([6b2bbed](https://github.com/tj-actions/glob/commit/6b2bbedccef37b8e1ae24e4c97ffe608dbfe8c7a))  - (repo-ranger[bot])
+- Merge 91c66516e368831249873abb7222c87eef188e5c into 67614dfa5041639ab0453e111ee31a69c30dad7e
+ ([873db97](https://github.com/tj-actions/glob/commit/873db978e09917aeea1ff777ad5698ca7a46ac9e))  - (renovate[bot])
+- PR [#968](https://github.com/tj-actions/glob/pull/968): update dependency @types/node to v20.9.0 ([67614df](https://github.com/tj-actions/glob/commit/67614dfa5041639ab0453e111ee31a69c30dad7e))  - (repo-ranger[bot])
+- PR [#967](https://github.com/tj-actions/glob/pull/967): update dependency @types/uuid to v9.0.7 ([588a056](https://github.com/tj-actions/glob/commit/588a05659f2e4bdf7298267fe436943fb7f05f2e))  - (repo-ranger[bot])
+- PR [#966](https://github.com/tj-actions/glob/pull/966): update dependency @types/jest to v29.5.8 ([d6ca8c9](https://github.com/tj-actions/glob/commit/d6ca8c99b779ebb5bfd76f557102325624f64dc6))  - (repo-ranger[bot])
+- PR [#965](https://github.com/tj-actions/glob/pull/965): update typescript-eslint monorepo to v6.10.0 ([1f6f9ad](https://github.com/tj-actions/glob/commit/1f6f9ad35c9ebcb35e1ccc2e841870f8dc2e07a8))  - (repo-ranger[bot])
+- PR [#964](https://github.com/tj-actions/glob/pull/964): lock file maintenance ([496a623](https://github.com/tj-actions/glob/commit/496a6231798249be4f7bef7574b49974105bf191))  - (repo-ranger[bot])
+- Merge 2f0739cc14d5d7a368314b6352f6e290bf6d96df into fab86d3c5f604eb3b02a5c71e58d2706ba6ba0f7
+ ([3d488d6](https://github.com/tj-actions/glob/commit/3d488d63555234fe32b3f68a52f5a34e2b9ee4c3))  - (renovate[bot])
+- PR [#963](https://github.com/tj-actions/glob/pull/963): update dependency eslint to v8.53.0 ([fab86d3](https://github.com/tj-actions/glob/commit/fab86d3c5f604eb3b02a5c71e58d2706ba6ba0f7))  - (repo-ranger[bot])
+- PR [#962](https://github.com/tj-actions/glob/pull/962): update dependency @types/node to v20.8.10 ([6d1ae79](https://github.com/tj-actions/glob/commit/6d1ae7967b596f6b5407f31e76893c5e7b780a3b))  - (repo-ranger[bot])
+- PR [#961](https://github.com/tj-actions/glob/pull/961): update dependency @types/jest to v29.5.7 ([cf25539](https://github.com/tj-actions/glob/commit/cf25539a7e446a7dccb8d2db7934de1c0eca9f6f))  - (repo-ranger[bot])
+- PR [#960](https://github.com/tj-actions/glob/pull/960): update typescript-eslint monorepo to v6.9.1 ([7241c7a](https://github.com/tj-actions/glob/commit/7241c7ae52ca490f6da32061c4268276de7a5331))  - (repo-ranger[bot])
+- PR [#959](https://github.com/tj-actions/glob/pull/959): lock file maintenance ([d3ed669](https://github.com/tj-actions/glob/commit/d3ed669ac106b02d86efdf126b5c9b3e0c75eb74))  - (repo-ranger[bot])
+- Merge d838eb53e54653996c9e7d1ab9ac8d61f48eaa1e into 10214fe5c1dc940f0956699f62f4bb2f782c50a3
+ ([fa76f4e](https://github.com/tj-actions/glob/commit/fa76f4ef0f69a89f5f0a337998268b21acd3b5a9))  - (renovate[bot])
+- PR [#958](https://github.com/tj-actions/glob/pull/958): update dependency eslint-plugin-jest to v27.6.0 ([10214fe](https://github.com/tj-actions/glob/commit/10214fe5c1dc940f0956699f62f4bb2f782c50a3))  - (repo-ranger[bot])
+- PR [#957](https://github.com/tj-actions/glob/pull/957): update dependency @types/node to v20.8.9 ([b0c0d8a](https://github.com/tj-actions/glob/commit/b0c0d8a4920bfeef05cfd3f1a41edb9cb00b3820))  - (repo-ranger[bot])
+- PR [#956](https://github.com/tj-actions/glob/pull/956): update dependency @types/node to v20.8.8 ([abd3e24](https://github.com/tj-actions/glob/commit/abd3e249655e8e27ad76458fcc120d73317a63a6))  - (repo-ranger[bot])
+- PR [#954](https://github.com/tj-actions/glob/pull/954): update typescript-eslint monorepo to v6.9.0 ([5e63b15](https://github.com/tj-actions/glob/commit/5e63b1523507d2566770cf76df119aafbe1c0b0b))  - (repo-ranger[bot])
+- PR [#955](https://github.com/tj-actions/glob/pull/955): update actions/setup-node action to v4 ([cf998b4](https://github.com/tj-actions/glob/commit/cf998b4799a8ea5a5ece8756fc5b81ea4b76a878))  - (repo-ranger[bot])
+- PR [#953](https://github.com/tj-actions/glob/pull/953): update actions/setup-node action to v4 ([b7d91de](https://github.com/tj-actions/glob/commit/b7d91de4e24f1d658010c1f3a237933b865b342b))  - (repo-ranger[bot])
+- PR [#952](https://github.com/tj-actions/glob/pull/952): update actions/setup-node action to v3.8.2 ([1b18303](https://github.com/tj-actions/glob/commit/1b183037063d22a268437cbe5ab1e3c313c47dca))  - (repo-ranger[bot])
+- PR [#951](https://github.com/tj-actions/glob/pull/951): lock file maintenance ([43ce311](https://github.com/tj-actions/glob/commit/43ce3114020362ec9aa4365c214dea3ebf6b4729))  - (repo-ranger[bot])
+- Merge 6a2f9e76e437867f60200dc540e1c34446637954 into 622958c1bd7ef50189e3a7b4fe8686a955413d85
+ ([8e4de5a](https://github.com/tj-actions/glob/commit/8e4de5ab062472444e22dfe501ec5c502b5f2617))  - (renovate[bot])
+- PR [#949](https://github.com/tj-actions/glob/pull/949): update dependency eslint-plugin-jest to v27.4.3 ([622958c](https://github.com/tj-actions/glob/commit/622958c1bd7ef50189e3a7b4fe8686a955413d85))  - (repo-ranger[bot])
+- PR [#950](https://github.com/tj-actions/glob/pull/950): update dependency eslint to v8.52.0 ([67ff3de](https://github.com/tj-actions/glob/commit/67ff3dea97168d4212b2134dc589ae6e45ff93ca))  - (repo-ranger[bot])
+- PR [#948](https://github.com/tj-actions/glob/pull/948): update dependency @vercel/ncc to v0.38.1 ([ebcbd0b](https://github.com/tj-actions/glob/commit/ebcbd0b5a4faf2b28d7d78e25549e528b43c7514))  - (repo-ranger[bot])
+- Merge fcf1f54f6bda32c062c665af68d21b56d2882c04 into c69dad7615335d59522e6b9ab2b073f632c9b5e4
+ ([c3022a0](https://github.com/tj-actions/glob/commit/c3022a04a7573b173722392a80459701a3ec1a64))  - (renovate[bot])
+- PR [#947](https://github.com/tj-actions/glob/pull/947): update dependency @types/uuid to v9.0.6 ([c69dad7](https://github.com/tj-actions/glob/commit/c69dad7615335d59522e6b9ab2b073f632c9b5e4))  - (repo-ranger[bot])
+- PR [#946](https://github.com/tj-actions/glob/pull/946): update dependency @types/node to v20.8.7 ([df681f9](https://github.com/tj-actions/glob/commit/df681f90a7edfa58b334f5320ed784c383bcce1a))  - (repo-ranger[bot])
+- PR [#944](https://github.com/tj-actions/glob/pull/944): actions/checkout from 4.1.0 to 4.1.1 ([96a23a1](https://github.com/tj-actions/glob/commit/96a23a16125b71866265c9462324f804f9200aaa))  - (repo-ranger[bot])
+- Merge branch 'main' into dependabot/github_actions/actions/checkout-4.1.1 ([a2d2089](https://github.com/tj-actions/glob/commit/a2d2089b5004ab76ce5d7016fb7e6d3cd4dd3490))  - (repo-ranger[bot])
+- PR [#945](https://github.com/tj-actions/glob/pull/945): update dependency @types/jest to v29.5.6 ([0d29440](https://github.com/tj-actions/glob/commit/0d2944040d0817dd73e5fbcdb65112a3adb050f3))  - (repo-ranger[bot])
+- PR [#943](https://github.com/tj-actions/glob/pull/943): update typescript-eslint monorepo to v6.8.0 ([1300cf4](https://github.com/tj-actions/glob/commit/1300cf4ef5fac8f3bb741d1170b0cf66ae2adf40))  - (repo-ranger[bot])
+- PR [#942](https://github.com/tj-actions/glob/pull/942): lock file maintenance ([06dd346](https://github.com/tj-actions/glob/commit/06dd3469801d54747888e6e97334bcebb23d165e))  - (repo-ranger[bot])
+- Merge e66a750eddc3204cd229390b257d3b6038a737d4 into 597d0d0e984a5621ab9344b6b597d673a3f3c635
+ ([d3cd1ce](https://github.com/tj-actions/glob/commit/d3cd1ce2449b35e0aa6faf42b15445ec2f5f3f36))  - (renovate[bot])
+- PR [#941](https://github.com/tj-actions/glob/pull/941): update dependency @types/node to v20.8.6 ([597d0d0](https://github.com/tj-actions/glob/commit/597d0d0e984a5621ab9344b6b597d673a3f3c635))  - (repo-ranger[bot])
+- PR [#940](https://github.com/tj-actions/glob/pull/940): update dependency @types/node to v20.8.5 ([2a3e2c4](https://github.com/tj-actions/glob/commit/2a3e2c48b16cc19100b275398066cafbcf97a38d))  - (repo-ranger[bot])
+- PR [#939](https://github.com/tj-actions/glob/pull/939): update dependency eslint-plugin-prettier to v5.0.1 ([c39cf1a](https://github.com/tj-actions/glob/commit/c39cf1aeea3fbd9684ee29f6a9c89b4c1e845948))  - (repo-ranger[bot])
+- PR [#937](https://github.com/tj-actions/glob/pull/937): update dependency @types/node to v20.8.4 ([9e158b3](https://github.com/tj-actions/glob/commit/9e158b3c3d490d4bee1ec764d668afdf0d614827))  - (repo-ranger[bot])
+- PR [#936](https://github.com/tj-actions/glob/pull/936): update dependency @types/uuid to v9.0.5 ([2c074ad](https://github.com/tj-actions/glob/commit/2c074ad68bc6e092853535f7e272598c898228a7))  - (repo-ranger[bot])
+- PR [#935](https://github.com/tj-actions/glob/pull/935): update dependency @types/node to v20.8.3 ([dd304b3](https://github.com/tj-actions/glob/commit/dd304b34758658402fe775a932ca73706e81ea6c))  - (repo-ranger[bot])
+- PR [#934](https://github.com/tj-actions/glob/pull/934): update dependency eslint to v8.51.0 ([b088c65](https://github.com/tj-actions/glob/commit/b088c65626857c37781ba561f129602f03d0eb98))  - (repo-ranger[bot])
+- PR [#933](https://github.com/tj-actions/glob/pull/933): update dependency @types/node to v20.8.2 ([dcc7332](https://github.com/tj-actions/glob/commit/dcc7332cea2da7740ef978d7157d9cc7f25eca2e))  - (repo-ranger[bot])
+- PR [#932](https://github.com/tj-actions/glob/pull/932): update typescript-eslint monorepo to v6.7.4 ([d2b1908](https://github.com/tj-actions/glob/commit/d2b1908e8477628cabeb674933cbb081435dfdce))  - (repo-ranger[bot])
+- PR [#930](https://github.com/tj-actions/glob/pull/930): update dependency @types/node to v20.8.0 ([bcc7715](https://github.com/tj-actions/glob/commit/bcc771558896814c0de10eec2f498068756e5db5))  - (repo-ranger[bot])
+- PR [#929](https://github.com/tj-actions/glob/pull/929): update dependency eslint-plugin-jest to v27.4.2 ([ff1b76e](https://github.com/tj-actions/glob/commit/ff1b76ebca8fa78f27cdc6b2ded3bb184111374e))  - (repo-ranger[bot])
+- PR [#928](https://github.com/tj-actions/glob/pull/928): update dependency @types/node to v20.7.2 ([d44408c](https://github.com/tj-actions/glob/commit/d44408c5cb4b7f7a07e98fbb5086a7030f010a88))  - (repo-ranger[bot])
+- PR [#927](https://github.com/tj-actions/glob/pull/927): update dependency @types/node to v20.7.1 ([ae5aa60](https://github.com/tj-actions/glob/commit/ae5aa608fd71c36e46925752d0603f92e64e02fb))  - (repo-ranger[bot])
+- PR [#926](https://github.com/tj-actions/glob/pull/926): update dependency eslint-plugin-github to v4.10.1 ([fa4fc8d](https://github.com/tj-actions/glob/commit/fa4fc8d9925233ce7efa360fc5348060f1608de1))  - (repo-ranger[bot])
+- PR [#925](https://github.com/tj-actions/glob/pull/925): update dependency @types/node to v20.7.0 ([10420b5](https://github.com/tj-actions/glob/commit/10420b589045740bfd5d6939d314a1c8b19cdec8))  - (repo-ranger[bot])
+- PR [#924](https://github.com/tj-actions/glob/pull/924): update typescript-eslint monorepo to v6.7.3 ([b354e2e](https://github.com/tj-actions/glob/commit/b354e2e7c7d2b4373b10c469786528aa3c4bcdea))  - (repo-ranger[bot])
+- PR [#923](https://github.com/tj-actions/glob/pull/923): lock file maintenance ([771c8c1](https://github.com/tj-actions/glob/commit/771c8c1cfacadb8baf5cede409e65c828d4fcc6c))  - (repo-ranger[bot])
+- PR [#922](https://github.com/tj-actions/glob/pull/922): update dependency @types/node to v20.6.5 ([5fd3893](https://github.com/tj-actions/glob/commit/5fd3893bc179c280902f1c5b9c574f4ac0b43d6f))  - (repo-ranger[bot])
+- PR [#921](https://github.com/tj-actions/glob/pull/921): update dependency @types/node to v20.6.4 ([3c572c7](https://github.com/tj-actions/glob/commit/3c572c7d32b63f25fb63f443bbacbe127f89e19f))  - (repo-ranger[bot])
+- PR [#920](https://github.com/tj-actions/glob/pull/920): update dependency eslint to v8.50.0 ([54e2379](https://github.com/tj-actions/glob/commit/54e23797d63cc28da429a02f51cc1221825682f7))  - (repo-ranger[bot])
+- PR [#919](https://github.com/tj-actions/glob/pull/919): update actions/checkout digest to 8ade135 ([87e9c6b](https://github.com/tj-actions/glob/commit/87e9c6b4bf1382d5696dcfd713ec5851301d1395))  - (repo-ranger[bot])
+- PR [#918](https://github.com/tj-actions/glob/pull/918): update dependency @types/node to v20.6.3 ([a98a608](https://github.com/tj-actions/glob/commit/a98a608689c14d5cc5a4d30a9cd0074e2ce249ba))  - (repo-ranger[bot])
+- PR [#916](https://github.com/tj-actions/glob/pull/916): update typescript-eslint monorepo to v6.7.2 ([f06308b](https://github.com/tj-actions/glob/commit/f06308b290ad707ca33754a4d67a778a44fbb61c))  - (repo-ranger[bot])
+- PR [#915](https://github.com/tj-actions/glob/pull/915): lock file maintenance ([c447bbe](https://github.com/tj-actions/glob/commit/c447bbe8677c6b1857e34dae6b9f9f4c185e9f63))  - (repo-ranger[bot])
+- Merge cb7cc40c32791949447a4626be50cb75d205e00c into 2275559665d567ee45c743cfd35fb8bcc8c02796
+ ([0b2e771](https://github.com/tj-actions/glob/commit/0b2e7715e185934bd8ac35093e59cf63df015dd6))  - (renovate[bot])
+- PR [#914](https://github.com/tj-actions/glob/pull/914): update dependency @types/node to v20.6.2 ([2275559](https://github.com/tj-actions/glob/commit/2275559665d567ee45c743cfd35fb8bcc8c02796))  - (repo-ranger[bot])
+- PR [#913](https://github.com/tj-actions/glob/pull/913): update dependency eslint-plugin-jest to v27.4.0 ([b4f7695](https://github.com/tj-actions/glob/commit/b4f76959dd7c4e8d17a0ace3885c6d9b1c9fae19))  - (repo-ranger[bot])
+- PR [#912](https://github.com/tj-actions/glob/pull/912): update dependency @types/jest to v29.5.5 ([d223692](https://github.com/tj-actions/glob/commit/d223692fb10e368ae78f2f08c31d65f4e61cff6e))  - (repo-ranger[bot])
+- PR [#911](https://github.com/tj-actions/glob/pull/911): update dependency @types/node to v20.6.1 ([1591b6b](https://github.com/tj-actions/glob/commit/1591b6ba2ae3658aa12d5e03fa47a62a40068df8))  - (repo-ranger[bot])
+- PR [#910](https://github.com/tj-actions/glob/pull/910): update dependency @types/uuid to v9.0.4 ([fb5253d](https://github.com/tj-actions/glob/commit/fb5253db89d6b8cdfa3b0cfeb49a16c670091e38))  - (repo-ranger[bot])
+- PR [#908](https://github.com/tj-actions/glob/pull/908): update dependency uuid to v9.0.1 ([22a81cd](https://github.com/tj-actions/glob/commit/22a81cd1ea670541752ed4de268d6a22a835cf74))  - (repo-ranger[bot])
+- Merge branch 'main' into renovate/uuid-9.x ([18c0118](https://github.com/tj-actions/glob/commit/18c011895898e4592cff76a6d84448ec3dff46a2))  - (repo-ranger[bot])
+- PR [#909](https://github.com/tj-actions/glob/pull/909): update dependency jest to v29.7.0 ([6fc0ca1](https://github.com/tj-actions/glob/commit/6fc0ca15b2bf16c710b41db07265efee1caa9cb9))  - (repo-ranger[bot])
+- Merge df6e0fd67a710a6add4219ed78fc082a8e87ef3a into b2aef092cde5a552783ecf60393419377072b46c
+ ([cd4fafe](https://github.com/tj-actions/glob/commit/cd4fafea2598e6386667c3324ea5df6ab84def9e))  - (renovate[bot])
+- PR [#907](https://github.com/tj-actions/glob/pull/907): update typescript-eslint monorepo to v6.7.0 ([b2aef09](https://github.com/tj-actions/glob/commit/b2aef092cde5a552783ecf60393419377072b46c))  - (repo-ranger[bot])
+- PR [#906](https://github.com/tj-actions/glob/pull/906): update dependency @actions/core to v1.10.1 ([45325ce](https://github.com/tj-actions/glob/commit/45325ce23a4c87efbe30bdfb5bffd7be5817c78e))  - (repo-ranger[bot])
+- Merge 2ad810ecdd9ac8851d4220b15a4653f8c004089a into 5609b5b1dc476f4064904f538ab64fe029df0aa6
+ ([93561a0](https://github.com/tj-actions/glob/commit/93561a0306aff78ffd17ba7a356fc27b3a1bbdd4))  - (renovate[bot])
+- PR [#905](https://github.com/tj-actions/glob/pull/905): lock file maintenance ([5609b5b](https://github.com/tj-actions/glob/commit/5609b5b1dc476f4064904f538ab64fe029df0aa6))  - (repo-ranger[bot])
+- PR [#904](https://github.com/tj-actions/glob/pull/904): update dependency @types/node to v20.6.0 ([1bfc1c3](https://github.com/tj-actions/glob/commit/1bfc1c38551828fd8383acb749c983aa9eedab1b))  - (repo-ranger[bot])
+- PR [#903](https://github.com/tj-actions/glob/pull/903): update dependency eslint to v8.49.0 ([8082dd5](https://github.com/tj-actions/glob/commit/8082dd5fc23eac9ed5d320ebc8a719cd32315d7e))  - (repo-ranger[bot])
+- PR [#902](https://github.com/tj-actions/glob/pull/902): update dependency @vercel/ncc to v0.38.0 ([64243cd](https://github.com/tj-actions/glob/commit/64243cd28be44fafa239d5fa2333da5fc9d14d67))  - (repo-ranger[bot])
+- PR [#901](https://github.com/tj-actions/glob/pull/901): update tj-actions/eslint-changed-files action to v21 ([05e61c6](https://github.com/tj-actions/glob/commit/05e61c67e55760e2d34514bb1a63d382c27139f3))  - (repo-ranger[bot])
+- PR [#900](https://github.com/tj-actions/glob/pull/900): update typescript-eslint monorepo to v6.6.0 ([37d013b](https://github.com/tj-actions/glob/commit/37d013ba6186fc19fdb9cab05bc5355b083d6b6f))  - (repo-ranger[bot])
+- PR [#899](https://github.com/tj-actions/glob/pull/899): update actions/checkout action to v4 ([9f1f9e9](https://github.com/tj-actions/glob/commit/9f1f9e92c15e8e3122b21d4e6b66b7f680c54add))  - (repo-ranger[bot])
+- PR [#898](https://github.com/tj-actions/glob/pull/898): lock file maintenance ([0b73170](https://github.com/tj-actions/glob/commit/0b73170250d60935b9ffd0839043ec1232c82a2e))  - (repo-ranger[bot])
+- PR [#897](https://github.com/tj-actions/glob/pull/897): update dependency @types/node to v20.5.9 ([5a6e666](https://github.com/tj-actions/glob/commit/5a6e666414f35427b6064435f1570151e684e81c))  - (repo-ranger[bot])
+- PR [#896](https://github.com/tj-actions/glob/pull/896): update dependency @types/node to v20.5.8 ([956051c](https://github.com/tj-actions/glob/commit/956051c804bd7bfdad085e15ea82c94f64a9de72))  - (repo-ranger[bot])
+- PR [#895](https://github.com/tj-actions/glob/pull/895): update dependency @types/uuid to v9.0.3 ([dfff188](https://github.com/tj-actions/glob/commit/dfff188443f894c5315105e00687d130dd035e29))  - (repo-ranger[bot])
+- PR [#894](https://github.com/tj-actions/glob/pull/894): update dependency prettier to v3.0.3 ([ee7dd7e](https://github.com/tj-actions/glob/commit/ee7dd7ece00afda1c5fc1b31da95f9b5d2ee1fa6))  - (repo-ranger[bot])
+- PR [#893](https://github.com/tj-actions/glob/pull/893): update dependency eslint-plugin-github to v4.10.0 ([9e6d67c](https://github.com/tj-actions/glob/commit/9e6d67c8a59a3bcd18165cdda30639ebf30f1c54))  - (repo-ranger[bot])
+- PR [#892](https://github.com/tj-actions/glob/pull/892): update typescript-eslint monorepo to v6.5.0 ([413b87e](https://github.com/tj-actions/glob/commit/413b87e79ba7f7870e77253fb44b16b82313f470))  - (repo-ranger[bot])
+- PR [#890](https://github.com/tj-actions/glob/pull/890): update dependency @types/node to v20.5.7 ([bbee9dc](https://github.com/tj-actions/glob/commit/bbee9dc46ec0fdcb7be032bd8c30b36b11501957))  - (repo-ranger[bot])
+- PR [#891](https://github.com/tj-actions/glob/pull/891): lock file maintenance ([6eec4db](https://github.com/tj-actions/glob/commit/6eec4dbff5d78cffe6a05f7233516763178b7752))  - (repo-ranger[bot])
+- PR [#889](https://github.com/tj-actions/glob/pull/889): update tj-actions/release-tagger action to v4 ([86e83f3](https://github.com/tj-actions/glob/commit/86e83f32007362f7eaecbdc796923f0325cf88bd))  - (repo-ranger[bot])
+- PR [#888](https://github.com/tj-actions/glob/pull/888): update dependency eslint to v8.48.0 ([4841ff4](https://github.com/tj-actions/glob/commit/4841ff4ed20328e8d1514f82055fcd9c86ff9e75))  - (repo-ranger[bot])
+- PR [#887](https://github.com/tj-actions/glob/pull/887): update dependency @types/node to v20.5.6 ([b638dda](https://github.com/tj-actions/glob/commit/b638dda2ca517aff559dc553cb5214572d868eb9))  - (repo-ranger[bot])
+- PR [#886](https://github.com/tj-actions/glob/pull/886): update dependency typescript to v5.2.2 ([bcdb2f1](https://github.com/tj-actions/glob/commit/bcdb2f169d0f3394ebeaef72bf35872d4bcbd685))  - (repo-ranger[bot])
+- PR [#885](https://github.com/tj-actions/glob/pull/885): update dependency jest to v29.6.4 ([7211215](https://github.com/tj-actions/glob/commit/721121599314e17cbc85d603c421d56616f1a73a))  - (repo-ranger[bot])
+- PR [#884](https://github.com/tj-actions/glob/pull/884): README.md ([cea6566](https://github.com/tj-actions/glob/commit/cea65665e371ed861d39a4013552582aaa522197))  - (repo-ranger[bot])
+- PR [#883](https://github.com/tj-actions/glob/pull/883): update tj-actions/auto-doc action to v3 ([80d9eeb](https://github.com/tj-actions/glob/commit/80d9eeb79034c2263289af9349f9bcfceb545159))  - (repo-ranger[bot])
+- PR [#882](https://github.com/tj-actions/glob/pull/882): update dependency @types/node to v20.5.4 ([611c1dd](https://github.com/tj-actions/glob/commit/611c1ddef64c616a18cfa5744a0ac641b4f2ecfd))  - (repo-ranger[bot])
+- PR [#881](https://github.com/tj-actions/glob/pull/881): to v17.3.0 ([a35675b](https://github.com/tj-actions/glob/commit/a35675beaca8a7799427c9fc899d95f822ec871f))  - (repo-ranger[bot])
+
+## <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- Update escapeString function ([#1030](https://github.com/tj-actions/glob/issues/1030)) ([37015c4](https://github.com/tj-actions/glob/commit/37015c4829cb0be5f9afb838fc6dc262f7ccec40))  - (Tonye Jack)
+- **deps:** Update dependency eslint-plugin-jest to v27.6.1 ([46d02d8](https://github.com/tj-actions/glob/commit/46d02d874d8f13606d256341b1052ae535a26b28))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.17.0 ([20bf59e](https://github.com/tj-actions/glob/commit/20bf59ee6c8dd7edb24863a022ebb851bf6e294e))  - (renovate[bot])
+- **deps:** Lock file maintenance ([470402c](https://github.com/tj-actions/glob/commit/470402c4b8a32c54ce006a8550fa71f1d1d2cdff))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.10.6 ([baedc6c](https://github.com/tj-actions/glob/commit/baedc6cedad7948325c43292a63cddaf7f604ecd))  - (renovate[bot])
+- **deps:** Update tj-actions/verify-changed-files action to v17 ([59b390d](https://github.com/tj-actions/glob/commit/59b390df0265f9f72c022586527be8504ab06c9d))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.16.0 ([d935977](https://github.com/tj-actions/glob/commit/d935977ea96a288b513459e45d91876431a391ca))  - (renovate[bot])
+- **deps:** Lock file maintenance ([da2637a](https://github.com/tj-actions/glob/commit/da2637a93793f378930d29482029d9322d5c6f31))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-prettier to v5.1.2 ([8df5623](https://github.com/tj-actions/glob/commit/8df56234fd896d980c1b564c11f4d09f38a4a539))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-prettier to v5.1.1 ([100367a](https://github.com/tj-actions/glob/commit/100367aaa1c04d0785eb191097d09e712b327a22))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.15.0 ([402e97d](https://github.com/tj-actions/glob/commit/402e97de108c4341b24ad99e277232f31c49e032))  - (renovate[bot])
+- **deps:** Update actions/setup-node action to v4.0.1 ([1f76005](https://github.com/tj-actions/glob/commit/1f7600565609b8f3cee6434f871f442e14a6c75c))  - (renovate[bot])
+- **deps:** Lock file maintenance ([a19545c](https://github.com/tj-actions/glob/commit/a19545ce9f69a17e720698d933d0996236bd0147))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.10.5 ([4344273](https://github.com/tj-actions/glob/commit/4344273c613ed89cd7dca9bcb32b175734b49683))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.56.0 ([1c55146](https://github.com/tj-actions/glob/commit/1c551460931244358c3ee6c69965cd43b9899270))  - (renovate[bot])
+- **deps:** Update github/codeql-action action to v3 ([a9678ca](https://github.com/tj-actions/glob/commit/a9678ca946b1444e5dfde44cfe1c74bd7154c401))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.14.0 ([9cfbff5](https://github.com/tj-actions/glob/commit/9cfbff56879c82be836a6ab280ffb8e3bb1ad506))  - (renovate[bot])
+- **deps:** Lock file maintenance ([a675565](https://github.com/tj-actions/glob/commit/a675565be894e81fd22ad865b89a2660e84d7b87))  - (renovate[bot])
+- **deps:** Update dependency prettier to v3.1.1 ([3d0a58f](https://github.com/tj-actions/glob/commit/3d0a58fb7398dc9c10061bc17522a4f5b0cd2c30))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.10.4 ([6f782a2](https://github.com/tj-actions/glob/commit/6f782a2cda4dd967da731e323fdffcb62b6dcce0))  - (renovate[bot])
+- **deps:** Update dependency typescript to v5.3.3 ([31467d5](https://github.com/tj-actions/glob/commit/31467d5cdcca9e2881cc14e9e7783d9ee2b2732e))  - (renovate[bot])
+- **deps:** Update dependency @types/jest to v29.5.11 ([cef0c7f](https://github.com/tj-actions/glob/commit/cef0c7f5cc680d4fe35e388be069e6b3f00b5ac4))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.13.2 ([c0e30c2](https://github.com/tj-actions/glob/commit/c0e30c227187097df2aa19227ffd16ec86c5119e))  - (renovate[bot])
+- **deps:** Lock file maintenance ([8bba161](https://github.com/tj-actions/glob/commit/8bba161fd0c2781fc506f79f75ef1db0167dbcb3))  - (renovate[bot])
+- **deps:** Lock file maintenance ([184adf1](https://github.com/tj-actions/glob/commit/184adf13b8ac384c635d97210cfd9a26a73c97d5))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.10.3 ([0ed2584](https://github.com/tj-actions/glob/commit/0ed258480a18005b4d596e0bfd1d19676b6131ef))  - (renovate[bot])
+- **deps:** Update dependency eslint-config-prettier to v9.1.0 ([c97c3cd](https://github.com/tj-actions/glob/commit/c97c3cdb36eaf0297cc54e822626f9ea90c79f34))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.55.0 ([2c8fc43](https://github.com/tj-actions/glob/commit/2c8fc4337d14e68990f43f4f99090345b597e621))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.10.2 ([bb9fce3](https://github.com/tj-actions/glob/commit/bb9fce3c1af2f88b8d659254ab352e7ec81ff5ee))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.13.1 ([7a2538a](https://github.com/tj-actions/glob/commit/7a2538adb57e6c1e2a323e1a052ac28bdeb7e93e))  - (renovate[bot])
+- Update test.yml ([1c319f8](https://github.com/tj-actions/glob/commit/1c319f856b9f39f1ce7e649a9d06f72f1f905609))  - (Tonye Jack)
+- **deps:** Update dependency @types/node to v20.9.5 ([b10b2d9](https://github.com/tj-actions/glob/commit/b10b2d94ce300c0c6e978e82e4d1fcbaa74dd9fb))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.9.4 ([a662bf9](https://github.com/tj-actions/glob/commit/a662bf91f892b11d20b57871e464e8db2ab06691))  - (renovate[bot])
+- **deps:** Update dependency @types/jest to v29.5.10 ([d273fd7](https://github.com/tj-actions/glob/commit/d273fd7afd0c24a69a6d374118b382d114db8408))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.9.3 ([8c04c0d](https://github.com/tj-actions/glob/commit/8c04c0d9efde30238117e2f17f51593517f932a3))  - (renovate[bot])
+- **deps:** Update dependency @types/jest to v29.5.9 ([54d977b](https://github.com/tj-actions/glob/commit/54d977b5d75abc68a75d9df5bbe3ca26b1caa118))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.12.0 ([b6ea168](https://github.com/tj-actions/glob/commit/b6ea168052a1543a3b58c29aeabb87b9b8b84a68))  - (renovate[bot])
+- **deps:** Update dependency typescript to v5.3.2 ([f8d2856](https://github.com/tj-actions/glob/commit/f8d28560602ed9209723e54fa82294afc43251f7))  - (renovate[bot])
+- **deps:** Lock file maintenance ([767a957](https://github.com/tj-actions/glob/commit/767a957fd6bdcbeca3cc39263d50015885631b53))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.9.2 ([570d2b1](https://github.com/tj-actions/glob/commit/570d2b14c28d4de9767ffbab85ddcf9f196cbf4f))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.54.0 ([adf850a](https://github.com/tj-actions/glob/commit/adf850ab19ad6fbab6ca7c7450e71c7a8a488822))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.9.1 ([244b347](https://github.com/tj-actions/glob/commit/244b347bc55ae1a0c73980dd6eca42e64ca38441))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.11.0 ([b65188b](https://github.com/tj-actions/glob/commit/b65188b7a2f9e02ce9254160c751f3881b3e3242))  - (renovate[bot])
+- **deps:** Update dependency prettier to v3.1.0 ([2be4548](https://github.com/tj-actions/glob/commit/2be45482040c7b2b76a550f7e8181295a2bb5c23))  - (renovate[bot])
+- **deps:** Lock file maintenance ([91b0ca6](https://github.com/tj-actions/glob/commit/91b0ca68cb7762d6c99b790b9b319cb8c594419f))  - (renovate[bot])
+- **deps:** Lock file maintenance ([91c6651](https://github.com/tj-actions/glob/commit/91c66516e368831249873abb7222c87eef188e5c))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.9.0 ([d6e1cb8](https://github.com/tj-actions/glob/commit/d6e1cb85142b89c0c4771ba541992a2b539e6e54))  - (renovate[bot])
+- **deps:** Update dependency @types/uuid to v9.0.7 ([65c1be5](https://github.com/tj-actions/glob/commit/65c1be59b54dc1727d8ecd103080680c10546588))  - (renovate[bot])
+- **deps:** Update dependency @types/jest to v29.5.8 ([f37c3d0](https://github.com/tj-actions/glob/commit/f37c3d0736000a3aac7200e3b31e0407a18a3840))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.10.0 ([2d04159](https://github.com/tj-actions/glob/commit/2d04159b3dbec93060db2db29f8e427f905cd691))  - (renovate[bot])
+- **deps:** Lock file maintenance ([2f0739c](https://github.com/tj-actions/glob/commit/2f0739cc14d5d7a368314b6352f6e290bf6d96df))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.53.0 ([c06b957](https://github.com/tj-actions/glob/commit/c06b957ecf09b96b6dcbe87a12abf00ae0c61319))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.10 ([759f891](https://github.com/tj-actions/glob/commit/759f891088fc22805f691fb4557299c08c036a1b))  - (renovate[bot])
+- **deps:** Update dependency @types/jest to v29.5.7 ([102ff80](https://github.com/tj-actions/glob/commit/102ff80333ca07d128aaf5e44689dd498c6319dd))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.9.1 ([3ec7ed0](https://github.com/tj-actions/glob/commit/3ec7ed03e6a2b5a63169d566b5e5387b8e59075f))  - (renovate[bot])
+- **deps:** Lock file maintenance ([d838eb5](https://github.com/tj-actions/glob/commit/d838eb53e54653996c9e7d1ab9ac8d61f48eaa1e))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v27.6.0 ([ba2627c](https://github.com/tj-actions/glob/commit/ba2627c8d42953dbb6c457cf0fa3979fe11a9b1d))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.9 ([d038146](https://github.com/tj-actions/glob/commit/d0381460e9297493e36476cdcd745185d1823bcc))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.8 ([6a30b20](https://github.com/tj-actions/glob/commit/6a30b206b5f698c53c4f957af9915505c68a9a5f))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.9.0 ([14a4cf7](https://github.com/tj-actions/glob/commit/14a4cf768603dc3928cbd83c2eb28b5b33b95086))  - (renovate[bot])
+- **deps:** Update actions/setup-node action to v4 ([569a580](https://github.com/tj-actions/glob/commit/569a580226c028e1d8c59420e3279f270cd01b7c))  - (renovate[bot])
+- **deps:** Update actions/setup-node action to v4 ([a7b2d8c](https://github.com/tj-actions/glob/commit/a7b2d8cf97aa946e9b23acbcbbfcb082930c477a))  - (renovate[bot])
+- **deps:** Update actions/setup-node action to v3.8.2 ([817734d](https://github.com/tj-actions/glob/commit/817734d337ce78f17bfd2f60c7b73a948875b5de))  - (renovate[bot])
+- **deps:** Lock file maintenance ([6a2f9e7](https://github.com/tj-actions/glob/commit/6a2f9e76e437867f60200dc540e1c34446637954))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v27.4.3 ([8acc4bb](https://github.com/tj-actions/glob/commit/8acc4bb0694011baff5085957d6f76a80ad99a9c))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.52.0 ([c8ca680](https://github.com/tj-actions/glob/commit/c8ca68028d26d6457c2047db955ca2977b92eab6))  - (renovate[bot])
+- **deps:** Update dependency @vercel/ncc to v0.38.1 ([fcf1f54](https://github.com/tj-actions/glob/commit/fcf1f54f6bda32c062c665af68d21b56d2882c04))  - (renovate[bot])
+- **deps:** Update dependency @types/uuid to v9.0.6 ([b142865](https://github.com/tj-actions/glob/commit/b1428652aaba422f5bf8ef621c35576cae6a3a0b))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.7 ([1ff4b16](https://github.com/tj-actions/glob/commit/1ff4b16def827fbc2460a2ff038e6b49c9a60850))  - (renovate[bot])
+- **deps:** Update dependency @types/jest to v29.5.6 ([dd9ba2e](https://github.com/tj-actions/glob/commit/dd9ba2e4f03a28b5b451826c77a30265b4d37b00))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.8.0 ([bc5524a](https://github.com/tj-actions/glob/commit/bc5524ab9044165f9900692c02bb4dd0ccc91ec5))  - (renovate[bot])
+- **deps:** Lock file maintenance ([e66a750](https://github.com/tj-actions/glob/commit/e66a750eddc3204cd229390b257d3b6038a737d4))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.6 ([ea3428b](https://github.com/tj-actions/glob/commit/ea3428b5e6ca749a8c3785288cbe361481a13108))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.5 ([15ce7b9](https://github.com/tj-actions/glob/commit/15ce7b9de8f12f4d3774ba2a49ab68433b62a20d))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-prettier to v5.0.1 ([de75711](https://github.com/tj-actions/glob/commit/de75711179ce94de587c7d368a46c7babe8cb884))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.4 ([2631c6f](https://github.com/tj-actions/glob/commit/2631c6f03fc23ff191e6e25b6e61918fc64ef125))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.7.5 ([#938](https://github.com/tj-actions/glob/issues/938)) ([17a6dde](https://github.com/tj-actions/glob/commit/17a6ddebc776c2d809bac0860ee8bf39608e933e))  - (renovate[bot])
+- **deps:** Update dependency @types/uuid to v9.0.5 ([ff4d2d4](https://github.com/tj-actions/glob/commit/ff4d2d4b6488a42903c67af405707f04fe3468f0))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.3 ([f06ac1e](https://github.com/tj-actions/glob/commit/f06ac1e316700074ba7d55766bb80febaf536e8a))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.51.0 ([0f66cc5](https://github.com/tj-actions/glob/commit/0f66cc5da8151461eb547d2f8d7d4cb6082b73ef))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.2 ([a906f17](https://github.com/tj-actions/glob/commit/a906f1748d14077ab85239eca0ef42e612700e1c))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.7.4 ([fa73979](https://github.com/tj-actions/glob/commit/fa7397924596cb69a04f3a6521f9c03fc6c03bf0))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.8.0 ([b3f7565](https://github.com/tj-actions/glob/commit/b3f7565a06739d4e129a26eaaeb384ed96a7c247))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v27.4.2 ([73925c7](https://github.com/tj-actions/glob/commit/73925c75a33dd4e25c0f2693fb48a72b2357f99a))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.7.2 ([195292d](https://github.com/tj-actions/glob/commit/195292d5eeee1a5853a719767bab37fa9a81f62d))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.7.1 ([42c32b7](https://github.com/tj-actions/glob/commit/42c32b75cfc35a1d602f67bed75787e17b49316a))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-github to v4.10.1 ([8b8937d](https://github.com/tj-actions/glob/commit/8b8937de5a89f3972e4cc5743340b235f06c9c36))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.7.0 ([0bcc153](https://github.com/tj-actions/glob/commit/0bcc153c5e691ad0756302fbfdee856d18d5188f))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.7.3 ([9ab51f1](https://github.com/tj-actions/glob/commit/9ab51f19ee65f1ed94c58eda4d30ba2eb76362e9))  - (renovate[bot])
+- **deps:** Lock file maintenance ([5417a82](https://github.com/tj-actions/glob/commit/5417a82147821345d5e9c91f4b09d740d9b26923))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.6.5 ([a67274b](https://github.com/tj-actions/glob/commit/a67274b8d1c6d3438f1b273ec1a0c832776471a3))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.6.4 ([65142af](https://github.com/tj-actions/glob/commit/65142af8912a309fc858cc42f48e5099dc09c1fe))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.50.0 ([2d3eb5b](https://github.com/tj-actions/glob/commit/2d3eb5b1553ca8e29064fa0478b2e8502e42eb18))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to 8ade135 ([799dfca](https://github.com/tj-actions/glob/commit/799dfca199d4ce690d3e5da12d9eacd1480868eb))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.6.3 ([9710597](https://github.com/tj-actions/glob/commit/9710597f197a6ddf610f2ee4cf2f1661248cd448))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.7.2 ([cea5f39](https://github.com/tj-actions/glob/commit/cea5f3949e80dece21a08b37411737b38fb68e03))  - (renovate[bot])
+- **deps:** Lock file maintenance ([cb7cc40](https://github.com/tj-actions/glob/commit/cb7cc40c32791949447a4626be50cb75d205e00c))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.6.2 ([93cb3ab](https://github.com/tj-actions/glob/commit/93cb3ab1ec1f0d406202fc9a01bded9c34c530c9))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v27.4.0 ([7f767dd](https://github.com/tj-actions/glob/commit/7f767dde785f39aca1e90c5368229a3f59c26f26))  - (renovate[bot])
+- **deps:** Update dependency @types/jest to v29.5.5 ([84c0e67](https://github.com/tj-actions/glob/commit/84c0e67260a35d4f50f3a05665e5deb3ef17bba7))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.6.1 ([60f08b4](https://github.com/tj-actions/glob/commit/60f08b412bef721d065b81c0631c2d2f19463f0f))  - (renovate[bot])
+- **deps:** Update dependency @types/uuid to v9.0.4 ([ed84bde](https://github.com/tj-actions/glob/commit/ed84bdead173204dfbd983159b8c64a34ae46233))  - (renovate[bot])
+- **deps:** Update dependency jest to v29.7.0 ([460ab14](https://github.com/tj-actions/glob/commit/460ab140f01a81250002ec2ffe0f116231c35f7d))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.7.0 ([8c04381](https://github.com/tj-actions/glob/commit/8c04381fdb6fdb19aefc7e4118003e7a7268754a))  - (renovate[bot])
+- **deps:** Lock file maintenance ([919bcf6](https://github.com/tj-actions/glob/commit/919bcf661d50d8edd46821f1e08439b3a8796950))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.6.0 ([43d4d21](https://github.com/tj-actions/glob/commit/43d4d2149a4e7b61fb59b7098a7c55f9dbdcff1d))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.49.0 ([4b1900c](https://github.com/tj-actions/glob/commit/4b1900ca446a458d9001d60436c3418347f3b925))  - (renovate[bot])
+- **deps:** Update dependency @vercel/ncc to v0.38.0 ([5ae77bc](https://github.com/tj-actions/glob/commit/5ae77bcb99ab7224e75495884211a625f14e4e67))  - (renovate[bot])
+- **deps:** Update tj-actions/eslint-changed-files action to v21 ([8ee2501](https://github.com/tj-actions/glob/commit/8ee250187ed6f88666234bee9ea6c5f18444e2aa))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.6.0 ([a256ef2](https://github.com/tj-actions/glob/commit/a256ef23e7e8de109a4790615df35f778e4a36c9))  - (renovate[bot])
+- **deps:** Update actions/checkout action to v4 ([f273608](https://github.com/tj-actions/glob/commit/f27360883eb336be4bb1538a3f0cccd989cf3a77))  - (renovate[bot])
+- **deps:** Lock file maintenance ([6532712](https://github.com/tj-actions/glob/commit/6532712076b569737956cff9449e6d479e0d8654))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.5.9 ([c40c76d](https://github.com/tj-actions/glob/commit/c40c76db863c8f86314c3690ef35ef199120ef48))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.5.8 ([10cf9b0](https://github.com/tj-actions/glob/commit/10cf9b020188b4af25c1b8dcc2c43af774e36127))  - (renovate[bot])
+- **deps:** Update dependency @types/uuid to v9.0.3 ([f4ba2e8](https://github.com/tj-actions/glob/commit/f4ba2e83b0aeca6896ec15562bd932d5c5209f7b))  - (renovate[bot])
+- **deps:** Update dependency prettier to v3.0.3 ([a9e69f6](https://github.com/tj-actions/glob/commit/a9e69f69dd9c586a600d29c4b5db086b1a0a7e09))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-github to v4.10.0 ([e30a818](https://github.com/tj-actions/glob/commit/e30a818d4f1aad84691e42cb276266d9b21a12dc))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.5.0 ([fba3fe7](https://github.com/tj-actions/glob/commit/fba3fe7c4179970adbfb8316b414e770cbbd8e05))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.5.7 ([b2582a3](https://github.com/tj-actions/glob/commit/b2582a35abce145734f2e63ea76173a48831f463))  - (renovate[bot])
+- **deps:** Lock file maintenance ([00165cc](https://github.com/tj-actions/glob/commit/00165cc7f63aa8fb05d5e3c4d48e384c26d1186d))  - (renovate[bot])
+- **deps:** Update tj-actions/release-tagger action to v4 ([9adbaab](https://github.com/tj-actions/glob/commit/9adbaab0bbc04271beaf6446533ee7599c0d6b92))  - (renovate[bot])
+- **deps:** Update dependency eslint to v8.48.0 ([0d2f8c4](https://github.com/tj-actions/glob/commit/0d2f8c4b016b7b5e1115abbdf35932eaaa145592))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.5.6 ([aa2a042](https://github.com/tj-actions/glob/commit/aa2a04252a4f1ba8edd50c1b3425646811cac6aa))  - (renovate[bot])
+- **deps:** Update dependency typescript to v5.2.2 ([095080d](https://github.com/tj-actions/glob/commit/095080d2e5c3fbf0f390ed0d161106c84fea06f4))  - (renovate[bot])
+- **deps:** Update dependency jest to v29.6.4 ([2dce267](https://github.com/tj-actions/glob/commit/2dce2676c5fc524c9264d8af08fcb75996ee7fee))  - (renovate[bot])
+- **deps:** Update tj-actions/auto-doc action to v3 ([06911a9](https://github.com/tj-actions/glob/commit/06911a9cfc67efb105d905ca9fa7166717a05e0b))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.5.4 ([0487661](https://github.com/tj-actions/glob/commit/0487661c26827bd151db6b2e2ee61ecaf1867e3b))  - (renovate[bot])
+
+## <!-- 9 -->⬆️ Upgrades
+
+- Upgraded from v17.2.6 -> v17.3.0
+ ([37ff902](https://github.com/tj-actions/glob/commit/37ff902a50b72c89bfa66b45a38fcedb08f63e63))  - (jackton1)
+
 # [17.3.0](https://github.com/tj-actions/glob/compare/v17.2.6...v17.3.0) - (2023-08-22)
 
 ## <!-- 1 -->🐛 Bug Fixes
