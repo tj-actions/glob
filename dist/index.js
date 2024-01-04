@@ -499,7 +499,8 @@ function tempfile(extension = '') {
 }
 exports.tempfile = tempfile;
 function escapeString(value) {
-    return value.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
+    // escape special characters for bash shell
+    return value.replace(/[^\x20-\x7E]|[:*?<>|;`$()&!]/g, '\\$&');
 }
 exports.escapeString = escapeString;
 function exists(filePath) {
