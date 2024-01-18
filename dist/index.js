@@ -95,7 +95,11 @@ function run() {
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
         const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
         const gitignorePath = path.join(workingDirectory, '.gitignore');
-        let filePatterns = files.split(filesSeparator).filter(Boolean).join('\n');
+        let filePatterns = files
+            .split(filesSeparator)
+            .filter(Boolean)
+            .map(p => (p.endsWith(path.sep) ? `${p}**` : p))
+            .join('\n');
         core.debug(`file patterns: ${filePatterns}`);
         let diffType = diff;
         if (!diffType) {
@@ -106,11 +110,9 @@ function run() {
                 .split(excludedFilesSeparator)
                 .filter(Boolean)
                 .map(p => {
-                if (!p.startsWith('!')) {
-                    p = `!${p}`;
-                }
+                p = p.startsWith('!') ? p : `!${p}`;
                 if (p.endsWith(path.sep)) {
-                    p = `${p}${path.sep}**`;
+                    p = `${p}**`;
                 }
                 return p;
             })
@@ -446,11 +448,12 @@ function lineOfFileGenerator({ filePath, excludedFiles }) {
                     if (excludedFiles) {
                         line = line.startsWith('!') ? line : `!${line}`;
                         if (line.endsWith(path_1.default.sep)) {
-                            line = `${line}${path_1.default.sep}**`;
+                            line = `${line}**`;
                         }
                         yield yield __await(line);
                     }
                     else {
+                        line = line.endsWith(path_1.default.sep) ? `${line}**` : line;
                         yield yield __await(line);
                     }
                 }
