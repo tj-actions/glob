@@ -172,7 +172,6 @@ async function* lineOfFileGenerator({
         if (line.endsWith(path.sep)) {
           line = `${line}${path.sep}**`
         }
-
         yield line
       } else {
         yield line
