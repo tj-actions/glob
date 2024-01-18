@@ -165,7 +165,7 @@ async function* lineOfFileGenerator({
     input: fileStream,
     crlfDelay: Infinity
   })
-  for await (const line of rl) {
+  for await (let line of rl) {
     if (!line.startsWith('#') && line !== '') {
       if (excludedFiles) {
         line = line.startsWith('!') ? line : `!${line}`
