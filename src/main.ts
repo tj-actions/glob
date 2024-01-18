@@ -102,7 +102,7 @@ export async function run(): Promise<void> {
         if (!p.startsWith('!')) {
           p = `!${p}`
         }
-        if (p.endsWith(path.sep) {
+        if (p.endsWith(path.sep)) {
           p = `${p}${path.sep}**`
         }
         return p
