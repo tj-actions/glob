@@ -81,7 +81,11 @@ export async function run(): Promise<void> {
 
   const gitignorePath = path.join(workingDirectory, '.gitignore')
 
-  let filePatterns = files.split(filesSeparator).filter(Boolean).join('\n')
+  let filePatterns = files
+    .split(filesSeparator)
+    .filter(Boolean)
+    .map(p => (p.endsWith(path.sep) ? `${p}**` : p))
+    .join('\n')
 
   core.debug(`file patterns: ${filePatterns}`)
 
@@ -96,11 +100,9 @@ export async function run(): Promise<void> {
       .split(excludedFilesSeparator)
       .filter(Boolean)
       .map(p => {
-        if (!p.startsWith('!')) {
-          p = `!${p}`
-        }
+        p = p.startsWith('!') ? p : `!${p}`
         if (p.endsWith(path.sep)) {
-          p = `${p}${path.sep}**`
+          p = `${p}**`
         }
         return p
       })
