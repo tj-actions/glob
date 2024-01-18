@@ -170,7 +170,7 @@ async function* lineOfFileGenerator({
       if (excludedFiles) {
         line = line.startsWith('!') ? line : `!${line}`
         if (line.endsWith(path.sep)) {
-          line = `${line}${path.sep}**`
+          line = `${line}**`
         }
         yield line
       } else {
