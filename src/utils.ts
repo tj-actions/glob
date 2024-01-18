@@ -174,6 +174,7 @@ async function* lineOfFileGenerator({
         }
         yield line
       } else {
+        line = line.endsWith(path.sep) ? `${line}**` : line
         yield line
       }
     }
