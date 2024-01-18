@@ -169,7 +169,6 @@ async function* lineOfFileGenerator({
     if (!line.startsWith('#') && line !== '') {
       if (excludedFiles) {
         line = line.startsWith('!') ? line : `!${line}`
-        
         if (line.endsWith(path.sep)) {
           line = `${line}${path.sep}**`
         }
