@@ -81,10 +81,7 @@ export async function run(): Promise<void> {
 
   const gitignorePath = path.join(workingDirectory, '.gitignore')
 
-  let filePatterns = files
-    .split(filesSeparator)
-    .filter(Boolean)
-    .join('\n')
+  let filePatterns = files.split(filesSeparator).filter(Boolean).join('\n')
 
   core.debug(`file patterns: ${filePatterns}`)
 
