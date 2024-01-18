@@ -168,11 +168,13 @@ async function* lineOfFileGenerator({
   for await (const line of rl) {
     if (!line.startsWith('#') && line !== '') {
       if (excludedFiles) {
-        if (line.startsWith('!')) {
-          yield line
-        } else {
-          yield `!${line}`
+        line = line.startsWith('!') ? line : `!${line}`
+        
+        if (line.endsWith(path.sep) {
+          line = `${line}${path.sep}**`
         }
+
+        yield line
       } else {
         yield line
       }
