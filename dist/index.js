@@ -453,6 +453,7 @@ function lineOfFileGenerator({ filePath, excludedFiles }) {
                         yield yield __await(line);
                     }
                     else {
+                        line = line.endsWith(path_1.default.sep) ? `${line}**` : line;
                         yield yield __await(line);
                     }
                 }
