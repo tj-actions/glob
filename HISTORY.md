@@ -1,5 +1,39 @@
 # Changelog
 
+# [20.0.0](https://github.com/tj-actions/glob/compare/v19.0.0...v20.0.0) - (2024-01-25)
+
+## <!-- 26 -->🔄 Update
+
+- Updated README.md ([#1073](https://github.com/tj-actions/glob/issues/1073))
+
+Co-authored-by: jackton1 <jackton1@users.noreply.github.com> ([9fd322f](https://github.com/tj-actions/glob/commit/9fd322ff42666140f0671b075e1fa42a2821c0d1))  - (tj-actions[bot])
+- Update action runtime to node20 ([#1071](https://github.com/tj-actions/glob/issues/1071))
+
+Co-authored-by: Tonye Jack <jtonye@ymail.com>
+ ([a79b65e](https://github.com/tj-actions/glob/commit/a79b65e975a9769f41f7e237bbe29de83798d76f))  - (Misha Kaletsky)
+
+## <!-- 3 -->📚 Documentation
+
+- Add mmkal as a contributor for code ([#1072](https://github.com/tj-actions/glob/issues/1072)) ([e01e5ce](https://github.com/tj-actions/glob/commit/e01e5ced9ff71dc3681176cce46f388a9efa33d7))  - (allcontributors[bot])
+
+## <!-- 30 -->📝 Other
+
+- PR [#1066](https://github.com/tj-actions/glob/pull/1066): update tj-actions/eslint-changed-files action to v23 ([6db5077](https://github.com/tj-actions/glob/commit/6db5077ed7b1870874cd23126df7e18d09a71dce))  - (repo-ranger[bot])
+
+## <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- **deps:** Update dependency @types/node to v20.11.6 ([bf25bec](https://github.com/tj-actions/glob/commit/bf25bec1c26e4e3720718b28188598a8d5667c68))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v6.19.1 ([6fb4cff](https://github.com/tj-actions/glob/commit/6fb4cff7a7637cfa82c5dc7fef617be658e96920))  - (renovate[bot])
+- **deps:** Update dependency ts-jest to v29.1.2 ([5fe58e0](https://github.com/tj-actions/glob/commit/5fe58e03832a5a85ed0c453958c8ea62bb2e73ea))  - (renovate[bot])
+- **deps:** Lock file maintenance ([1120fab](https://github.com/tj-actions/glob/commit/1120fab27a1a10db6f6ee00cb411041090a71f62))  - (renovate[bot])
+- **deps:** Update tj-actions/eslint-changed-files action to v23 ([3429124](https://github.com/tj-actions/glob/commit/3429124b201aa67be9bd8c0744140c58896173c8))  - (renovate[bot])
+
+## <!-- 9 -->⬆️ Upgrades
+
+- Upgraded to v19 ([#1064](https://github.com/tj-actions/glob/issues/1064))
+
+Co-authored-by: jackton1 <jackton1@users.noreply.github.com> ([d4443d8](https://github.com/tj-actions/glob/commit/d4443d83de3b14f6a2ec3153c58348c08595510a))  - (tj-actions[bot])
+
 # [19.0.0](https://github.com/tj-actions/glob/compare/v18.0.0...v19.0.0) - (2024-01-18)
 
 ## <!-- 0 -->🚀 Features
