@@ -53,7 +53,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
       - uses: actions/checkout@v2
 
       - name: Glob match
-        uses: tj-actions/glob@v19
+        uses: tj-actions/glob@v20
         id: glob
         with:
           files: |
@@ -73,7 +73,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 <!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
 
 ```yaml
-- uses: tj-actions/glob@v19
+- uses: tj-actions/glob@v20
   id: glob
   with:
     # Specify a base ref used for comparing changes, when 
