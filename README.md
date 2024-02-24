@@ -49,7 +49,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 ```yaml
 ...
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Glob match
         uses: tj-actions/glob@v21
