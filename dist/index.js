@@ -500,9 +500,15 @@ function tempfile(extension = '') {
     });
 }
 exports.tempfile = tempfile;
+/**
+ * Escapes special characters in a string for the bash shell.
+ *
+ * @param value - The string to be escaped.
+ * @returns The escaped string.
+ */
 function escapeString(value) {
     // escape special characters for bash shell
-    return value.replace(/[^\x20-\x7E]|[:*?<>|;`$()&!]/g, '\\$&');
+    return value.replace(/[^\x20-\x7E]|[:*?<>|;`$()&!]|\[|]/g, '\\$&');
 }
 exports.escapeString = escapeString;
 function exists(filePath) {
