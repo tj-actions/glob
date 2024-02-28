@@ -202,9 +202,15 @@ export async function tempfile(extension = ''): Promise<string> {
   return path.join(tempDirectory, `${uuidv4()}${extension}`)
 }
 
+/**
+ * Escapes special characters in a string for the bash shell.
+ *
+ * @param value - The string to be escaped.
+ * @returns The escaped string.
+ */
 export function escapeString(value: string): string {
   // escape special characters for bash shell
-  return value.replace(/[^\x20-\x7E]|[:*?<>|;`$()&!]/g, '\\$&')
+  return value.replace(/[^\x20-\x7E]|[:*?<>|;`$()&!]|\[|]/g, '\\$&')
 }
 
 export async function exists(filePath: string): Promise<boolean> {
