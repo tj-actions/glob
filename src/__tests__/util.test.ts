@@ -1,5 +1,5 @@
 import * as path from 'path'
-import {getDeletedFiles, normalizeSeparators} from '../utils'
+import {escapeString, getDeletedFiles, normalizeSeparators} from '../utils'
 
 const {GITHUB_WORKSPACE} = process.env
 const topLevelDir = `${GITHUB_WORKSPACE}${path.sep}`
@@ -181,6 +181,50 @@ describe('utils test', () => {
       })
 
       expect(deletedFiles).toContain(path.join(topLevelDir, 'entrypoint.sh'))
+    })
+  })
+
+  describe('escapeString', () => {
+    // Returns the input string if it contains no special characters
+    it('should return the input string when it contains no special characters', () => {
+      const input = 'hello world'
+      const result = escapeString(input)
+      expect(result).toBe(input)
+    })
+
+    // Escapes special characters for bash shell if they exist in the input string
+    it('should escape special characters for bash shell if they exist in the input string', () => {
+      const input = 'hello $world'
+      const result = escapeString(input)
+      expect(result).toBe('hello \\$world')
+    })
+
+    // Escapes square brackets in the input string
+    it('should escape square brackets in the input string', () => {
+      const input = 'hello [world]'
+      const result = escapeString(input)
+      expect(result).toBe('hello \\[world\\]')
+    })
+
+    // Returns an empty string if the input string is empty
+    it('should return an empty string when the input string is empty', () => {
+      const input = ''
+      const result = escapeString(input)
+      expect(result).toBe('')
+    })
+
+    // Escapes all special characters if they all exist in the input string
+    it('should escape all special characters if they all exist in the input string', () => {
+      const input = ':*?<>|;`$()&!'
+      const result = escapeString(input)
+      expect(result).toBe('\\:\\*\\?\\<\\>\\|\\;\\`\\$\\(\\)\\&\\!')
+    })
+
+    // Escapes special characters at the beginning and end of the input string
+    it('should escape special characters at the beginning and end of the input string', () => {
+      const input = '!hello!'
+      const result = escapeString(input)
+      expect(result).toBe('\\!hello\\!')
     })
   })
 })
