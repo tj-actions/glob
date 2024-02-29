@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@types/jest": "29.5.12",
-    "@types/node": "20.11.22",
+    "@types/node": "20.11.23",
     "@types/uuid": "9.0.8",
     "@typescript-eslint/eslint-plugin": "7.1.0",
     "@typescript-eslint/parser": "7.1.0",
