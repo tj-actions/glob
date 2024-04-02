@@ -837,7 +837,18 @@
     semver "^7.5.4"
     ts-api-utils "^1.0.1"
 
-"@typescript-eslint/parser@7.4.0", "@typescript-eslint/parser@^7.0.1":
+"@typescript-eslint/parser@7.5.0":
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-7.5.0.tgz#1eeff36309ac2253c905dd4a88b4b71b72a358ed"
+  integrity sha512-cj+XGhNujfD2/wzR1tabNsidnYRaFfEkcULdcIyVBYcXjBvBKOes+mpMBP7hMpOyk+gBcfXsrg4NBGAStQyxjQ==
+  dependencies:
+    "@typescript-eslint/scope-manager" "7.5.0"
+    "@typescript-eslint/types" "7.5.0"
+    "@typescript-eslint/typescript-estree" "7.5.0"
+    "@typescript-eslint/visitor-keys" "7.5.0"
+    debug "^4.3.4"
+
+"@typescript-eslint/parser@^7.0.1":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-7.4.0.tgz#540f4321de1e52b886c0fa68628af1459954c1f1"
   integrity sha512-ZvKHxHLusweEUVwrGRXXUVzFgnWhigo4JurEj0dGF1tbcGh6buL+ejDdjxOQxv6ytcY1uhun1p2sm8iWStlgLQ==
