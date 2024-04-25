@@ -66,8 +66,12 @@ function run() {
             required: false
         });
         const filesFromSourceFileSeparator = core.getInput('files-from-source-file-separator', { required: false, trimWhitespace: false });
+        const filesFromESLintConfig = core.getInput('files-from-eslint-config', {
+            required: false
+        });
         const excludedFilesFromSourceFile = core.getInput('excluded-files-from-source-file', { required: false });
         const excludedFilesFromSourceFileSeparator = core.getInput('excluded-files-from-source-file-separator', { required: false, trimWhitespace: false });
+        const excludedFilesFromESLintConfig = core.getInput('excluded-files-from-eslint-config', { required: false });
         const followSymbolicLinks = core.getBooleanInput('follow-symbolic-links', {
             required: false
         });
@@ -135,6 +139,13 @@ function run() {
             core.debug(`files from source files patterns: ${filesFromSourceFiles}`);
             filePatterns += `\n${filesFromSourceFiles}`;
         }
+        if (filesFromESLintConfig !== '') {
+            const filesFromESLintConfigFile = (yield (0, utils_1.getFilesFromEsLintConfig)({
+                eslintConfigPath: path.join(workingDirectory, filesFromESLintConfig)
+            })).join('\n');
+            core.debug(`files from ESLint config patterns: ${filesFromESLintConfigFile}`);
+            filePatterns += `\n${filesFromESLintConfigFile}`;
+        }
         if (excludedFilesFromSourceFile !== '') {
             const inputExcludedFilesFromSourceFile = excludedFilesFromSourceFile
                 .split(excludedFilesFromSourceFileSeparator)
@@ -150,6 +161,19 @@ function run() {
             }
             else {
                 filePatterns += `\n${excludedFilesFromSourceFiles}`;
+            }
+        }
+        if (excludedFilesFromESLintConfig !== '') {
+            const excludedFilesFromESLintConfigFile = (yield (0, utils_1.getFilesFromEsLintConfig)({
+                eslintConfigPath: path.join(workingDirectory, excludedFilesFromESLintConfig),
+                excludedFiles: true
+            })).join('\n');
+            core.debug(`excluded files from ESLint config patterns: ${excludedFilesFromESLintConfigFile}`);
+            if (!files && !filesFromSourceFile && !excludedFilesFromSourceFile) {
+                filePatterns += `\n**\n${excludedFilesFromESLintConfigFile}`;
+            }
+            else {
+                filePatterns += `\n${excludedFilesFromESLintConfigFile}`;
             }
         }
         filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`;
@@ -323,7 +347,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.exists = exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.getPatterns = exports.deletedGitFiles = exports.normalizeSeparators = void 0;
+exports.exists = exports.escapeString = exports.tempfile = exports.getFilesFromEsLintConfig = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.getPatterns = exports.deletedGitFiles = exports.normalizeSeparators = void 0;
 /*global AsyncIterableIterator*/
 const fs_1 = __nccwpck_require__(7147);
 const os_1 = __nccwpck_require__(2037);
@@ -494,6 +518,25 @@ function getFilesFromSourceFile(_a) {
     });
 }
 exports.getFilesFromSourceFile = getFilesFromSourceFile;
+function getFilesFromEsLintConfig(_a) {
+    return __awaiter(this, arguments, void 0, function* ({ eslintConfigPath, excludedFiles = false }) {
+        // Dynamically import the eslint config file using the provided path
+        const eslintConfigModule = yield Promise.resolve(`${eslintConfigPath}`).then(s => __importStar(require(s)));
+        // Access the default export, which should be an array of configuration objects
+        const eslintConfig = eslintConfigModule.default;
+        const fileNames = [];
+        for (const config of eslintConfig) {
+            if (excludedFiles) {
+                fileNames.push(...config.ignores.map((ignoredFile) => `!${ignoredFile}`));
+            }
+            else {
+                fileNames.push(...config.files);
+            }
+        }
+        return fileNames;
+    });
+}
+exports.getFilesFromEsLintConfig = getFilesFromEsLintConfig;
 function tempfile() {
     return __awaiter(this, arguments, void 0, function* (extension = '') {
         const tempDirectory = yield fs_1.promises.realpath((0, os_1.tmpdir)());
