@@ -1,4 +1,4 @@
-/*global AsyncIterableIterator*/
+/* global AsyncIterableIterator */
 import {createReadStream, promises as fs} from 'fs'
 import {tmpdir} from 'os'
 import path from 'path'
@@ -78,7 +78,7 @@ export async function deletedGitFiles({
     .filter(p => p !== '')
     .map(p => path.join(topLevelDir, p))
 
-  core.debug(`deleted files: ${deletedFiles}`)
+  core.debug(`deleted files: ${deletedFiles.join('\n')}`)
 
   return deletedFiles
 }
@@ -99,9 +99,9 @@ export async function getPatterns(filePatterns: string): Promise<Pattern[]> {
     if (!(!line || line.startsWith('#'))) {
       line = IS_WINDOWS ? line.replace(/\\/g, '/') : line
       const pattern = new Pattern(line)
-      // @ts-ignore
+      // @ts-expect-error
       pattern.minimatch.options.nobrace = false
-      // @ts-ignore
+      // @ts-expect-error
       pattern.minimatch.make()
       patterns.push(pattern)
 
@@ -204,20 +204,22 @@ export async function getFilesFromEsLintConfig({
   eslintConfigPath: string
   excludedFiles?: boolean
 }): Promise<string[]> {
+  core.debug(`eslint config path: ${eslintConfigPath}`)
   // Dynamically import the eslint config file using the provided path
-  const eslintConfigModule = await import(eslintConfigPath)
+  const {default: eslintConfig} = await import(eslintConfigPath)
 
   // Access the default export, which should be an array of configuration objects
-  const eslintConfig = eslintConfigModule.default
   const fileNames: string[] = []
 
   for (const config of eslintConfig) {
     if (excludedFiles) {
       fileNames.push(
-        ...config.ignores.map((ignoredFile: string) => `!${ignoredFile}`)
+        ...(config.ignores as string[]).map(
+          (ignoredFile: string) => `!${ignoredFile}`
+        )
       )
     } else {
-      fileNames.push(...config.files)
+      fileNames.push(...(config.files as string[]))
     }
   }
 

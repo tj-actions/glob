@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import {run} from '../main'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {normalizeSeparators, tempfile} from '../utils'
+import {getFilesFromEsLintConfig, normalizeSeparators, tempfile} from '../utils'
 
 const defaultEnv = {
   'INPUT_FILES-SEPARATOR': '\n',
@@ -214,6 +214,7 @@ test('returns the paths of the all other files (input files)', async () => {
   const EXPECTED_FILENAMES = [
     'LICENSE',
     'action.yml',
+    'eslint.config.mjs',
     'jest.config.js',
     'package.json',
     'renovate.json',

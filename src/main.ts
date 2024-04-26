@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
 import * as glob from '@actions/glob'
-import {GlobOptions} from '@actions/glob'
+import {type GlobOptions} from '@actions/glob'
 import {promises as fs} from 'fs'
 import * as path from 'path'
 
@@ -83,7 +83,7 @@ export async function run(): Promise<void> {
   const baseSha = core.getInput('base-sha', {required: includeDeletedFiles})
 
   const workingDirectory = path.resolve(
-    process.env.GITHUB_WORKSPACE || process.cwd(),
+    process.env.GITHUB_WORKSPACE ?? process.cwd(),
     core.getInput('working-directory', {required: true})
   )
 
@@ -238,7 +238,7 @@ export async function run(): Promise<void> {
   }
 
   const globber = await glob.create(filePatterns, globOptions)
-  // @ts-ignore
+  // @ts-expect-error
   globber.patterns.map(pattern => {
     pattern.minimatch.options.nobrace = false
     pattern.minimatch.make()
@@ -340,8 +340,7 @@ export async function run(): Promise<void> {
 
 /* istanbul ignore if */
 if (!process.env.TESTING) {
-  // eslint-disable-next-line github/no-then
-  run().catch(e => {
-    core.setFailed(e.message || e)
+  run().catch((e: Error) => {
+    core.setFailed(e.message ?? e)
   })
 }
