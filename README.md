@@ -75,24 +75,28 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 - uses: tj-actions/glob@v21
   id: glob
   with:
-    # Specify a base ref used for comparing changes, when 
-    # `include-deleted-files` is set to `true` 
+    # Specify a base ref used 
+    # for comparing changes, when `include-deleted-files` 
+    # is set to `true` 
     # Type: string
     # Default: "${{ github.event.pull_request.base.ref }}"
     base-ref: ''
 
-    # Specify a base commit SHA used for comparing changes, 
-    # when `include-deleted-files` is set to `true` 
+    # Specify a base commit SHA 
+    # used for comparing changes, when 
+    # `include-deleted-files` is set to `true` 
     # Type: string
     base-sha: ''
 
-    # Specify a diff string `..` or `...` used for 
-    # comparing changes, when `include-deleted-files` is set to `true` 
+    # Specify a diff string `..` 
+    # or `...` used for comparing 
+    # changes, when `include-deleted-files` is set 
+    # to `true` 
     # Type: string
     diff: ''
 
-    # Escape special characters of filenames used in the `paths` 
-    # output 
+    # Escape special characters of filenames 
+    # used in the `paths` output 
     # Type: boolean
     # Default: "true"
     escape-paths: ''
@@ -101,16 +105,19 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
     # Type: string
     excluded-files: ''
 
-    # Source file to populate the `excluded-files` input
+    # Source file to populate the 
+    # `excluded-files` input 
     # Type: string
     excluded-files-from-source-file: ''
 
-    # Separator used to split the `excluded-files-from-source-file` input
+    # Separator used to split the 
+    # `excluded-files-from-source-file` input 
     # Type: string
     # Default: "\n"
     excluded-files-from-source-file-separator: ''
 
-    # Separator used to split the `excluded-files` input
+    # Separator used to split the 
+    # `excluded-files` input 
     # Type: string
     # Default: "\n"
     excluded-files-separator: ''
@@ -119,28 +126,33 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
     # Type: string
     files: ''
 
-    # Source file to populate the `files` input
+    # Source file to populate the 
+    # `files` input 
     # Type: string
     files-from-source-file: ''
 
-    # Separator used to split the `files-from-source-file` input
+    # Separator used to split the 
+    # `files-from-source-file` input 
     # Type: string
     # Default: "\n"
     files-from-source-file-separator: ''
 
-    # Separator used to split the `files` input
+    # Separator used to split the 
+    # `files` input 
     # Type: string
     # Default: "\n"
     files-separator: ''
 
-    # Indicates whether to follow symbolic links
+    # Indicates whether to follow symbolic 
+    # links 
     # Type: boolean
     # Default: "true"
     follow-symbolic-links: ''
 
-    # Specify a boolean indicating a PR from a fork 
-    # is used for comparing changes, when `include-deleted-files` is set 
-    # to `true` 
+    # Specify a boolean indicating a 
+    # PR from a fork is 
+    # used for comparing changes, when 
+    # `include-deleted-files` is set to `true` 
     # Type: string
     # Default: "${{ github.event.pull_request.head.repo.fork }}"
     head-repo-fork: ''
@@ -150,34 +162,40 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
     # Default: "false"
     include-deleted-files: ''
 
-    # Indicates whether to include matched directories
+    # Indicates whether to include matched 
+    # directories 
     # Type: boolean
     # Default: "true"
     match-directories: ''
 
-    # Indicates whether to match files in `.gitignore`
+    # Indicates whether to match files 
+    # in `.gitignore` 
     # Type: boolean
     # Default: "false"
     match-gitignore-files: ''
 
-    # Separator used for the paths output.
+    # Separator used for the paths 
+    # output. 
     # Type: string
     # Default: " "
     separator: ''
 
-    # Specify a current commit SHA used for comparing changes, 
-    # when `include-deleted-files` is set to `true` 
+    # Specify a current commit SHA 
+    # used for comparing changes, when 
+    # `include-deleted-files` is set to `true` 
     # Type: string
     # Default: "${{ github.sha }}"
     sha: ''
 
-    # Strip the `$GITHUB_WORKSPACE` from the `paths` output
+    # Strip the `$GITHUB_WORKSPACE` from the 
+    # `paths` output 
     # Type: boolean
     # Default: "true"
     strip-top-level-dir: ''
 
-    # Provide a path that is relative to `$GITHUB_WORKSPACE` for 
-    # identifying the repository. 
+    # Provide a path that is 
+    # relative to `$GITHUB_WORKSPACE` for identifying 
+    # the repository. 
     # Type: string
     # Default: "."
     working-directory: ''
