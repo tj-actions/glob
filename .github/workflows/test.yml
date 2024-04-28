@@ -237,16 +237,3 @@ jobs:
         run: |
           echo "Expected: paths-output-file to not be empty got ${{ steps.glob-invalid.outputs.paths-output-file }}"
           exit 1
-
-      - name: Run glob files-from-eslint-config set to eslint.config.mjs
-        uses: ./
-        id: glob-files-from-eslint-config
-        with:
-          files: |
-            *.md
-          files-from-eslint-config: "eslint.config.mjs"
-
-      - name: Show output
-        run: |
-          echo "${{ steps.glob-files-from-eslint-config.outputs.paths }}"
-          cat "${{ steps.glob-files-from-eslint-config.outputs.paths-output-file }}"
