@@ -23,7 +23,7 @@ const defaultEnv = {
   'INPUT_FILES-FROM-SOURCE-FILE': ''
 }
 
-function mockedEnv(testEnvVars: {[key: string]: string}): void {
+function mockedEnv(testEnvVars: Record<string, string>): void {
   jest.replaceProperty(process, 'env', {...process.env, ...testEnvVars})
 }
 
