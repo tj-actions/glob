@@ -41,6 +41,12 @@ jobs:
         uses: tj-actions/eslint-changed-files@v25
         with:
           token: ${{ secrets.PAT_TOKEN }}
+          ignore_patterns: |
+            dist/**
+            lib/**
+            node_modules/**
+            jest.config.js
+            coverage/**
 
       - name: Run build and test
         run: |
