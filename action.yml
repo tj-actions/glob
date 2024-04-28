@@ -25,10 +25,6 @@ inputs:
     description: 'Separator used to split the `files-from-source-file` input'
     default: "\n"
     required: false
-  files-from-eslint-config:
-    description: 'ESLint config file to populate the `files` input with the `files` from the ESLint config'
-    required: false
-    default: ""
   excluded-files-from-source-file:
     description: 'Source file to populate the `excluded-files` input'
     required: false
@@ -37,10 +33,6 @@ inputs:
     description: 'Separator used to split the `excluded-files-from-source-file` input'
     default: "\n"
     required: false
-  excluded-files-from-eslint-config:
-    description: 'ESLint config to populate the `excluded-files` input with the `ignores` from the ESLint config'
-    required: false
-    default: ""
   follow-symbolic-links:
     description: 'Indicates whether to follow symbolic links'
     default: "true"
