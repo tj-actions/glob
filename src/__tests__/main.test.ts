@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import {run} from '../main'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {getFilesFromEsLintConfig, normalizeSeparators, tempfile} from '../utils'
+import {normalizeSeparators, tempfile} from '../utils'
 
 const defaultEnv = {
   'INPUT_FILES-SEPARATOR': '\n',
