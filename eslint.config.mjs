@@ -35,6 +35,7 @@ export default [
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/strict-boolean-expressions": "off",
       "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/prefer-ts-expect-error": "off",
     },
   })),
   prettierConfig, // Turns off all ESLint rules that have the potential to interfere with Prettier rules.
