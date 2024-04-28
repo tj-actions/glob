@@ -197,35 +197,6 @@ export async function getFilesFromSourceFile({
   return lines
 }
 
-export async function getFilesFromEsLintConfig({
-  eslintConfigPath,
-  excludedFiles = false
-}: {
-  eslintConfigPath: string
-  excludedFiles?: boolean
-}): Promise<string[]> {
-  core.debug(`eslint config path: ${eslintConfigPath}`)
-  // Dynamically import the eslint config file using the provided path
-  const {default: eslintConfig} = await import(eslintConfigPath)
-
-  // Access the default export, which should be an array of configuration objects
-  const fileNames: string[] = []
-
-  for (const config of eslintConfig) {
-    if (excludedFiles) {
-      fileNames.push(
-        ...(config.ignores as string[]).map(
-          (ignoredFile: string) => `!${ignoredFile}`
-        )
-      )
-    } else {
-      fileNames.push(...(config.files as string[]))
-    }
-  }
-
-  return fileNames
-}
-
 export async function tempfile(extension = ''): Promise<string> {
   const tempDirectory = await fs.realpath(tmpdir())
   return path.join(tempDirectory, `${uuidv4()}${extension}`)

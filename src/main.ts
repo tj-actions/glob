@@ -8,7 +8,6 @@ import {
   escapeString,
   exists,
   getDeletedFiles,
-  getFilesFromEsLintConfig,
   getFilesFromSourceFile,
   normalizeSeparators,
   tempfile
@@ -39,9 +38,6 @@ export async function run(): Promise<void> {
     'files-from-source-file-separator',
     {required: false, trimWhitespace: false}
   )
-  const filesFromESLintConfig = core.getInput('files-from-eslint-config', {
-    required: false
-  })
   const excludedFilesFromSourceFile = core.getInput(
     'excluded-files-from-source-file',
     {required: false}
@@ -49,10 +45,6 @@ export async function run(): Promise<void> {
   const excludedFilesFromSourceFileSeparator = core.getInput(
     'excluded-files-from-source-file-separator',
     {required: false, trimWhitespace: false}
-  )
-  const excludedFilesFromESLintConfig = core.getInput(
-    'excluded-files-from-eslint-config',
-    {required: false}
   )
   const followSymbolicLinks = core.getBooleanInput('follow-symbolic-links', {
     required: false
@@ -140,20 +132,6 @@ export async function run(): Promise<void> {
     filePatterns += `\n${filesFromSourceFiles}`
   }
 
-  if (filesFromESLintConfig !== '') {
-    const filesFromESLintConfigFile = (
-      await getFilesFromEsLintConfig({
-        eslintConfigPath: path.join(workingDirectory, filesFromESLintConfig)
-      })
-    ).join('\n')
-
-    core.debug(
-      `files from ESLint config patterns: ${filesFromESLintConfigFile}`
-    )
-
-    filePatterns += `\n${filesFromESLintConfigFile}`
-  }
-
   if (excludedFilesFromSourceFile !== '') {
     const inputExcludedFilesFromSourceFile = excludedFilesFromSourceFile
       .split(excludedFilesFromSourceFileSeparator)
@@ -175,28 +153,6 @@ export async function run(): Promise<void> {
       filePatterns += `\n**\n${excludedFilesFromSourceFiles}`
     } else {
       filePatterns += `\n${excludedFilesFromSourceFiles}`
-    }
-  }
-
-  if (excludedFilesFromESLintConfig !== '') {
-    const excludedFilesFromESLintConfigFile = (
-      await getFilesFromEsLintConfig({
-        eslintConfigPath: path.join(
-          workingDirectory,
-          excludedFilesFromESLintConfig
-        ),
-        excludedFiles: true
-      })
-    ).join('\n')
-
-    core.debug(
-      `excluded files from ESLint config patterns: ${excludedFilesFromESLintConfigFile}`
-    )
-
-    if (!files && !filesFromSourceFile && !excludedFilesFromSourceFile) {
-      filePatterns += `\n**\n${excludedFilesFromESLintConfigFile}`
-    } else {
-      filePatterns += `\n${excludedFilesFromESLintConfigFile}`
     }
   }
 
