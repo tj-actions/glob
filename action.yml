@@ -45,6 +45,10 @@ inputs:
     description: 'Indicates whether to match files in `.gitignore`'
     default: "false"
     required: true
+  read-gitignore:
+    description: 'Indicates whether to read `.gitignore`. If set to `false`, the `.gitignore` file will be ignored. Overrides `match-gitignore-files`'
+    default: "true"
+    required: true
   separator:
     description: 'Separator used for the paths output.'
     required: true

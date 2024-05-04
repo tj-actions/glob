@@ -56,6 +56,7 @@ export async function run(): Promise<void> {
   const matchGitignoreFiles = core.getBooleanInput('match-gitignore-files', {
     required: true
   })
+  const readGitignore = core.getBooleanInput('read-gitignore', {required: true})
   const separator = core.getInput('separator', {
     required: true,
     trimWhitespace: false
@@ -202,7 +203,7 @@ export async function run(): Promise<void> {
   })
   let paths = new Set(await globber.glob())
 
-  if (await exists(gitignorePath)) {
+  if (readGitignore && await exists(gitignorePath)) {
     const gitignoreFilePatterns = (
       await getFilesFromSourceFile({
         filePaths: [gitignorePath]
