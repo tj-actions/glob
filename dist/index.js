@@ -77,6 +77,7 @@ function run() {
         const matchGitignoreFiles = core.getBooleanInput('match-gitignore-files', {
             required: true
         });
+        const readGitignore = core.getBooleanInput('read-gitignore', { required: true });
         const separator = core.getInput('separator', {
             required: true,
             trimWhitespace: false
@@ -186,7 +187,7 @@ function run() {
             return pattern;
         });
         let paths = new Set(yield globber.glob());
-        if (yield (0, utils_1.exists)(gitignorePath)) {
+        if (readGitignore && (yield (0, utils_1.exists)(gitignorePath))) {
             const gitignoreFilePatterns = (yield (0, utils_1.getFilesFromSourceFile)({
                 filePaths: [gitignorePath]
             }))
