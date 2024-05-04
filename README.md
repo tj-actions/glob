@@ -72,7 +72,7 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
 <!-- AUTO-DOC-INPUT:START - Do not remove or modify this section -->
 
 ```yaml
-- uses: tj-actions/glob@v21
+- uses: tj-actions/glob@v22
   id: glob
   with:
     # Specify a base ref used 
@@ -169,8 +169,8 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
     match-gitignore-files: ''
 
     # Indicates whether to read `.gitignore`. 
-    # If set to `false`, the 
-    # `.gitignore` file will be ignored. 
+    # The `.gitignore` file will be 
+    # ignored if set to `false`. 
     # Overrides `match-gitignore-files` 
     # Type: boolean
     # Default: "true"
