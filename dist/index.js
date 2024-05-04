@@ -83,7 +83,7 @@ function run() {
             trimWhitespace: false
         });
         const diff = core.getInput('diff', { required: false });
-        const escapePaths = core.getBooleanInput('escape-paths', { required: false });
+        const safeOutput = core.getBooleanInput('safe-output', { required: false });
         const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
             required: true
         });
@@ -230,7 +230,7 @@ function run() {
                 .replace(workingDirectory, '')))
                 .filter((p) => !!p));
         }
-        if (escapePaths) {
+        if (safeOutput) {
             paths = new Set([...paths].map(p => (0, utils_1.escapeString)(p)));
         }
         const pathsOutput = [...paths].join(separator);

@@ -62,7 +62,7 @@ export async function run(): Promise<void> {
     trimWhitespace: false
   })
   const diff = core.getInput('diff', {required: false})
-  const escapePaths = core.getBooleanInput('escape-paths', {required: false})
+  const safeOutput = core.getBooleanInput('safe-output', {required: false})
   const stripTopLevelDir = core.getBooleanInput('strip-top-level-dir', {
     required: true
   })
@@ -270,7 +270,7 @@ export async function run(): Promise<void> {
     )
   }
 
-  if (escapePaths) {
+  if (safeOutput) {
     paths = new Set([...paths].map(p => escapeString(p)))
   }
 

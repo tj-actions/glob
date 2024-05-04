@@ -53,7 +53,7 @@ inputs:
     description: 'Separator used for the paths output.'
     required: true
     default: " "
-  escape-paths:
+  safe-output:
     description: 'Escape special characters of filenames used in the `paths` output'
     required: false
     default: "true"

@@ -158,17 +158,17 @@ jobs:
           
       - name: Run glob for source-files.txt escape paths
         uses: ./
-        id: glob-source-files-escape-paths
+        id: glob-source-files-safe-output
         with:
           files-from-source-file: |
             src/__tests__/source-files.txt
             src/__tests__/source-files.txt
-          escape-paths: true
+          safe-output: true
 
       - name: Show output
         run: |
-          echo "${{ steps.glob-source-files-escape-paths.outputs.paths }}"
-          cat "${{ steps.glob-source-files-escape-paths.outputs.paths-output-file }}"
+          echo "${{ steps.glob-source-files-safe-output.outputs.paths }}"
+          cat "${{ steps.glob-source-files-safe-output.outputs.paths-output-file }}"
 
       - name: Run glob for source-files.txt
         uses: ./
