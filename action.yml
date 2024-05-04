@@ -46,7 +46,7 @@ inputs:
     default: "false"
     required: true
   read-gitignore:
-    description: 'Indicates whether to read `.gitignore`. If set to `false`, the `.gitignore` file will be ignored. Overrides `match-gitignore-files`'
+    description: 'Indicates whether to read `.gitignore`. The `.gitignore` file will be ignored if set to `false`. Overrides `match-gitignore-files`'
     default: "true"
     required: true
   separator:
