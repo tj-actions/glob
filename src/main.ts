@@ -203,7 +203,7 @@ export async function run(): Promise<void> {
   })
   let paths = new Set(await globber.glob())
 
-  if (readGitignore && await exists(gitignorePath)) {
+  if (readGitignore && (await exists(gitignorePath))) {
     const gitignoreFilePatterns = (
       await getFilesFromSourceFile({
         filePaths: [gitignorePath]
