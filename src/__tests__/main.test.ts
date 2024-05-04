@@ -12,7 +12,7 @@ const defaultEnv = {
   'INPUT_FOLLOW-SYMBOLIC-LINKS': 'true',
   'INPUT_MATCH-DIRECTORIES': 'true',
   'INPUT_MATCH-GITIGNORE-FILES': 'true',
-  'INPUT_ESCAPE-PATHS': 'false',
+  'INPUT_SAFE-OUTPUT': 'false',
   'INPUT_HEAD-REPO-FORK': 'false',
   INPUT_SEPARATOR: ' ',
   'INPUT_STRIP-TOP-LEVEL-DIR': 'true',

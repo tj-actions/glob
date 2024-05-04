@@ -53,7 +53,7 @@ inputs:
     description: 'Separator used for the paths output.'
     required: true
     default: " "
-  escape-paths:
+  safe-output:
     description: 'Escape special characters of filenames used in the `paths` output'
     required: false
     default: "true"
@@ -87,10 +87,6 @@ inputs:
   diff:
     description: 'Specify a diff string `..` or `...` used for comparing changes, when `include-deleted-files` is set to `true`'
     required: false
-  safe_output:
-    description: 'Escaped filename returned in the output'
-    required: true
-    default: "true"
 
 outputs:
   paths:
