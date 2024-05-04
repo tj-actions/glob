@@ -174,6 +174,14 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
     # Default: "false"
     match-gitignore-files: ''
 
+    # Indicates whether to read `.gitignore`. 
+    # If set to `false`, the 
+    # `.gitignore` file will be ignored. 
+    # Overrides `match-gitignore-files` 
+    # Type: boolean
+    # Default: "true"
+    read-gitignore: ''
+
     # Separator used for the paths 
     # output. 
     # Type: string
