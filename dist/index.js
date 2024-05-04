@@ -51,6 +51,7 @@ const DEFAULT_EXCLUDED_FILES = [
     '!node_modules/**'
 ];
 function run() {
+    var _a;
     return __awaiter(this, void 0, void 0, function* () {
         const files = core.getInput('files', { required: false });
         const filesSeparator = core.getInput('files-separator', {
@@ -66,12 +67,8 @@ function run() {
             required: false
         });
         const filesFromSourceFileSeparator = core.getInput('files-from-source-file-separator', { required: false, trimWhitespace: false });
-        const filesFromESLintConfig = core.getInput('files-from-eslint-config', {
-            required: false
-        });
         const excludedFilesFromSourceFile = core.getInput('excluded-files-from-source-file', { required: false });
         const excludedFilesFromSourceFileSeparator = core.getInput('excluded-files-from-source-file-separator', { required: false, trimWhitespace: false });
-        const excludedFilesFromESLintConfig = core.getInput('excluded-files-from-eslint-config', { required: false });
         const followSymbolicLinks = core.getBooleanInput('follow-symbolic-links', {
             required: false
         });
@@ -98,7 +95,7 @@ function run() {
         const headRepoFork = core.getInput('head-repo-fork', { required: false }) === 'true';
         const sha = core.getInput('sha', { required: includeDeletedFiles });
         const baseSha = core.getInput('base-sha', { required: includeDeletedFiles });
-        const workingDirectory = path.resolve(process.env.GITHUB_WORKSPACE || process.cwd(), core.getInput('working-directory', { required: true }));
+        const workingDirectory = path.resolve((_a = process.env.GITHUB_WORKSPACE) !== null && _a !== void 0 ? _a : process.cwd(), core.getInput('working-directory', { required: true }));
         const gitignorePath = path.join(workingDirectory, '.gitignore');
         let filePatterns = files
             .split(filesSeparator)
@@ -139,13 +136,6 @@ function run() {
             core.debug(`files from source files patterns: ${filesFromSourceFiles}`);
             filePatterns += `\n${filesFromSourceFiles}`;
         }
-        if (filesFromESLintConfig !== '') {
-            const filesFromESLintConfigFile = (yield (0, utils_1.getFilesFromEsLintConfig)({
-                eslintConfigPath: path.join(workingDirectory, filesFromESLintConfig)
-            })).join('\n');
-            core.debug(`files from ESLint config patterns: ${filesFromESLintConfigFile}`);
-            filePatterns += `\n${filesFromESLintConfigFile}`;
-        }
         if (excludedFilesFromSourceFile !== '') {
             const inputExcludedFilesFromSourceFile = excludedFilesFromSourceFile
                 .split(excludedFilesFromSourceFileSeparator)
@@ -161,19 +151,6 @@ function run() {
             }
             else {
                 filePatterns += `\n${excludedFilesFromSourceFiles}`;
-            }
-        }
-        if (excludedFilesFromESLintConfig !== '') {
-            const excludedFilesFromESLintConfigFile = (yield (0, utils_1.getFilesFromEsLintConfig)({
-                eslintConfigPath: path.join(workingDirectory, excludedFilesFromESLintConfig),
-                excludedFiles: true
-            })).join('\n');
-            core.debug(`excluded files from ESLint config patterns: ${excludedFilesFromESLintConfigFile}`);
-            if (!files && !filesFromSourceFile && !excludedFilesFromSourceFile) {
-                filePatterns += `\n**\n${excludedFilesFromESLintConfigFile}`;
-            }
-            else {
-                filePatterns += `\n${excludedFilesFromESLintConfigFile}`;
             }
         }
         filePatterns += `\n${DEFAULT_EXCLUDED_FILES.join('\n')}`;
@@ -204,7 +181,7 @@ function run() {
             matchDirectories
         };
         const globber = yield glob.create(filePatterns, globOptions);
-        // @ts-ignore
+        // @ts-expect-error
         globber.patterns.map(pattern => {
             pattern.minimatch.options.nobrace = false;
             pattern.minimatch.make();
@@ -277,9 +254,9 @@ function run() {
 exports.run = run;
 /* istanbul ignore if */
 if (!process.env.TESTING) {
-    // eslint-disable-next-line github/no-then
-    run().catch(e => {
-        core.setFailed(e.message || e);
+    run().catch((e) => {
+        var _a;
+        core.setFailed((_a = e.message) !== null && _a !== void 0 ? _a : e);
     });
 }
 
@@ -347,8 +324,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.exists = exports.escapeString = exports.tempfile = exports.getFilesFromEsLintConfig = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.getPatterns = exports.deletedGitFiles = exports.normalizeSeparators = void 0;
-/*global AsyncIterableIterator*/
+exports.exists = exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.getPatterns = exports.deletedGitFiles = exports.normalizeSeparators = void 0;
+/* global AsyncIterableIterator */
 const fs_1 = __nccwpck_require__(7147);
 const os_1 = __nccwpck_require__(2037);
 const path_1 = __importDefault(__nccwpck_require__(1017));
@@ -375,8 +352,8 @@ exports.normalizeSeparators = normalizeSeparators;
 /**
  * Retrieve all deleted files
  */
-function deletedGitFiles(_a) {
-    return __awaiter(this, arguments, void 0, function* ({ baseSha, sha, cwd, diff }) {
+function deletedGitFiles({ baseSha, sha, cwd, diff }) {
+    return __awaiter(this, void 0, void 0, function* () {
         const { exitCode: topDirExitCode, stdout: topDirStdout, stderr: topDirStderr } = yield exec.getExecOutput('git', ['rev-parse', '--show-toplevel'], {
             cwd
         });
@@ -401,7 +378,7 @@ function deletedGitFiles(_a) {
             .map(p => p.trim())
             .filter(p => p !== '')
             .map(p => path_1.default.join(topLevelDir, p));
-        core.debug(`deleted files: ${deletedFiles}`);
+        core.debug(`deleted files: ${deletedFiles.join('\n')}`);
         return deletedFiles;
     });
 }
@@ -420,9 +397,9 @@ function getPatterns(filePatterns) {
             if (!(!line || line.startsWith('#'))) {
                 line = IS_WINDOWS ? line.replace(/\\/g, '/') : line;
                 const pattern = new internal_pattern_1.Pattern(line);
-                // @ts-ignore
+                // @ts-expect-error
                 pattern.minimatch.options.nobrace = false;
-                // @ts-ignore
+                // @ts-expect-error
                 pattern.minimatch.make();
                 patterns.push(pattern);
                 if (pattern.trailingSeparator ||
@@ -435,8 +412,8 @@ function getPatterns(filePatterns) {
     });
 }
 exports.getPatterns = getPatterns;
-function getDeletedFiles(_a) {
-    return __awaiter(this, arguments, void 0, function* ({ filePatterns, baseSha, sha, cwd, diff }) {
+function getDeletedFiles({ filePatterns, baseSha, sha, cwd, diff }) {
+    return __awaiter(this, void 0, void 0, function* () {
         const patterns = yield getPatterns(filePatterns);
         const deletedFiles = [];
         for (const filePath of yield deletedGitFiles({ baseSha, sha, cwd, diff })) {
@@ -452,9 +429,9 @@ exports.getDeletedFiles = getDeletedFiles;
 /**
  * Generator for retrieving all file contents
  */
-function lineOfFileGenerator(_a) {
-    return __asyncGenerator(this, arguments, function* lineOfFileGenerator_1({ filePath, excludedFiles }) {
-        var _b, e_1, _c, _d;
+function lineOfFileGenerator({ filePath, excludedFiles }) {
+    return __asyncGenerator(this, arguments, function* lineOfFileGenerator_1() {
+        var _a, e_1, _b, _c;
         const fileStream = (0, fs_1.createReadStream)(filePath);
         /* istanbul ignore next */
         fileStream.on('error', error => {
@@ -465,10 +442,10 @@ function lineOfFileGenerator(_a) {
             crlfDelay: Infinity
         });
         try {
-            for (var _e = true, rl_1 = __asyncValues(rl), rl_1_1; rl_1_1 = yield __await(rl_1.next()), _b = rl_1_1.done, !_b; _e = true) {
-                _d = rl_1_1.value;
-                _e = false;
-                let line = _d;
+            for (var _d = true, rl_1 = __asyncValues(rl), rl_1_1; rl_1_1 = yield __await(rl_1.next()), _a = rl_1_1.done, !_a; _d = true) {
+                _c = rl_1_1.value;
+                _d = false;
+                let line = _c;
                 if (!line.startsWith('#') && line !== '') {
                     if (excludedFiles) {
                         line = line.startsWith('!') ? line : `!${line}`;
@@ -487,29 +464,29 @@ function lineOfFileGenerator(_a) {
         catch (e_1_1) { e_1 = { error: e_1_1 }; }
         finally {
             try {
-                if (!_e && !_b && (_c = rl_1.return)) yield __await(_c.call(rl_1));
+                if (!_d && !_a && (_b = rl_1.return)) yield __await(_b.call(rl_1));
             }
             finally { if (e_1) throw e_1.error; }
         }
     });
 }
-function getFilesFromSourceFile(_a) {
-    return __awaiter(this, arguments, void 0, function* ({ filePaths, excludedFiles = false }) {
-        var _b, e_2, _c, _d;
+function getFilesFromSourceFile({ filePaths, excludedFiles = false }) {
+    var _a, e_2, _b, _c;
+    return __awaiter(this, void 0, void 0, function* () {
         const lines = [];
         for (const filePath of filePaths) {
             try {
-                for (var _e = true, _f = (e_2 = void 0, __asyncValues(lineOfFileGenerator({ filePath, excludedFiles }))), _g; _g = yield _f.next(), _b = _g.done, !_b; _e = true) {
-                    _d = _g.value;
-                    _e = false;
-                    const line = _d;
+                for (var _d = true, _e = (e_2 = void 0, __asyncValues(lineOfFileGenerator({ filePath, excludedFiles }))), _f; _f = yield _e.next(), _a = _f.done, !_a; _d = true) {
+                    _c = _f.value;
+                    _d = false;
+                    const line = _c;
                     lines.push(line);
                 }
             }
             catch (e_2_1) { e_2 = { error: e_2_1 }; }
             finally {
                 try {
-                    if (!_e && !_b && (_c = _f.return)) yield _c.call(_f);
+                    if (!_d && !_a && (_b = _e.return)) yield _b.call(_e);
                 }
                 finally { if (e_2) throw e_2.error; }
             }
@@ -518,27 +495,8 @@ function getFilesFromSourceFile(_a) {
     });
 }
 exports.getFilesFromSourceFile = getFilesFromSourceFile;
-function getFilesFromEsLintConfig(_a) {
-    return __awaiter(this, arguments, void 0, function* ({ eslintConfigPath, excludedFiles = false }) {
-        // Dynamically import the eslint config file using the provided path
-        const eslintConfigModule = yield Promise.resolve(`${eslintConfigPath}`).then(s => __importStar(require(s)));
-        // Access the default export, which should be an array of configuration objects
-        const eslintConfig = eslintConfigModule.default;
-        const fileNames = [];
-        for (const config of eslintConfig) {
-            if (excludedFiles) {
-                fileNames.push(...config.ignores.map((ignoredFile) => `!${ignoredFile}`));
-            }
-            else {
-                fileNames.push(...config.files);
-            }
-        }
-        return fileNames;
-    });
-}
-exports.getFilesFromEsLintConfig = getFilesFromEsLintConfig;
-function tempfile() {
-    return __awaiter(this, arguments, void 0, function* (extension = '') {
+function tempfile(extension = '') {
+    return __awaiter(this, void 0, void 0, function* () {
         const tempDirectory = yield fs_1.promises.realpath((0, os_1.tmpdir)());
         return path_1.default.join(tempDirectory, `${(0, uuid_1.v4)()}${extension}`);
     });
