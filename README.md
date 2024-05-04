@@ -95,12 +95,6 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
     # Type: string
     diff: ''
 
-    # Escape special characters of filenames 
-    # used in the `paths` output 
-    # Type: boolean
-    # Default: "true"
-    escape-paths: ''
-
     # Excluded file patterns (optionally include `!` before the file pattern or it would be prepended) 
     # Type: string
     excluded-files: ''
@@ -181,6 +175,12 @@ Search for files matching [glob patterns](https://docs.github.com/en/actions/lea
     # Type: boolean
     # Default: "true"
     read-gitignore: ''
+
+    # Escape special characters of filenames 
+    # used in the `paths` output 
+    # Type: boolean
+    # Default: "true"
+    safe-output: ''
 
     # Separator used for the paths 
     # output. 
