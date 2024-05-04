@@ -54,9 +54,9 @@ function run() {
 exports.run = run;
 /* istanbul ignore if */
 if (!process.env.TESTING) {
-    // eslint-disable-next-line github/no-then
-    run().catch(e => {
-        core.setFailed(e.message || e);
+    run().catch((e) => {
+        var _a;
+        core.setFailed((_a = e.message) !== null && _a !== void 0 ? _a : e);
     });
 }
 

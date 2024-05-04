@@ -37,12 +37,16 @@ jobs:
         run: |
           yarn install
 
-      - name: Run eslint on changed files
+      - name: Run ESLint on changed files
         uses: tj-actions/eslint-changed-files@v25
         with:
           token: ${{ secrets.PAT_TOKEN }}
-          config_path: ".eslintrc.json"
-          ignore_path: ".eslintignore"
+          ignore_patterns: |
+            dist/**
+            lib/**
+            node_modules/**
+            jest.config.js
+            coverage/**
 
       - name: Run build and test
         run: |

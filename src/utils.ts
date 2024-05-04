@@ -1,4 +1,4 @@
-/*global AsyncIterableIterator*/
+/* global AsyncIterableIterator */
 import {createReadStream, promises as fs} from 'fs'
 import {tmpdir} from 'os'
 import path from 'path'
@@ -78,7 +78,7 @@ export async function deletedGitFiles({
     .filter(p => p !== '')
     .map(p => path.join(topLevelDir, p))
 
-  core.debug(`deleted files: ${deletedFiles}`)
+  core.debug(`deleted files: ${deletedFiles.join('\n')}`)
 
   return deletedFiles
 }
@@ -99,9 +99,9 @@ export async function getPatterns(filePatterns: string): Promise<Pattern[]> {
     if (!(!line || line.startsWith('#'))) {
       line = IS_WINDOWS ? line.replace(/\\/g, '/') : line
       const pattern = new Pattern(line)
-      // @ts-ignore
+      // @ts-expect-error
       pattern.minimatch.options.nobrace = false
-      // @ts-ignore
+      // @ts-expect-error
       pattern.minimatch.make()
       patterns.push(pattern)
 
