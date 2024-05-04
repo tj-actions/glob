@@ -18,6 +18,7 @@ const defaultEnv = {
   'INPUT_STRIP-TOP-LEVEL-DIR': 'true',
   'INPUT_WORKING-DIRECTORY': '.',
   'INPUT_INCLUDE-DELETED-FILES': 'false',
+  'INPUT_READ-GITIGNORE': 'true',
   INPUT_FILES: '',
   'INPUT_FILES-FROM-SOURCE-FILE': ''
 }
