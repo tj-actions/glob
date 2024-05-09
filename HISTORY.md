@@ -1,5 +1,696 @@
 # Changelog
 
+# [22.0.1](https://github.com/tj-actions/glob/compare/v22.0.0...v22.0.1) - (2024-05-09)
+
+## <!-- 26 -->🔄 Update
+
+- Update sync-release-version.yml ([2944188](https://github.com/tj-actions/glob/commit/2944188f585a0ec102a6a82d9eeb3aed69785393))  - (Tonye Jack)
+- Updated README.md
+ ([3ab1fe2](https://github.com/tj-actions/glob/commit/3ab1fe2a9cc0b4d5fac5aa5a935d91c54afeda4e))  - (jackton1)
+
+## <!-- 29 -->👷 CI/CD
+
+- **deps-dev:** Bump eslint-plugin-n from 17.5.0 to 17.5.1 ([67e2a34](https://github.com/tj-actions/glob/commit/67e2a34d5db5028e2c446943179b1e845cec4083))  - (dependabot[bot])
+- **deps:** Bump actions/checkout from 4.1.4 to 4.1.5 ([1133b97](https://github.com/tj-actions/glob/commit/1133b97500490d8666f1fd38793c8f9d7bdb3c16))  - (dependabot[bot])
+- **deps-dev:** Bump eslint-plugin-n from 17.4.0 to 17.5.0 ([064e444](https://github.com/tj-actions/glob/commit/064e4444be04a14ba4fce9a6f238e0db39c29ca6))  - (dependabot[bot])
+- **deps:** Bump actions/checkout from 4.1.4 to 4.1.5 ([75a1408](https://github.com/tj-actions/glob/commit/75a14088de245315980d25505f0f443f44e2f1db))  - (dependabot[bot])
+
+## <!-- 3 -->📚 Documentation
+
+- Improve clarity of `read-gitignore` input ([53aa93a](https://github.com/tj-actions/glob/commit/53aa93ac740b44183b841f9ef2cb82d77aa0c51d))  - (Tonye Jack)
+
+## <!-- 30 -->📝 Other
+
+- PR [#1260](https://github.com/tj-actions/glob/pull/1260): bump eslint-plugin-n from 17.5.0 to 17.5.1 ([1561bbb](https://github.com/tj-actions/glob/commit/1561bbb519184df51de62a4e42a19123699e718d))  - (repo-ranger[bot])
+- PR [#1259](https://github.com/tj-actions/glob/pull/1259): update actions/checkout digest to 0ad4b8f ([dc9b183](https://github.com/tj-actions/glob/commit/dc9b18319cbb85214307c1daf5a83b8940fb2a64))  - (repo-ranger[bot])
+- PR [#1258](https://github.com/tj-actions/glob/pull/1258): bump actions/checkout from 4.1.4 to 4.1.5 ([a4a08fd](https://github.com/tj-actions/glob/commit/a4a08fdce7cc9347448bab5dface56a39f6aa4c1))  - (repo-ranger[bot])
+- PR [#1257](https://github.com/tj-actions/glob/pull/1257): bump eslint-plugin-n from 17.4.0 to 17.5.0 ([b65df37](https://github.com/tj-actions/glob/commit/b65df37ff5224fbba38a473ad50344ba133ae408))  - (repo-ranger[bot])
+- PR [#1256](https://github.com/tj-actions/glob/pull/1256): update actions/checkout digest to 0ad4b8f ([82e5c55](https://github.com/tj-actions/glob/commit/82e5c554a3855ab1bfc5ff1e9b7c498b47075250))  - (repo-ranger[bot])
+- PR [#1255](https://github.com/tj-actions/glob/pull/1255): bump actions/checkout from 4.1.4 to 4.1.5 ([e737fba](https://github.com/tj-actions/glob/commit/e737fbaeb4b3ad414b38cf1a8089726a3d2dc05e))  - (repo-ranger[bot])
+- PR [#1251](https://github.com/tj-actions/glob/pull/1251): update tj-actions/verify-changed-files action to v20 ([86498b1](https://github.com/tj-actions/glob/commit/86498b1959b48a97ea6e22a6e8a9942b92e533aa))  - (repo-ranger[bot])
+- PR [#1250](https://github.com/tj-actions/glob/pull/1250): README.md ([aada2df](https://github.com/tj-actions/glob/commit/aada2df713e06c5073fc70798c229d611f551b91))  - (repo-ranger[bot])
+
+## <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- **deps:** Update actions/checkout digest to 44c2b7a ([6f9090a](https://github.com/tj-actions/glob/commit/6f9090a871d788ae9f8af9d0c8316ea041f7abe8))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.11 ([13a8194](https://github.com/tj-actions/glob/commit/13a81944e7543cde739ce7bf62f61b049f195d8d))  - (renovate[bot])
+- **deps:** Update codacy/codacy-analysis-cli-action action to v4.4.1 ([2696167](https://github.com/tj-actions/glob/commit/2696167c7663fcfb9fed42c23d26aaa9ef5dc893))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to 0ad4b8f ([e766415](https://github.com/tj-actions/glob/commit/e766415c8bc25d78751f2bea36d3c4ff25c12e2d))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to 0ad4b8f ([a39eb9e](https://github.com/tj-actions/glob/commit/a39eb9e93a5e96bbbacd22ebb6cffc6244df087a))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.10 ([8f256e3](https://github.com/tj-actions/glob/commit/8f256e3db9399fb2356d8acbc2e72e64fc66d84b))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.9 ([9fe938f](https://github.com/tj-actions/glob/commit/9fe938f0c766423d03240d245d63b7f472ee05db))  - (renovate[bot])
+- **deps:** Lock file maintenance ([660f659](https://github.com/tj-actions/glob/commit/660f65968f727766f59117e5f8a363a722066ad6))  - (renovate[bot])
+- **deps:** Update tj-actions/verify-changed-files action to v20 ([5ada2e3](https://github.com/tj-actions/glob/commit/5ada2e33032b254b3a46556889ae27e73c2559f4))  - (renovate[bot])
+
+# [22.0.0](https://github.com/tj-actions/glob/compare/v21.0.0...v22.0.0) - (2024-05-04)
+
+## <!-- 0 -->🚀 Features
+
+- Upgrade to eslint v9 ([#1234](https://github.com/tj-actions/glob/issues/1234)) ([fe8057e](https://github.com/tj-actions/glob/commit/fe8057ea956a8e880a2884738a938b74b6d398e0))  - (Tonye Jack)
+- Rename escape-paths to safe-output ([#1029](https://github.com/tj-actions/glob/issues/1029)) ([be06119](https://github.com/tj-actions/glob/commit/be061196f1491ea7ed208d78e2e731ff50c6ace4))  - (Tonye Jack)
+- Add support for optionally reading the gitignore file ([f3d30c1](https://github.com/tj-actions/glob/commit/f3d30c1c3a83e9080c6590d98234dfb19f3bbdfc))  - (Tonye Jack)
+
+## <!-- 1 -->🐛 Bug Fixes
+
+- **deps:** Update dependency minimatch to v9.0.4 ([31e8731](https://github.com/tj-actions/glob/commit/31e8731fe66c53e0d347efecfd865a2289ad3947))  - (renovate[bot])
+
+## <!-- 13 -->📦 Bumps
+
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([4934de3](https://github.com/tj-actions/glob/commit/4934de3a5f232d7845c86c932c9aaed38e5454fd))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([7430120](https://github.com/tj-actions/glob/commit/7430120c46518ce2977d3f43eb35e076021887eb))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([b5fb1b4](https://github.com/tj-actions/glob/commit/b5fb1b46b893e23ca925c86933992e81ceff7289))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([e312fcc](https://github.com/tj-actions/glob/commit/e312fccb8cab693ef234fbad707ac520236c981f))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([1f0b6bb](https://github.com/tj-actions/glob/commit/1f0b6bbd0d4136bc5c90b4714559673e4af80a6a))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([a77aaaf](https://github.com/tj-actions/glob/commit/a77aaaf02e20d7020b2479f450c625f3d6f87878))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([4d39c62](https://github.com/tj-actions/glob/commit/4d39c62fcd79cdbe0af869c1afe406edcc8080d2))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([6d6dfb8](https://github.com/tj-actions/glob/commit/6d6dfb8ae237e87764b345d39f34723b2346093e))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([015d4f7](https://github.com/tj-actions/glob/commit/015d4f7dcca65c4b377630318f07b421ba23037a))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([4313c92](https://github.com/tj-actions/glob/commit/4313c9298036a040ba80f1fc4780c079b5fdcff3))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([965bd41](https://github.com/tj-actions/glob/commit/965bd412adc617cafdef5d29e6cbe7d54f33345e))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([7219654](https://github.com/tj-actions/glob/commit/721965423908e59c6cf4690d45bd61f96df2ccf6))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([c19e468](https://github.com/tj-actions/glob/commit/c19e468ecca42b7f2f677655821bc34412e1fc6d))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([9d33dc7](https://github.com/tj-actions/glob/commit/9d33dc7a50ade1b2c0750426545d94ee32975701))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([c71fdfb](https://github.com/tj-actions/glob/commit/c71fdfb7aa5390a4b79190e27c5ffdd93d8a7f00))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([712ab13](https://github.com/tj-actions/glob/commit/712ab1347fd1b38378f173044a8394385469a15b))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([b0ea724](https://github.com/tj-actions/glob/commit/b0ea7246266f52e6de26cbb0d3ef99842a170686))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([7685831](https://github.com/tj-actions/glob/commit/76858312126f5d924b51ed1924a1ac3b9a8fc577))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([1492a9c](https://github.com/tj-actions/glob/commit/1492a9c6e65c2e098730b7773d682f6bdc0e932d))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([5a537b4](https://github.com/tj-actions/glob/commit/5a537b428c2a918929fac617ad6f20f644145c15))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([a293986](https://github.com/tj-actions/glob/commit/a2939868291b4b0988c70ef825aa453ff81e273c))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([f46ce26](https://github.com/tj-actions/glob/commit/f46ce26714df9a24263bff0dc3847b1108d48ecd))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([05bf1bb](https://github.com/tj-actions/glob/commit/05bf1bbe1eb63819be1fa7e1004dd0d8a7a7eea9))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([5c823a5](https://github.com/tj-actions/glob/commit/5c823a583f13334bff0003ffaaef54c813cc4d2e))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([f97c431](https://github.com/tj-actions/glob/commit/f97c4313df3d4abf7a40da0c2595a3a1df9dc653))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([7424d3a](https://github.com/tj-actions/glob/commit/7424d3aae039a28b7cb3d1e873625241e48d5e6b))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([a5e49ac](https://github.com/tj-actions/glob/commit/a5e49ac7e4cb2ea5a60bbc99eb22c627c6a62395))  - (dependabot[bot])
+- Bump actions/checkout from 4.1.1 to 4.1.2
+
+Bumps [actions/checkout](https://github.com/actions/checkout) from 4.1.1 to 4.1.2.
+- [Release notes](https://github.com/actions/checkout/releases)
+- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)
+- [Commits](https://github.com/actions/checkout/compare/b4ffde65f46336ab88eb53be808477a3936bae11...9bb56186c3b09b4f86b1c65136769dd318469633)
+
+---
+updated-dependencies:
+- dependency-name: actions/checkout
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com> ([fc74d14](https://github.com/tj-actions/glob/commit/fc74d14d4c266e6ec2b5065092b013b2acc97e15))  - (dependabot[bot])
+
+## <!-- 16 -->➕ Add
+
+- Added missing changes and modified dist assets.
+ ([8c36a5b](https://github.com/tj-actions/glob/commit/8c36a5be204551d8fe0055d292240f30932215ba))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([da7ae38](https://github.com/tj-actions/glob/commit/da7ae385c03bec1ceeb68699ce05dd893d12f307))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([2c495c0](https://github.com/tj-actions/glob/commit/2c495c0adeff84f786fa8fe133f40e506a1a6ab4))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([dff7d8e](https://github.com/tj-actions/glob/commit/dff7d8ef884569d18f12dbaed95dc5005d1b253d))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([cef4821](https://github.com/tj-actions/glob/commit/cef4821e5568ab4b6e1376e7c89a3f7f95d31ea5))  - (GitHub Action)
+- Added missing changes and modified dist assets.
+ ([96a0e0c](https://github.com/tj-actions/glob/commit/96a0e0cc1eca0c102e48b2af81c193a73548dc51))  - (GitHub Action)
+
+## <!-- 26 -->🔄 Update
+
+- Updated README.md ([#1246](https://github.com/tj-actions/glob/issues/1246))
+
+Co-authored-by: jackton1 <17484350+jackton1@users.noreply.github.com> ([45253be](https://github.com/tj-actions/glob/commit/45253bef9689cb29d787c30ba3d0ec147b5ed828))  - (tj-actions[bot])
+- Updated README.md ([#1245](https://github.com/tj-actions/glob/issues/1245))
+
+ ([3101549](https://github.com/tj-actions/glob/commit/3101549ab3ad1aadbdebc754e1c79640434ea6e5))  - (tj-actions[bot])
+- Update src/main.ts
+
+Co-authored-by: tj-actions[bot] <109116665+tj-actions-bot@users.noreply.github.com> ([cd6c57c](https://github.com/tj-actions/glob/commit/cd6c57cced3f676ad9b2ce30b2468866adcc8190))  - (Tonye Jack)
+- Updated README.md
+ ([05026c7](https://github.com/tj-actions/glob/commit/05026c766ef6775d1398cd018201c5a2462e0284))  - (renovate[bot])
+- Updated README.md
+ ([e2d71f9](https://github.com/tj-actions/glob/commit/e2d71f9756203eb2a2cdac80df3f5b53a6811cef))  - (repo-ranger[bot])
+
+## <!-- 29 -->👷 CI/CD
+
+- **deps:** Bump actions/checkout from 4.1.3 to 4.1.4 ([c713797](https://github.com/tj-actions/glob/commit/c7137971d2e1faff0f57a7484b132150801c9fee))  - (dependabot[bot])
+
+## <!-- 3 -->📚 Documentation
+
+- Add boidolr as a contributor for doc ([#1228](https://github.com/tj-actions/glob/issues/1228)) ([38a8f2a](https://github.com/tj-actions/glob/commit/38a8f2af2aa4358dd312157807c9e4b858a398ff))  - (allcontributors[bot])
+- Update checkout action ([#1121](https://github.com/tj-actions/glob/issues/1121)) ([27c5b4f](https://github.com/tj-actions/glob/commit/27c5b4fff7f1845736d592b5a1cca536dac217bc))  - (Raphael Boidol)
+
+## <!-- 30 -->📝 Other
+
+- Renovate/typescript 5.x ([#1249](https://github.com/tj-actions/glob/issues/1249))
+
+ ([55fb07d](https://github.com/tj-actions/glob/commit/55fb07d24b31b00343d42088fa49a26fbbcbce79))  - (Tonye Jack)
+- PR [#1248](https://github.com/tj-actions/glob/pull/1248): update dependency eslint-plugin-n to v17 ([0cd345f](https://github.com/tj-actions/glob/commit/0cd345f7dda75fff6e5647b8c2508cec4df682b1))  - (repo-ranger[bot])
+- Merge cd6c57cced3f676ad9b2ce30b2468866adcc8190 into 674bbadc3ebf9153c8fedb29785d4fbefaa2ca5c
+ ([54e8001](https://github.com/tj-actions/glob/commit/54e8001cc84aa6c6bf3ca82fa19a7aa2845be847))  - (Tonye Jack)
+- PR [#1238](https://github.com/tj-actions/glob/pull/1238): update tj-actions/eslint-changed-files action to v25 ([a337b3d](https://github.com/tj-actions/glob/commit/a337b3d17d19c44ba251f1b4480758b386d0caa0))  - (repo-ranger[bot])
+- PR [#1237](https://github.com/tj-actions/glob/pull/1237): README.md ([d5755a4](https://github.com/tj-actions/glob/commit/d5755a474a1bfb867d99e7ef2d77a8feff663814))  - (repo-ranger[bot])
+- PR [#1232](https://github.com/tj-actions/glob/pull/1232): update actions/checkout digest to 1d96c77 ([cdbad29](https://github.com/tj-actions/glob/commit/cdbad29971849490aa1acd90e7bbe124a9e13ccd))  - (repo-ranger[bot])
+- PR [#1231](https://github.com/tj-actions/glob/pull/1231): README.md ([515f3dd](https://github.com/tj-actions/glob/commit/515f3ddeb6a7c7b0ff6a119ea9240416da262783))  - (repo-ranger[bot])
+- PR [#1230](https://github.com/tj-actions/glob/pull/1230): bump actions/checkout from 4.1.3 to 4.1.4 ([05b5f0f](https://github.com/tj-actions/glob/commit/05b5f0f520fe073fe45bc68dc7d8ad984236ca61))  - (repo-ranger[bot])
+- PR [#1222](https://github.com/tj-actions/glob/pull/1222): update actions/checkout digest to b4ffde6 ([b8c06d2](https://github.com/tj-actions/glob/commit/b8c06d2e5f0b15aefeb4430ed997d94f04e1449e))  - (repo-ranger[bot])
+- PR [#1221](https://github.com/tj-actions/glob/pull/1221): actions/checkout from 4.1.1 to 4.1.2 ([fc988c9](https://github.com/tj-actions/glob/commit/fc988c9bfcf7953f01bc6fbebb3c2d63a3461588))  - (repo-ranger[bot])
+- PR [#1220](https://github.com/tj-actions/glob/pull/1220): update actions/checkout digest to b4ffde6 ([6c727ce](https://github.com/tj-actions/glob/commit/6c727ce2e01bf990fa3ab274fc2c290e66814df9))  - (repo-ranger[bot])
+- PR [#1219](https://github.com/tj-actions/glob/pull/1219): actions/checkout from 4.1.1 to 4.1.2 ([c5133b3](https://github.com/tj-actions/glob/commit/c5133b365e32c46fb326b98c97b7d2ffb90ce428))  - (repo-ranger[bot])
+- PR [#1217](https://github.com/tj-actions/glob/pull/1217): update actions/checkout digest to b4ffde6 ([5b1ff44](https://github.com/tj-actions/glob/commit/5b1ff44c920aa9bda0206093ee344e8c2d3e6053))  - (repo-ranger[bot])
+- PR [#1216](https://github.com/tj-actions/glob/pull/1216): actions/checkout from 4.1.1 to 4.1.2 ([6abb64e](https://github.com/tj-actions/glob/commit/6abb64eceff1f693aa55e2219c141c7401f7f0e7))  - (repo-ranger[bot])
+- PR [#1215](https://github.com/tj-actions/glob/pull/1215): update actions/checkout digest to b4ffde6 ([d350429](https://github.com/tj-actions/glob/commit/d3504297d40ee0783d3da04b5d4115d12a989ae2))  - (repo-ranger[bot])
+- PR [#1214](https://github.com/tj-actions/glob/pull/1214): actions/checkout from 4.1.1 to 4.1.2 ([874c1c5](https://github.com/tj-actions/glob/commit/874c1c59253a74727072a3228c601b6364588811))  - (repo-ranger[bot])
+- PR [#1212](https://github.com/tj-actions/glob/pull/1212): update actions/checkout digest to b4ffde6 ([a3c71a3](https://github.com/tj-actions/glob/commit/a3c71a3ab06aa4e85b5f05d2bfef9d6a2e289f7d))  - (repo-ranger[bot])
+- PR [#1211](https://github.com/tj-actions/glob/pull/1211): actions/checkout from 4.1.1 to 4.1.2 ([b36e39a](https://github.com/tj-actions/glob/commit/b36e39aac753420776521b75f63ba0dd5f701379))  - (repo-ranger[bot])
+- PR [#1207](https://github.com/tj-actions/glob/pull/1207): update actions/checkout digest to b4ffde6 ([9b253a7](https://github.com/tj-actions/glob/commit/9b253a77d2d26d2a14aa124bf29f1bbbdc27c68e))  - (repo-ranger[bot])
+- PR [#1206](https://github.com/tj-actions/glob/pull/1206): actions/checkout from 4.1.1 to 4.1.2 ([370c3de](https://github.com/tj-actions/glob/commit/370c3dec56eb53578d0ab2e97639bb3286cce13d))  - (repo-ranger[bot])
+- PR [#1205](https://github.com/tj-actions/glob/pull/1205): update actions/checkout digest to b4ffde6 ([dcaf165](https://github.com/tj-actions/glob/commit/dcaf165291843c694f38d6a9ffb5b0619835311c))  - (repo-ranger[bot])
+- PR [#1204](https://github.com/tj-actions/glob/pull/1204): actions/checkout from 4.1.1 to 4.1.2 ([2dc27f1](https://github.com/tj-actions/glob/commit/2dc27f1706cbc90eef433e63e83f3a42988945fe))  - (repo-ranger[bot])
+- PR [#1202](https://github.com/tj-actions/glob/pull/1202): update actions/checkout digest to b4ffde6 ([89745f5](https://github.com/tj-actions/glob/commit/89745f5c66e072fc364851815d845c430ec65875))  - (repo-ranger[bot])
+- PR [#1201](https://github.com/tj-actions/glob/pull/1201): actions/checkout from 4.1.1 to 4.1.2 ([92abca8](https://github.com/tj-actions/glob/commit/92abca8fef2a13a63d9c83bcbc77551e7f9bfac6))  - (repo-ranger[bot])
+- PR [#1199](https://github.com/tj-actions/glob/pull/1199): update actions/checkout digest to b4ffde6 ([d6f31e9](https://github.com/tj-actions/glob/commit/d6f31e98ae5a90aa756efbab82ae14572acb5f83))  - (repo-ranger[bot])
+- PR [#1198](https://github.com/tj-actions/glob/pull/1198): actions/checkout from 4.1.1 to 4.1.2 ([f344d6f](https://github.com/tj-actions/glob/commit/f344d6faf2e26feb8ab5ef92163a10b8c6e035de))  - (repo-ranger[bot])
+- PR [#1194](https://github.com/tj-actions/glob/pull/1194): update actions/checkout digest to b4ffde6 ([3f99325](https://github.com/tj-actions/glob/commit/3f993258b78cf64433a79fe0208e296ab70ceef2))  - (repo-ranger[bot])
+- PR [#1193](https://github.com/tj-actions/glob/pull/1193): actions/checkout from 4.1.1 to 4.1.2 ([097d149](https://github.com/tj-actions/glob/commit/097d149769dea3cf4f8b3877a553b1f57d11f32a))  - (repo-ranger[bot])
+- PR [#1190](https://github.com/tj-actions/glob/pull/1190): update dependency eslint-plugin-jest to v28 ([19d1c4e](https://github.com/tj-actions/glob/commit/19d1c4eff5ca04b6e737ca7f2cd5f0abbf49c302))  - (repo-ranger[bot])
+- PR [#1187](https://github.com/tj-actions/glob/pull/1187): update actions/checkout digest to b4ffde6 ([2e7a626](https://github.com/tj-actions/glob/commit/2e7a626362555e647fbe388d1a40416030f0dffe))  - (repo-ranger[bot])
+- PR [#1186](https://github.com/tj-actions/glob/pull/1186): actions/checkout from 4.1.1 to 4.1.2 ([2cb6444](https://github.com/tj-actions/glob/commit/2cb6444a62811b277afe5b0259ca3063b2e199a6))  - (repo-ranger[bot])
+- PR [#1183](https://github.com/tj-actions/glob/pull/1183): update actions/checkout digest to b4ffde6 ([a3a82fd](https://github.com/tj-actions/glob/commit/a3a82fd72b5e099124cfe32a1abfe1629943e4fd))  - (repo-ranger[bot])
+- PR [#1182](https://github.com/tj-actions/glob/pull/1182): actions/checkout from 4.1.1 to 4.1.2 ([2503037](https://github.com/tj-actions/glob/commit/250303748b9c30855544195acedcce30c3da6270))  - (repo-ranger[bot])
+- PR [#1180](https://github.com/tj-actions/glob/pull/1180): update actions/checkout digest to b4ffde6 ([3c1270a](https://github.com/tj-actions/glob/commit/3c1270a439278b0b59abac01e98371b1ed6b374d))  - (repo-ranger[bot])
+- PR [#1179](https://github.com/tj-actions/glob/pull/1179): actions/checkout from 4.1.1 to 4.1.2 ([67d46a8](https://github.com/tj-actions/glob/commit/67d46a8971b18b3875afad5b9f22ab2736170a28))  - (repo-ranger[bot])
+- PR [#1177](https://github.com/tj-actions/glob/pull/1177): update actions/checkout digest to b4ffde6 ([ef00b4a](https://github.com/tj-actions/glob/commit/ef00b4ab8e736e15489cdea3244a793f3f7e8dad))  - (repo-ranger[bot])
+- PR [#1176](https://github.com/tj-actions/glob/pull/1176): actions/checkout from 4.1.1 to 4.1.2 ([005aeb5](https://github.com/tj-actions/glob/commit/005aeb5418528fe1b84b8356a5f65a8d323b180c))  - (repo-ranger[bot])
+- PR [#1173](https://github.com/tj-actions/glob/pull/1173): update actions/checkout digest to b4ffde6 ([da1f8fb](https://github.com/tj-actions/glob/commit/da1f8fb97f9898164f9e18dedda0c8a822ed8b17))  - (repo-ranger[bot])
+- PR [#1172](https://github.com/tj-actions/glob/pull/1172): actions/checkout from 4.1.1 to 4.1.2 ([ad7800f](https://github.com/tj-actions/glob/commit/ad7800fc424bc0cbffebadbfbbc3df80d1315bb4))  - (repo-ranger[bot])
+- PR [#1168](https://github.com/tj-actions/glob/pull/1168): update tj-actions/eslint-changed-files action to v24 ([0b0f140](https://github.com/tj-actions/glob/commit/0b0f14072d73a74d2147214a681547a633f693b5))  - (repo-ranger[bot])
+- PR [#1167](https://github.com/tj-actions/glob/pull/1167): update actions/checkout digest to b4ffde6 ([00e1718](https://github.com/tj-actions/glob/commit/00e1718fcf2d216b10051e33def18c0898dd3d29))  - (repo-ranger[bot])
+- PR [#1166](https://github.com/tj-actions/glob/pull/1166): actions/checkout from 4.1.1 to 4.1.2 ([8ae0809](https://github.com/tj-actions/glob/commit/8ae08094c9a12f8c5d719cdbb8b556d32a614bc5))  - (repo-ranger[bot])
+- PR [#1164](https://github.com/tj-actions/glob/pull/1164): update actions/checkout digest to b4ffde6 ([ab753c6](https://github.com/tj-actions/glob/commit/ab753c66c5d4d61fa791e3c20e1c63d7a5d3b09f))  - (repo-ranger[bot])
+- PR [#1163](https://github.com/tj-actions/glob/pull/1163): actions/checkout from 4.1.1 to 4.1.2 ([bbc23cc](https://github.com/tj-actions/glob/commit/bbc23ccd7ab42301bac15a94e042a2a29e300f6e))  - (repo-ranger[bot])
+- PR [#1162](https://github.com/tj-actions/glob/pull/1162): update actions/checkout digest to b4ffde6 ([7d18bfe](https://github.com/tj-actions/glob/commit/7d18bfe87b66e05983fa9ba7265f744407ff2b38))  - (repo-ranger[bot])
+- PR [#1161](https://github.com/tj-actions/glob/pull/1161): actions/checkout from 4.1.1 to 4.1.2 ([76af595](https://github.com/tj-actions/glob/commit/76af595c7a49e9d373c16f1857942012a97c8261))  - (repo-ranger[bot])
+- PR [#1160](https://github.com/tj-actions/glob/pull/1160): update actions/checkout digest to b4ffde6 ([7d4c2a2](https://github.com/tj-actions/glob/commit/7d4c2a2a719e91094b7142d0399eb1da4d7bf9fb))  - (repo-ranger[bot])
+- PR [#1159](https://github.com/tj-actions/glob/pull/1159): actions/checkout from 4.1.1 to 4.1.2 ([3fabf37](https://github.com/tj-actions/glob/commit/3fabf37bc9fb1d664238b5bb27f8486cf73cb07d))  - (repo-ranger[bot])
+- PR [#1157](https://github.com/tj-actions/glob/pull/1157): update actions/checkout digest to b4ffde6 ([3441b52](https://github.com/tj-actions/glob/commit/3441b52c7d4eb1960de818d577aa81290c565211))  - (repo-ranger[bot])
+- PR [#1156](https://github.com/tj-actions/glob/pull/1156): actions/checkout from 4.1.1 to 4.1.2 ([de7124c](https://github.com/tj-actions/glob/commit/de7124c75170f57ab0e32310c2f9fd270267c24e))  - (repo-ranger[bot])
+- PR [#1154](https://github.com/tj-actions/glob/pull/1154): update actions/checkout digest to b4ffde6 ([7d13e7a](https://github.com/tj-actions/glob/commit/7d13e7a477c5c8f081e6ad317f3c5f301beb2797))  - (repo-ranger[bot])
+- PR [#1153](https://github.com/tj-actions/glob/pull/1153): actions/checkout from 4.1.1 to 4.1.2 ([e0c6a64](https://github.com/tj-actions/glob/commit/e0c6a64bc205ce1d418e62c8980af8f201f40444))  - (repo-ranger[bot])
+- PR [#1152](https://github.com/tj-actions/glob/pull/1152): update actions/checkout digest to b4ffde6 ([e25c91b](https://github.com/tj-actions/glob/commit/e25c91bdb1da107ad37a3afd8c2755351fca22c8))  - (repo-ranger[bot])
+- PR [#1151](https://github.com/tj-actions/glob/pull/1151): actions/checkout from 4.1.1 to 4.1.2 ([c9673d3](https://github.com/tj-actions/glob/commit/c9673d3adf1148ee18d244e6783a68aea8f4a1e5))  - (repo-ranger[bot])
+- PR [#1149](https://github.com/tj-actions/glob/pull/1149): update actions/checkout digest to b4ffde6 ([1104959](https://github.com/tj-actions/glob/commit/11049597f03c40d4bb55b12b7bbef2dc7594490e))  - (repo-ranger[bot])
+- PR [#1148](https://github.com/tj-actions/glob/pull/1148): actions/checkout from 4.1.1 to 4.1.2 ([c7b066d](https://github.com/tj-actions/glob/commit/c7b066df3ad86f45034099ba62779923d1506a3d))  - (repo-ranger[bot])
+- PR [#1146](https://github.com/tj-actions/glob/pull/1146): update actions/checkout digest to b4ffde6 ([2319ea7](https://github.com/tj-actions/glob/commit/2319ea7fcd85b241197b19d6a58dd7f1774742df))  - (repo-ranger[bot])
+- PR [#1145](https://github.com/tj-actions/glob/pull/1145): actions/checkout from 4.1.1 to 4.1.2 ([845cc81](https://github.com/tj-actions/glob/commit/845cc81154b58bf22c26d796036cc075f5772266))  - (repo-ranger[bot])
+- PR [#1141](https://github.com/tj-actions/glob/pull/1141): update actions/checkout digest to b4ffde6 ([c9f0d35](https://github.com/tj-actions/glob/commit/c9f0d359f4d0388a2923aaac24218ba4da72c044))  - (repo-ranger[bot])
+- PR [#1140](https://github.com/tj-actions/glob/pull/1140): actions/checkout from 4.1.1 to 4.1.2 ([f1dc2d1](https://github.com/tj-actions/glob/commit/f1dc2d1f7225325b2eab93058c63c6fd56c185fd))  - (repo-ranger[bot])
+- PR [#1137](https://github.com/tj-actions/glob/pull/1137): update actions/checkout digest to b4ffde6 ([27c5719](https://github.com/tj-actions/glob/commit/27c57193a8e4ecd4028f35655620734fff88db52))  - (repo-ranger[bot])
+- PR [#1136](https://github.com/tj-actions/glob/pull/1136): actions/checkout from 4.1.1 to 4.1.2 ([04d0cd5](https://github.com/tj-actions/glob/commit/04d0cd5b42198cdd734b59492dcf5b624afe678f))  - (repo-ranger[bot])
+- PR [#1135](https://github.com/tj-actions/glob/pull/1135): update actions/checkout digest to b4ffde6 ([5d84f8e](https://github.com/tj-actions/glob/commit/5d84f8e5b45d0a78f7978bd2a16e450b9f882690))  - (repo-ranger[bot])
+- PR [#1134](https://github.com/tj-actions/glob/pull/1134): actions/checkout from 4.1.1 to 4.1.2 ([3c723b9](https://github.com/tj-actions/glob/commit/3c723b95bca01fc7e8117d5e5e76bdd91750f7a8))  - (repo-ranger[bot])
+- PR [#1131](https://github.com/tj-actions/glob/pull/1131): actions/checkout from 4.1.1 to 4.1.2 ([48ee947](https://github.com/tj-actions/glob/commit/48ee94773fb6fdbdd481fc2125f4f9faa792201e))  - (repo-ranger[bot])
+- PR [#1122](https://github.com/tj-actions/glob/pull/1122): update tj-actions/semver-diff action to v3 ([2f9de1a](https://github.com/tj-actions/glob/commit/2f9de1a1e824aab7793f2de16bb4184496092811))  - (repo-ranger[bot])
+- PR [#1117](https://github.com/tj-actions/glob/pull/1117): update tj-actions/verify-changed-files action to v19 ([d6b4b27](https://github.com/tj-actions/glob/commit/d6b4b272d305a442c8a1c0ade79f9d4afe55fde6))  - (repo-ranger[bot])
+- PR [#1116](https://github.com/tj-actions/glob/pull/1116): to v21 ([32309ec](https://github.com/tj-actions/glob/commit/32309ecd453b059b382f6f94e2ff8e2175054cfd))  - (repo-ranger[bot])
+
+## <!-- 6 -->🧪 Testing
+
+- "add `INPUT_READ-GITIGNORE` to the default environment variables" ([55cf7a3](https://github.com/tj-actions/glob/commit/55cf7a322c2dcb55925dd59b8f53d0ab539c92ae))  - (Tonye Jack)
+
+## <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- **deps:** Update dependency typescript to <5.4.6 ([d91c9f7](https://github.com/tj-actions/glob/commit/d91c9f75ac81b41ae02a26ee1eabb41826904840))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-n to v17 ([26f22d9](https://github.com/tj-actions/glob/commit/26f22d9b39e50a0026030b27810bac985ec22763))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v28.5.0 ([674bbad](https://github.com/tj-actions/glob/commit/674bbadc3ebf9153c8fedb29785d4fbefaa2ca5c))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v28.4.0 ([f41e79b](https://github.com/tj-actions/glob/commit/f41e79bb34b1a90c97a7c26a464da700f74b2be8))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.8 ([b6bc4b2](https://github.com/tj-actions/glob/commit/b6bc4b2fc393a8d7f6c898375660c845f842caa9))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.8.0 ([7241967](https://github.com/tj-actions/glob/commit/72419671221d7a7b075a4a27149b25bcabd514df))  - (renovate[bot])
+- **deps:** Lock file maintenance ([248b3c3](https://github.com/tj-actions/glob/commit/248b3c30d8f9f5b73e64c281ae0f2ba96f98be28))  - (renovate[bot])
+- **deps:** Update tj-actions/eslint-changed-files action to v25 ([54aa5c1](https://github.com/tj-actions/glob/commit/54aa5c17782b8863b4a854f3c12967aa36561f0d))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v28.3.0 ([ceb8223](https://github.com/tj-actions/glob/commit/ceb8223253a80e5561e3b5fd07728fa349837a54))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to 0ad4b8f ([28d3475](https://github.com/tj-actions/glob/commit/28d3475a84dc47731c921d3d735aca66fb229bd9))  - (renovate[bot])
+- **deps:** Update peter-evans/create-pull-request action to v6.0.5 ([4774a1b](https://github.com/tj-actions/glob/commit/4774a1b10bcb70733c106d972d2032125cbb9f04))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to 1d96c77 ([dcc9135](https://github.com/tj-actions/glob/commit/dcc9135d27ca3e397c86a77417063675bed83113))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.7.1 ([4975979](https://github.com/tj-actions/glob/commit/497597971dd39891e7fef59ff962161b757c1fca))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to 1d96c77 ([f6561e6](https://github.com/tj-actions/glob/commit/f6561e61d810e4fc0575767eca527c3ba45f5e36))  - (renovate[bot])
+- **deps:** Lock file maintenance ([4eee5b9](https://github.com/tj-actions/glob/commit/4eee5b90953755b4ade75e04a7ba41d75ad59d5d))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([d9a837b](https://github.com/tj-actions/glob/commit/d9a837bd5c48270dc6bf9025435808ae212ddb44))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([2c96f61](https://github.com/tj-actions/glob/commit/2c96f615a309c6114de7376fa1fe4c2ee5d74744))  - (renovate[bot])
+- **deps:** Update peter-evans/create-pull-request action to v6.0.4 ([f06d074](https://github.com/tj-actions/glob/commit/f06d074b918adf129fb1ee55af822e5d07a8bb14))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([156d9c8](https://github.com/tj-actions/glob/commit/156d9c863e714c320c6f14520ee9b84b0e3e6d05))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([b005d74](https://github.com/tj-actions/glob/commit/b005d74347657c4539e3a1542f600b82b8603202))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.7.0 ([d6f5315](https://github.com/tj-actions/glob/commit/d6f531513c22353ed58310fed3008832690184b5))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([ec3a1bf](https://github.com/tj-actions/glob/commit/ec3a1bf33ee9a68eefa091ddc4459978fdb478d1))  - (renovate[bot])
+- **deps:** Lock file maintenance ([977b5bd](https://github.com/tj-actions/glob/commit/977b5bdbc8da2007c77638343ebdc7ad4cafdc47))  - (renovate[bot])
+- **deps:** Lock file maintenance ([a85641b](https://github.com/tj-actions/glob/commit/a85641b4275d0513101a807ca5acb7458cc9cc1b))  - (renovate[bot])
+- **deps:** Update peter-evans/create-pull-request action to v6.0.3 ([80b9548](https://github.com/tj-actions/glob/commit/80b9548dda3f0c998170932d66c74c2dcad38058))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([2f5ee99](https://github.com/tj-actions/glob/commit/2f5ee99dab852c466bda13105275cd41667b0aaa))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([5958a9e](https://github.com/tj-actions/glob/commit/5958a9e4ee8425b73e3d9b441c9d69546d3ff4b9))  - (renovate[bot])
+- **deps:** Update dependency typescript to v5.4.5 ([5cca81e](https://github.com/tj-actions/glob/commit/5cca81ea151a34f7ae3acca16d1d2a507d76f102))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([3d6f393](https://github.com/tj-actions/glob/commit/3d6f3932cee2ed3df9ba66507f06b618e808f71e))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.7 ([56f0de9](https://github.com/tj-actions/glob/commit/56f0de932600d028867fd193542bb8dd307fb979))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([760c320](https://github.com/tj-actions/glob/commit/760c32097b54a7157b8fe06b37e1c21f7144b124))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.6 ([b753929](https://github.com/tj-actions/glob/commit/b7539290a3383f174d9b7a3e7822c0e801c81a7c))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.6.0 ([60a83b9](https://github.com/tj-actions/glob/commit/60a83b97349c508d04babc63d1c10e34b8e4506a))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([3631f32](https://github.com/tj-actions/glob/commit/3631f32700d8cae0f9ac973f63cd7815210eee60))  - (renovate[bot])
+- **deps:** Lock file maintenance ([e383e88](https://github.com/tj-actions/glob/commit/e383e885595d869da99d4b0c55ffca496df5db1e))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v28.2.0 ([e85370c](https://github.com/tj-actions/glob/commit/e85370c96502cadeaacf575407545b11dba0e5e5))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-jest to v28 ([fbc29b4](https://github.com/tj-actions/glob/commit/fbc29b4ec0709fe3be51d8e8923a936bc77ec0cb))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.5 ([638801e](https://github.com/tj-actions/glob/commit/638801e9d83f8d97ad792ed516c562511ab4e672))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([8a9e3f0](https://github.com/tj-actions/glob/commit/8a9e3f0e5535c6202f6f2544703aaa3608d275e2))  - (renovate[bot])
+- **deps:** Update dependency typescript to v5.4.4 ([fcbde0b](https://github.com/tj-actions/glob/commit/fcbde0b958a0a46f6cf6d2e79217e6ff1e9fb929))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([472f4f1](https://github.com/tj-actions/glob/commit/472f4f193b21677242d956f053ada4f5a55d9983))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.4 ([de1bfaf](https://github.com/tj-actions/glob/commit/de1bfaf76eb3c4967b94a2b3adc661669af69165))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([40a1066](https://github.com/tj-actions/glob/commit/40a10668d897d22bbf0f597ad530147e94e9daa3))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.3 ([2f1633a](https://github.com/tj-actions/glob/commit/2f1633a1a06d97daf1718648f636798add7ad10e))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([14f63f9](https://github.com/tj-actions/glob/commit/14f63f9a07621735adf365e2c003e606227d8924))  - (renovate[bot])
+- **deps:** Update dependency @typescript-eslint/parser to v7.5.0 ([1990a80](https://github.com/tj-actions/glob/commit/1990a80294e05f4e8b3e4f55843fd9609c7bfc6a))  - (renovate[bot])
+- **deps:** Update dependency @typescript-eslint/eslint-plugin to v7.5.0 ([66ce193](https://github.com/tj-actions/glob/commit/66ce19361c4c07d15607471289ed35cc77b14fad))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([ae6e209](https://github.com/tj-actions/glob/commit/ae6e209f687b65d93e0a5d568d1fc0582dfa009f))  - (renovate[bot])
+- **deps:** Lock file maintenance ([09e524c](https://github.com/tj-actions/glob/commit/09e524c93ef3219f6f3b1be2c60af19ecd9fd073))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.2 ([25dc054](https://github.com/tj-actions/glob/commit/25dc0542c12f14a0ed783f0f10ec183483518bf8))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.12.0 ([64214e4](https://github.com/tj-actions/glob/commit/64214e491eb1192d2e0194d062e668a44237658d))  - (renovate[bot])
+- **deps:** Update tj-actions/eslint-changed-files action to v24 ([920202c](https://github.com/tj-actions/glob/commit/920202c491d4b72373df68dbc8048871fc467e93))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([935ae3a](https://github.com/tj-actions/glob/commit/935ae3a30989c8684c5a60304d945105e7b643e3))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([d52f887](https://github.com/tj-actions/glob/commit/d52f88777f1448cdf5c2f099edd27487aee3ac39))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([b968d62](https://github.com/tj-actions/glob/commit/b968d62b4f1fd3e01c07aa6374367c7834cd4969))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([1f441cc](https://github.com/tj-actions/glob/commit/1f441ccff78f1b89b5b0e9085a90ae402ee8e964))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.4.0 ([bea7389](https://github.com/tj-actions/glob/commit/bea73897a2960d4bb3e5dd3177ee87fb928c0f26))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([f880433](https://github.com/tj-actions/glob/commit/f880433970c84075990299901b8e5c2b37440fe7))  - (renovate[bot])
+- **deps:** Lock file maintenance ([d534c74](https://github.com/tj-actions/glob/commit/d534c745e0f20d68c0b59d9e895862c4e0af8bdf))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([0efcde5](https://github.com/tj-actions/glob/commit/0efcde5028f88f47beb67d25abd211699daef42e))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([e755bd8](https://github.com/tj-actions/glob/commit/e755bd8848fb13aa95eaf227a5202a3a7edaa3d4))  - (renovate[bot])
+- **deps:** Update dependency typescript to v5.4.3 ([067df16](https://github.com/tj-actions/glob/commit/067df166f0bdbc062f8d844078bb8640eaa73715))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([3e56800](https://github.com/tj-actions/glob/commit/3e56800ab418866c27867653275fe11a3c8d9593))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.11.30 ([caecfca](https://github.com/tj-actions/glob/commit/caecfcafb1bc27f9b7fd68b421915b38320bf62d))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([bdb862d](https://github.com/tj-actions/glob/commit/bdb862de18d7fe7841f2d47f520d3ef9be121f20))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.3.1 ([0b1ccb1](https://github.com/tj-actions/glob/commit/0b1ccb1aaac013ee0f04f66b3777d18d6e7830ed))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.11.29 ([39985bd](https://github.com/tj-actions/glob/commit/39985bd1cc5311d6f8d56094a95e3727d7315096))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.3.0 ([d341ad6](https://github.com/tj-actions/glob/commit/d341ad652b5dab87c7476bb6028b9ad39fc1352a))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([20aa23e](https://github.com/tj-actions/glob/commit/20aa23e29f8a6da14d51e79d83f81f1f2bc4846d))  - (renovate[bot])
+- **deps:** Lock file maintenance ([7d071e1](https://github.com/tj-actions/glob/commit/7d071e1fd20fbee3866ed2ad82210c9c28a16d14))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.11.28 ([f6f3156](https://github.com/tj-actions/glob/commit/f6f31563ec6aaa2f73981b41aeef1bf3d2d7aa3b))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([e5dc54b](https://github.com/tj-actions/glob/commit/e5dc54bb836df78712a137f3ecec98cc8f936535))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([d38f7c8](https://github.com/tj-actions/glob/commit/d38f7c8bc71c4034cc98db7a253d502543faabc6))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.11.27 ([1519ba4](https://github.com/tj-actions/glob/commit/1519ba47abf96a2187e0e4cec44cb968f38682b0))  - (renovate[bot])
+- **deps:** Update actions/checkout digest to b4ffde6 ([8246167](https://github.com/tj-actions/glob/commit/8246167e67cfcfe29f77da493b074e7eed8ddeeb))  - (renovate[bot])
+- **deps:** Update peter-evans/create-pull-request action to v6.0.2 ([9a5e96c](https://github.com/tj-actions/glob/commit/9a5e96c4cdfd8458342b0d41bdcf3b13aa0b4e12))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.11.26 ([43130bc](https://github.com/tj-actions/glob/commit/43130bc9729a03a698be37ea64575d268aab2f3f))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.2.0 ([a06b630](https://github.com/tj-actions/glob/commit/a06b630d0b89bf8aff7691cb27df3287d64e8789))  - (renovate[bot])
+- **deps:** Lock file maintenance ([faa6d94](https://github.com/tj-actions/glob/commit/faa6d9477f3cd4bcd0bbbbda38d894f3d677b64e))  - (renovate[bot])
+- **deps:** Update dependency typescript to v5.4.2 ([03f243f](https://github.com/tj-actions/glob/commit/03f243fdd4f627d55efdf37d95b61192785334bb))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.11.25 ([6d25c95](https://github.com/tj-actions/glob/commit/6d25c95cbe305e550c10cfdf8a5f8b647878a524))  - (renovate[bot])
+- **deps:** Update typescript-eslint monorepo to v7.1.1 ([2d6254f](https://github.com/tj-actions/glob/commit/2d6254ff9199d8d295760db035b72fb8c4cb7612))  - (renovate[bot])
+- **deps:** Lock file maintenance ([b52edd9](https://github.com/tj-actions/glob/commit/b52edd913a24e12660c7d6f6f2f15ffc9dab1830))  - (renovate[bot])
+- **deps:** Update tj-actions/semver-diff action to v3 ([05fed9b](https://github.com/tj-actions/glob/commit/05fed9b317210a1791fef200746732221359e3f0))  - (renovate[bot])
+- **deps:** Update dependency eslint-plugin-github to v4.10.2 ([c2b38ca](https://github.com/tj-actions/glob/commit/c2b38caa594f3fe9cdb3aa05631f90a19b161ca8))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.11.24 ([7a2cf2c](https://github.com/tj-actions/glob/commit/7a2cf2c501e1eee9947f5fc6cb4ae425e8037874))  - (renovate[bot])
+- **deps:** Update dependency @types/node to v20.11.23 ([73fe982](https://github.com/tj-actions/glob/commit/73fe9825b9f4021bb4820c7894b977284d3702f5))  - (renovate[bot])
+- **deps:** Update tj-actions/verify-changed-files action to v19 ([0b00127](https://github.com/tj-actions/glob/commit/0b001273ce2de6eba2e2a57bdbaa1a09431ef869))  - (renovate[bot])
+
+## <!-- 9 -->⬆️ Upgrades
+
+- Upgraded from v20.0.0 -> v21
+ ([7b2db48](https://github.com/tj-actions/glob/commit/7b2db4850432307a031eb86c841caba72439a53c))  - (jackton1)
+
 # [21.0.0](https://github.com/tj-actions/glob/compare/v20.0.0...v21.0.0) - (2024-02-28)
 
 ## <!-- 0 -->🚀 Features
@@ -144,8 +835,8 @@ Co-authored-by: jackton1 <jackton1@users.noreply.github.com> ([d9b22df](https://
 - PR [#1040](https://github.com/tj-actions/glob/pull/1040): bump @typescript-eslint/parser from 6.18.0 to 6.18.1 ([3deed59](https://github.com/tj-actions/glob/commit/3deed59d9e02d8aa34ba34ebaa936c88654e919d))  - (repo-ranger[bot])
 - Merge branch 'main' into dependabot/npm_and_yarn/typescript-eslint/parser-6.18.1 ([83e737d](https://github.com/tj-actions/glob/commit/83e737d4a7ce3f82de40fd9840781d824f64d262))  - (repo-ranger[bot])
 - PR [#1045](https://github.com/tj-actions/glob/pull/1045): bump @types/node from 20.10.6 to 20.11.0 ([a0c1d13](https://github.com/tj-actions/glob/commit/a0c1d136d54f560d9a559968b31d58485a9260de))  - (repo-ranger[bot])
-- Merge branch 'main' into dependabot/npm_and_yarn/typescript-eslint/parser-6.18.1 ([07d17f1](https://github.com/tj-actions/glob/commit/07d17f179aadb32f33cd43f41b9da1e90dbae53b))  - (repo-ranger[bot])
 - Merge branch 'main' into dependabot/npm_and_yarn/types/node-20.11.0 ([9f3bdf5](https://github.com/tj-actions/glob/commit/9f3bdf57a3bd597d827ddc8e659acce7dd67a86e))  - (repo-ranger[bot])
+- Merge branch 'main' into dependabot/npm_and_yarn/typescript-eslint/parser-6.18.1 ([07d17f1](https://github.com/tj-actions/glob/commit/07d17f179aadb32f33cd43f41b9da1e90dbae53b))  - (repo-ranger[bot])
 - PR [#1041](https://github.com/tj-actions/glob/pull/1041): update dependency eslint-plugin-prettier to v5.1.3 ([fa2a766](https://github.com/tj-actions/glob/commit/fa2a76641b4d96e54a92d999508aaa64f3167dfa))  - (repo-ranger[bot])
 - PR [#1044](https://github.com/tj-actions/glob/pull/1044): update dependency eslint-plugin-jest to v27.6.3 ([ed540e2](https://github.com/tj-actions/glob/commit/ed540e2536ed201930a5b4ac1d9060fd407d9242))  - (repo-ranger[bot])
 - PR [#1034](https://github.com/tj-actions/glob/pull/1034): update typescript-eslint monorepo to v6.18.0 ([afd190d](https://github.com/tj-actions/glob/commit/afd190d5c57951b299fe7296822ceb25ed854688))  - (repo-ranger[bot])
@@ -167,9 +858,9 @@ Co-authored-by: jackton1 <jackton1@users.noreply.github.com> ([d9b22df](https://
 - **deps:** Lock file maintenance ([e1cda60](https://github.com/tj-actions/glob/commit/e1cda60c02998e96e311ffebbf7c7be7ea4fde81))  - (renovate[bot])
 - **deps:** Update dependency prettier to v3.2.0 ([2bd3542](https://github.com/tj-actions/glob/commit/2bd3542efc97fa05203bb0bd27693f9c5b1dd1da))  - (renovate[bot])
 - **deps:** Update dependency @typescript-eslint/eslint-plugin to v6.18.1 ([db80849](https://github.com/tj-actions/glob/commit/db808490c3d80d878b10bfb43186ac35a325a221))  - (renovate[bot])
-- **deps-dev:** Bump @typescript-eslint/parser from 6.18.0 to 6.18.1 ([e59d72f](https://github.com/tj-actions/glob/commit/e59d72f655161ff84cf210fbf95decebe75bc130))  - (dependabot[bot])
 - **deps-dev:** Bump @types/node from 20.10.6 to 20.11.0 ([fde5940](https://github.com/tj-actions/glob/commit/fde5940460fcccacb124ea83c16899b8516444b4))  - (dependabot[bot])
 - **deps:** Update dependency eslint-plugin-prettier to v5.1.3 ([7c21cb2](https://github.com/tj-actions/glob/commit/7c21cb23dda63899a24ebe31bd63e11b2e91b2c7))  - (renovate[bot])
+- **deps-dev:** Bump @typescript-eslint/parser from 6.18.0 to 6.18.1 ([e59d72f](https://github.com/tj-actions/glob/commit/e59d72f655161ff84cf210fbf95decebe75bc130))  - (dependabot[bot])
 - **deps:** Update dependency eslint-plugin-jest to v27.6.3 ([a1e193c](https://github.com/tj-actions/glob/commit/a1e193c561fc66a8bf1d9ec7a1a2b15317ffb104))  - (renovate[bot])
 - **deps-dev:** Bump eslint-plugin-jest from 27.6.1 to 27.6.2 ([#1046](https://github.com/tj-actions/glob/issues/1046)) ([ddc56ff](https://github.com/tj-actions/glob/commit/ddc56ff79c1fc4c79d1ed81472bc2de80a0dc0ff))  - (dependabot[bot])
 - **deps:** Update typescript-eslint monorepo to v6.18.0 ([d52fca4](https://github.com/tj-actions/glob/commit/d52fca46905db38a6fbb900beb38cf4b4677ea57))  - (renovate[bot])
@@ -1117,9 +1808,12 @@ Signed-off-by: dependabot[bot] <support@github.com> ([1654334](https://github.co
 - Updated README.md
  ([b14f8f6](https://github.com/tj-actions/glob/commit/b14f8f6eeae0959b989e25288053e78c12e541ac))  - (repo-ranger[bot])
 
-## <!-- 30 -->📝 Other
+## <!-- 29 -->👷 CI/CD
 
 - PR [#746](https://github.com/tj-actions/glob/pull/746): no matching files with the specified pattern to raised a wa rning instead ([9423dbf](https://github.com/tj-actions/glob/commit/9423dbf649c8d78b1322a2ac11b5a4dcb9e39163))  - (repo-ranger[bot])
+
+## <!-- 30 -->📝 Other
+
 - Merge dbc63da33948a07c58ea78bd24dddf4b4edd9456 into 21d0114fc2490512ccf0215cbc24e7eb852d5600
  ([457cf57](https://github.com/tj-actions/glob/commit/457cf575d64ffd82c457bc51374e93b208790fc7))  - (Tonye Jack)
 - Apply suggestions from code review ([beb63cb](https://github.com/tj-actions/glob/commit/beb63cb5be833a19d9f9d8beb2ba965f4b69f052))  - (Tonye Jack)
@@ -1174,9 +1868,9 @@ Signed-off-by: dependabot[bot] <support@github.com> ([1654334](https://github.co
 
 - Update use of path.replace
  ([634a630](https://github.com/tj-actions/glob/commit/634a630ec4973c3cc282fba5b162510c06e8541b))  - (Tonye Jack)
-- Update main.test.ts ([2e52aa4](https://github.com/tj-actions/glob/commit/2e52aa45e9c8de070e26ffa7389f12c656c8b923))  - (Tonye Jack)
 - Update renovate.yml ([ae3a257](https://github.com/tj-actions/glob/commit/ae3a2578279142f85622ddfe217ecf881728b4f5))  - (Tonye Jack)
 - Update renovate.json ([8cff68f](https://github.com/tj-actions/glob/commit/8cff68fdbba205d5fd4b7b3bee4593c0910b109c))  - (Tonye Jack)
+- Update main.test.ts ([2e52aa4](https://github.com/tj-actions/glob/commit/2e52aa45e9c8de070e26ffa7389f12c656c8b923))  - (Tonye Jack)
 - Update .nvmrc ([27a40af](https://github.com/tj-actions/glob/commit/27a40af3f4bef067d85dd260997065929057897a))  - (Tonye Jack)
 
 ## <!-- 30 -->📝 Other
@@ -1750,9 +2444,9 @@ Signed-off-by: dependabot[bot] <support@github.com> ([f944cdf](https://github.co
 - Update dependency @types/node to v18.11.16 ([a688bb6](https://github.com/tj-actions/glob/commit/a688bb623cac49f6ce43830c697f12895034c9d9))  - (renovate[bot])
 - Updated README.md
  ([5fca6c2](https://github.com/tj-actions/glob/commit/5fca6c2469d312f8e424848dfc2663b419e5c4a9))  - (jackton1)
-- Update tj-actions/verify-changed-files action to v13 ([15af57b](https://github.com/tj-actions/glob/commit/15af57b21aa4131cf1a20bb1504e2001dfded512))  - (renovate[bot])
-- Update tj-actions/auto-doc action to v1.6.0 ([cc7149a](https://github.com/tj-actions/glob/commit/cc7149afea25152aba0d75ac534a6c07c3f25336))  - (renovate[bot])
 - Update dependency eslint-plugin-jest to v27.1.7 ([71fc6ac](https://github.com/tj-actions/glob/commit/71fc6acd937243391aac4b916ff407588b6b2bcf))  - (renovate[bot])
+- Update tj-actions/auto-doc action to v1.6.0 ([cc7149a](https://github.com/tj-actions/glob/commit/cc7149afea25152aba0d75ac534a6c07c3f25336))  - (renovate[bot])
+- Update tj-actions/verify-changed-files action to v13 ([15af57b](https://github.com/tj-actions/glob/commit/15af57b21aa4131cf1a20bb1504e2001dfded512))  - (renovate[bot])
 
 ## <!-- 30 -->📝 Other
 
@@ -2011,11 +2705,18 @@ Signed-off-by: dependabot[bot] <support@github.com> ([9edd6ed](https://github.co
 
 ## <!-- 16 -->➕ Add
 
+- Added missing changes and modified dist assets.
+ ([5f2f34a](https://github.com/tj-actions/glob/commit/5f2f34a2fd75f396f3b01cb2acd0299021475921))  - (GitHub Action)
 - Create generate-changelog.yml ([b71a88a](https://github.com/tj-actions/glob/commit/b71a88ad9933c3d63ed95a08f4f5f5a41c2d55c4))  - (Tonye Jack)
+
+## <!-- 26 -->🔄 Update
+
+- Update dependency typescript to v4.9.3 ([88ebef6](https://github.com/tj-actions/glob/commit/88ebef654acee5592d062b14631b0ceb65bab449))  - (renovate[bot])
 
 ## <!-- 30 -->📝 Other
 
 - PR [#516](https://github.com/tj-actions/glob/pull/516): ([186b11f](https://github.com/tj-actions/glob/commit/186b11fd1e35abe516a54693b53ca410295867b5))  - (Tonye Jack)
+- Lock file maintenance ([3bf6905](https://github.com/tj-actions/glob/commit/3bf6905ebef7fd5e041d7eafbcd3183e53bbc3ec))  - (renovate[bot])
 - PR [#515](https://github.com/tj-actions/glob/pull/515): ([6a0a1f2](https://github.com/tj-actions/glob/commit/6a0a1f2b66fcbbd176512ad7311229eae8a7fa9f))  - (Tonye Jack)
 
 # [16.1](https://github.com/tj-actions/glob/compare/v15.3...v16.1) - (2022-11-15)
@@ -2027,13 +2728,10 @@ Signed-off-by: dependabot[bot] <support@github.com> ([9edd6ed](https://github.co
 ## <!-- 16 -->➕ Add
 
 - Added missing changes and modified dist assets.
- ([5f2f34a](https://github.com/tj-actions/glob/commit/5f2f34a2fd75f396f3b01cb2acd0299021475921))  - (GitHub Action)
-- Added missing changes and modified dist assets.
  ([7a20add](https://github.com/tj-actions/glob/commit/7a20add58dfed143ee0b2d0822c0f4ba64deef9d))  - (GitHub Action)
 
 ## <!-- 26 -->🔄 Update
 
-- Update dependency typescript to v4.9.3 ([88ebef6](https://github.com/tj-actions/glob/commit/88ebef654acee5592d062b14631b0ceb65bab449))  - (renovate[bot])
 - Update dependency @types/jest to v29.2.3 ([cdfe78e](https://github.com/tj-actions/glob/commit/cdfe78eee6a31c6b03a2e3656bedff7f241f70d3))  - (renovate[bot])
 - Update typescript-eslint monorepo to v5.43.0 ([f78cac3](https://github.com/tj-actions/glob/commit/f78cac345a61e122489990666c093332b58d9149))  - (renovate[bot])
 - Update jest.config.js ([9d3ae8e](https://github.com/tj-actions/glob/commit/9d3ae8e8f641874a422c84eb9f24beecd9391d49))  - (Tonye Jack)
@@ -2046,7 +2744,6 @@ Signed-off-by: dependabot[bot] <support@github.com> ([9edd6ed](https://github.co
 ## <!-- 30 -->📝 Other
 
 - PR [#517](https://github.com/tj-actions/glob/pull/517): ([1d245bb](https://github.com/tj-actions/glob/commit/1d245bbd4f422de9f99a04529d2a774838cb6b3e))  - (Tonye Jack)
-- Lock file maintenance ([3bf6905](https://github.com/tj-actions/glob/commit/3bf6905ebef7fd5e041d7eafbcd3183e53bbc3ec))  - (renovate[bot])
 - Lock file maintenance ([f324440](https://github.com/tj-actions/glob/commit/f324440a86cc7f271dc2c40c05187e9176f168fe))  - (renovate[bot])
 - PR [#511](https://github.com/tj-actions/glob/pull/511): ([9271c73](https://github.com/tj-actions/glob/commit/9271c73cb5d6b39435b57c519421ac688163e5cc))  - (Tonye Jack)
 - PR [#508](https://github.com/tj-actions/glob/pull/508): ([b8f02cb](https://github.com/tj-actions/glob/commit/b8f02cb130686ff414d91b010616b4c81b8fb1bb))  - (Tonye Jack)
@@ -2280,7 +2977,6 @@ Signed-off-by: dependabot[bot] <support@github.com> ([04a9214](https://github.co
  ([c979988](https://github.com/tj-actions/glob/commit/c9799881510c65d8e62ec0034c601774c72b45ae))  - (Tonye Jack)
 - Update dependency eslint to v8.26.0 ([b218814](https://github.com/tj-actions/glob/commit/b218814d4e94fa5b61313441aa2fa700c667d304))  - (renovate[bot])
 - Update test.yml ([0e3fd55](https://github.com/tj-actions/glob/commit/0e3fd55c73e590a411f82bc7d49cb851fbd9a17a))  - (Tonye Jack)
-- Update main.ts ([76cdbc8](https://github.com/tj-actions/glob/commit/76cdbc84d9634cc3ac58e3887de14d617c78b195))  - (Tonye Jack)
 - Update dependency eslint-plugin-jest to v27.1.3 ([de24981](https://github.com/tj-actions/glob/commit/de24981997087de6e7933f2ffef5353808613621))  - (renovate[bot])
 - Update dependency jest to v29.2.1 ([0d9eb3f](https://github.com/tj-actions/glob/commit/0d9eb3fc72130e73a6002cd76063ece2f3aa668b))  - (renovate[bot])
 - Update dependency @types/jest to v29.2.0 ([fc5dba3](https://github.com/tj-actions/glob/commit/fc5dba3ec3fce33d714512d609f7290f069ddc1d))  - (renovate[bot])
@@ -2296,6 +2992,7 @@ Signed-off-by: dependabot[bot] <support@github.com> ([04a9214](https://github.co
  ([6c392d9](https://github.com/tj-actions/glob/commit/6c392d9c86ee0c219a4099fee369be87607bc8aa))  - (jackton1)
 - Update README.md ([957dc64](https://github.com/tj-actions/glob/commit/957dc64fe3cbb58cf74d7173e36cf824bf97df6f))  - (Tonye Jack)
 - Update actions/setup-node action to v3.5.1 ([bf72c12](https://github.com/tj-actions/glob/commit/bf72c124dd4695364b5f812f4131badb841a0987))  - (renovate[bot])
+- Update main.ts ([76cdbc8](https://github.com/tj-actions/glob/commit/76cdbc84d9634cc3ac58e3887de14d617c78b195))  - (Tonye Jack)
 - Update dependency eslint-plugin-github to v4.4.0 ([89eb9d0](https://github.com/tj-actions/glob/commit/89eb9d08045ccc1aa9cd8e65a1ab644201606fcb))  - (renovate[bot])
 
 ## <!-- 30 -->📝 Other
@@ -2826,8 +3523,8 @@ Signed-off-by: dependabot[bot] <support@github.com> ([93b07c1](https://github.co
 - Update dependency ts-jest to v29 ([29313ba](https://github.com/tj-actions/glob/commit/29313bad8eacfc555998397134a0fa2ae5ed9bb3))  - (renovate[bot])
 - Update dependency typescript to v4.8.3 ([17e1cd9](https://github.com/tj-actions/glob/commit/17e1cd93cf5efc12f087488ee2631a3ec6b12526))  - (renovate[bot])
 - Update dependency eslint-plugin-jest to v27.0.2 ([3e2e6a8](https://github.com/tj-actions/glob/commit/3e2e6a80687909095fdea9e833a46df39af9387f))  - (renovate[bot])
-- Update typescript-eslint monorepo to v5.36.2 ([ff745bf](https://github.com/tj-actions/glob/commit/ff745bfd2127819cca5539513149e57b18d065ab))  - (renovate[bot])
 - Update dependency uuid to v9 ([12b477f](https://github.com/tj-actions/glob/commit/12b477f46a9c078fb3fce2b1a384eaeb3539613a))  - (renovate[bot])
+- Update typescript-eslint monorepo to v5.36.2 ([ff745bf](https://github.com/tj-actions/glob/commit/ff745bfd2127819cca5539513149e57b18d065ab))  - (renovate[bot])
 - Update dependency jest to v29.0.2 ([216de12](https://github.com/tj-actions/glob/commit/216de124032e9b1f8146da8943b2d4db6bf5369c))  - (renovate[bot])
 - Update typescript-eslint monorepo to v5.36.1 ([6b3be3f](https://github.com/tj-actions/glob/commit/6b3be3f54d53656ef8c06cc43fe392df21b6d210))  - (renovate[bot])
 - Update typescript-eslint monorepo to v5.36.0 ([7da2c84](https://github.com/tj-actions/glob/commit/7da2c84a9087e4a86fe7cc9576bf76aea2111c5c))  - (renovate[bot])
@@ -3077,8 +3774,8 @@ Signed-off-by: dependabot[bot] <support@github.com> ([b85b6d7](https://github.co
 - Lock file maintenance ([843478a](https://github.com/tj-actions/glob/commit/843478a294bfea6a33d4ce9d524e5d02274bb453))  - (renovate[bot])
 - Lock file maintenance ([a7aff28](https://github.com/tj-actions/glob/commit/a7aff28e1503ac845ce51d2e8d82b0e9013e5b85))  - (renovate[bot])
 - PR [#312](https://github.com/tj-actions/glob/pull/312): ([e1dbbf2](https://github.com/tj-actions/glob/commit/e1dbbf2a1806ae16b47843405a0458ccc160e136))  - (Tonye Jack)
-- PR [#313](https://github.com/tj-actions/glob/pull/313): ([01f3c04](https://github.com/tj-actions/glob/commit/01f3c04aaa4ce8e3a2e6796aeb05f422e1c6fe3b))  - (Tonye Jack)
 - Lock file maintenance ([0bc8fdf](https://github.com/tj-actions/glob/commit/0bc8fdfb73bdf753e478ecce10037987f6d8be70))  - (renovate[bot])
+- PR [#313](https://github.com/tj-actions/glob/pull/313): ([01f3c04](https://github.com/tj-actions/glob/commit/01f3c04aaa4ce8e3a2e6796aeb05f422e1c6fe3b))  - (Tonye Jack)
 
 ## <!-- 9 -->⬆️ Upgrades
 
@@ -3573,6 +4270,7 @@ Signed-off-by: dependabot[bot] <support@github.com> ([eb5794f](https://github.co
 
 ## <!-- 26 -->🔄 Update
 
+- Update test.yml ([f968b82](https://github.com/tj-actions/glob/commit/f968b82afa948624d71641eeea44f2edf0c0140d))  - (Tonye Jack)
 - Update main.ts ([9bc2618](https://github.com/tj-actions/glob/commit/9bc261891c2c1906cb8f6e4c01ebf605284985ec))  - (Tonye Jack)
 - Update main.ts ([13b3510](https://github.com/tj-actions/glob/commit/13b35104b960cba75522fd4b99fdcac89d42c09c))  - (Tonye Jack)
 - Updated README.md
@@ -3580,7 +4278,6 @@ Signed-off-by: dependabot[bot] <support@github.com> ([eb5794f](https://github.co
 - Update main.test.ts ([ea24a29](https://github.com/tj-actions/glob/commit/ea24a29caea5ecec595b0b7b9631ca856ddbf4b9))  - (Tonye Jack)
 - Update main.ts ([eb92335](https://github.com/tj-actions/glob/commit/eb9233521e7d73133e28b93d157500452587048b))  - (Tonye Jack)
 - Update action.yml ([75589ed](https://github.com/tj-actions/glob/commit/75589ed95a91da8a98942abb367737ed2cba9d8a))  - (Tonye Jack)
-- Update test.yml ([f968b82](https://github.com/tj-actions/glob/commit/f968b82afa948624d71641eeea44f2edf0c0140d))  - (Tonye Jack)
 - Update dependency eslint-plugin-jest to v26.4.6
  ([9fb7504](https://github.com/tj-actions/glob/commit/9fb75049933f192fe0b4e96935b9e0864f31a4fe))  - (Renovate Bot)
 - Update dependency @typescript-eslint/parser to v5.27.0
@@ -4561,16 +5258,16 @@ Signed-off-by: dependabot[bot] <support@github.com> ([dabe791](https://github.co
  ([58ee991](https://github.com/tj-actions/glob/commit/58ee9916b6295f63f6a220cabbcb49e6cd6a28bb))  - (jackton1)
 - Updated README.md
  ([537ccdc](https://github.com/tj-actions/glob/commit/537ccdc1a00ed963508f02bdba03a6c214c4e29e))  - (jackton1)
+- Update README.md ([7f7d0e3](https://github.com/tj-actions/glob/commit/7f7d0e3e0e4f2c3a09f8d6542d0d4bfecf0754e8))  - (Tonye Jack)
+- Update README.md ([10e1f93](https://github.com/tj-actions/glob/commit/10e1f931ad8510beb44cf3971f0971233648fe8b))  - (Tonye Jack)
 - Updated test
  ([97e8b2a](https://github.com/tj-actions/glob/commit/97e8b2a688a5e712d05285f718099f5888e541d9))  - (Tonye Jack)
-- Update README.md ([7f7d0e3](https://github.com/tj-actions/glob/commit/7f7d0e3e0e4f2c3a09f8d6542d0d4bfecf0754e8))  - (Tonye Jack)
 - Updated test
  ([05cefdd](https://github.com/tj-actions/glob/commit/05cefdd4a0ac86bcf31fc93370c5e6255ba56466))  - (Tonye Jack)
-- Update README.md ([10e1f93](https://github.com/tj-actions/glob/commit/10e1f931ad8510beb44cf3971f0971233648fe8b))  - (Tonye Jack)
 - Update README.md ([cd434ec](https://github.com/tj-actions/glob/commit/cd434ec9a9c0b577ceaf4738c6aabc0e8770dadb))  - (Tonye Jack)
-- Update test.yml ([00b3d84](https://github.com/tj-actions/glob/commit/00b3d8411fa40c04204b6796344bbefe4cdc578f))  - (Tonye Jack)
 - Updated README.md
  ([87cc575](https://github.com/tj-actions/glob/commit/87cc57523478514420bd582f4f431d256619748c))  - (jackton1)
+- Update test.yml ([00b3d84](https://github.com/tj-actions/glob/commit/00b3d8411fa40c04204b6796344bbefe4cdc578f))  - (Tonye Jack)
 - Update tj-actions/verify-changed-files action to v9
  ([40d5c6f](https://github.com/tj-actions/glob/commit/40d5c6fc779760123cf07c8e102b7915b0e7e265))  - (Renovate Bot)
 - Update dependency eslint to v8.11.0
@@ -4607,9 +5304,9 @@ Signed-off-by: dependabot[bot] <support@github.com> ([dabe791](https://github.co
 - Update README.md ([69c5969](https://github.com/tj-actions/glob/commit/69c59696386ed987b3a7691e578fcadab9d04fd9))  - (Tonye Jack)
 - Updated README.md
  ([f36090c](https://github.com/tj-actions/glob/commit/f36090cddd6ea9c027d5167348a75b4b0816039d))  - (jackton1)
-- Update README.md ([11b6f77](https://github.com/tj-actions/glob/commit/11b6f778c3c59fcd4355052f19db55d6cbc12a88))  - (Tonye Jack)
 - Updated README.md
  ([3a19dbb](https://github.com/tj-actions/glob/commit/3a19dbb2aa0a3e5861c8016863b904e32380a478))  - (jackton1)
+- Update README.md ([11b6f77](https://github.com/tj-actions/glob/commit/11b6f778c3c59fcd4355052f19db55d6cbc12a88))  - (Tonye Jack)
 - Update action.yml ([01ad659](https://github.com/tj-actions/glob/commit/01ad6594bc3c0c8568ab087a9991f43f27c97b1a))  - (Tonye Jack)
 - Update tj-actions/sync-release-version action to v11
  ([8a227fd](https://github.com/tj-actions/glob/commit/8a227fda55b7be681455787bf91c4f8ea5e27635))  - (Renovate Bot)
@@ -4734,15 +5431,15 @@ Signed-off-by: dependabot[bot] <support@github.com> ([2838d69](https://github.co
 
 - Updated assets.
  ([5021d19](https://github.com/tj-actions/glob/commit/5021d1972563d56de23480a8d5eb667d6d128c0a))  - (Tonye Jack)
-- Updated action.
- ([6bed068](https://github.com/tj-actions/glob/commit/6bed06829d0539e80cec64db3e52484ebd28cfc4))  - (Tonye Jack)
 - Update README.md ([2bbef1e](https://github.com/tj-actions/glob/commit/2bbef1e94e18cb4012d22593d5b0c9e55255c622))  - (Tonye Jack)
 - Update README.md ([e22f789](https://github.com/tj-actions/glob/commit/e22f7899e7203fdc419ba7e81aef0ef314a4c1de))  - (Tonye Jack)
+- Updated action.
+ ([6bed068](https://github.com/tj-actions/glob/commit/6bed06829d0539e80cec64db3e52484ebd28cfc4))  - (Tonye Jack)
 - Update README.md ([a613d88](https://github.com/tj-actions/glob/commit/a613d8849ba37b1b079ac1b92e22355c3b1d4e52))  - (Tonye Jack)
-- Updated test.
- ([6a37dec](https://github.com/tj-actions/glob/commit/6a37dece6e3a819f77714c315e8b3c569745b9c3))  - (Tonye Jack)
 - Update dependency @typescript-eslint/parser to v5.12.0
  ([bb1edfa](https://github.com/tj-actions/glob/commit/bb1edfa0e28f087922d1d6c23076bc71b11e3242))  - (Renovate Bot)
+- Updated test.
+ ([6a37dec](https://github.com/tj-actions/glob/commit/6a37dece6e3a819f77714c315e8b3c569745b9c3))  - (Tonye Jack)
 - Updated test.
  ([a0a0656](https://github.com/tj-actions/glob/commit/a0a06560965513a9f3d6edbffb176695456b3a73))  - (Tonye Jack)
 - Update main.test.ts ([b41b6cd](https://github.com/tj-actions/glob/commit/b41b6cd3b62daae014fff434e8e0ab293e2333aa))  - (Tonye Jack)
