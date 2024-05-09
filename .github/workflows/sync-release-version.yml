@@ -28,7 +28,7 @@ jobs:
         uses: tj-actions/semver-diff@v3
       - uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version: '20.x'
           registry-url: https://npm.pkg.github.com/
       - run: yarn install
       - name: Setup committer
