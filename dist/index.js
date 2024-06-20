@@ -39,7 +39,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.run = void 0;
+exports.run = run;
 const core = __importStar(__nccwpck_require__(2186));
 const glob = __importStar(__nccwpck_require__(8090));
 const fs_1 = __nccwpck_require__(7147);
@@ -251,7 +251,6 @@ function run() {
         core.setOutput('has-custom-patterns', hasCustomPatterns);
     });
 }
-exports.run = run;
 /* istanbul ignore if */
 if (!process.env.TESTING) {
     run().catch((e) => {
@@ -324,7 +323,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.exists = exports.escapeString = exports.tempfile = exports.getFilesFromSourceFile = exports.getDeletedFiles = exports.getPatterns = exports.deletedGitFiles = exports.normalizeSeparators = void 0;
+exports.normalizeSeparators = normalizeSeparators;
+exports.deletedGitFiles = deletedGitFiles;
+exports.getPatterns = getPatterns;
+exports.getDeletedFiles = getDeletedFiles;
+exports.getFilesFromSourceFile = getFilesFromSourceFile;
+exports.tempfile = tempfile;
+exports.escapeString = escapeString;
+exports.exists = exists;
 /* global AsyncIterableIterator */
 const fs_1 = __nccwpck_require__(7147);
 const os_1 = __nccwpck_require__(2037);
@@ -348,7 +354,6 @@ function normalizeSeparators(filePath) {
     }
     return filePath;
 }
-exports.normalizeSeparators = normalizeSeparators;
 /**
  * Retrieve all deleted files
  */
@@ -382,7 +387,6 @@ function deletedGitFiles(_a) {
         return deletedFiles;
     });
 }
-exports.deletedGitFiles = deletedGitFiles;
 function getPatterns(filePatterns) {
     return __awaiter(this, void 0, void 0, function* () {
         const IS_WINDOWS = process.platform === 'win32';
@@ -411,7 +415,6 @@ function getPatterns(filePatterns) {
         return patterns;
     });
 }
-exports.getPatterns = getPatterns;
 function getDeletedFiles(_a) {
     return __awaiter(this, arguments, void 0, function* ({ filePatterns, baseSha, sha, cwd, diff }) {
         const patterns = yield getPatterns(filePatterns);
@@ -425,7 +428,6 @@ function getDeletedFiles(_a) {
         return deletedFiles;
     });
 }
-exports.getDeletedFiles = getDeletedFiles;
 /**
  * Generator for retrieving all file contents
  */
@@ -494,14 +496,12 @@ function getFilesFromSourceFile(_a) {
         return lines;
     });
 }
-exports.getFilesFromSourceFile = getFilesFromSourceFile;
 function tempfile() {
     return __awaiter(this, arguments, void 0, function* (extension = '') {
         const tempDirectory = yield fs_1.promises.realpath((0, os_1.tmpdir)());
         return path_1.default.join(tempDirectory, `${(0, uuid_1.v4)()}${extension}`);
     });
 }
-exports.tempfile = tempfile;
 /**
  * Escapes special characters in a string for the bash shell.
  *
@@ -512,7 +512,6 @@ function escapeString(value) {
     // escape special characters for bash shell
     return value.replace(/[^\x20-\x7E]|[:*?<>|;`$()&!]|\[|]/g, '\\$&');
 }
-exports.escapeString = escapeString;
 function exists(filePath) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -524,7 +523,6 @@ function exists(filePath) {
         }
     });
 }
-exports.exists = exists;
 
 
 /***/ }),
