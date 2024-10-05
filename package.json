@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/tj-actions/glob#readme",
   "dependencies": {
-    "@actions/core": "1.11.0",
+    "@actions/core": "1.11.1",
     "@actions/exec": "1.1.1",
     "@actions/glob": "0.5.0",
     "minimatch": "^10.0.1",
