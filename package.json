@@ -36,7 +36,7 @@
     "@actions/exec": "1.1.1",
     "@actions/glob": "0.5.0",
     "minimatch": "^10.0.1",
-    "uuid": "10.0.0"
+    "uuid": "11.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
