@@ -217,7 +217,6 @@ test('returns the paths of the all other files (input files)', async () => {
     'eslint.config.mjs',
     'jest.config.js',
     'package.json',
-    'renovate.json',
     'src',
     'src/cleanup.ts',
     'src/utils.ts',
